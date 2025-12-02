@@ -1,5 +1,6 @@
-# Lighthouse CI Configuration
-ci:
+// Lighthouse CI Configuration
+module.exports = {
+  ci:
   collect:
     numberOfRuns: 3
     startServerCommand: npm run serve:production
@@ -16,3 +17,4 @@ ci:
       "categories:seo": ["warn", {"minScore": 0.9}]
   upload:
     target: temporary-public-storage
+};
