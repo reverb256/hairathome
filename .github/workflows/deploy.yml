@@ -28,9 +28,15 @@ jobs:
     - name: Build
       run: npm run build
       
+    - name: Copy to docs
+      run: |
+        rm -rf docs
+        cp -r public docs
+        
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       if: github.ref == 'refs/heads/main'
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./public
+        publish_dir: ./docs
+        destination_dir: ./
