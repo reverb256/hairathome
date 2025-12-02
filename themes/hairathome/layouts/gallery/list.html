@@ -2,16 +2,16 @@
 <div class="container">
     <h1>{{ .Title }}</h1>
     <p class="section-subtitle">{{ .Params.subtitle }}</p>
-    
-    <div class="gallery-grid">
+
+    <div class="gallery-grid" role="grid" aria-label="Photo gallery">
         {{ range .RegularPages }}
-        <div class="gallery-item">
-            <img 
-                src="{{ .Params.image }}" 
+        <div class="gallery-item" role="gridcell" tabindex="0" aria-label="View {{ .Title }} in lightbox">
+            <img
+                src="{{ .Params.image }}"
                 alt="{{ .Title }}"
                 loading="lazy"
                 width="400"
-                height="300"
+                height="600"
                 data-critical="{{ if eq (len .RegularPages) 1 }}true{{ else }}false{{ end }}"
                 data-src="{{ .Params.image }}"
                 data-srcset="{{ .Params.image }}?w=400 400w, {{ .Params.image }}?w=800 800w, {{ .Params.image }}?w=1200 1200w"
@@ -20,11 +20,15 @@
             <div class="gallery-overlay">
                 <h3>{{ .Title }}</h3>
                 <p>{{ .Params.description }}</p>
+                <span class="gallery-view-text" aria-hidden="true">Click to view</span>
             </div>
         </div>
         {{ end }}
     </div>
-    
+
     {{ .Content }}
 </div>
+
+<!-- Gallery Lightbox Script -->
+<script src="/js/gallery-lightbox.js" defer></script>
 {{ end }}

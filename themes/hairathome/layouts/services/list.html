@@ -15,46 +15,62 @@
                      <th>Book Now</th>
                  </tr>
              </thead>
-             <tbody>
-                 {{ range .RegularPages }}
-                 <tr>
-                     <td class="service-name">
-                         <div class="service-icon">
-                             <i class="{{ .Params.icon }}"></i>
-                         </div>
-                         <strong>{{ .Title }}</strong>
-                     </td>
-                     <td class="service-description">{{ .Params.description }}</td>
-                     <td class="service-duration">{{ if .Params.duration }}{{ .Params.duration }}{{ else }}Varies{{ end }}</td>
-                     <td class="service-price">{{ .Params.price }}</td>
-                     <td class="service-action">
-                         <a href="/booking/" class="btn btn-primary btn-small">Book</a>
-                     </td>
-                 </tr>
-                 {{ end }}
-             </tbody>
+              <tbody>
+                  {{ range .RegularPages }}
+                  <tr>
+                      <td class="service-name">
+                          <div class="service-icon">
+                              <i class="{{ .Params.icon }}"></i>
+                          </div>
+                          <strong>{{ .Title }}</strong>
+                          {{ if .Params.discount }}
+                          <span class="service-discount" aria-label="Discount available">{{ .Params.discount }}</span>
+                          {{ end }}
+                      </td>
+                      <td class="service-description">{{ .Params.description }}</td>
+                      <td class="service-duration">{{ if .Params.duration }}{{ .Params.duration }}{{ else }}Varies{{ end }}</td>
+                      <td class="service-price">
+                          {{ .Params.price }}
+                          {{ if .Params.original_price }}
+                          <span class="original-price">{{ .Params.original_price }}</span>
+                          {{ end }}
+                      </td>
+                      <td class="service-action">
+                          <a href="/booking/" class="btn btn-primary btn-small" aria-label="Book {{ .Title }}">Book</a>
+                      </td>
+                  </tr>
+                  {{ end }}
+              </tbody>
          </table>
      </div>
 
-     <!-- Mobile Card Layout -->
-     <div class="services-mobile-grid">
-         {{ range .RegularPages }}
-         <div class="service-card">
-             <div class="service-icon">
-                 <i class="{{ .Params.icon }}"></i>
-             </div>
-             <h3>{{ .Title }}</h3>
-             <p>{{ .Params.description }}</p>
-             <div class="service-details">
-                 {{ if .Params.duration }}
-                 <p class="duration"><i class="far fa-clock"></i> {{ .Params.duration }}</p>
-                 {{ end }}
-                 <p class="price">{{ .Params.price }}</p>
-             </div>
-             <a href="/booking/" class="btn btn-primary">Book Now</a>
-         </div>
-         {{ end }}
-     </div>
+      <!-- Mobile Card Layout -->
+      <div class="services-mobile-grid">
+          {{ range .RegularPages }}
+          <div class="service-card">
+              <div class="service-icon">
+                  <i class="{{ .Params.icon }}" aria-hidden="true"></i>
+              </div>
+              <h3>{{ .Title }}</h3>
+              {{ if .Params.discount }}
+              <span class="service-discount" role="status" aria-label="Discount available">{{ .Params.discount }}</span>
+              {{ end }}
+              <p>{{ .Params.description }}</p>
+              <div class="service-details">
+                  {{ if .Params.duration }}
+                  <p class="duration"><i class="far fa-clock" aria-hidden="true"></i> {{ .Params.duration }}</p>
+                  {{ end }}
+                  <p class="price">
+                      {{ .Params.price }}
+                      {{ if .Params.original_price }}
+                      <span class="original-price">{{ .Params.original_price }}</span>
+                      {{ end }}
+                  </p>
+              </div>
+              <a href="/booking/" class="btn btn-primary" aria-label="Book {{ .Title }} service">Book Now</a>
+          </div>
+          {{ end }}
+      </div>
 
      {{ .Content }}
 </div>
