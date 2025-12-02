@@ -2,18 +2,18 @@
 
 /* CSS Variables for Dark Mode (Default) */
 :root {
-    /* Primary Colors - Dark Mode */
-    --bg-primary: #0a0a0a;
-    --bg-secondary: #1a1a1a;
-    --bg-tertiary: #2a2a2a;
-    --bg-card: #1f1f1f;
-    --bg-hover: #2a2a2a;
+    /* Primary Colors - Very Dark Almost Black Theme */
+    --bg-primary: #050505;
+    --bg-secondary: #0a0a0a;
+    --bg-tertiary: #0f0f0f;
+    --bg-card: #080808;
+    --bg-hover: #0f0f0f;
     
-    /* Text Colors - Dark Mode */
+    /* Text Colors - Dark Mode with High Contrast */
     --text-primary: #ffffff;
-    --text-secondary: #b8b8b8;
-    --text-muted: #888888;
-    --text-accent: #e8e8e8;
+    --text-secondary: #e0e0e0;
+    --text-muted: #b0b0b0;
+    --text-accent: #f0f0f0;
     
     /* Brand Colors */
     --primary-color: #8e44ad;
@@ -26,38 +26,42 @@
     --accent-hover: #8e44ad;
     
     /* Border and Shadow Colors */
-    --border-color: #333333;
-    --border-light: #404040;
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.4);
-    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.5);
-    --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.6);
+    --border-color: #666666;
+    --border-light: #707070;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.6);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.7);
+    --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.8);
     
     /* Gradient Colors */
-    --gradient-primary: linear-gradient(135deg, #8e44ad 0%, #7d3c98 100%);
-    --gradient-hero: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-    --gradient-card: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    --gradient-primary: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+    --gradient-hero: linear-gradient(135deg, #050505 0%, #080808 100%);
+    --gradient-card: linear-gradient(135deg, #080808 0%, #0f0f0f 100%);
     
     /* Form Colors */
-    --input-bg: #2a2a2a;
-    --input-border: #404040;
+    --input-bg: #1a1a1a;
+    --input-border: #333333;
     --input-focus: #8e44ad;
     --input-text: #ffffff;
     
     /* Footer Colors */
-    --footer-bg: #0f0f0f;
-    --footer-text: #b8b8b8;
-    --footer-border: #2a2a2a;
+    --footer-bg: #030303;
+    --footer-text: #e0e0e0;
+    --footer-border: #1a1a1a;
     
     /* Service Card Colors */
-    --service-icon-bg: #2a2a2a;
-    --service-icon-color: #8e44ad;
+    --service-icon-bg: #1a1a1a;
+    --service-icon-color: #9b59b6;
     
     /* Gallery Overlay */
-    --gallery-overlay: linear-gradient(transparent, rgba(0,0,0,0.9));
+    --gallery-overlay: linear-gradient(transparent, rgba(5,5,5,0.95));
+    --gallery-overlay-text: #ffffff;
+    --gallery-border: rgba(255,255,255,0.1);
+    --image-shadow: 0 4px 20px rgba(0,0,0,0.8);
+    --image-border: rgba(255,255,255,0.05);
     
     /* Testimonial Quote */
-    --quote-color: #2a2a2a;
+    --quote-color: #1a1a1a;
 }
 
 /* Light Mode Variables */
@@ -122,6 +126,44 @@ a {
 img {
     max-width: 100%;
     height: auto;
+    display: block;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Enhanced image styles for dark theme */
+img {
+    filter: brightness(0.95) contrast(1.05);
+    border: 1px solid var(--image-border);
+    box-shadow: var(--image-shadow);
+}
+
+/* Light theme image adjustments */
+[data-theme="light"] img {
+    filter: brightness(1) contrast(1);
+    box-shadow: var(--shadow-md);
+}
+
+/* Image loading states */
+img.lazyload {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+img.lazyloaded {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Image hover effects */
+img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.9);
+}
+
+[data-theme="light"] img:hover {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
 .container {
@@ -296,19 +338,30 @@ h2 {
 .gallery-item {
     position: relative;
     overflow: hidden;
-    border-radius: 10px;
-    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    border: 1px solid var(--gallery-border);
+    background: var(--bg-card);
+    box-shadow: var(--shadow-lg);
+    transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary-color);
 }
 
 .gallery-item img {
     width: 100%;
-    height: 250px;
+    height: 280px;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: all 0.4s ease;
+    filter: brightness(0.9) contrast(1.1);
 }
 
 .gallery-item:hover img {
-    transform: scale(1.05);
+    transform: scale(1.08);
+    filter: brightness(1) contrast(1.15);
 }
 
 .gallery-overlay {
@@ -317,10 +370,12 @@ h2 {
     left: 0;
     right: 0;
     background: var(--gallery-overlay);
-    color: white;
-    padding: 20px;
+    color: var(--gallery-overlay-text);
+    padding: 25px 20px 20px;
     transform: translateY(100%);
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255,255,255,0.1);
 }
 
 .gallery-item:hover .gallery-overlay {
@@ -328,8 +383,40 @@ h2 {
 }
 
 .gallery-overlay h3 {
-    color: white;
-    margin-bottom: 5px;
+    color: var(--gallery-overlay-text);
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.gallery-overlay p {
+    color: rgba(255,255,255,0.9);
+    font-size: 0.95rem;
+    line-height: 1.4;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Light theme gallery adjustments */
+[data-theme="light"] .gallery-item {
+    border-color: var(--border-color);
+}
+
+[data-theme="light"] .gallery-item img {
+    filter: brightness(1) contrast(1);
+}
+
+[data-theme="light"] .gallery-item:hover img {
+    filter: brightness(1.05) contrast(1.05);
+}
+
+[data-theme="light"] .gallery-overlay {
+    background: linear-gradient(transparent, rgba(0,0,0,0.85));
+}
+
+[data-theme="light"] .gallery-overlay h3,
+[data-theme="light"] .gallery-overlay p {
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
 }
 
 /* Testimonials Section */
@@ -743,11 +830,51 @@ footer {
 .lazyload,
 .lazyloading {
     opacity: 0;
+    transform: scale(0.95);
+    filter: blur(2px);
 }
 
 .lazyloaded {
     opacity: 1;
-    transition: opacity 300ms;
+    transform: scale(1);
+    filter: blur(0);
+    transition: opacity 0.4s ease, transform 0.4s ease, filter 0.4s ease;
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.image-error {
+    filter: grayscale(100%);
+    opacity: 0.7;
+}
+
+/* Image loading skeleton */
+.image-loading {
+    background: linear-gradient(90deg, var(--bg-tertiary) 25%, var(--bg-card) 50%, var(--bg-tertiary) 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
 }
 
 /* Reduce motion for accessibility */
@@ -758,5 +885,75 @@ footer {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
+    }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    :root {
+        --text-secondary: #ffffff;
+        --text-muted: #ffffff;
+        --border-color: #ffffff;
+        --border-light: #ffffff;
+    }
+    
+    .service-card,
+    .testimonial-card,
+    .booking-form {
+        border: 2px solid var(--border-color);
+    }
+}
+
+/* Focus Styles for Better Accessibility */
+.btn:focus,
+.nav-link:focus,
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Skip to Content Link for Screen Readers */
+.skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--primary-color);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 10000;
+    transition: top 0.3s;
+}
+
+.skip-to-content:focus {
+    top: 6px;
+}
+
+/* Enhanced Dark Mode Print Styles */
+@media print {
+    :root {
+        --bg-primary: #ffffff;
+        --bg-secondary: #ffffff;
+        --bg-tertiary: #ffffff;
+        --bg-card: #ffffff;
+        --text-primary: #000000;
+        --text-secondary: #000000;
+        --text-muted: #666666;
+        --text-accent: #000000;
+        --border-color: #000000;
+    }
+    
+    header,
+    .theme-toggle,
+    .whatsapp-float {
+        display: none;
+    }
+    
+    body {
+        background: white;
+        color: black;
     }
 }
