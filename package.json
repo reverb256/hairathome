@@ -22,11 +22,6 @@
       "serve": "project"
     }
   },
-  "dependencies": {
-    "imagemin-mozjpeg": "^10.0.0",
-    "imagemin-pngquant": "^10.0.0",
-    "imagemin-webp": "^8.0.0"
-  },
   "description": "Hair At Home - Hugo Static Site for Winnipeg Mobile Hair Stylist",
   "devDependencies": {
     "@axe-core/playwright": "^4.11.0",
