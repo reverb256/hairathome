@@ -20,7 +20,7 @@ test.describe('Hair At Home - Performance', () => {
   });
 
   test('images are optimized', async ({ page }) => {
-    const responses: any[] = [];
+    const responses = [];
     
     page.on('response', response => {
       if (response.url().includes('.jpg') || response.url().includes('.png') || response.url().includes('.webp')) {
@@ -45,7 +45,7 @@ test.describe('Hair At Home - Performance', () => {
   });
 
   test('CSS and JS files are minified', async ({ page }) => {
-    const responses: any[] = [];
+    const responses = [];
     
     page.on('response', response => {
       if (response.url().includes('.css') || response.url().includes('.js')) {
@@ -68,7 +68,7 @@ test.describe('Hair At Home - Performance', () => {
   });
 
   test('no console errors on page load', async ({ page }) => {
-    const consoleMessages: string[] = [];
+    const consoleMessages = [];
     
     page.on('console', msg => {
       if (msg.type() === 'error') {
@@ -95,7 +95,7 @@ test.describe('Hair At Home - Performance', () => {
       return new Promise((resolve) => {
         const observer = new PerformanceObserver((list) => {
           const entries = list.getEntries();
-          const vitals: any = {};
+          const vitals = {};
           
           entries.forEach((entry) => {
             if (entry.entryType === 'largest-contentful-paint') {
@@ -137,7 +137,7 @@ test.describe('Hair At Home - Performance', () => {
   });
 
   test('font loading performance', async ({ page }) => {
-    const fontLoadTimes: any[] = [];
+    const fontLoadTimes = [];
     
     page.on('response', response => {
       if (response.url().includes('fonts.googleapis.com') || response.url().includes('.woff') || response.url().includes('.ttf')) {
@@ -158,7 +158,7 @@ test.describe('Hair At Home - Performance', () => {
   });
 
   test('resource loading order', async ({ page }) => {
-    const resourceOrder: string[] = [];
+    const resourceOrder = [];
     
     page.on('response', response => {
       const url = response.url();
@@ -185,10 +185,10 @@ test.describe('Hair At Home - Performance', () => {
 
     // Get memory usage (Chrome-specific)
     const memoryInfo = await page.evaluate(() => {
-      return (performance as any).memory ? {
-        usedJSHeapSize: (performance as any).memory.usedJSHeapSize,
-        totalJSHeapSize: (performance as any).memory.totalJSHeapSize,
-        jsHeapSizeLimit: (performance as any).memory.jsHeapSizeLimit
+      return performance.memory ? {
+        usedJSHeapSize: performance.memory.usedJSHeapSize,
+        totalJSHeapSize: performance.memory.totalJSHeapSize,
+        jsHeapSizeLimit: performance.memory.jsHeapSizeLimit
       } : null;
     });
 
@@ -205,7 +205,7 @@ test.describe('Hair At Home - Performance', () => {
   });
 
   test('network request count', async ({ page }) => {
-    const requests: string[] = [];
+    const requests = [];
     
     page.on('request', request => {
       requests.push(request.url());

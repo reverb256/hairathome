@@ -1,0 +1,88 @@
+{{ define "main" }}
+<div class="container">
+    <h1>{{ .Title }}</h1>
+    <p class="section-subtitle">{{ .Params.subtitle }}</p>
+    
+    <div class="booking-container">
+        <form id="booking-form" class="booking-form">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="service">Service</label>
+                <select id="service" name="service" required>
+                    <option value="">Select a service</option>
+                    {{ range where site.RegularPages "Type" "services" }}
+                    <option value="{{ .Params.slug }}">{{ .Title }} - {{ .Params.price }}</option>
+                    {{ end }}
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="date">Preferred Date</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="time">Preferred Time</label>
+                <select id="time" name="time" required>
+                    <option value="">Select a time</option>
+                    <option value="9:00">9:00 AM</option>
+                    <option value="10:00">10:00 AM</option>
+                    <option value="11:00">11:00 AM</option>
+                    <option value="12:00">12:00 PM</option>
+                    <option value="1:00">1:00 PM</option>
+                    <option value="2:00">2:00 PM</option>
+                    <option value="3:00">3:00 PM</option>
+                    <option value="4:00">4:00 PM</option>
+                    <option value="5:00">5:00 PM</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="location">Your Location (Winnipeg)</label>
+                <input type="text" id="location" name="location" placeholder="Neighborhood or area" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Additional Details</label>
+                <textarea id="message" name="message" rows="4" placeholder="Any special requests or hair concerns..."></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Request Appointment</button>
+        </form>
+        
+        <div class="booking-info">
+            <h3>Service Information</h3>
+            <ul>
+                <li><i class="fas fa-check"></i> Travel fee included in Winnipeg city limits</li>
+                <li><i class="fas fa-check"></i> All equipment and products provided</li>
+                <li><i class="fas fa-check"></i> Sanitized tools for each client</li>
+                <li><i class="fas fa-check"></i> Flexible scheduling including evenings & weekends</li>
+                <li><i class="fas fa-check"></i> Same-day service available based on availability</li>
+            </ul>
+            
+            <div class="contact-info">
+                <h4>Contact Information</h4>
+                <p><i class="fas fa-phone"></i> {{ site.Params.phone }}</p>
+                <p><i class="fas fa-envelope"></i> {{ site.Params.email }}</p>
+                <p><i class="fas fa-map-marker-alt"></i> Serving all Winnipeg areas</p>
+            </div>
+        </div>
+    </div>
+    
+    {{ .Content }}
+</div>
+{{ end }}

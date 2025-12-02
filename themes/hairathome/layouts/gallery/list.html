@@ -1,0 +1,26 @@
+{{ define "main" }}
+<div class="container">
+    <h1>{{ .Title }}</h1>
+    <p class="section-subtitle">{{ .Params.subtitle }}</p>
+    
+    <div class="gallery-grid">
+        {{ range .RegularPages }}
+        <div class="gallery-item">
+            <img 
+                src="{{ .Params.image }}" 
+                alt="{{ .Title }}"
+                loading="lazy"
+                width="400"
+                height="300"
+            >
+            <div class="gallery-overlay">
+                <h3>{{ .Title }}</h3>
+                <p>{{ .Params.description }}</p>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+    
+    {{ .Content }}
+</div>
+{{ end }}

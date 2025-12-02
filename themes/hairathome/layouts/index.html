@@ -1,0 +1,119 @@
+{{ define "main" }}
+<section id="home" class="hero">
+    <div class="hero-content">
+        <h1>Professional Hair Styling at Your Doorstep</h1>
+        <p>Bringing salon-quality services directly to you in Winnipeg. No more rushing to appointments - we come to you!</p>
+        <div class="hero-buttons">
+            <a href="/booking/" class="btn btn-primary">Book Now</a>
+            <a href="/services/" class="btn btn-secondary">View Services</a>
+        </div>
+    </div>
+    <div class="hero-image">
+        <img 
+            src="https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+            alt="Mobile hair stylist in Winnipeg"
+            loading="lazy"
+            width="800"
+            height="600"
+        >
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about">
+    <div class="container">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Your Trusted Mobile Hair Stylist in Winnipeg</h2>
+                <p>With over 8 years of professional experience, I bring salon-quality hair styling directly to your home, office, or any location within Winnipeg. As a Red Seal Certified hairstylist, I'm passionate about providing convenient and personalized hair care services for busy individuals and those who prefer the comfort of their own space.</p>
+                <p>Whether you need a quick trim, a special occasion updo, or professional color services, I come equipped with all the tools and products needed to deliver exceptional results. My mobile setup ensures the same quality you'd expect from a traditional salon, with the added convenience of no travel time or waiting rooms.</p>
+            </div>
+            <div class="about-image">
+                <img 
+                    src="https://images.unsplash.com/photo-1570699020466-27e32d0d9c38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                    alt="Winnipeg mobile hair stylist"
+                    loading="lazy"
+                    width="800"
+                    height="600"
+                >
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Preview -->
+<section class="services-preview">
+    <div class="container">
+        <h2>Popular Services</h2>
+        <p class="section-subtitle">Professional hair services delivered to your doorstep</p>
+        
+        <div class="services-grid">
+            {{ range first 3 (where site.RegularPages "Type" "services") }}
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="{{ .Params.icon }}"></i>
+                </div>
+                <h3>{{ .Title }}</h3>
+                <p>{{ .Params.description }}</p>
+                <p class="price">{{ .Params.price }}</p>
+            </div>
+            {{ end }}
+        </div>
+        
+        <div class="text-center" style="margin-top: 3rem;">
+            <a href="/services/" class="btn btn-primary">View All Services</a>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+    <div class="container">
+        <h2>Client Testimonials</h2>
+        <p class="section-subtitle">What our Winnipeg clients say about our mobile service</p>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"The convenience of having a professional stylist come to my home is incredible! The service was just as good as any salon, and I saved so much time. My hair has never looked better!"</p>
+                    <div class="testimonial-author">
+                        <h4>Sarah M.</h4>
+                        <p>Winnipeg</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"I'm a busy mom and this service is a lifesaver. The stylist was punctual, professional, and did an amazing job on my hair for my daughter's wedding. Highly recommend!"</p>
+                    <div class="testimonial-author">
+                        <h4>Jennifer L.</h4>
+                        <p>St. Vital</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"As someone with mobility challenges, this mobile service has been a game-changer. The stylist came directly to my home and gave me the same quality service I would get at a salon."</p>
+                    <div class="testimonial-author">
+                        <h4>Robert K.</h4>
+                        <p>Fort Garry</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Ready to Experience Salon-Quality Service at Home?</h2>
+            <p>Book your appointment today and discover the convenience of mobile hair styling in Winnipeg.</p>
+            <a href="/booking/" class="btn btn-primary btn-large">Book Your Appointment</a>
+        </div>
+    </div>
+</section>
+{{ end }}

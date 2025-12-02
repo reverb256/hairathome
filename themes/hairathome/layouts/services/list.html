@@ -1,0 +1,24 @@
+{{ define "main" }}
+<div class="container">
+    <h1>{{ .Title }}</h1>
+    <p class="section-subtitle">{{ .Params.subtitle }}</p>
+    
+    <div class="services-grid">
+        {{ range .RegularPages }}
+        <div class="service-card">
+            <div class="service-icon">
+                <i class="{{ .Params.icon }}"></i>
+            </div>
+            <h3>{{ .Title }}</h3>
+            <p>{{ .Params.description }}</p>
+            <p class="price">{{ .Params.price }}</p>
+            {{ if .Params.duration }}
+            <p class="duration"><i class="far fa-clock"></i> {{ .Params.duration }}</p>
+            {{ end }}
+        </div>
+        {{ end }}
+    </div>
+    
+    {{ .Content }}
+</div>
+{{ end }}

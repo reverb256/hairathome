@@ -1,0 +1,21 @@
+<header>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="{{ .Site.BaseURL }}">
+                    <h2>Hair At Home</h2>
+                </a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                {{ range .Site.Menus.main }}
+                <a href="{{ .URL }}" class="nav-link">{{ .Name }}</a>
+                {{ end }}
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,275 @@
+# ISO 27001 Information Security Management System
+# Annex A Controls Implementation for Hair at Home
+
+[iso-27001-policy]
+version = "1.0"
+last-reviewed = "2025-01-02"
+next-review = "2025-07-02"
+approved-by = "Security Committee"
+implementation-date = "2025-01-02"
+
+# A.5 Organizational Security Policies
+[policy-management]
+information-security-policy = true
+review-of-security-policy = true
+scope-of-isms = true
+
+# A.6 Organization of Information Security
+[organization]
+internal-organization = true
+contact-with-authorities = true
+contact-with-special-interest-groups = true
+project-management = true
+
+# A.7 Human Resource Security
+[human-resources]
+prior-to-employment = true
+during-employment = true
+termination-and-change-of-employment = true
+
+# A.8 Asset Management
+[asset-management]
+responsibility-for-assets = true
+information-classification = true
+media-handling = true
+
+# A.9 Access Control
+[access-control]
+business-requirements-of-access-control = true
+user-access-management = true
+user-responsibilities = true
+system-and-application-access-control = true
+
+# A.10 Cryptography
+[cryptography]
+cryptographic-controls = true
+
+# A.11 Physical and Environmental Security
+[physical-security]
+secure-areas = true
+equipment-security = true
+
+# A.12 Operations Security
+[operations-security]
+operational-procedures = true
+malware-protection = true
+backup = true
+logging-and-monitoring = true
+control-of-technical-vulnerabilities = true
+
+# A.13 Communications Security
+[communications-security]
+network-security-management = true
+information-transfer = true
+
+# A.14 System Acquisition, Development and Maintenance
+[system-development]
+security-requirements-of-information-systems = true
+security-in-development-and-support = true
+test-data = true
+
+# A.15 Supplier Relationships
+[supplier-relationships]
+supplier-relationship-management = true
+supplier-service-delivery-management = true
+
+# A.16 Incident Management
+[incident-management]
+management-of-information-security-incidents = true
+
+# A.17 Business Continuity Management
+[business-continuity]
+information-security-continuity = true
+redundancies = true
+
+# A.18 Compliance
+[compliance]
+compliance-with-legal-and-contractual-requirements = true
+information-security-reviews = true
+
+# Risk Assessment and Treatment
+[risk-assessment]
+risk-identification = true
+risk-analysis = true
+risk-treatment = true
+risk-acceptance = true
+
+# Security Controls Implementation
+
+[security-controls]
+
+# Access Control Implementation
+[access-controls]
+multi-factor-authentication = true
+password-policy = {
+    min-length = 12
+    complexity-required = true
+    expiration-days = 90
+    history-count = 12
+    lockout-threshold = 5
+    lockout-duration = 30
+}
+session-management = {
+    timeout-minutes = 30
+    secure-flag = true
+    http-only-flag = true
+    same-site-policy = "strict"
+}
+privilege-management = true
+access-review-frequency = "quarterly"
+
+# Data Protection
+[data-protection]
+encryption-at-rest = true
+encryption-in-transit = true
+key-management = true
+data-classification = {
+    public = "Low risk"
+    internal = "Medium risk"
+    confidential = "High risk"
+    restricted = "Critical risk"
+}
+data-retention-policy = true
+data-disposal-procedure = true
+
+# Network Security
+[network-security]
+firewall-configuration = true
+intrusion-detection = true
+network-segmentation = true
+vpn-access = true
+wireless-security = true
+
+# Application Security
+[application-security]
+secure-coding-practices = true
+code-review-process = true
+vulnerability-scanning = true
+penetration-testing = true
+dependency-management = true
+
+# Incident Response
+[incident-response]
+incident-response-plan = true
+incident-classification = true
+response-team = true
+communication-plan = true
+post-incident-review = true
+lessons-learned-process = true
+
+# Business Continuity
+[business-continuity]
+business-impact-analysis = true
+recovery-strategy = true
+backup-procedures = true
+disaster-recovery-plan = true
+testing-frequency = "semi-annual"
+
+# Monitoring and Logging
+[monitoring]
+security-monitoring = true
+log-management = true
+siem-implementation = true
+alerting-system = true
+compliance-monitoring = true
+
+# Training and Awareness
+[training]
+security-awareness-program = true
+role-based-training = true
+phishing-simulation = true
+training-frequency = "annual"
+assessment-frequency = "quarterly"
+
+# Documentation and Records
+[documentation]
+security-policies = true
+procedures-and-guidelines = true
+records-management = true
+document-control = true
+version-control = true
+
+# Compliance and Auditing
+[compliance-auditing]
+internal-audits = true
+external-audits = true
+regulatory-compliance = true
+certification-maintenance = true
+continuous-improvement = true
+
+# Specific Controls for Hair at Home
+
+[business-specific-controls]
+customer-data-protection = true
+payment-card-security = false  # No payment processing
+appointment-system-security = true
+mobile-service-considerations = true
+employee-data-protection = true
+
+# Cloud Security (if applicable)
+[cloud-security]
+cloud-provider-assessment = true
+data-sovereignty = true
+cloud-access-controls = true
+cloud-monitoring = true
+backup-and-recovery = true
+
+# Third-Party Risk Management
+[third-party-risk]
+vendor-assessment = true
+contract-review = true
+service-level-agreements = true
+security-audit-rights = true
+incident-coordination = true
+
+# Key Performance Indicators
+[kpis]
+security-incident-count = { target = 0, threshold = 2 }
+vulnerability-remediation-time = { target = 30, unit = "days"security-awareness-completion = { target = 100, unit = "%" }
+backup-success-rate = { target = 99.9, unit = "%" }
+system-uptime = { target = 99.9, unit = "%" }
+incident-response-time = { target = 1, unit = "hour" }
+
+# Risk Register
+[risk-register]
+[[risks]]
+id = "R001"
+description = "Data breach of customer personal information"
+likelihood = "Medium"
+impact = "High"
+risk-level = "High"
+mitigation = "Encryption, access controls, monitoring"
+owner = "Security Officer"
+status = "Mitigated"
+
+[[risks]]
+id = "R002"
+description = "Unauthorized access to appointment system"
+likelihood = "Low"
+impact = "Medium"
+risk-level = "Medium"
+mitigation = "MFA, strong authentication, audit logs"
+owner = "IT Manager"
+status = "Mitigated"
+
+[[risks]]
+id = "R003"
+description = "Service disruption due to cyber attack"
+likelihood = "Medium"
+impact = "Medium"
+risk-level = "Medium"
+mitigation = "DDoS protection, backup systems, incident response"
+owner = "Operations Manager"
+status = "Mitigated"
+
+# Control Effectiveness Measurement
+[control-effectiveness]
+measurement-frequency = "quarterly"
+effectiveness-criteria = [
+    "Control implementation completeness",
+    "Control operating effectiveness",
+    "Risk reduction achievement",
+    "Compliance maintenance"
+]
+improvement-actions = true
+management-review = true

@@ -23,7 +23,7 @@ faqQuestions.forEach(question => {
     });
 });
 
-// Form Validation
+// Form Validation and Submission
 const bookingForm = document.getElementById('booking-form');
 
 if (bookingForm) {
@@ -44,14 +44,86 @@ if (bookingForm) {
         });
         
         if (isValid) {
-            // In a real implementation, you would submit the form to a server
-            // For this demo, we'll show a success message
-            alert('Thank you for your booking request! We will contact you shortly to confirm your appointment.');
-            bookingForm.reset();
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Submit to Formspree
+            fetch(this.action, {
+                method: 'POST',
+                body: new FormData(this),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Success message with WhatsApp option
+                    showSuccessMessage();
+                    this.reset();
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            })
+            .catch(error => {
+                // Fallback to WhatsApp on error
+                showWhatsAppFallback();
+            })
+            .finally(() => {
+                // Reset button
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            });
         } else {
             alert('Please fill in all required fields.');
         }
     });
+}
+
+function showSuccessMessage() {
+    const message = document.createElement('div');
+    message.className = 'success-message';
+    message.innerHTML = `
+        <h3>✅ Booking Request Received!</h3>
+        <p>Thank you for your booking request! We'll contact you shortly to confirm your appointment.</p>
+        <p>For immediate assistance, feel free to reach out via WhatsApp:</p>
+        <a href="https://wa.me/12045550123?text=Hi!%20I%20just%20submitted%20a%20booking%20request%20and%20would%20like%20to%20confirm" target="_blank" class="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+        </a>
+    `;
+    
+    // Insert after form
+    const form = document.getElementById('booking-form');
+    form.parentNode.insertBefore(message, form.nextSibling);
+    
+    // Remove after 10 seconds
+    setTimeout(() => {
+        message.remove();
+    }, 10000);
+}
+
+function showWhatsAppFallback() {
+    const message = document.createElement('div');
+    message.className = 'fallback-message';
+    message.innerHTML = `
+        <h3>📱 Quick Booking Available</h3>
+        <p>Our online form is experiencing technical difficulties. For immediate booking, please use WhatsApp:</p>
+        <a href="https://wa.me/12045550123?text=Hi!%20I'd%20like%20to%20book%20a%20mobile%20hair%20appointment%20in%20Winnipeg" target="_blank" class="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i> Book via WhatsApp
+        </a>
+        <p>Or call us at (204) 555-0123</p>
+    `;
+    
+    // Insert after form
+    const form = document.getElementById('booking-form');
+    form.parentNode.insertBefore(message, form.nextSibling);
+    
+    // Remove after 15 seconds
+    setTimeout(() => {
+        message.remove();
+    }, 15000);
 }
 
 // Smooth scrolling for anchor links

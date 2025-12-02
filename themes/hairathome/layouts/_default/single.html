@@ -1,0 +1,19 @@
+{{ define "main" }}
+<div class="container">
+    <h1>{{ .Title }}</h1>
+    <div class="about-content">
+        <div class="about-text">
+            {{ .Content }}
+        </div>
+        <div class="about-image">
+            <img 
+                src="https://images.unsplash.com/photo-1570699020466-27e32d0d9c38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                alt="Winnipeg mobile hair stylist"
+                loading="lazy"
+                width="800"
+                height="600"
+            >
+        </div>
+    </div>
+</div>
+{{ end }}

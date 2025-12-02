@@ -1,0 +1,336 @@
+# Cloudflare OWASP Core Ruleset - Paranoid Mode Configuration
+# Implements OWASP Top 10 and ISO 27001 security controls
+
+# Zone Settings
+zone_name = "hairathome.ca"
+
+# SSL/TLS Configuration
+ssl_mode = "strict"
+min_tls_version = "1.2"
+tls_1_3 = "on"
+certificate_pack = "advanced"
+always_use_https = "on"
+hsts = "on"
+hsts_include_subdomains = "on"
+hsts_preload = "on"
+hsts_max_age = 31536000
+
+# WAF Configuration - OWASP CRS Paranoid Mode
+waf_mode = "on"
+waf_level = "paranoid"
+owasp_modsecurity_core_rule_set = "on"
+
+# Firewall Rules (OWASP Top 10 Coverage)
+
+# A01: Broken Access Control
+[[firewall_rules]]
+id = "1001"
+action = "block"
+description = "Block SQL Injection attempts"
+expression = "(http.request.uri.path contains \"select\" or http.request.uri.path contains \"union\" or http.request.uri.path contains \"insert\" or http.request.uri.path contains \"delete\" or http.request.uri.path contains \"drop\" or http.request.uri.path contains \"exec\" or http.request.uri.path contains \"script\") and (http.request.uri.path contains \"'\" or http.request.uri.path contains \"\\\"\" or http.request.uri.path contains \"=\" or http.request.uri.path contains \"%\")"
+priority = "high"
+
+[[firewall_rules]]
+id = "1002"
+action = "block"
+description = "Block XSS attempts"
+expression = "(http.request.uri.query contains \"<script\" or http.request.uri.query contains \"javascript:\" or http.request.uri.query contains \"onload=\" or http.request.uri.query contains \"onerror=\" or http.request.body contains \"<script\" or http.request.body contains \"javascript:\")"
+priority = "high"
+
+[[firewall_rules]]
+id = "1003"
+action = "block"
+description = "Block command injection"
+expression = "(http.request.uri.path contains \"&&\" or http.request.uri.path contains \"||\" or http.request.uri.path contains \";\" or http.request.uri.path contains \"|\" or http.request.uri.path contains \"&\" or http.request.uri.path contains \"`\" or http.request.uri.path contains \"$()\") and (http.request.uri.path contains \"cat\" or http.request.uri.path contains \"ls\" or http.request.uri.path contains \"pwd\" or http.request.uri.path contains \"whoami\")"
+priority = "high"
+
+# A02: Cryptographic Failures
+[[firewall_rules]]
+id = "1004"
+action = "block"
+description = "Block non-HTTPS requests"
+expression = "not cf.tls_version on"
+priority = "high"
+
+# A03: Injection
+[[firewall_rules]]
+id = "1005"
+action = "block"
+description = "Block NoSQL injection"
+expression = "(http.request.uri.query contains \"$where\" or http.request.uri.query contains \"$ne\" or http.request.uri.query contains \"$in\" or http.request.uri.query contains \"$gt\" or http.request.uri.query contains \"$lt\") and (http.request.uri.query contains \"{\" or http.request.uri.query contains \"}\")"
+priority = "high"
+
+[[firewall_rules]]
+id = "1006"
+action = "block"
+description = "Block LDAP injection"
+expression = "(http.request.uri.query contains \"*\" or http.request.uri.query contains \"(\" or http.request.uri.query contains \")\" or http.request.uri.query contains \"\\\\\" or http.request.uri.query contains \"=\") and (http.request.uri.query contains \"cn=\" or http.request.uri.query contains \"uid=\" or http.request.uri.query contains \"dn=\")"
+priority = "high"
+
+# A04: Insecure Design
+[[firewall_rules]]
+id = "1007"
+action = "block"
+description = "Block path traversal"
+expression = "http.request.uri.path contains \"../\" or http.request.uri.path contains \"..\\\" or http.request.uri.path contains \"%2e%2e%2f\" or http.request.uri.path contains \"%2e%2e\\\" or http.request.uri.path contains \"..%2f\" or http.request.uri.path contains \"..%5c\""
+priority = "high"
+
+[[firewall_rules]]
+id = "1008"
+action = "block"
+description = "Block file inclusion"
+expression = "http.request.uri.path contains \"php://\" or http.request.uri.path contains \"file://\" or http.request.uri.path contains \"expect://\" or http.request.uri.path contains \"data://\" or http.request.uri.path contains \"zip://\""
+priority = "high"
+
+# A05: Security Misconfiguration
+[[firewall_rules]]
+id = "1009"
+action = "block"
+description = "Block access to sensitive files"
+expression = "http.request.uri.path contains \".env\" or http.request.uri.path contains \".git\" or http.request.uri.path contains \"config.php\" or http.request.uri.path contains \"wp-config.php\" or http.request.uri.path contains \"database.yml\" or http.request.uri.path contains \"secrets.yml\""
+priority = "high"
+
+[[firewall_rules]]
+id = "1010"
+action = "block"
+description = "Block admin panel access"
+expression = "http.request.uri.path contains \"/admin\" or http.request.uri.path contains \"/wp-admin\" or http.request.uri.path contains \"/phpmyadmin\" or http.request.uri.path contains \"/mysql\" or http.request.uri.path contains \"/cpanel\""
+priority = "medium"
+
+# A06: Vulnerable Components
+[[firewall_rules]]
+id = "1011"
+action = "block"
+description = "Block known vulnerable user agents"
+expression = "(http.user_agent contains \"sqlmap\" or http.user_agent contains \"nmap\" or http.user_agent contains \"nikto\" or http.user_agent contains \"dirb\" or http.user_agent contains \"gobuster\" or http.user_agent contains \"burp\" or http.user_agent contains \"metasploit\")"
+priority = "high"
+
+# A07: Identification & Authentication Failures
+[[firewall_rules]]
+id = "1012"
+action = "rate_limit"
+description = "Rate limit login attempts"
+expression = "http.request.uri.path contains \"/login\" or http.request.uri.path contains \"/auth\""
+rate_limit = {
+    period = "60s",
+    requests_per_period = 5,
+    mitigation_timeout = "300s"
+}
+priority = "high"
+
+[[firewall_rules]]
+id = "1013"
+action = "rate_limit"
+description = "Rate limit password reset"
+expression = "http.request.uri.path contains \"/reset\" or http.request.uri.path contains \"/forgot\""
+rate_limit = {
+    period = "900s",
+    requests_per_period = 3,
+    mitigation_timeout = "900s"
+}
+priority = "high"
+
+# A08: Software and Data Integrity Failures
+[[firewall_rules]]
+id = "1014"
+action = "block"
+description = "Block file upload attacks"
+expression = "(http.request.method eq \"POST\" or http.request.method eq \"PUT\") and (http.request.uri.path contains \"/upload\" or http.request.uri.path contains \"/file\") and (http.request.body contains \"<?php\" or http.request.body contains \"<%\" or http.request.body contains \"<script\" or http.request.body contains \"eval(\")"
+priority = "high"
+
+# A09: Security Logging and Monitoring Failures
+[[firewall_rules]]
+id = "1015"
+action = "log"
+description = "Log suspicious activity"
+expression = "http.request.uri.path contains \"union\" or http.request.uri.path contains \"select\" or http.request.uri.path contains \"script\" or http.request.uri.path contains \"../\""
+priority = "low"
+
+# A10: Server-Side Request Forgery (SSRF)
+[[firewall_rules]]
+id = "1016"
+action = "block"
+description = "Block SSRF attempts"
+expression = "(http.request.uri.query contains \"url=\" or http.request.uri.query contains \"redirect=\" or http.request.uri.query contains \"return=\" or http.request.uri.query contains \"goto=\") and (http.request.uri.query contains \"http://localhost\" or http.request.uri.query contains \"http://127.0.0.1\" or http.request.uri.query contains \"http://169.254\" or http.request.uri.query contains \"file://\")"
+priority = "high"
+
+# Bot Fight Mode
+bot_fight_mode = "on"
+
+# Rate Limiting
+rate_limiting = "on"
+rate_limiting_level = "high"
+
+# DDoS Protection
+ddos_protection = "on"
+ddos_protection_level = "under_attack"
+
+# Security Headers (via Cloudflare)
+security_headers = "on"
+security_level = "high"
+
+# Browser Integrity Check
+browser_integrity_check = "on"
+
+# IP Reputation
+ip_reputation = "on"
+
+# Hotlink Protection
+hotlink_protection = "on"
+
+# Email Obfuscation
+email_obfuscation = "on"
+
+# Server Side Excludes
+server_side_excludes = "on"
+
+# Automatic HTTPS Rewrites
+automatic_https_rewrites = "on"
+
+# Mirage (Image Optimization)
+mirage = "on"
+
+# Polish (Image Compression)
+polish = "lossless"
+
+# Minify
+minify = {
+    html = "on",
+    css = "on",
+    js = "on"
+}
+
+# Brotli Compression
+brotli = "on"
+
+# Cache Level
+cache_level = "aggressive"
+
+# Browser Cache TTL
+browser_cache_ttl = 31536000
+
+# Edge Cache TTL
+edge_cache_ttl = 86400
+
+# Development Mode (off for production)
+development_mode = "off"
+
+# Page Rules for Additional Security
+
+[[page_rules]]
+id = "2001"
+target = "hairathome.ca/.git*"
+action = "block"
+priority = "high"
+
+[[page_rules]]
+id = "2002"
+target = "hairathome.ca/.env*"
+action = "block"
+priority = "high"
+
+[[page_rules]]
+id = "2003"
+target = "hairathome.ca/config*"
+action = "block"
+priority = "high"
+
+[[page_rules]]
+id = "2004"
+target = "hairathome.ca/admin*"
+action = "block"
+priority = "medium"
+
+[[page_rules]]
+id = "2005"
+target = "hairathome.ca/wp-admin*"
+action = "block"
+priority = "medium"
+
+# Transform Rules for Security Headers
+
+[[transform_rules]]
+id = "3001"
+action = "add_response_header"
+description = "Add CSP Header"
+expression = "true"
+parameters = {
+    header = "Content-Security-Policy",
+    value = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://images.unsplash.com https://*.unsplash.com; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;"
+}
+
+[[transform_rules]]
+id = "3002"
+action = "add_response_header"
+description = "Add HSTS Header"
+expression = "true"
+parameters = {
+    header = "Strict-Transport-Security",
+    value = "max-age=31536000; includeSubDomains; preload"
+}
+
+[[transform_rules]]
+id = "3003"
+action = "add_response_header"
+description = "Add Frame Options Header"
+expression = "true"
+parameters = {
+    header = "X-Frame-Options",
+    value = "DENY"
+}
+
+[[transform_rules]]
+id = "3004"
+action = "add_response_header"
+description = "Add Content Type Options Header"
+expression = "true"
+parameters = {
+    header = "X-Content-Type-Options",
+    value = "nosniff"
+}
+
+[[transform_rules]]
+id = "3005"
+action = "add_response_header"
+description = "Add XSS Protection Header"
+expression = "true"
+parameters = {
+    header = "X-XSS-Protection",
+    value = "1; mode=block"
+}
+
+[[transform_rules]]
+id = "3006"
+action = "add_response_header"
+description = "Add Referrer Policy Header"
+expression = "true"
+parameters = {
+    header = "Referrer-Policy",
+    value = "strict-origin-when-cross-origin"
+}
+
+[[transform_rules]]
+id = "3007"
+action = "add_response_header"
+description = "Add Permissions Policy Header"
+expression = "true"
+parameters = {
+    header = "Permissions-Policy",
+    value = "geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), fullscreen=(self)"
+}
+
+# Origin CA Certificate for Internal Services
+origin_ca_certificate = "on"
+
+# Argo Smart Routing
+argo_smart_routing = "on"
+
+# Web Application Firewall Payload Logging
+waf_payload_logging = "on"
+
+# Event Notifications
+event_notifications = "on"
+notification_email = "security@hairathome.ca"
+
+# Lockdown Mode (for critical security events)
+lockdown_mode = "off"  # Enable only during security incidents
