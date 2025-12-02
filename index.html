@@ -38,8 +38,10 @@
             <h1>Professional Hair Styling at Your Doorstep</h1>
             <p>Bringing salon-quality services directly to you in Winnipeg. No more rushing to appointments - we come to you!</p>
             <div class="hero-buttons">
-                <a href="#booking" class="btn btn-primary">Book Now</a>
-                <a href="#services" class="btn btn-secondary">View Services</a>
+                <a href="https://wa.me/12045550123?text=Hi!%20I'd%20like%20to%20book%20a%20mobile%20hair%20appointment%20in%20Winnipeg" target="_blank" class="btn btn-primary whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i> Book via WhatsApp
+                </a>
+                <a href="#booking" class="btn btn-secondary">Book Online</a>
             </div>
         </div>
         <div class="hero-image">
@@ -203,7 +205,7 @@
             <p class="section-subtitle">Schedule your mobile hair appointment in Winnipeg</p>
             
             <div class="booking-container">
-                <form id="booking-form" class="booking-form">
+                <form id="booking-form" class="booking-form" action="https://formspree.io/f/your-formspree-id" method="POST">
                     <div class="form-group">
                         <label for="name">Full Name</label>
                         <input type="text" id="name" name="name" required>
@@ -263,7 +265,12 @@
                         <textarea id="message" name="message" rows="4" placeholder="Any special requests or hair concerns..."></textarea>
                     </div>
                     
-                    <button type="submit" class="btn btn-primary">Request Appointment</button>
+                    <div class="booking-buttons">
+                        <button type="submit" class="btn btn-primary">Request Appointment</button>
+                        <a href="https://wa.me/12045550123?text=Hi!%20I'd%20like%20to%20book%20a%20mobile%20hair%20appointment%20in%20Winnipeg" target="_blank" class="btn btn-secondary whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Book via WhatsApp
+                        </a>
+                    </div>
                 </form>
                 
                 <div class="booking-info">
@@ -279,6 +286,7 @@
                     <div class="contact-info">
                         <h4>Contact Information</h4>
                         <p><i class="fas fa-phone"></i> (204) 555-0123</p>
+                        <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/12045550123" target="_blank">(204) 555-0123</a></p>
                         <p><i class="fas fa-envelope"></i> info@hairathome.ca</p>
                         <p><i class="fas fa-map-marker-alt"></i> Serving all Winnipeg areas</p>
                     </div>
@@ -382,6 +390,7 @@
                     <h3>Hair At Home</h3>
                     <p>Bringing professional hair styling directly to you in Winnipeg since 2018.</p>
                     <div class="social-links">
+                        <a href="https://wa.me/12045550123" target="_blank" class="whatsapp-social"><i class="fab fa-whatsapp"></i></a>
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-tiktok"></i></a>
@@ -402,6 +411,7 @@
                 <div class="footer-section">
                     <h4>Contact</h4>
                     <p><i class="fas fa-phone"></i> (204) 555-0123</p>
+                    <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/12045550123" target="_blank">(204) 555-0123</a></p>
                     <p><i class="fas fa-envelope"></i> info@hairathome.ca</p>
                     <p><i class="fas fa-map-marker-alt"></i> Winnipeg, MB</p>
                 </div>
@@ -412,6 +422,13 @@
             </div>
         </div>
     </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/12045550123?text=Hi!%20I'd%20like%20to%20book%20a%20mobile%20hair%20appointment%20in%20Winnipeg" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
 
     <script src="script.js"></script>
 </body>

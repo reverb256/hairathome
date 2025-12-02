@@ -1,0 +1,75 @@
+baseURL = 'https://hairathome.ca'
+languageCode = 'en-ca'
+title = 'Hair At Home - Winnipeg Mobile Hair Stylist'
+theme = 'hairathome'
+
+[params]
+  description = "Professional mobile hair styling services in Winnipeg. Salon-quality haircuts, color, and styling at your doorstep."
+  author = "Hair At Home"
+  phone = "(204) 555-0123"
+  email = "info@hairathome.ca"
+  location = "Winnipeg, MB"
+  
+  # Performance optimizations
+  [params.performance]
+    enableImageOptimization = true
+    enableLazyLoading = true
+    enableMinification = true
+    enableCompression = true
+    
+  # SEO
+  [params.seo]
+    enableOpenGraph = true
+    enableTwitterCards = true
+    enableJsonLd = true
+    
+  # Social
+  [params.social]
+    facebook = "#"
+    instagram = "#"
+    tiktok = "#"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "github"
+    
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 10
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 20
+  [[menu.main]]
+    name = "Services"
+    url = "/services/"
+    weight = 30
+  [[menu.main]]
+    name = "Gallery"
+    url = "/gallery/"
+    weight = 40
+  [[menu.main]]
+    name = "Book Now"
+    url = "/booking/"
+    weight = 50
+
+[sitemap]
+  changefreq = "monthly"
+  filename = "sitemap.xml"
+  priority = 0.8
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  page = ["HTML"]
+  section = ["HTML", "RSS"]
+  
+[minify]
+  minifyOutput = true
+  [minify.tdewolff]
+    [minify.tdewolff.html]
+      keepWhitespace = false
