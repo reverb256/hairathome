@@ -25,7 +25,6 @@
   "description": "Hair At Home - Hugo Static Site for Winnipeg Mobile Hair Stylist",
   "devDependencies": {
     "@axe-core/playwright": "^4.11.0",
-    "@lhci/cli": "^0.15.1",
     "@playwright/test": "^1.57.0",
     "axe-core": "^4.11.0",
     "hugo-extended": "latest",

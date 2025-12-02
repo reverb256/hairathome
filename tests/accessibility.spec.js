@@ -6,7 +6,7 @@ import { test, expect } from '@playwright/test';
  */
 test.describe('Hair At Home - Accessibility', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/');
+    await page.goto('http://localhost:1313/hairathome/');
   });
 
   test('page has proper HTML structure', async ({ page }) => {
@@ -36,18 +36,18 @@ test.describe('Hair At Home - Accessibility', () => {
     }
   });
 
-  test('form inputs have proper labels', async ({ page }) => {
-    await page.locator('#booking').scrollIntoViewIfNeeded();
-    await page.waitForTimeout(500);
+   test('form inputs have proper labels', async ({ page }) => {
+     await page.goto('http://localhost:1313/hairathome/booking/');
+     await page.waitForTimeout(500);
 
-    const formInputs = page.locator('input, select, textarea');
-    const inputCount = await formInputs.count();
+     const formInputs = page.locator('input, select, textarea');
+     const inputCount = await formInputs.count();
 
-    for (let i = 0; i < inputCount; i++) {
-      const input = formInputs.nth(i);
-      const inputId = await input.getAttribute('id');
-      
-      if (inputId) {
+     for (let i = 0; i < inputCount; i++) {
+       const input = formInputs.nth(i);
+       const inputId = await input.getAttribute('id');
+
+       if (inputId) {
         const label = page.locator(`label[for="${inputId}"]`);
         await expect(label).toBeVisible();
       }
