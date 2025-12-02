@@ -6,13 +6,13 @@ import { test, expect } from '@playwright/test';
  */
 test.describe('Hair At Home - Dark Mode Implementation', () => {
   const pages = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about/' },
-    { name: 'Services', path: '/services/' },
-    { name: 'Gallery', path: '/gallery/' },
-    { name: 'Booking', path: '/booking/' },
-    { name: 'FAQ', path: '/faq/' },
-    { name: 'Areas', path: '/areas/' }
+    { name: 'Home', path: 'http://localhost:1313/hairathome/' },
+    { name: 'About', path: 'http://localhost:1313/hairathome/about/' },
+    { name: 'Services', path: 'http://localhost:1313/hairathome/services/' },
+    { name: 'Gallery', path: 'http://localhost:1313/hairathome/gallery/' },
+    { name: 'Booking', path: 'http://localhost:1313/hairathome/booking/' },
+    { name: 'FAQ', path: 'http://localhost:1313/hairathome/faq/' },
+    { name: 'Areas', path: 'http://localhost:1313/hairathome/areas/' }
   ];
 
   const devices = [
@@ -23,7 +23,7 @@ test.describe('Hair At Home - Dark Mode Implementation', () => {
 
   // Test that dark mode is the default theme
   test('dark mode should be the default theme', async ({ page }) => {
-    await page.goto('/');
+    await page.goto('http://localhost:1313/hairathome/');
 
     // Check that no data-theme attribute is set (defaults to dark)
     const htmlElement = page.locator('html');
@@ -35,18 +35,18 @@ test.describe('Hair At Home - Dark Mode Implementation', () => {
       return window.getComputedStyle(el);
     });
 
-    // Verify dark mode background color
+    // Verify dark mode background color (check computed style)
     const backgroundColor = computedStyle.backgroundColor;
-    expect(backgroundColor).toBe('rgb(5, 5, 5)'); // #050505
+    expect(backgroundColor).toMatch(/rgb\(5,\s*5,\s*5\)/); // #050505
 
     // Verify dark mode text color
     const textColor = computedStyle.color;
-    expect(textColor).toBe('rgb(255, 255, 255)'); // #ffffff
+    expect(textColor).toMatch(/rgb\(255,\s*255,\s*255\)/); // #ffffff
   });
 
   // Test color contrast in dark mode
   test('dark mode should have accessible color contrast', async ({ page }) => {
-    await page.goto('/');
+    await page.goto('http://localhost:1313/hairathome/');
 
     // Test main text contrast
     const heroTitle = page.locator('.hero-content h1');
