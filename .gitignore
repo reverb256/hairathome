@@ -1,4 +1,52 @@
 
+
+# Build outputs
+dist/
+
+# Dependencies
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Test reports
+playwright-report/
+test-results/
+test-results.json
+test-results.xml
+trace.zip
+
+# Coverage reports
+coverage/
+.nyc_output/
+
+# Playwright artifacts
+/.playwright/
+
+# Temporary files
+.tmp/
+.temp/
+tmp/
+temp/
+
+# Environment files
+.env
+.env.local
+.env.production
+
 # Claude Flow generated files
 .claude/settings.local.json
 .mcp.json
@@ -23,5 +71,13 @@ coordination/orchestration/*
 *.sqlite-journal
 *.sqlite-wal
 claude-flow
-# Removed Windows wrapper files per user request
 hive-mind-prompt-*.txt
+
+# MCP artifacts (if sensitive)
+.memory/
+
+# Docker
+.dockerignore
+
+# k8s secrets (if any)
+k8s/secrets/

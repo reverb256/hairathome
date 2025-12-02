@@ -1,0 +1,266 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: playwright-test-config
+  namespace: hairathome
+data:
+  playwright.config.js: |
+    import { defineConfig, devices } from '@playwright/test';
+
+    export default defineConfig({
+      testDir: './tests',
+      fullyParallel: true,
+      forbidOnly: !!process.env.CI,
+      retries: process.env.CI ? 2 : 0,
+      workers: 2, // Optimized for k3s resources
+      
+      reporter: [
+        ['html', { outputFolder: '/test-results/playwright-report' }],
+        ['json', { outputFile: '/test-results/test-results.json' }],
+        ['junit', { outputFile: '/test-results/test-results.xml' }]
+      ],
+      
+      use: {
+        baseURL: process.env.BASE_URL || 'http://hairathome-service:3000',
+        trace: 'on-first-retry',
+        screenshot: 'only-on-failure',
+        video: 'retain-on-failure',
+        actionTimeout: 15000,
+        navigationTimeout: 45000,
+        ignoreHTTPSErrors: true,
+      },
+
+      projects: [
+        {
+          name: 'chromium',
+          use: { 
+            ...devices['Desktop Chrome'],
+            launchOptions: {
+              args: [
+                '--no-sandbox',
+                '--disable-dev-shm-usage',
+                '--disable-gpu'
+              ]
+            }
+          },
+        },
+        {
+          name: 'Mobile Chrome',
+          use: { 
+            ...devices['Pixel 5'],
+            launchOptions: {
+              args: [
+                '--no-sandbox',
+                '--disable-dev-shm-usage'
+              ]
+            }
+          },
+        },
+      ],
+
+      outputDir: '/test-results/artifacts',
+    });
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mcp-config
+  namespace: hairathome
+data:
+  mcp-settings.json: |
+    {
+      "enabled": true,
+      "hooks": {
+        "pre-task": true,
+        "post-task": true,
+        "session-restore": true,
+        "session-end": true
+      },
+      "memory": {
+        "storage": "/shared-memory",
+        "persistence": true
+      },
+      "neural": {
+        "training": true,
+        "patterns": ["test-results", "performance", "accessibility"]
+      }
+    }
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: playwright-tests
+  namespace: hairathome
+  labels:
+    app: playwright-tests
+spec:
+  template:
+    metadata:
+      labels:
+        app: playwright-tests
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: playwright
+        image: mcr.microsoft.com/playwright:v1.48.0-focal
+        workingDir: /app
+        env:
+        - name: BASE_URL
+          value: "http://hairathome-service:3000"
+        - name: MCP_ENABLED
+          value: "true"
+        - name: CI
+          value: "true"
+        command: ["sh", "-c"]
+        args:
+        - |
+          echo "🚀 Starting Playwright tests in k3s..."
+          
+          # Install dependencies
+          npm ci
+          
+          # Install MCP tools
+          npm install -g claude-flow@alpha
+          
+          # Wait for application to be ready
+          echo "⏳ Waiting for application..."
+          timeout 300 bash -c 'until curl -f $BASE_URL; do sleep 5; done'
+          
+          # Initialize MCP
+          if [ "$MCP_ENABLED" = "true" ]; then
+            echo "🔧 Initializing MCP..."
+            claude mcp add claude-flow npx claude-flow@alpha mcp start
+            npx claude-flow@alpha hooks pre-task --description "k3s Playwright testing"
+          fi
+          
+          # Run tests
+          echo "🧪 Running Playwright tests..."
+          npx playwright test --reporter=json || true
+          
+          # Run MCP post-processing
+          if [ "$MCP_ENABLED" = "true" ]; then
+            echo "📊 Processing results with MCP..."
+            npx claude-flow@alpha hooks post-task --task-id "k3s-playwright-tests"
+            npx claude-flow@alpha hooks session-end --export-metrics true
+          fi
+          
+          echo "✅ Test execution completed"
+        volumeMounts:
+        - name: test-results
+          mountPath: /test-results
+        - name: shared-memory
+          mountPath: /shared-memory
+        - name: app-source
+          mountPath: /app
+          readOnly: true
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "500m"
+          limits:
+            memory: "2Gi"
+            cpu: "1000m"
+      
+      - name: results-processor
+        image: alpine:latest
+        command: ["sh", "-c"]
+        args:
+        - |
+          echo "📋 Processing test results..."
+          
+          # Wait for test completion
+          while [ ! -f /test-results/test-results.json ]; do
+            sleep 10
+          done
+          
+          # Display summary
+          if [ -f /test-results/test-results.json ]; then
+            echo "📊 Test Results Summary:"
+            cat /test-results/test-results.json | jq '.summary' || echo "Could not parse JSON"
+          fi
+          
+          # List all artifacts
+          echo "📁 Generated artifacts:"
+          find /test-results -type f -name "*.json" -o -name "*.xml" -o -name "*.html" | head -20
+          
+          echo "✅ Results processing completed"
+        volumeMounts:
+        - name: test-results
+          mountPath: /test-results
+          readOnly: true
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "200m"
+      
+      volumes:
+      - name: test-results
+        persistentVolumeClaim:
+          claimName: playwright-test-results
+      - name: shared-memory
+        emptyDir:
+          sizeLimit: 1Gi
+      - name: app-source
+        configMap:
+          name: hairathome-source
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: playwright-test-results
+  namespace: hairathome
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+  storageClassName: standard
+
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: playwright-scheduled-tests
+  namespace: hairathome
+spec:
+  schedule: "0 2 * * *"  # Daily at 2 AM
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: Never
+          containers:
+          - name: playwright
+            image: mcr.microsoft.com/playwright:v1.48.0-focal
+            env:
+            - name: BASE_URL
+              value: "http://hairathome-service:3000"
+            - name: MCP_ENABLED
+              value: "true"
+            command: ["npx", "playwright", "test", "--config=/config/playwright.config.js"]
+            volumeMounts:
+            - name: test-config
+              mountPath: /config
+            - name: test-results
+              mountPath: /test-results
+            resources:
+              requests:
+                memory: "1Gi"
+                cpu: "500m"
+              limits:
+                memory: "2Gi"
+                cpu: "1000m"
+          volumes:
+          - name: test-config
+            configMap:
+              name: playwright-test-config
+          - name: test-results
+            persistentVolumeClaim:
+              claimName: playwright-test-results
