@@ -17,7 +17,7 @@ export default defineConfig({
     process.env.CI ? ['github'] : ['list']
   ],
   use: {
-    baseURL: process.env.BASE_URL || 'http://localhost:3000',
+    baseURL: process.env.BASE_URL || 'http://localhost:1313/hairathome/',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
@@ -53,8 +53,8 @@ export default defineConfig({
   ],
 
   webServer: {
-    command: 'npx http-server . -p 3000 -s',
-    port: 3000,
+    command: 'hugo server -D --bind 0.0.0.0 --baseURL http://localhost:1313/hairathome/',
+    port: 1313,
     reuseExistingServer: !process.env.CI,
     timeout: 120000,
   },
