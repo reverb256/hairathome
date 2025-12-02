@@ -190,7 +190,6 @@ gdpr = true
 pci-dss = false  # No payment processing
 
 # Security Test Cases
-[test-cases]
 
 [[test-cases]]
 id = "TC001"

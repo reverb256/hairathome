@@ -78,88 +78,11 @@ supplier-service-delivery-management = true
 management-of-information-security-incidents = true
 
 # A.17 Business Continuity Management
-[business-continuity]
-information-security-continuity = true
-redundancies = true
-
-# A.18 Compliance
-[compliance]
-compliance-with-legal-and-contractual-requirements = true
-information-security-reviews = true
-
-# Risk Assessment and Treatment
-[risk-assessment]
-risk-identification = true
-risk-analysis = true
-risk-treatment = true
-risk-acceptance = true
-
-# Security Controls Implementation
-
-[security-controls]
-
-# Access Control Implementation
-[access-controls]
-multi-factor-authentication = true
-password-policy = {
-    min-length = 12
-    complexity-required = true
-    expiration-days = 90
-    history-count = 12
-    lockout-threshold = 5
-    lockout-duration = 30
-}
-session-management = {
-    timeout-minutes = 30
-    secure-flag = true
-    http-only-flag = true
-    same-site-policy = "strict"
-}
-privilege-management = true
-access-review-frequency = "quarterly"
-
-# Data Protection
-[data-protection]
-encryption-at-rest = true
-encryption-in-transit = true
-key-management = true
-data-classification = {
-    public = "Low risk"
-    internal = "Medium risk"
-    confidential = "High risk"
-    restricted = "Critical risk"
-}
-data-retention-policy = true
-data-disposal-procedure = true
-
-# Network Security
-[network-security]
-firewall-configuration = true
-intrusion-detection = true
-network-segmentation = true
-vpn-access = true
-wireless-security = true
-
-# Application Security
-[application-security]
-secure-coding-practices = true
-code-review-process = true
-vulnerability-scanning = true
-penetration-testing = true
-dependency-management = true
-
-# Incident Response
-[incident-response]
-incident-response-plan = true
-incident-classification = true
-response-team = true
-communication-plan = true
-post-incident-review = true
-lessons-learned-process = true
-
-# Business Continuity
-[business-continuity]
-business-impact-analysis = true
+[business-continuity-settings]
+backup-frequency = "daily"
+backup-retention = "30 days"
+disaster-recovery-plan-enabled = true
+business-impact-analysis-enabled = true
 recovery-strategy = true
 backup-procedures = true
 disaster-recovery-plan = true
@@ -225,7 +148,8 @@ incident-coordination = true
 # Key Performance Indicators
 [kpis]
 security-incident-count = { target = 0, threshold = 2 }
-vulnerability-remediation-time = { target = 30, unit = "days"security-awareness-completion = { target = 100, unit = "%" }
+vulnerability-remediation-time = { target = 30, unit = "days" }
+security-awareness-completion = { target = 100, unit = "%" }
 backup-success-rate = { target = 99.9, unit = "%" }
 system-uptime = { target = 99.9, unit = "%" }
 incident-response-time = { target = 1, unit = "hour" }

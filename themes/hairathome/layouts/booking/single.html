@@ -61,8 +61,23 @@
                 <textarea id="message" name="message" rows="4" placeholder="Any special requests or hair concerns..."></textarea>
             </div>
             
-            <button type="submit" class="btn btn-primary">Request Appointment</button>
-        </form>
+             <button type="submit" class="btn btn-primary">Request Appointment</button>
+         </form>
+
+         <!-- WhatsApp Booking Alternative -->
+         <div class="booking-alternatives">
+             <h3>Quick Booking Options</h3>
+             <div class="booking-buttons">
+                 <a href="https://wa.me/12045550123?text=Hi!%20I'd%20like%20to%20book%20a%20mobile%20hair%20appointment.%20Please%20let%20me%20know%20your%20availability."
+                    class="btn whatsapp-btn"
+                    target="_blank">
+                     <i class="fab fa-whatsapp"></i> Book via WhatsApp
+                 </a>
+                 <a href="tel:{{ site.Params.phone }}" class="btn call-btn">
+                     <i class="fas fa-phone"></i> Call Now
+                 </a>
+             </div>
+         </div>
         
         <div class="booking-info">
             <h3>Service Information</h3>

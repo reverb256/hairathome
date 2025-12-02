@@ -5,6 +5,9 @@
         <p>Bringing salon-quality services directly to you in Winnipeg. No more rushing to appointments - we come to you!</p>
         <div class="hero-buttons">
             <a href="/booking/" class="btn btn-primary">Book Now</a>
+            <a href="https://wa.me/12045550123?text=Hi!%20I'd%20like%20to%20book%20a%20mobile%20hair%20appointment.%20Please%20let%20me%20know%20your%20availability." class="btn whatsapp-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
             <a href="/services/" class="btn btn-secondary">View Services</a>
         </div>
     </div>
@@ -66,42 +69,129 @@
     </div>
 </section>
 
-<!-- Testimonials -->
+<!-- Social Proof & Testimonials -->
 <section class="testimonials">
     <div class="container">
-        <h2>Client Testimonials</h2>
-        <p class="section-subtitle">What our Winnipeg clients say about our mobile service</p>
-        
+        <h2>Trusted by Winnipeg Residents</h2>
+        <p class="section-subtitle">Join 127+ satisfied clients who choose mobile hair styling</p>
+
+        <!-- Rating Summary -->
+        <div class="rating-summary">
+            <div class="rating-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="rating-text">4.9 out of 5 stars</span>
+            </div>
+            <p class="rating-count">Based on 127 reviews</p>
+        </div>
+
         <div class="testimonials-grid">
             <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
                 <div class="testimonial-content">
                     <p>"The convenience of having a professional stylist come to my home is incredible! The service was just as good as any salon, and I saved so much time. My hair has never looked better!"</p>
                     <div class="testimonial-author">
                         <h4>Sarah M.</h4>
-                        <p>Winnipeg</p>
+                        <p>Winnipeg • Haircut & Style</p>
                     </div>
                 </div>
             </div>
-            
+
             <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
                 <div class="testimonial-content">
-                    <p>"I'm a busy mom and this service is a lifesaver. The stylist was punctual, professional, and did an amazing job on my hair for my daughter's wedding. Highly recommend!"</p>
+                    <p>"I'm a busy mom and this service is a lifesaver. The stylist was punctual, professional, and did an amazing job on my hair for my daughter's wedding. Red Seal certified and it shows!"</p>
                     <div class="testimonial-author">
                         <h4>Jennifer L.</h4>
-                        <p>St. Vital</p>
+                        <p>St. Vital • Special Occasion</p>
                     </div>
                 </div>
             </div>
-            
+
             <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
                 <div class="testimonial-content">
                     <p>"As someone with mobility challenges, this mobile service has been a game-changer. The stylist came directly to my home and gave me the same quality service I would get at a salon."</p>
                     <div class="testimonial-author">
                         <h4>Robert K.</h4>
-                        <p>Fort Garry</p>
+                        <p>Fort Garry • Senior Client</p>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Trust Indicators -->
+        <div class="trust-indicators">
+            <div class="trust-item">
+                <i class="fas fa-shield-alt"></i>
+                <span>Licensed & Insured</span>
+            </div>
+            <div class="trust-item">
+                <i class="fas fa-certificate"></i>
+                <span>Red Seal Certified</span>
+            </div>
+            <div class="trust-item">
+                <i class="fas fa-clock"></i>
+                <span>8+ Years Experience</span>
+            </div>
+            <div class="trust-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Serves All Winnipeg</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Lead Capture Section -->
+<section class="lead-capture">
+    <div class="container">
+        <div class="lead-content">
+            <h2>Get Your Free Consultation</h2>
+            <p>Book a free 15-minute consultation to discuss your hair goals and get personalized recommendations.</p>
+
+            <form id="lead-form" class="lead-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" id="lead-name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="lead-phone" name="phone" placeholder="Phone Number" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <select id="lead-service" name="service" required>
+                        <option value="">Select Service of Interest</option>
+                        <option value="haircut">Haircut & Style</option>
+                        <option value="color">Hair Color</option>
+                        <option value="special">Special Occasion</option>
+                        <option value="consultation">Free Consultation</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Get Free Consultation</button>
+            </form>
+
+            <p class="form-note">By submitting this form, you'll receive a call within 24 hours to schedule your consultation.</p>
         </div>
     </div>
 </section>

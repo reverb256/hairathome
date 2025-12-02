@@ -21,11 +21,11 @@ const bookingForm = document.getElementById('booking-form');
 if (bookingForm) {
     bookingForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        
+
         // Simple validation
         let isValid = true;
         const requiredFields = this.querySelectorAll('[required]');
-        
+
         requiredFields.forEach(field => {
             if (!field.value.trim()) {
                 isValid = false;
@@ -34,12 +34,42 @@ if (bookingForm) {
                 field.style.borderColor = '#ddd';
             }
         });
-        
+
         if (isValid) {
             // In a real implementation, you would submit the form to a server
             // For this demo, we'll show a success message
             alert('Thank you for your booking request! We will contact you shortly to confirm your appointment.');
             bookingForm.reset();
+        } else {
+            alert('Please fill in all required fields.');
+        }
+    });
+}
+
+// Lead Capture Form
+const leadForm = document.getElementById('lead-form');
+
+if (leadForm) {
+    leadForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Simple validation
+        let isValid = true;
+        const requiredFields = this.querySelectorAll('[required]');
+
+        requiredFields.forEach(field => {
+            if (!field.value.trim()) {
+                isValid = false;
+                field.style.borderColor = '#e74c3c';
+            } else {
+                field.style.borderColor = '#ddd';
+            }
+        });
+
+        if (isValid) {
+            // Show success message
+            alert('Thank you! We will call you within 24 hours to schedule your free consultation.');
+            leadForm.reset();
         } else {
             alert('Please fill in all required fields.');
         }
