@@ -111,11 +111,7 @@ id = "1012"
 action = "rate_limit"
 description = "Rate limit login attempts"
 expression = "http.request.uri.path contains \"/login\" or http.request.uri.path contains \"/auth\""
-rate_limit = {
-    period = "60s",
-    requests_per_period = 5,
-    mitigation_timeout = "300s"
-}
+rate_limit = { period = "60s", requests_per_period = 5, mitigation_timeout = "300s" }
 priority = "high"
 
 [[firewall_rules]]
@@ -123,11 +119,7 @@ id = "1013"
 action = "rate_limit"
 description = "Rate limit password reset"
 expression = "http.request.uri.path contains \"/reset\" or http.request.uri.path contains \"/forgot\""
-rate_limit = {
-    period = "900s",
-    requests_per_period = 3,
-    mitigation_timeout = "900s"
-}
+rate_limit = { period = "900s", requests_per_period = 3, mitigation_timeout = "900s" }
 priority = "high"
 
 # A08: Software and Data Integrity Failures
@@ -157,9 +149,30 @@ priority = "high"
 # Bot Fight Mode
 bot_fight_mode = "on"
 
-# Rate Limiting
+# Enhanced Rate Limiting for API endpoints and forms
 rate_limiting = "on"
 rate_limiting_level = "high"
+
+# API Rate Limiting Rules
+[[rate_limiting_rules]]
+id = "api-rate-limit"
+description = "Rate limit API endpoints"
+expression = "http.request.uri.path contains \"/api/\""
+rate_limit = { period = "60s", requests_per_period = 100, mitigation_timeout = "300s" }
+
+# Form Submission Rate Limiting
+[[rate_limiting_rules]]
+id = "form-rate-limit"
+description = "Rate limit form submissions"
+expression = "http.request.method eq \"POST\" and (http.request.uri.path contains \"/booking\" or http.request.uri.path contains \"/contact\")"
+rate_limit = { period = "300s", requests_per_period = 3, mitigation_timeout = "900s" }
+
+# Image Request Rate Limiting
+[[rate_limiting_rules]]
+id = "image-rate-limit"
+description = "Rate limit image requests to prevent hotlinking abuse"
+expression = "http.request.uri.path matches \"\\\\.(jpg|jpeg|png|gif|webp|svg)$\""
+rate_limit = { period = "60s", requests_per_period = 50, mitigation_timeout = "300s" }
 
 # DDoS Protection
 ddos_protection = "on"
@@ -194,11 +207,7 @@ mirage = "on"
 polish = "lossless"
 
 # Minify
-minify = {
-    html = "on",
-    css = "on",
-    js = "on"
-}
+minify = { html = "on", css = "on", js = "on" }
 
 # Brotli Compression
 brotli = "on"
@@ -247,77 +256,64 @@ target = "hairathome.ca/wp-admin*"
 action = "block"
 priority = "medium"
 
-# Transform Rules for Security Headers
+# Enhanced Transform Rules for Security Headers
 
 [[transform_rules]]
 id = "3001"
 action = "add_response_header"
-description = "Add CSP Header"
+description = "Add Enhanced CSP Header"
 expression = "true"
-parameters = {
-    header = "Content-Security-Policy",
-    value = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://images.unsplash.com https://*.unsplash.com; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;"
-}
+parameters = { header = "Content-Security-Policy", value = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://images.unsplash.com https://*.unsplash.com blob:; connect-src 'self' https://www.google-analytics.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests; block-all-mixed-content; manifest-src 'self'; worker-src 'self';" }
+
+[[transform_rules]]
+id = "3008"
+action = "add_response_header"
+description = "Add Permissions Policy for enhanced security"
+expression = "true"
+parameters = { header = "Permissions-Policy", value = "geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), ambient-light-sensor=(), autoplay=(self), encrypted-media=(self), fullscreen=(self), picture-in-picture=()" }
+
 
 [[transform_rules]]
 id = "3002"
 action = "add_response_header"
 description = "Add HSTS Header"
 expression = "true"
-parameters = {
-    header = "Strict-Transport-Security",
-    value = "max-age=31536000; includeSubDomains; preload"
-}
+parameters = { header = "Strict-Transport-Security", value = "max-age=31536000; includeSubDomains; preload" }
 
 [[transform_rules]]
 id = "3003"
 action = "add_response_header"
 description = "Add Frame Options Header"
 expression = "true"
-parameters = {
-    header = "X-Frame-Options",
-    value = "DENY"
-}
+parameters = { header = "X-Frame-Options", value = "DENY" }
 
 [[transform_rules]]
 id = "3004"
 action = "add_response_header"
 description = "Add Content Type Options Header"
 expression = "true"
-parameters = {
-    header = "X-Content-Type-Options",
-    value = "nosniff"
-}
+parameters = { header = "X-Content-Type-Options", value = "nosniff" }
 
 [[transform_rules]]
 id = "3005"
 action = "add_response_header"
 description = "Add XSS Protection Header"
 expression = "true"
-parameters = {
-    header = "X-XSS-Protection",
-    value = "1; mode=block"
-}
+parameters = { header = "X-XSS-Protection", value = "1; mode=block" }
 
 [[transform_rules]]
 id = "3006"
 action = "add_response_header"
 description = "Add Referrer Policy Header"
 expression = "true"
-parameters = {
-    header = "Referrer-Policy",
-    value = "strict-origin-when-cross-origin"
-}
+parameters = { header = "Referrer-Policy", value = "strict-origin-when-cross-origin" }
 
 [[transform_rules]]
 id = "3007"
 action = "add_response_header"
 description = "Add Permissions Policy Header"
 expression = "true"
-parameters = {
-    header = "Permissions-Policy",
-    value = "geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), fullscreen=(self)"
-}
+parameters = { header = "Permissions-Policy", value = "geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), ambient-light-sensor=(), autoplay=(self), encrypted-media=(self), fullscreen=(self), picture-in-picture=()" }
 
 # Origin CA Certificate for Internal Services
 origin_ca_certificate = "on"

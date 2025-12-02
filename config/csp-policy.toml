@@ -49,24 +49,15 @@ report-only-csp = [
 
 # CSP Hashes for Inline Scripts
 script-hashes = [
-    "sha256-xyz123...",  # Add actual hashes for inline scripts
-    "sha256-abc456..."   # Generate with: echo -n "script-content" | openssl dgst -sha256 -binary | openssl base64
+    "sha256-xyz123",  # Add actual hashes for inline scripts
+    "sha256-abc456"   # Generate with: echo -n "script-content" | openssl dgst -sha256 -binary | openssl base64
 ]
 
 # CSP Nonces for Dynamic Content
-nonce-config = {
-    enabled = true,
-    length = 16,
-    refresh_interval = "1h"
-}
+nonce-config = { enabled = true, length = 16, refresh_interval = "1h" }
 
 # CSP Violation Reporting
-csp-reporting = {
-    enabled = true,
-    endpoint = "https://csp-report.hairathome.ca/api/csp-report",
-    report_only = false,
-    sample_rate = 1.0
-}
+csp-reporting = { enabled = true, endpoint = "https://csp-report.hairathome.ca/api/csp-report", report_only = false, sample_rate = 1.0 }
 
 # Environment-specific CSP
 [environments.development]
