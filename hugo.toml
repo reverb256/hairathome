@@ -73,3 +73,30 @@ theme = 'hairathome'
   [minify.tdewolff]
     [minify.tdewolff.html]
       keepWhitespace = false
+
+# Image processing configuration
+[imaging]
+  resampleFilter = "Lanczos"
+  quality = 85
+  anchor = "Smart"
+  bgColor = "#050505"
+  histogram = true
+
+# Image presets
+[[imaging.presets]]
+  name = "gallery"
+  width = 800
+  height = 600
+  quality = 90
+
+[[imaging.presets]]
+  name = "thumbnail"
+  width = 400
+  height = 300
+  quality = 80
+
+[[imaging.presets]]
+  name = "hero"
+  width = 1200
+  height = 600
+  quality = 92

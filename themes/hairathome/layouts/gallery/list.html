@@ -12,6 +12,10 @@
                 loading="lazy"
                 width="400"
                 height="300"
+                data-critical="{{ if eq (len .RegularPages) 1 }}true{{ else }}false{{ end }}"
+                data-src="{{ .Params.image }}"
+                data-srcset="{{ .Params.image }}?w=400 400w, {{ .Params.image }}?w=800 800w, {{ .Params.image }}?w=1200 1200w"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
             >
             <div class="gallery-overlay">
                 <h3>{{ .Title }}</h3>
