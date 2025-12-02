@@ -8,60 +8,80 @@
     --bg-tertiary: #0f0f0f;
     --bg-card: #080808;
     --bg-hover: #0f0f0f;
-    
-    /* Text Colors - Dark Mode with High Contrast */
+
+    /* Text Colors - Dark Mode */
     --text-primary: #ffffff;
-    --text-secondary: #e0e0e0;
-    --text-muted: #b0b0b0;
-    --text-accent: #f0f0f0;
-    
+    --text-secondary: #b8b8b8;
+    --text-muted: #888888;
+    --text-accent: #e8e8e8;
+
     /* Brand Colors */
     --primary-color: #8e44ad;
     --primary-hover: #7d3c98;
     --primary-light: #a569bd;
     --primary-dark: #6c3483;
-    
+
     /* Accent Colors */
     --accent-color: #9b59b6;
     --accent-hover: #8e44ad;
-    
+
     /* Border and Shadow Colors */
-    --border-color: #666666;
-    --border-light: #707070;
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.5);
-    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.6);
-    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.7);
-    --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.8);
-    
+    --border-color: #333333;
+    --border-light: #404040;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.6);
+
     /* Gradient Colors */
     --gradient-primary: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
     --gradient-hero: linear-gradient(135deg, #050505 0%, #080808 100%);
     --gradient-card: linear-gradient(135deg, #080808 0%, #0f0f0f 100%);
-    
+
     /* Form Colors */
-    --input-bg: #1a1a1a;
-    --input-border: #333333;
+    --input-bg: #2a2a2a;
+    --input-border: #404040;
     --input-focus: #8e44ad;
     --input-text: #ffffff;
-    
+
     /* Footer Colors */
     --footer-bg: #030303;
-    --footer-text: #e0e0e0;
-    --footer-border: #1a1a1a;
-    
+    --footer-text: #b8b8b8;
+    --footer-border: #0f0f0f;
+
     /* Service Card Colors */
-    --service-icon-bg: #1a1a1a;
+    --service-icon-bg: #0f0f0f;
     --service-icon-color: #9b59b6;
-    
+
     /* Gallery Overlay */
     --gallery-overlay: linear-gradient(transparent, rgba(5,5,5,0.95));
-    --gallery-overlay-text: #ffffff;
-    --gallery-border: rgba(255,255,255,0.1);
-    --image-shadow: 0 4px 20px rgba(0,0,0,0.8);
-    --image-border: rgba(255,255,255,0.05);
-    
+
     /* Testimonial Quote */
     --quote-color: #1a1a1a;
+
+    /* 8px Grid Spacing System */
+    --space-1: 4px;   /* xs */
+    --space-2: 8px;   /* sm */
+    --space-3: 12px;  /* md */
+    --space-4: 16px;  /* lg */
+    --space-5: 24px;  /* xl */
+    --space-6: 32px;  /* 2xl */
+    --space-7: 48px;  /* 3xl */
+    --space-8: 64px;  /* 4xl */
+    --space-9: 96px;  /* 5xl */
+    --space-10: 128px; /* 6xl */
+
+    /* Typography Spacing */
+    --line-height-tight: 1.25;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.75;
+    --line-height-loose: 2;
+
+    /* Layout Spacing */
+    --container-padding: var(--space-4);
+    --section-padding: var(--space-10);
+    --component-gap: var(--space-6);
+    --element-gap: var(--space-4);
 }
 
 /* Light Mode Variables */
@@ -71,32 +91,56 @@
     --bg-tertiary: #e9ecef;
     --bg-card: #ffffff;
     --bg-hover: #f8f9fa;
-    
+
     --text-primary: #333333;
     --text-secondary: #555555;
     --text-muted: #7f8c8d;
     --text-accent: #2c3e50;
-    
+
     --border-color: #dddddd;
     --border-light: #e9ecef;
     --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
     --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
     --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
     --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.1);
-    
+
     --gradient-hero: linear-gradient(135deg, #f5f7fa 0%, #e4e7f1 100%);
     --gradient-card: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-    
+
     --input-bg: #ffffff;
     --input-border: #dddddd;
     --input-text: #333333;
-    
+
     --footer-bg: #2c3e50;
     --footer-text: #bdc3c7;
     --footer-border: #34495e;
-    
+
     --service-icon-bg: #f0e6f6;
     --quote-color: #f0e6f6;
+
+    /* 8px Grid Spacing System (same for both themes) */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-7: 48px;
+    --space-8: 64px;
+    --space-9: 96px;
+    --space-10: 128px;
+
+    /* Typography Spacing (same for both themes) */
+    --line-height-tight: 1.25;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.75;
+    --line-height-loose: 2;
+
+    /* Layout Spacing (same for both themes) */
+    --container-padding: var(--space-4);
+    --section-padding: var(--space-10);
+    --component-gap: var(--space-6);
+    --element-gap: var(--space-4);
 }
 
 /* Reset and Base Styles */
