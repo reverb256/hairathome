@@ -74,7 +74,7 @@ theme = 'hairathome'
     [minify.tdewolff.html]
       keepWhitespace = false
 
-# Image processing configuration
+# Image processing configuration - Optimized for performance
 [imaging]
   resampleFilter = "Lanczos"
   quality = 85
@@ -82,21 +82,21 @@ theme = 'hairathome'
   bgColor = "#050505"
   histogram = true
 
-# Image presets
+# Image presets - Optimized for Lighthouse scores
 [[imaging.presets]]
   name = "gallery"
   width = 800
-  height = 600
-  quality = 90
+  height = 1200
+  quality = 85
 
 [[imaging.presets]]
   name = "thumbnail"
   width = 400
-  height = 300
+  height = 600
   quality = 80
 
 [[imaging.presets]]
   name = "hero"
   width = 1200
-  height = 600
-  quality = 92
+  height = 800
+  quality = 85

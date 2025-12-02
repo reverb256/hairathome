@@ -1,35 +1,36 @@
-<header>
-    <nav class="navbar">
+<header role="banner">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
             <div class="logo">
-                <a href="{{ .Site.BaseURL }}">
+                <a href="{{ .Site.BaseURL }}" aria-label="Hair At Home - Go to homepage">
                     <h2>Hair At Home</h2>
                 </a>
             </div>
-            <div class="nav-menu" id="nav-menu">
+            <div class="nav-menu" id="nav-menu" role="menu">
                 {{ range .Site.Menus.main }}
-                <a href="{{ .URL }}" class="nav-link">{{ .Name }}</a>
+                <a href="{{ .URL }}" class="nav-link" role="menuitem">{{ .Name }}</a>
                 {{ end }}
             </div>
-             <div class="hamburger" id="hamburger">
-                 <span class="bar"></span>
-                 <span class="bar"></span>
-                 <span class="bar"></span>
-             </div>
+              <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+                  <span class="bar" aria-hidden="true"></span>
+                  <span class="bar" aria-hidden="true"></span>
+                  <span class="bar" aria-hidden="true"></span>
+              </button>
 
-             <!-- WhatsApp Quick Contact -->
-             <a href="https://wa.me/12045550123?text=Hi!%20I'd%20like%20to%20book%20a%20mobile%20hair%20appointment.%20Please%20let%20me%20know%20your%20availability."
+              <!-- WhatsApp Quick Contact -->
+              <a href="https://wa.me/12045550123?text=Hi!%20I'd%20like%20to%20book%20a%20mobile%20hair%20appointment.%20Please%20let%20me%20know%20your%20availability."
                 class="whatsapp-header-btn"
                 target="_blank"
-                aria-label="Contact via WhatsApp">
-                 <i class="fab fa-whatsapp"></i>
-             </a>
+                rel="noopener"
+                aria-label="Contact via WhatsApp for booking">
+                  <i class="fab fa-whatsapp" aria-hidden="true"></i>
+              </a>
         </div>
     </nav>
-    
+
     <!-- Theme Toggle -->
-    <div class="theme-toggle" id="theme-toggle" title="Toggle theme">
-        <i class="fas fa-moon" id="theme-icon"></i>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle between dark and light theme">
+        <i class="fas fa-moon" id="theme-icon" aria-hidden="true"></i>
         <span id="theme-text">Dark</span>
-    </div>
+    </button>
 </header>

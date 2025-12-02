@@ -1,7 +1,9 @@
 ---
 title: "Color Services"
 icon: "fas fa-paint-brush"
-price: "$150 - $300"
+price: "$135 - $270"
+original_price: "$150 - $300"
+discount: "10% OFF"
 duration: "1.5-3 hours"
 description: "Full color, highlights, and touch-ups"
 slug: "color"

@@ -4,14 +4,16 @@ const navMenu = document.getElementById('nav-menu');
 
 if (hamburger && navMenu) {
     hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
+        const isExpanded = hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
+        hamburger.setAttribute('aria-expanded', isExpanded);
     });
 
     // Close mobile menu when clicking on a link
     document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
     }));
 }
 

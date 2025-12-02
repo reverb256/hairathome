@@ -1,0 +1,59 @@
+{{ define "main" }}
+<section class="areas-hero">
+    <div class="container">
+        <h1>{{ .Title }}</h1>
+        <p class="section-subtitle">{{ .Params.subtitle }}</p>
+    </div>
+</section>
+
+<section class="areas-content">
+    <div class="container">
+        {{ .Content }}
+    </div>
+</section>
+
+<!-- Areas Map Section -->
+<section class="areas-map">
+    <div class="container">
+        <h2>Areas We Serve</h2>
+        <div class="areas-grid">
+            <div class="area-card">
+                <h3><i class="fas fa-city" aria-hidden="true"></i> Central Winnipeg</h3>
+                <ul>
+                    <li>Downtown</li>
+                    <li>Exchange District</li>
+                    <li>Wolseley</li>
+                    <li>Osborne Village</li>
+                </ul>
+            </div>
+            <div class="area-card">
+                <h3><i class="fas fa-home" aria-hidden="true"></i> South Winnipeg</h3>
+                <ul>
+                    <li>Fort Garry</li>
+                    <li>St. Vital</li>
+                    <li>St. Boniface</li>
+                    <li>Transcona</li>
+                </ul>
+            </div>
+            <div class="area-card">
+                <h3><i class="fas fa-tree" aria-hidden="true"></i> West Winnipeg</h3>
+                <ul>
+                    <li>Charleswood</li>
+                    <li>St. James</li>
+                    <li>Fort Richmond</li>
+                    <li>Headingley</li>
+                </ul>
+            </div>
+            <div class="area-card">
+                <h3><i class="fas fa-building" aria-hidden="true"></i> North Winnipeg</h3>
+                <ul>
+                    <li>Seven Oaks</li>
+                    <li>River Heights</li>
+                    <li>North Kildonan</li>
+                    <li>St. Johns</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}
