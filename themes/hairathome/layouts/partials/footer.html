@@ -1,0 +1,41 @@
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Hair At Home</h3>
+                <p>Bringing professional hair styling directly to you in Winnipeg since 2018.</p>
+                <div class="social-links">
+                    {{ with .Site.Params.social.facebook }}
+                    <a href="{{ . }}" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    {{ end }}
+                    {{ with .Site.Params.social.instagram }}
+                    <a href="{{ . }}" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    {{ end }}
+                    {{ with .Site.Params.social.tiktok }}
+                    <a href="{{ . }}" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    {{ end }}
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    {{ range .Site.Menus.main }}
+                    <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                    {{ end }}
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p><i class="fas fa-phone"></i> {{ .Site.Params.phone }}</p>
+                <p><i class="fas fa-envelope"></i> {{ .Site.Params.email }}</p>
+                <p><i class="fas fa-map-marker-alt"></i> {{ .Site.Params.location }}</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; {{ now.Year }} {{ .Site.Title }}. All rights reserved. | Licensed Mobile Hair Stylist in Winnipeg</p>
+        </div>
+    </div>
+</footer>

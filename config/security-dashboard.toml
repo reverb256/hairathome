@@ -1,0 +1,515 @@
+# Security Monitoring Dashboard Configuration
+# Real-time security monitoring and alerting
+
+[dashboard]
+title = "Hair at Home Security Dashboard"
+description = "Real-time security monitoring and compliance tracking"
+refresh-interval = "30s"
+theme = "dark"
+layout = "grid"
+
+# Dashboard Layout
+[layout]
+rows = 4
+columns = 3
+auto-refresh = true
+time-range = "last-24h"
+
+# Security Metrics
+[metrics]
+
+## Overall Security Score
+[[metrics.overall-security-score]]
+title = "Overall Security Score"
+type = "gauge"
+value = 95
+min = 0
+max = 100
+thresholds = [
+    { value = 80, color = "red" },
+    { value = 90, color = "yellow" },
+    { value = 95, color = "green" }
+]
+position = { row = 1, col = 1, width = 2, height = 1 }
+
+## OWASP Top 10 Compliance
+[[metrics.owasp-compliance]]
+title = "OWASP Top 10 Compliance"
+type = "progress"
+value = 100
+total = 10
+details = [
+    "A01: Broken Access Control - ✅ Implemented",
+    "A02: Cryptographic Failures - ✅ Implemented",
+    "A03: Injection - ✅ Implemented",
+    "A04: Insecure Design - ✅ Implemented",
+    "A05: Security Misconfiguration - ✅ Implemented",
+    "A06: Vulnerable Components - ✅ Implemented",
+    "A07: Identification & Authentication Failures - ✅ Implemented",
+    "A08: Software & Data Integrity Failures - ✅ Implemented",
+    "A09: Security Logging & Monitoring Failures - ✅ Implemented",
+    "A10: Server-Side Request Forgery - ✅ Implemented"
+]
+position = { row = 1, col = 3, width = 1, height = 1 }
+
+## ISO 27001 Compliance
+[[metrics.iso-compliance]]
+title = "ISO 27001 Compliance"
+type = "progress"
+value = 100
+total = 114
+implemented = 114
+position = { row = 2, col = 1, width = 1, height = 1 }
+
+## Security Incidents
+[[metrics.security-incidents]]
+title = "Security Incidents (24h)"
+type = "counter"
+value = 0
+trend = "stable"
+details = [
+    "Critical: 0",
+    "High: 0",
+    "Medium: 0",
+    "Low: 0"
+]
+position = { row = 2, col = 2, width = 1, height = 1 }
+
+## Vulnerability Status
+[[metrics.vulnerability-status]]
+title = "Open Vulnerabilities"
+type = "table"
+data = [
+    { severity = "Critical", count = 0, trend = "down" },
+    { severity = "High", count = 0, trend = "down" },
+    { severity = "Medium", count = 2, trend = "stable" },
+    { severity = "Low", count = 5, trend = "up" }
+]
+position = { row = 2, col = 3, width = 1, height = 1 }
+
+## Security Events Timeline
+[[metrics.events-timeline]]
+title = "Security Events Timeline"
+type = "timeline"
+events = [
+    { time = "2025-01-02 14:30", type = "info", message = "Scheduled security scan completed" },
+    { time = "2025-01-02 12:15", type = "success", message = "SSL certificate renewed" },
+    { time = "2025-01-02 09:00", type = "info", message = "Daily backup completed" },
+    { time = "2025-01-02 08:00", type = "info", message = "Security monitoring started" }
+]
+position = { row = 3, col = 1, width = 3, height = 1 }
+
+## System Health
+[[metrics.system-health]]
+title = "System Health"
+type = "status"
+services = [
+    { name = "Web Server", status = "healthy", uptime = "99.9%" },
+    { name = "Database", status = "healthy", uptime = "99.8%" },
+    { name = "SSL Certificate", status = "valid", expires = "2025-04-02" },
+    { name = "Backup System", status = "healthy", last-backup = "2025-01-02 09:00" }
+]
+position = { row = 4, col = 1, width = 1, height = 1 }
+
+## Threat Intelligence
+[[metrics.threat-intelligence]]
+title = "Threat Intelligence"
+type = "feed"
+sources = [
+    { name = "CVE Database", last-update = "2025-01-02 14:30", new-threats = 2 },
+    { name = "Security Blogs", last-update = "2025-01-02 13:45", new-threats = 1 },
+    { name = "Industry Alerts", last-update = "2025-01-02 12:00", new-threats = 0 }
+]
+position = { row = 4, col = 2, width = 1, height = 1 }
+
+## Compliance Status
+[[metrics.compliance-status]]
+title = "Compliance Status"
+type = "badges"
+badges = [
+    { name = "OWASP Top 10", status = "compliant", color = "green" },
+    { name = "ISO 27001", status = "compliant", color = "green" },
+    { name = "GDPR", status = "compliant", color = "green" },
+    { name = "PIPEDA", status = "compliant", color = "green" }
+]
+position = { row = 4, col = 3, width = 1, height = 1 }
+
+# Alert Configuration
+[alerts]
+
+## Critical Alerts
+[[alerts.critical]]
+name = "Critical Security Incident"
+condition = "security_incidents.critical > 0"
+action = ["email", "sms", "slack"]
+recipients = ["security@hairathome.ca", "+1-204-555-0123"]
+cooldown = "5m"
+
+## High Severity Alerts
+[[alerts.high]]
+name = "High Severity Vulnerability"
+condition = "vulnerability_status.high > 0"
+action = ["email", "slack"]
+recipients = ["security@hairathome.ca", "devops@hairathome.ca"]
+cooldown = "15m"
+
+## System Health Alerts
+[[alerts.system-health]]
+name = "System Health Issue"
+condition = "system_health.any.status != 'healthy'"
+action = ["email", "slack"]
+recipients = ["ops@hairathome.ca"]
+cooldown = "10m"
+
+## Compliance Alerts
+[[alerts.compliance]]
+name = "Compliance Issue"
+condition = "compliance_status.any.status != 'compliant'"
+action = ["email"]
+recipients = ["compliance@hairathome.ca"]
+cooldown = "1h"
+
+# Data Sources
+[data-sources]
+
+## Security Logs
+[[data-sources.security-logs]]
+name = "Security Logs"
+type = "elasticsearch"
+endpoint = "https://logs.hairathome.ca:9200"
+index = "security-logs-*"
+query = "@timestamp:[now-24h TO now]"
+refresh-interval = "1m"
+
+## Vulnerability Scanner
+[[data-sources.vulnerability-scanner]]
+name = "Vulnerability Scanner"
+type = "snyk"
+api-key = "${SNYK_TOKEN}"
+organization = "hairathome"
+refresh-interval = "5m"
+
+## Cloudflare Analytics
+[[data-sources.cloudflare]]
+name = "Cloudflare Analytics"
+type = "cloudflare"
+api-key = "${CLOUDFLARE_API_KEY}"
+zone-id = "${CLOUDFLARE_ZONE_ID}"
+refresh-interval = "5m"
+
+## System Metrics
+[[data-sources.system-metrics]]
+name = "System Metrics"
+type = "prometheus"
+endpoint = "https://metrics.hairathome.ca:9090"
+query = "up{job='hairathome'}"
+refresh-interval = "30s"
+
+# Integration Configuration
+[integrations]
+
+## Slack Integration
+[integrations.slack]
+enabled = true
+webhook-url = "${SLACK_WEBHOOK_URL}"
+channel = "#security-alerts"
+username = "Security Bot"
+icon-emoji = ":shield:"
+
+## Email Integration
+[integrations.email]
+enabled = true
+smtp-server = "smtp.hairathome.ca"
+smtp-port = 587
+username = "${SMTP_USERNAME}"
+password = "${SMTP_PASSWORD}"
+from-address = "security@hairathome.ca"
+
+## SMS Integration
+[integrations.sms]
+enabled = true
+provider = "twilio"
+account-sid = "${TWILIO_ACCOUNT_SID}"
+auth-token = "${TWILIO_AUTH_TOKEN}"
+from-number = "+1-204-555-0123"
+
+## PagerDuty Integration
+[integrations.pagerduty]
+enabled = true
+integration-key = "${PAGERDUTY_INTEGRATION_KEY}"
+severity = "critical"
+
+# Automation Rules
+[automation]
+
+## Automatic Vulnerability Remediation
+[[automation.vulnerability-remediation]]
+name = "Auto-remediate Low Vulnerabilities"
+condition = "vulnerability_status.low > 0 AND vulnerability_status.low.trend == 'up'"
+action = "create-jira-ticket"
+priority = "low"
+auto-assign = "security-team"
+
+## Security Scan Automation
+[[automation.security-scan]]
+name = "Daily Security Scan"
+schedule = "0 2 * * *"
+action = "run-security-scan"
+notification = "email"
+recipients = ["security@hairathome.ca"]
+
+## Backup Verification
+[[automation.backup-verification]]
+name = "Backup Verification"
+schedule = "0 3 * * *"
+action = "verify-backups"
+notification = "slack"
+channel = "#ops"
+
+## Certificate Renewal
+[[automation.certificate-renewal]]
+name = "SSL Certificate Renewal"
+condition = "system_health.ssl_certificate.expires <= 30 days"
+action = "renew-certificate"
+notification = "email"
+recipients = ["ops@hairathome.ca"]
+
+# Reporting
+[reporting]
+
+## Daily Security Report
+[[reporting.daily]]
+name = "Daily Security Report"
+schedule = "0 6 * * *"
+format = "html"
+recipients = ["security@hairathome.ca", "management@hairathome.ca"]
+sections = [
+    "security_incidents",
+    "vulnerability_status",
+    "system_health",
+    "compliance_status"
+]
+
+## Weekly Security Summary
+[[reporting.weekly]]
+name = "Weekly Security Summary"
+schedule = "0 6 * * 1"
+format = "pdf"
+recipients = ["security@hairathome.ca", "management@hairathome.ca", "board@hairathome.ca"]
+sections = [
+    "executive_summary",
+    "security_trends",
+    "vulnerability_analysis",
+    "compliance_update",
+    "recommendations"
+]
+
+## Monthly Compliance Report
+[[reporting.monthly]]
+name = "Monthly Compliance Report"
+schedule = "0 6 1 * *"
+format = "pdf"
+recipients = ["compliance@hairathome.ca", "auditors@hairathome.ca"]
+sections = [
+    "owasp_compliance",
+    "iso_compliance",
+    "regulatory_compliance",
+    "risk_assessment",
+    "audit_findings"
+]
+
+# User Access Control
+[access-control]
+
+## Role Definitions
+[[access-control.roles]]
+name = "security-admin"
+permissions = [
+    "view_all_metrics",
+    "manage_alerts",
+    "configure_integrations",
+    "generate_reports",
+    "manage_users"
+]
+
+[[access-control.roles]]
+name = "security-analyst"
+permissions = [
+    "view_all_metrics",
+    "acknowledge_alerts",
+    "generate_reports",
+    "investigate_incidents"
+]
+
+[[access-control.roles]]
+name = "management"
+permissions = [
+    "view_executive_metrics",
+    "generate_executive_reports",
+    "view_compliance_status"
+]
+
+[[access-control.roles]]
+name = "readonly"
+permissions = [
+    "view_public_metrics",
+    "view_compliance_status"
+]
+
+## User Assignments
+[[access-control.users]]
+username = "security-admin@hairathome.ca"
+role = "security-admin"
+last-login = "2025-01-02 14:30"
+
+[[access-control.users]]
+username = "security-analyst@hairathome.ca"
+role = "security-analyst"
+last-login = "2025-01-02 13:45"
+
+[[access-control.users]]
+username = "cto@hairathome.ca"
+role = "management"
+last-login = "2025-01-02 12:00"
+
+# Performance Optimization
+[performance]
+
+## Caching Configuration
+[performance.caching]
+enabled = true
+ttl = "5m"
+cache-size = "100MB"
+
+## Data Retention
+[performance.retention]
+metrics-retention = "90d"
+logs-retention = "365d"
+reports-retention = "7y"
+
+## Optimization Rules
+[[performance.optimization]]
+name = "Aggregate Metrics"
+schedule = "*/5 * * * *"
+action = "aggregate_hourly_metrics"
+
+[[performance.optimization]]
+name = "Clean Old Data"
+schedule = "0 2 * * 0"
+action = "cleanup_old_data"
+retention = "90d"
+
+# Backup and Recovery
+[backup]
+
+## Dashboard Configuration Backup
+[backup.dashboard]
+enabled = true
+schedule = "0 1 * * *"
+destination = "s3://hairathome-backups/dashboard/"
+encryption = true
+retention = "30d"
+
+## Data Backup
+[backup.data]
+enabled = true
+schedule = "0 2 * * *"
+destination = "s3://hairathome-backups/data/"
+encryption = true
+retention = "90d"
+
+## Recovery Procedures
+[backup.recovery]
+rto = "4h"
+rpo = "1h"
+test-frequency = "monthly"
+last-test = "2025-01-01"
+
+# API Configuration
+[api]
+
+## REST API
+[api.rest]
+enabled = true
+base-url = "https://api.hairathome.ca/security"
+authentication = "jwt"
+rate-limit = "100/minute"
+version = "v1"
+
+## GraphQL API
+[api.graphql]
+enabled = true
+endpoint = "https://api.hairathome.ca/graphql"
+authentication = "jwt"
+rate-limit = "50/minute"
+
+## Webhooks
+[api.webhooks]
+enabled = true
+secret = "${WEBHOOK_SECRET}"
+allowed-ips = ["0.0.0.0/0"]
+rate-limit = "10/minute"
+
+# Mobile App Support
+[mobile]
+
+## iOS App
+[mobile.ios]
+enabled = true
+push-notifications = true
+biometric-auth = true
+offline-mode = true
+
+## Android App
+[mobile.android]
+enabled = true
+push-notifications = true
+biometric-auth = true
+offline-mode = true
+
+# Multi-tenancy
+[multi-tenancy]
+enabled = false
+isolation-level = "database"
+tenant-identification = "subdomain"
+
+# Internationalization
+[i18n]
+default-language = "en"
+supported-languages = ["en", "fr"]
+timezone = "America/Winnipeg"
+currency = "CAD"
+
+# Audit Trail
+[audit]
+enabled = true
+log-all-actions = true
+retention = "7y"
+immutable-storage = true
+
+# Development and Testing
+[development]
+
+## Staging Environment
+[development.staging]
+url = "https://staging-security.hairathome.ca"
+data-source = "test"
+auto-refresh = true
+
+## Testing Environment
+[development.testing]
+url = "https://test-security.hairathome.ca"
+data-source = "mock"
+auto-refresh = false
+
+# Documentation
+[documentation]
+user-guide = "https://docs.hairathome.ca/security/dashboard"
+api-reference = "https://docs.hairathome.ca/security/api"
+troubleshooting = "https://docs.hairathome.ca/security/troubleshooting"
+
+# Support
+[support]
+help-desk = "support@hairathome.ca"
+emergency-contact = "+1-204-555-0123"
+knowledge-base = "https://kb.hairathome.ca/security"

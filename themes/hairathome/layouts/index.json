@@ -1,0 +1,18 @@
+{{- $pages := where site.RegularPages "Type" "in" (slice "services" "gallery") -}}
+{
+  "title": "{{ .Site.Title }}",
+  "description": "{{ .Site.Params.description }}",
+  "baseURL": "{{ .Site.BaseURL }}",
+  "pages": [
+    {{- range $index, $page := $pages -}}
+    {{- if $index }},{{ end }}
+    {
+      "title": {{ $page.Title | jsonify }},
+      "url": {{ $page.Permalink | jsonify }},
+      "description": {{ $page.Description | jsonify }},
+      "date": {{ $page.Date.Format "2006-01-02" | jsonify }},
+      "type": {{ $page.Type | jsonify }}
+    }
+    {{- end -}}
+  ]
+}
