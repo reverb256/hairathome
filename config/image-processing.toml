@@ -1,0 +1,75 @@
+# Image Processing Configuration for Hugo
+# Optimized for very dark theme compatibility
+
+[imaging]
+  # Resampling filter
+  # Available filters: NearestNeighbor, Box, Linear, Hermite, MitchellNetravali, CatmullRom, Gaussian, Lanczos
+  resampleFilter = "Lanczos"
+  
+  # Default image quality
+  quality = 85
+  
+  # Anchor for smart cropping
+  # Valid values: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
+  anchor = "Smart"
+  
+  # Background color for transparent images (hex format)
+  # Dark theme optimized background
+  bgColor = "#050505"
+  
+  # Enable histogram calculation for better image processing
+  histogram = true
+
+# Image presets for different use cases
+[[imaging.presets]]
+  name = "gallery"
+  width = 800
+  height = 600
+  quality = 90
+  filter = "Lanczos"
+  anchor = "Smart"
+
+[[imaging.presets]]
+  name = "thumbnail"
+  width = 400
+  height = 300
+  quality = 80
+  filter = "Lanczos"
+  anchor = "Center"
+
+[[imaging.presets]]
+  name = "hero"
+  width = 1200
+  height = 600
+  quality = 92
+  filter = "Lanczos"
+  anchor = "Smart"
+
+[[imaging.presets]]
+  name = "social"
+  width = 1200
+  height = 630
+  quality = 88
+  filter = "Lanczos"
+  anchor = "Center"
+
+# Dark theme specific settings
+[imaging.darkTheme]
+  # Slightly increase contrast for dark backgrounds
+  contrast = 1.05
+  # Slightly reduce brightness to prevent glare
+  brightness = 0.95
+  # Enhance sharpness for better visibility
+  sharpen = 0.1
+
+# WebP generation settings
+[imaging.webp]
+  enabled = true
+  quality = 85
+  method = 6  # Best compression
+
+# AVIF generation settings (if supported)
+[imaging.avif]
+  enabled = true
+  quality = 80
+  speed = 6

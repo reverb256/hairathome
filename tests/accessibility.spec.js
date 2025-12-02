@@ -16,7 +16,7 @@ test.describe('Hair At Home - Accessibility', () => {
 
     // Check for lang attribute
     const htmlLang = await page.locator('html').getAttribute('lang');
-    expect(htmlLang).toBe('en');
+    expect(htmlLang).toMatch(/^en/); // Accept 'en' or 'en-ca'
 
     // Check for proper title
     const title = await page.title();
@@ -210,7 +210,8 @@ test.describe('Hair At Home - Accessibility', () => {
       const elements = page.locator(element);
       // At least header, nav, section, and footer should be present
       if (['header', 'nav', 'section', 'footer'].includes(element)) {
-        await expect(elements).toHaveCount({ min: 1 });
+        const count = await elements.count();
+        expect(count).toBeGreaterThanOrEqual(1);
       }
     }
   });
