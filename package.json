@@ -18,9 +18,12 @@
     "typecheck": "echo \"Hugo has built-in type checking\" && exit 0"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.11.0",
     "@lhci/cli": "^0.12.0",
     "@playwright/test": "^1.57.0",
+    "axe-core": "^4.11.0",
     "hugo-extended": "latest",
+    "pa11y-ci": "^4.0.1",
     "serve": "^14.2.1"
   },
   "keywords": [
@@ -44,5 +47,10 @@
     "last 2 versions",
     "not dead",
     "not ie <= 11"
-  ]
+  ],
+  "dependencies": {
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^10.0.0",
+    "imagemin-webp": "^8.0.0"
+  }
 }

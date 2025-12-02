@@ -1,5 +1,3 @@
-# GitHub Pages Workflow
-
 name: Deploy to GitHub Pages
 
 on:
@@ -9,13 +7,20 @@ on:
     branches: [ main ]
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-      
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
+        
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v3
+      with:
+        hugo-version: 'latest'
+        extended: true
+        
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
@@ -25,18 +30,31 @@ jobs:
     - name: Install dependencies
       run: npm ci
       
-    - name: Build
+    - name: Build site
       run: npm run build
       
-    - name: Copy to docs
+    - name: Optimize assets
       run: |
-        rm -rf docs
-        cp -r public docs
+        # Install optimization tools
+        npm install -g terser clean-css-cli
+        
+        # Optimize CSS
+        cleancss -o public/css/style.css public/css/style.css
+        
+        # Optimize JS
+        terser public/js/main.js -o public/js/main.js -c -m
         
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       if: github.ref == 'refs/heads/main'
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./docs
-        destination_dir: ./
+        publish_dir: ./public
+        
+    - name: Run Lighthouse CI
+      uses: treosh/lighthouse-ci-action@v10
+      if: github.ref == 'refs/heads/main'
+      with:
+        configPath: './lighthouserc.js'
+        uploadArtifacts: true
+        temporaryPublicStorage: true

@@ -1,0 +1,854 @@
+{
+  "auditReportVersion": 2,
+  "vulnerabilities": {
+    "@lhci/cli": {
+      "name": "@lhci/cli",
+      "severity": "low",
+      "isDirect": true,
+      "via": [
+        "@lhci/utils",
+        "inquirer",
+        "lighthouse",
+        "tmp"
+      ],
+      "effects": [],
+      "range": "*",
+      "nodes": [
+        "node_modules/@lhci/cli"
+      ],
+      "fixAvailable": {
+        "name": "@lhci/cli",
+        "version": "0.1.0",
+        "isSemVerMajor": true
+      }
+    },
+    "@lhci/utils": {
+      "name": "@lhci/utils",
+      "severity": "low",
+      "isDirect": false,
+      "via": [
+        "lighthouse"
+      ],
+      "effects": [
+        "@lhci/cli"
+      ],
+      "range": "0.11.0 - 0.14.0",
+      "nodes": [
+        "node_modules/@lhci/utils"
+      ],
+      "fixAvailable": {
+        "name": "@lhci/cli",
+        "version": "0.1.0",
+        "isSemVerMajor": true
+      }
+    },
+    "@puppeteer/browsers": {
+      "name": "@puppeteer/browsers",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "tar-fs"
+      ],
+      "effects": [
+        "puppeteer-core"
+      ],
+      "range": "<=1.4.1",
+      "nodes": [
+        "node_modules/@puppeteer/browsers"
+      ],
+      "fixAvailable": {
+        "name": "@lhci/cli",
+        "version": "0.1.0",
+        "isSemVerMajor": true
+      }
+    },
+    "@sentry/node": {
+      "name": "@sentry/node",
+      "severity": "low",
+      "isDirect": false,
+      "via": [
+        "cookie"
+      ],
+      "effects": [
+        "lighthouse"
+      ],
+      "range": "4.0.0-beta.0 - 7.74.2-alpha.1",
+      "nodes": [
+        "node_modules/@sentry/node"
+      ],
+      "fixAvailable": {
+        "name": "@lhci/cli",
+        "version": "0.1.0",
+        "isSemVerMajor": true
+      }
+    },
+    "bin-build": {
+      "name": "bin-build",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "download",
+        "execa"
+      ],
+      "effects": [
+        "cwebp-bin",
+        "mozjpeg",
+        "pngquant-bin"
+      ],
+      "range": ">=2.1.2",
+      "nodes": [
+        "node_modules/bin-build"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-mozjpeg",
+        "version": "7.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "bin-check": {
+      "name": "bin-check",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "execa"
+      ],
+      "effects": [
+        "bin-wrapper"
+      ],
+      "range": ">=4.1.0",
+      "nodes": [
+        "node_modules/bin-check"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-mozjpeg",
+        "version": "7.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "bin-version": {
+      "name": "bin-version",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "find-versions"
+      ],
+      "effects": [
+        "bin-version-check"
+      ],
+      "range": "<=4.0.0",
+      "nodes": [
+        "node_modules/bin-version"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-mozjpeg",
+        "version": "7.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "bin-version-check": {
+      "name": "bin-version-check",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "bin-version"
+      ],
+      "effects": [
+        "bin-wrapper"
+      ],
+      "range": "<=4.0.0",
+      "nodes": [
+        "node_modules/bin-version-check"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-mozjpeg",
+        "version": "7.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "bin-wrapper": {
+      "name": "bin-wrapper",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "bin-check",
+        "bin-version-check",
+        "download"
+      ],
+      "effects": [
+        "cwebp-bin",
+        "mozjpeg",
+        "pngquant-bin"
+      ],
+      "range": ">=0.4.0",
+      "nodes": [
+        "node_modules/bin-wrapper"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-mozjpeg",
+        "version": "7.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "cacheable-request": {
+      "name": "cacheable-request",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "http-cache-semantics"
+      ],
+      "effects": [
+        "got"
+      ],
+      "range": "0.1.0 - 2.1.4",
+      "nodes": [
+        "node_modules/bin-wrapper/node_modules/cacheable-request"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-mozjpeg",
+        "version": "7.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "cookie": {
+      "name": "cookie",
+      "severity": "low",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1103907,
+          "name": "cookie",
+          "dependency": "cookie",
+          "title": "cookie accepts cookie name, path, and domain with out of bounds characters",
+          "url": "https://github.com/advisories/GHSA-pxg6-pf52-xh8x",
+          "severity": "low",
+          "cwe": [
+            "CWE-74"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": "<0.7.0"
+        }
+      ],
+      "effects": [
+        "@sentry/node"
+      ],
+      "range": "<0.7.0",
+      "nodes": [
+        "node_modules/@sentry/node/node_modules/cookie"
+      ],
+      "fixAvailable": {
+        "name": "@lhci/cli",
+        "version": "0.1.0",
+        "isSemVerMajor": true
+      }
+    },
+    "cross-spawn": {
+      "name": "cross-spawn",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1104663,
+          "name": "cross-spawn",
+          "dependency": "cross-spawn",
+          "title": "Regular Expression Denial of Service (ReDoS) in cross-spawn",
+          "url": "https://github.com/advisories/GHSA-3xgq-45jj-v275",
+          "severity": "high",
+          "cwe": [
+            "CWE-1333"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": "<6.0.6"
+        }
+      ],
+      "effects": [
+        "execa"
+      ],
+      "range": "<6.0.6",
+      "nodes": [
+        "node_modules/bin-build/node_modules/cross-spawn",
+        "node_modules/bin-check/node_modules/cross-spawn",
+        "node_modules/exec-buffer/node_modules/cross-spawn"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-webp",
+        "version": "6.1.0",
+        "isSemVerMajor": true
+      }
+    },
+    "cwebp-bin": {
+      "name": "cwebp-bin",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "bin-build",
+        "bin-wrapper"
+      ],
+      "effects": [
+        "imagemin-webp"
+      ],
+      "range": ">=3.0.0",
+      "nodes": [
+        "node_modules/cwebp-bin"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-webp",
+        "version": "6.1.0",
+        "isSemVerMajor": true
+      }
+    },
+    "download": {
+      "name": "download",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "got"
+      ],
+      "effects": [
+        "bin-build",
+        "bin-wrapper"
+      ],
+      "range": ">=4.0.0",
+      "nodes": [
+        "node_modules/bin-wrapper/node_modules/download",
+        "node_modules/download"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-mozjpeg",
+        "version": "7.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "exec-buffer": {
+      "name": "exec-buffer",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "execa"
+      ],
+      "effects": [
+        "imagemin-webp"
+      ],
+      "range": ">=3.1.0",
+      "nodes": [
+        "node_modules/exec-buffer"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-webp",
+        "version": "6.1.0",
+        "isSemVerMajor": true
+      }
+    },
+    "execa": {
+      "name": "execa",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "cross-spawn"
+      ],
+      "effects": [
+        "bin-build",
+        "bin-check",
+        "exec-buffer"
+      ],
+      "range": "0.5.0 - 0.9.0",
+      "nodes": [
+        "node_modules/bin-build/node_modules/execa",
+        "node_modules/bin-check/node_modules/execa",
+        "node_modules/exec-buffer/node_modules/execa"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-webp",
+        "version": "6.1.0",
+        "isSemVerMajor": true
+      }
+    },
+    "external-editor": {
+      "name": "external-editor",
+      "severity": "low",
+      "isDirect": false,
+      "via": [
+        "tmp"
+      ],
+      "effects": [
+        "inquirer"
+      ],
+      "range": ">=1.1.1",
+      "nodes": [
+        "node_modules/external-editor"
+      ],
+      "fixAvailable": {
+        "name": "@lhci/cli",
+        "version": "0.1.0",
+        "isSemVerMajor": true
+      }
+    },
+    "find-versions": {
+      "name": "find-versions",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "semver-regex"
+      ],
+      "effects": [
+        "bin-version"
+      ],
+      "range": "<=3.2.0",
+      "nodes": [
+        "node_modules/find-versions"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-mozjpeg",
+        "version": "7.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "got": {
+      "name": "got",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1088948,
+          "name": "got",
+          "dependency": "got",
+          "title": "Got allows a redirect to a UNIX socket",
+          "url": "https://github.com/advisories/GHSA-pfrx-2q88-qq97",
+          "severity": "moderate",
+          "cwe": [],
+          "cvss": {
+            "score": 5.3,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N"
+          },
+          "range": "<11.8.5"
+        },
+        "cacheable-request"
+      ],
+      "effects": [
+        "download"
+      ],
+      "range": "<=11.8.3",
+      "nodes": [
+        "node_modules/bin-wrapper/node_modules/got",
+        "node_modules/download/node_modules/got"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-mozjpeg",
+        "version": "7.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "http-cache-semantics": {
+      "name": "http-cache-semantics",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1102456,
+          "name": "http-cache-semantics",
+          "dependency": "http-cache-semantics",
+          "title": "http-cache-semantics vulnerable to Regular Expression Denial of Service",
+          "url": "https://github.com/advisories/GHSA-rc47-6667-2j5j",
+          "severity": "high",
+          "cwe": [
+            "CWE-1333"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": "<4.1.1"
+        }
+      ],
+      "effects": [
+        "cacheable-request"
+      ],
+      "range": "<4.1.1",
+      "nodes": [
+        "node_modules/bin-wrapper/node_modules/http-cache-semantics"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-mozjpeg",
+        "version": "7.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "imagemin-mozjpeg": {
+      "name": "imagemin-mozjpeg",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        "mozjpeg"
+      ],
+      "effects": [],
+      "range": ">=8.0.0",
+      "nodes": [
+        "node_modules/imagemin-mozjpeg"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-mozjpeg",
+        "version": "7.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "imagemin-pngquant": {
+      "name": "imagemin-pngquant",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        "pngquant-bin"
+      ],
+      "effects": [],
+      "range": ">=5.1.0",
+      "nodes": [
+        "node_modules/imagemin-pngquant"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-pngquant",
+        "version": "5.0.1",
+        "isSemVerMajor": true
+      }
+    },
+    "imagemin-webp": {
+      "name": "imagemin-webp",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        "cwebp-bin",
+        "exec-buffer"
+      ],
+      "effects": [],
+      "range": ">=5.0.0",
+      "nodes": [
+        "node_modules/imagemin-webp"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-webp",
+        "version": "6.1.0",
+        "isSemVerMajor": true
+      }
+    },
+    "inquirer": {
+      "name": "inquirer",
+      "severity": "low",
+      "isDirect": false,
+      "via": [
+        "external-editor"
+      ],
+      "effects": [
+        "@lhci/cli"
+      ],
+      "range": "3.0.0 - 8.2.6 || 9.0.0 - 9.3.7",
+      "nodes": [
+        "node_modules/inquirer"
+      ],
+      "fixAvailable": {
+        "name": "@lhci/cli",
+        "version": "0.1.0",
+        "isSemVerMajor": true
+      }
+    },
+    "lighthouse": {
+      "name": "lighthouse",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "@sentry/node",
+        "puppeteer-core"
+      ],
+      "effects": [
+        "@lhci/cli",
+        "@lhci/utils"
+      ],
+      "range": "9.4.0-dev.20220216 - 12.2.1",
+      "nodes": [
+        "node_modules/lighthouse"
+      ],
+      "fixAvailable": {
+        "name": "@lhci/cli",
+        "version": "0.1.0",
+        "isSemVerMajor": true
+      }
+    },
+    "mozjpeg": {
+      "name": "mozjpeg",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "bin-build",
+        "bin-wrapper"
+      ],
+      "effects": [
+        "imagemin-mozjpeg"
+      ],
+      "range": ">=4.0.0",
+      "nodes": [
+        "node_modules/mozjpeg"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-mozjpeg",
+        "version": "7.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "pngquant-bin": {
+      "name": "pngquant-bin",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "bin-build",
+        "bin-wrapper"
+      ],
+      "effects": [
+        "imagemin-pngquant"
+      ],
+      "range": ">=3.0.0",
+      "nodes": [
+        "node_modules/pngquant-bin"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-pngquant",
+        "version": "5.0.1",
+        "isSemVerMajor": true
+      }
+    },
+    "puppeteer-core": {
+      "name": "puppeteer-core",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "@puppeteer/browsers",
+        "tar-fs",
+        "ws"
+      ],
+      "effects": [
+        "lighthouse"
+      ],
+      "range": "10.0.0 - 22.11.1",
+      "nodes": [
+        "node_modules/puppeteer-core"
+      ],
+      "fixAvailable": {
+        "name": "@lhci/cli",
+        "version": "0.1.0",
+        "isSemVerMajor": true
+      }
+    },
+    "semver-regex": {
+      "name": "semver-regex",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1092475,
+          "name": "semver-regex",
+          "dependency": "semver-regex",
+          "title": "semver-regex Regular Expression Denial of Service (ReDOS)",
+          "url": "https://github.com/advisories/GHSA-44c6-4v22-4mhx",
+          "severity": "high",
+          "cwe": [
+            "CWE-400",
+            "CWE-1333"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": "<3.1.3"
+        },
+        {
+          "source": 1092605,
+          "name": "semver-regex",
+          "dependency": "semver-regex",
+          "title": "Regular expression denial of service in semver-regex",
+          "url": "https://github.com/advisories/GHSA-4x5v-gmq8-25ch",
+          "severity": "low",
+          "cwe": [
+            "CWE-1333"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": "<3.1.4"
+        }
+      ],
+      "effects": [
+        "find-versions"
+      ],
+      "range": "<=3.1.3",
+      "nodes": [
+        "node_modules/semver-regex"
+      ],
+      "fixAvailable": {
+        "name": "imagemin-mozjpeg",
+        "version": "7.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "tar-fs": {
+      "name": "tar-fs",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1109532,
+          "name": "tar-fs",
+          "dependency": "tar-fs",
+          "title": "tar-fs has a symlink validation bypass if destination directory is predictable with a specific tarball",
+          "url": "https://github.com/advisories/GHSA-vj76-c3g6-qr5v",
+          "severity": "high",
+          "cwe": [
+            "CWE-22",
+            "CWE-61"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": ">=2.0.0 <2.1.4"
+        },
+        {
+          "source": 1109543,
+          "name": "tar-fs",
+          "dependency": "tar-fs",
+          "title": "tar-fs can extract outside the specified dir with a specific tarball",
+          "url": "https://github.com/advisories/GHSA-8cj5-5rvv-wf4v",
+          "severity": "high",
+          "cwe": [
+            "CWE-22"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": ">=2.0.0 <2.1.3"
+        },
+        {
+          "source": 1109552,
+          "name": "tar-fs",
+          "dependency": "tar-fs",
+          "title": "tar-fs Vulnerable to Link Following and Path Traversal via Extracting a Crafted tar File",
+          "url": "https://github.com/advisories/GHSA-pq67-2wwv-3xjx",
+          "severity": "high",
+          "cwe": [
+            "CWE-22"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+          },
+          "range": ">=2.0.0 <2.1.2"
+        }
+      ],
+      "effects": [
+        "@puppeteer/browsers",
+        "puppeteer-core"
+      ],
+      "range": "2.0.0 - 2.1.3",
+      "nodes": [
+        "node_modules/tar-fs"
+      ],
+      "fixAvailable": {
+        "name": "@lhci/cli",
+        "version": "0.1.0",
+        "isSemVerMajor": true
+      }
+    },
+    "tmp": {
+      "name": "tmp",
+      "severity": "low",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1109537,
+          "name": "tmp",
+          "dependency": "tmp",
+          "title": "tmp allows arbitrary temporary file / directory write via symbolic link `dir` parameter",
+          "url": "https://github.com/advisories/GHSA-52f5-9888-hmc6",
+          "severity": "low",
+          "cwe": [
+            "CWE-59"
+          ],
+          "cvss": {
+            "score": 2.5,
+            "vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:L/A:N"
+          },
+          "range": "<=0.2.3"
+        }
+      ],
+      "effects": [
+        "@lhci/cli",
+        "external-editor"
+      ],
+      "range": "<=0.2.3",
+      "nodes": [
+        "node_modules/external-editor/node_modules/tmp",
+        "node_modules/tmp"
+      ],
+      "fixAvailable": {
+        "name": "@lhci/cli",
+        "version": "0.1.0",
+        "isSemVerMajor": true
+      }
+    },
+    "ws": {
+      "name": "ws",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1098392,
+          "name": "ws",
+          "dependency": "ws",
+          "title": "ws affected by a DoS when handling a request with many HTTP headers",
+          "url": "https://github.com/advisories/GHSA-3h5v-q93c-6h6q",
+          "severity": "high",
+          "cwe": [
+            "CWE-476"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": ">=8.0.0 <8.17.1"
+        }
+      ],
+      "effects": [
+        "puppeteer-core"
+      ],
+      "range": "8.0.0 - 8.17.0",
+      "nodes": [
+        "node_modules/puppeteer-core/node_modules/ws"
+      ],
+      "fixAvailable": {
+        "name": "@lhci/cli",
+        "version": "0.1.0",
+        "isSemVerMajor": true
+      }
+    }
+  },
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 7,
+      "moderate": 1,
+      "high": 24,
+      "critical": 0,
+      "total": 32
+    },
+    "dependencies": {
+      "prod": 292,
+      "dev": 398,
+      "optional": 2,
+      "peer": 1,
+      "peerOptional": 0,
+      "total": 689
+    }
+  }
+}
