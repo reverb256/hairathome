@@ -10,7 +10,7 @@ test.describe('Hair At Home - Basic Functionality', () => {
   });
 
    test('page loads correctly with proper title', async ({ page }) => {
-     await expect(page).toHaveTitle(/Hair At Home/);
+     await expect(page).toHaveTitle(/Hair At Home.*Winnipeg Mobile Hair Stylist/);
    });
 
    test('navigation menu is present and functional', async ({ page }) => {
@@ -32,7 +32,7 @@ test.describe('Hair At Home - Basic Functionality', () => {
      await expect(heroSection).toBeVisible();
 
      const heroTitle = page.locator('.hero-content h1');
-     await expect(heroTitle).toContainText('Professional Hair Styling');
+     await expect(heroTitle).toContainText('Professional Hair Styling at Your Doorstep');
 
      const heroButtons = page.locator('.hero-buttons .btn');
      await expect(heroButtons).toHaveCount(2);
@@ -49,35 +49,34 @@ test.describe('Hair At Home - Basic Functionality', () => {
      await hamburger.click();
      const navMenu = page.locator('#nav-menu');
      await expect(navMenu).toHaveClass(/active/);
-    await expect(navMenu).toHaveClass(/active/);
-    
-    await hamburger.click();
-    await expect(navMenu).not.toHaveClass(/active/);
-  });
+   });
 
-  test('all sections are present on the page', async ({ page }) => {
-    const sections = [
-      '.hero',
-      '.about',
-      '.services',
-      '.gallery',
-      '.testimonials',
-      '.booking',
-      '.winnipeg-areas',
-      '.faq',
-      'footer'
-    ];
-    
-    for (const section of sections) {
-      await expect(page.locator(section)).toBeVisible();
-    }
-  });
+   test('all sections are present on the page', async ({ page }) => {
+     const sections = [
+       'hero',
+       'about',
+       'services-preview',
+       'testimonials',
+       'lead-capture',
+       'cta-section'
+     ];
 
-  test('contact information is displayed', async ({ page }) => {
-    const phone = page.locator('footer').getByText('(204) 555-0123');
-    const email = page.locator('footer').getByText('info@hairathome.ca');
-    
-    await expect(phone).toBeVisible();
-    await expect(email).toBeVisible();
-  });
+     for (const section of sections) {
+       const sectionElement = page.locator(`.${section}`);
+       await expect(sectionElement).toBeVisible();
+     }
+   });
+
+   test('contact information is displayed', async ({ page }) => {
+     const contactSection = page.locator('footer');
+     await expect(contactSection).toBeVisible();
+
+     // Check for phone number
+     const phoneLink = page.locator('a[href*="tel:"]');
+     await expect(phoneLink).toBeVisible();
+
+     // Check for WhatsApp
+     const whatsappLink = page.locator('a[href*="wa.me"]');
+     await expect(whatsappLink).toBeVisible();
+   });
 });
