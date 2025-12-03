@@ -1,0 +1,354 @@
+---
+# Distributed k3s MCP Services for Proxmox Cluster
+# This configuration distributes MCP workloads across all cluster nodes
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cluster-mcp-config
+  namespace: hairathome
+data:
+  cluster-nodes.json: |
+    {
+      "nodes": [
+        {"name": "nexus", "role": "master", "workloads": ["claude-flow", "coordination"]},
+        {"name": "forge", "role": "worker", "workloads": ["ruv-swarm", "testing"]},
+        {"name": "sentry", "role": "worker", "workloads": ["flow-nexus", "monitoring"]}
+      ],
+      "workstation": {
+        "name": "zephyr",
+        "role": "standalone",
+        "workloads": ["development", "testing"]
+      }
+    }
+  mcp-service-discovery.json: |
+    {
+      "services": {
+        "claude-flow": {"port": 3001, "health": "/health", "metrics": "/metrics"},
+        "ruv-swarm": {"port": 3002, "health": "/health", "metrics": "/metrics"},
+        "flow-nexus": {"port": 3003, "health": "/health", "metrics": "/metrics"}
+      }
+    }
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: claude-flow-mcp
+  namespace: hairathome
+  labels:
+    app: mcp-service
+    service: claude-flow
+    component: coordination
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mcp-service
+      service: claude-flow
+  template:
+    metadata:
+      labels:
+        app: mcp-service
+        service: claude-flow
+        component: coordination
+    spec:
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            preference:
+              matchExpressions:
+              - key: kubernetes.io/hostname
+                operator: In
+                values:
+                - nexus
+      containers:
+      - name: claude-flow
+        image: node:18-alpine
+        ports:
+        - containerPort: 3001
+          name: mcp-port
+        env:
+        - name: NODE_ENV
+          value: "production"
+        - name: CLUSTER_MODE
+          value: "true"
+        - name: SERVICE_DISCOVERY
+          value: "true"
+        command: ["sh", "-c"]
+        args:
+        - |
+          npm install -g claude-flow@alpha
+          npx claude-flow@alpha mcp start --port 3001 --cluster-mode
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "200m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 3001
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 3001
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      volumes:
+      - name: shared-memory
+        emptyDir:
+          sizeLimit: 1Gi
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ruv-swarm-mcp
+  namespace: hairathome
+  labels:
+    app: mcp-service
+    service: ruv-swarm
+    component: swarm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mcp-service
+      service: ruv-swarm
+  template:
+    metadata:
+      labels:
+        app: mcp-service
+        service: ruv-swarm
+        component: swarm
+    spec:
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            preference:
+              matchExpressions:
+              - key: kubernetes.io/hostname
+                operator: In
+                values:
+                - forge
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 50
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - mcp-service
+              topologyKey: kubernetes.io/hostname
+      containers:
+      - name: ruv-swarm
+        image: node:18-alpine
+        ports:
+        - containerPort: 3002
+          name: mcp-port
+        env:
+        - name: NODE_ENV
+          value: "production"
+        - name: CLUSTER_MODE
+          value: "true"
+        - name: SWARM_SIZE
+          value: "5"
+        command: ["sh", "-c"]
+        args:
+        - |
+          npm install -g ruv-swarm@latest
+          npx ruv-swarm@latest mcp start --port 3002 --cluster-mode
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "300m"
+          limits:
+            memory: "1Gi"
+            cpu: "700m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 3002
+          initialDelaySeconds: 30
+          periodSeconds: 15
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 3002
+          initialDelaySeconds: 10
+          periodSeconds: 10
+      volumes:
+      - name: shared-memory
+        emptyDir:
+          sizeLimit: 2Gi
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flow-nexus-mcp
+  namespace: hairathome
+  labels:
+    app: mcp-service
+    service: flow-nexus
+    component: orchestration
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mcp-service
+      service: flow-nexus
+  template:
+    metadata:
+      labels:
+        app: mcp-service
+        service: flow-nexus
+        component: orchestration
+    spec:
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            preference:
+              matchExpressions:
+              - key: kubernetes.io/hostname
+                operator: In
+                values:
+                - sentry
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 50
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - mcp-service
+              topologyKey: kubernetes.io/hostname
+      containers:
+      - name: flow-nexus
+        image: node:18-alpine
+        ports:
+        - containerPort: 3003
+          name: mcp-port
+        env:
+        - name: NODE_ENV
+          value: "production"
+        - name: CLUSTER_MODE
+          value: "true"
+        - name: NEXUS_FEATURES
+          value: "cloud,ai,orchestration"
+        command: ["sh", "-c"]
+        args:
+        - |
+          npm install -g flow-nexus@latest
+          npx flow-nexus@latest mcp start --port 3003 --cluster-mode
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "500m"
+          limits:
+            memory: "2Gi"
+            cpu: "1000m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 3003
+          initialDelaySeconds: 60
+          periodSeconds: 20
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 3003
+          initialDelaySeconds: 15
+          periodSeconds: 15
+      volumes:
+      - name: shared-memory
+        emptyDir:
+          sizeLimit: 5Gi
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mcp-service-discovery
+  namespace: hairathome
+  labels:
+    app: mcp-service
+    component: discovery
+spec:
+  selector:
+    app: mcp-service
+  ports:
+  - name: claude-flow
+    port: 3001
+    targetPort: 3001
+  - name: ruv-swarm
+    port: 3002
+    targetPort: 3002
+  - name: flow-nexus
+    port: 3003
+    targetPort: 3003
+  type: ClusterIP
+
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: cluster-mcp-health-check
+  namespace: hairathome
+spec:
+  schedule: "*/5 * * * *"  # Every 5 minutes
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: Never
+          containers:
+          - name: health-check
+            image: curlimages/curl:latest
+            command:
+            - sh
+            - -c
+            - |
+              echo "🔍 Checking MCP services health across 3-node cluster..."
+
+              # Check claude-flow (nexus)
+              if curl -f http://claude-flow-mcp:3001/health; then
+                echo "✅ Claude Flow (nexus): Healthy"
+              else
+                echo "❌ Claude Flow (nexus): Unhealthy"
+              fi
+
+              # Check ruv-swarm (forge)
+              if curl -f http://ruv-swarm-mcp:3002/health; then
+                echo "✅ RUV Swarm (forge): Healthy"
+              else
+                echo "❌ RUV Swarm (forge): Unhealthy"
+              fi
+
+              # Check flow-nexus (sentry)
+              if curl -f http://flow-nexus-mcp:3003/health; then
+                echo "✅ Flow Nexus (sentry): Healthy"
+              else
+                echo "❌ Flow Nexus (sentry): Unhealthy"
+              fi
+
+              echo "🏁 3-node cluster health check completed"
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "50m"
+            limits:
+              memory: "128Mi"
+              cpu: "100m"
