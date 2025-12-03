@@ -15,15 +15,14 @@
 4. **Responsive Design** - Mobile, tablet, desktop layouts
 5. **Accessibility** - WCAG compliance, keyboard navigation
 6. **Performance** - Load times, Core Web Vitals, optimization
-7. **MCP Integration** - Hook execution, memory storage, coordination
+7. **Integration** - Automated testing workflows
 
-### 🤖 MCP Integration Features
+### 🧪 Testing Features
 - **Pre/Post Hooks** - Automated test coordination
-- **Memory Storage** - Test result persistence across sessions
-- **Neural Training** - Pattern learning from test results
+- **Result Persistence** - Test result storage across sessions
 - **Session Management** - Cross-session state restoration
 - **GitHub Integration** - Automated CI/CD reporting
-- **Multi-Agent Coordination** - Distributed testing workflows
+- **Multi-Browser Testing** - Cross-browser compatibility validation
 
 ### 🐳 k3s/Container Support
 - **Optimized configuration** for containerized environments
@@ -38,11 +37,11 @@
 # Run all tests
 npm test
 
-# Run with MCP integration
-npm run test:mcp
+# Run with extended testing
+npm run test:extended
 
-# Run tests for k3s environment
-npx playwright test --config=playwright.k3s.config.js
+# Run tests for container environment
+npx playwright test --config=playwright.container.config.js
 
 # View test reports
 npm run test:report
@@ -70,11 +69,11 @@ npx playwright test performance.spec.js
 | File | Purpose |
 |------|---------|
 | `playwright.config.js` | Standard testing configuration |
-| `playwright.k3s.config.js` | k3s-optimized configuration |
-| `tests/mcp-runner.js` | MCP-enhanced test runner |
-| `tests/global-setup.js` | MCP initialization |
-| `tests/global-teardown.js` | MCP cleanup |
-| `k8s/playwright-tests.yaml` | Kubernetes deployment |
+| `playwright.container.config.js` | Container-optimized configuration |
+| `tests/runner.js` | Test runner |
+| `tests/global-setup.js` | Test initialization |
+| `tests/global-teardown.js` | Test cleanup |
+| `deployments/playwright-tests.yaml` | Kubernetes deployment |
 | `.github/workflows/playwright-tests.yml` | CI/CD pipeline |
 
 ## 🎯 Next Steps
@@ -91,29 +90,29 @@ npx playwright test performance.spec.js
 3. **Set up monitoring** and alerting
 4. **Schedule automated** test runs
 
-### For MCP Integration
-1. **Enable MCP** with `export MCP_ENABLED=true`
+### For Extended Testing
+1. **Enable extended tests** with `export EXTENDED_TESTS=true`
 2. **Configure hooks** for your workflow
-3. **Train neural patterns** from test results
-4. **Coordinate multi-agent** testing scenarios
+3. **Analyze patterns** from test results
+4. **Run comprehensive** testing scenarios
 
 ## 📞 Support & Troubleshooting
 
 ### Common Issues
 - **WebKit dependencies**: Install with `npx playwright install-deps`
-- **MCP hooks**: Check `npx claude-flow@alpha --version`
-- **k3s networking**: Verify `BASE_URL` configuration
-- **Memory issues**: Adjust resource limits in k8s manifests
+- **Test hooks**: Verify hook configuration
+- **Container networking**: Verify `BASE_URL` configuration
+- **Resource issues**: Adjust resource limits in deployment manifests
 
 ### Debug Commands
 ```bash
 # Debug test execution
 npx playwright test --debug
 
-# Check MCP integration
-npx claude-flow@alpha hooks pre-task --description "test"
+# Check test hooks
+npm run test:hooks
 
-# Verify k8s deployment
+# Verify deployment
 kubectl logs job/playwright-tests -n hairathome
 ```
 
@@ -121,4 +120,4 @@ kubectl logs job/playwright-tests -n hairathome
 
 🎊 **Your Playwright testing setup is now complete and ready for production use!**
 
-The hair salon website now has comprehensive test coverage with MCP integration, optimized for both local development and k3s cluster deployment.
+The hair salon website now has comprehensive test coverage with extended integration, optimized for both local development and container cluster deployment.

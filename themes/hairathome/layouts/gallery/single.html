@@ -1,0 +1,39 @@
+---
+title: "Gallery"
+description: "View our stunning hair transformations and styling portfolio"
+---
+
+{{ define "main" }}
+<section class="gallery">
+    <div class="container">
+        <h2>Stunning Transformations</h2>
+        <p class="section-subtitle">Experience the artistry of professional mobile hair styling</p>
+
+        <div class="gallery-grid">
+            {{ $gallery := where site.RegularPages "Type" "gallery" }}
+            {{ range $gallery }}
+            <div class="gallery-item">
+                <img 
+                    src="{{ .Params.image }}" 
+                    alt="{{ .Title }}"
+                    loading="lazy"
+                    width="800"
+                    height="600"
+                >
+                <div class="gallery-overlay">
+                    <h3>{{ .Title }}</h3>
+                    <p>{{ .Params.description }}</p>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+        
+        <!-- Beauty Industry Inspired CTA -->
+        <div class="text-center" style="margin-top: var(--space-8);">
+            <h3>Ready for Your Transformation?</h3>
+            <p>Book your appointment today and experience the Hair At Home difference</p>
+            <a href="/booking/" class="btn btn-primary">Book Your Consultation</a>
+        </div>
+    </div>
+</section>
+{{ end }}

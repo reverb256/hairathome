@@ -1,34 +1,39 @@
+---
+title: "Gallery"
+description: "View our stunning hair transformations and styling portfolio"
+---
+
 {{ define "main" }}
-<div class="container">
-    <h1>{{ .Title }}</h1>
-    <p class="section-subtitle">{{ .Params.subtitle }}</p>
+<section class="gallery">
+    <div class="container">
+        <h2>Stunning Transformations</h2>
+        <p class="section-subtitle">Experience the artistry of professional mobile hair styling</p>
 
-    <div class="gallery-grid" role="grid" aria-label="Photo gallery">
-        {{ range .RegularPages }}
-        <div class="gallery-item" role="gridcell" tabindex="0" aria-label="View {{ .Title }} in lightbox">
-            <img
-                src="{{ .Params.image }}"
-                alt="{{ .Title }}"
-                loading="lazy"
-                width="400"
-                height="600"
-                data-critical="{{ if eq (len .RegularPages) 1 }}true{{ else }}false{{ end }}"
-                data-src="{{ .Params.image }}"
-                data-srcset="{{ .Params.image }}?w=400 400w, {{ .Params.image }}?w=800 800w, {{ .Params.image }}?w=1200 1200w"
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            >
-            <div class="gallery-overlay">
-                <h3>{{ .Title }}</h3>
-                <p>{{ .Params.description }}</p>
-                <span class="gallery-view-text" aria-hidden="true">Click to view</span>
+        <div class="gallery-grid">
+            {{ $gallery := where site.RegularPages "Type" "gallery" }}
+            {{ range $gallery }}
+            <div class="gallery-item">
+                <img 
+                    src="{{ .Params.image }}" 
+                    alt="{{ .Title }}"
+                    loading="lazy"
+                    width="800"
+                    height="600"
+                >
+                <div class="gallery-overlay">
+                    <h3>{{ .Title }}</h3>
+                    <p>{{ .Params.description }}</p>
+                </div>
             </div>
+            {{ end }}
         </div>
-        {{ end }}
+        
+        <!-- Beauty Industry Inspired CTA -->
+        <div class="text-center" style="margin-top: var(--space-8);">
+            <h3>Ready for Your Transformation?</h3>
+            <p>Book your appointment today and experience the Hair At Home difference</p>
+            <a href="/booking/" class="btn btn-primary">Book Your Consultation</a>
+        </div>
     </div>
-
-    {{ .Content }}
-</div>
-
-<!-- Gallery Lightbox Script -->
-<script src="/js/gallery-lightbox.js" defer></script>
+</section>
 {{ end }}
