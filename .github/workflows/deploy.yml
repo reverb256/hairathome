@@ -37,12 +37,21 @@ jobs:
       run: |
         # Install optimization tools
         npm install -g terser clean-css-cli
-        
-        # Optimize CSS
-        cleancss -o public/css/style.css public/css/style.css
-        
-        # Optimize JS
-        terser public/js/main.js -o public/js/main.js -c -m
+
+        # Check if files exist before optimizing
+        if [ -f "public/css/style.css" ]; then
+          echo "Optimizing CSS..."
+          cleancss -o public/css/style.min.css public/css/style.css && mv public/css/style.min.css public/css/style.css
+        else
+          echo "CSS file not found, skipping CSS optimization"
+        fi
+
+        if [ -f "public/js/main.js" ]; then
+          echo "Optimizing JS..."
+          terser public/js/main.js -o public/js/main.min.js -c -m && mv public/js/main.min.js public/js/main.js
+        else
+          echo "JS file not found, skipping JS optimization"
+        fi
         
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
