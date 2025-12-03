@@ -73,12 +73,13 @@ export default defineConfig({
     },
   ],
 
-  webServer: {
-    command: 'npx http-server . -p 3000 -s --cors',
-    port: 3000,
-    reuseExistingServer: !process.env.CI,
-    timeout: 180000, // Increased for k3s startup
-  },
+  // webServer disabled - server started manually in workflow
+  // webServer: {
+  //   command: 'npx http-server . -p 3000 -s --cors',
+  //   port: 3000,
+  //   reuseExistingServer: !process.env.CI,
+  //   timeout: 180000, // Increased for k3s startup
+  // },
 
   // Global setup for MCP integration
   globalSetup: require.resolve('./tests/global-setup.js'),

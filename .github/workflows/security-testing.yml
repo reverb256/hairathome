@@ -127,26 +127,26 @@ jobs:
       run: npm run build
       
     - name: Start application
-      run: npm run serve &
-      
-    - name: Wait for application to start
-      run: sleep 10
-      
+      run: |
+        npm run build
+        npx serve public -l 8000 &
+        sleep 10
+
     - name: Run OWASP ZAP Baseline Scan
       uses: zaproxy/action-baseline@v0.7.0
       with:
         target: 'http://localhost:8000'
         rules_file_name: '.zap/rules.tsv'
         cmd_options: '-a'
-        
+
     - name: Run Nuclei vulnerability scan
       uses: projectdiscovery/nuclei-action@main
       with:
         target: 'http://localhost:8000'
         templates: '/nuclei-templates/'
-        
+
     - name: Stop application
-      run: pkill -f "python3 -m http.server"
+      run: pkill -f "serve"
 
   infrastructure-security:
     runs-on: ubuntu-latest
@@ -250,16 +250,16 @@ jobs:
       run: npm run build
       
     - name: Start application
-      run: npm run serve &
-      
-    - name: Wait for application to start
-      run: sleep 10
-      
+      run: |
+        npm run build
+        npx serve public -l 8000 &
+        sleep 10
+
     - name: Check security headers
       run: |
         curl -I http://localhost:8000 > headers.txt
         cat headers.txt
-        
+
         # Check for required security headers
         grep -i "strict-transport-security" headers.txt || echo "HSTS header missing"
         grep -i "content-security-policy" headers.txt || echo "CSP header missing"
@@ -267,9 +267,9 @@ jobs:
         grep -i "x-content-type-options" headers.txt || echo "X-Content-Type-Options header missing"
         grep -i "x-xss-protection" headers.txt || echo "X-XSS-Protection header missing"
         grep -i "referrer-policy" headers.txt || echo "Referrer-Policy header missing"
-        
+
     - name: Stop application
-      run: pkill -f "python3 -m http.server"
+      run: pkill -f "serve"
 
   ssl-tls-check:
     runs-on: ubuntu-latest

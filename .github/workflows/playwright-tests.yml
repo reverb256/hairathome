@@ -37,11 +37,14 @@ jobs:
         claude mcp add claude-flow npx claude-flow@alpha mcp start
         echo "MCP_ENABLED=true" >> $GITHUB_ENV
     
+    - name: Build Hugo site
+      run: npm run build
+
     - name: Start application
       run: |
-        npm run serve &
+        npx serve public -l 3000 &
         sleep 10
-    
+
     - name: Run Playwright tests
       run: |
         npx playwright test --shard=${{ matrix.shard }}/4 --config=playwright.k3s.config.js
