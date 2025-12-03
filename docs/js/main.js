@@ -1,19 +1,26 @@
-// Mobile Navigation Toggle
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('nav-menu');
+// Mobile Navigation Toggle - ensure DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
 
-if (hamburger && navMenu) {
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', () => {
+            const isExpanded = hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', isExpanded);
+        });
 
-    // Close mobile menu when clicking on a link
-    document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-    }));
-}
+        // Set a flag to indicate event listeners are attached (for testing)
+        hamburger._hasEventListener = true;
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
+        }));
+    }
+});
 
 // Form Validation
 const bookingForm = document.getElementById('booking-form');
@@ -21,11 +28,11 @@ const bookingForm = document.getElementById('booking-form');
 if (bookingForm) {
     bookingForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        
+
         // Simple validation
         let isValid = true;
         const requiredFields = this.querySelectorAll('[required]');
-        
+
         requiredFields.forEach(field => {
             if (!field.value.trim()) {
                 isValid = false;
@@ -34,12 +41,42 @@ if (bookingForm) {
                 field.style.borderColor = '#ddd';
             }
         });
-        
+
         if (isValid) {
             // In a real implementation, you would submit the form to a server
             // For this demo, we'll show a success message
             alert('Thank you for your booking request! We will contact you shortly to confirm your appointment.');
             bookingForm.reset();
+        } else {
+            alert('Please fill in all required fields.');
+        }
+    });
+}
+
+// Lead Capture Form
+const leadForm = document.getElementById('lead-form');
+
+if (leadForm) {
+    leadForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Simple validation
+        let isValid = true;
+        const requiredFields = this.querySelectorAll('[required]');
+
+        requiredFields.forEach(field => {
+            if (!field.value.trim()) {
+                isValid = false;
+                field.style.borderColor = '#e74c3c';
+            } else {
+                field.style.borderColor = '#ddd';
+            }
+        });
+
+        if (isValid) {
+            // Show success message
+            alert('Thank you! We will call you within 24 hours to schedule your free consultation.');
+            leadForm.reset();
         } else {
             alert('Please fill in all required fields.');
         }
