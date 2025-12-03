@@ -82,3 +82,4 @@ hive-mind-prompt-*.txt
 # k8s secrets (if any)
 k8s/secrets/
 .env
+.worktrees/
