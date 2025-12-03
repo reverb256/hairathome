@@ -95,75 +95,96 @@ metadata:
   namespace: hairathome
   labels:
     app: playwright-tests
+    component: testing
+    mcp-enabled: "true"
 spec:
-  template:
-    metadata:
-      labels:
-        app: playwright-tests
-    spec:
-      restartPolicy: Never
-      containers:
-      - name: playwright
-        image: mcr.microsoft.com/playwright:v1.48.0-focal
-        workingDir: /app
-        env:
-        - name: BASE_URL
-          value: "http://hairathome-service:3000"
-        - name: MCP_ENABLED
-          value: "true"
-        - name: CI
-          value: "true"
-        command: ["sh", "-c"]
-        args:
-        - |
-          echo "🚀 Starting Playwright tests in k3s..."
-          
-          # Install dependencies
-          npm ci
-          
-          # Install MCP tools
-          npm install -g claude-flow@alpha
-          
-          # Wait for application to be ready
-          echo "⏳ Waiting for application..."
-          timeout 300 bash -c 'until curl -f $BASE_URL; do sleep 5; done'
-          
-          # Initialize MCP
-          if [ "$MCP_ENABLED" = "true" ]; then
-            echo "🔧 Initializing MCP..."
-            claude mcp add claude-flow npx claude-flow@alpha mcp start
-            npx claude-flow@alpha hooks pre-task --description "k3s Playwright testing"
-          fi
-          
-          # Run tests
-          echo "🧪 Running Playwright tests..."
-          npx playwright test --reporter=json || true
-          
-          # Run MCP post-processing
-          if [ "$MCP_ENABLED" = "true" ]; then
-            echo "📊 Processing results with MCP..."
-            npx claude-flow@alpha hooks post-task --task-id "k3s-playwright-tests"
-            npx claude-flow@alpha hooks session-end --export-metrics true
-          fi
-          
-          echo "✅ Test execution completed"
-        volumeMounts:
-        - name: test-results
-          mountPath: /test-results
-        - name: shared-memory
-          mountPath: /shared-memory
-        - name: app-source
-          mountPath: /app
-          readOnly: true
-        resources:
-          requests:
-            memory: "1Gi"
-            cpu: "500m"
-          limits:
-            memory: "2Gi"
-            cpu: "1000m"
-      
-      - name: results-processor
+   template:
+     metadata:
+       labels:
+         app: playwright-tests
+     spec:
+       restartPolicy: Never
+       affinity:
+         podAntiAffinity:
+           preferredDuringSchedulingIgnoredDuringExecution:
+           - weight: 100
+             podAffinityTerm:
+               labelSelector:
+                 matchExpressions:
+                 - key: app
+                   operator: In
+                   values:
+                   - playwright-tests
+               topologyKey: kubernetes.io/hostname
+       nodeSelector:
+         kubernetes.io/os: linux
+       tolerations:
+       - key: "workload"
+         operator: "Equal"
+         value: "testing"
+         effect: "NoSchedule"
+       containers:
+       - name: playwright
+         image: mcr.microsoft.com/playwright:v1.48.0-focal
+         workingDir: /app
+         env:
+         - name: BASE_URL
+           value: "http://hairathome-service:3000"
+         - name: MCP_ENABLED
+           value: "true"
+         - name: CI
+           value: "true"
+         command: ["sh", "-c"]
+         args:
+         - |
+           echo "🚀 Starting Playwright tests in k3s..."
+
+           # Install dependencies
+           npm ci
+
+           # Install MCP tools
+           npm install -g claude-flow@alpha
+
+           # Wait for application to be ready
+           echo "⏳ Waiting for application..."
+           timeout 300 bash -c 'until curl -f $BASE_URL; do sleep 5; done'
+
+           # Initialize MCP
+           if [ "$MCP_ENABLED" = "true" ]; then
+             echo "🔧 Initializing MCP..."
+             claude mcp add claude-flow npx claude-flow@alpha mcp start
+             npx claude-flow@alpha hooks pre-task --description "k3s Playwright testing"
+           fi
+
+           # Run tests
+           echo "🧪 Running Playwright tests..."
+           npx playwright test --reporter=json || true
+
+           # Run MCP post-processing
+           if [ "$MCP_ENABLED" = "true" ]; then
+             echo "📊 Processing results with MCP..."
+             npx claude-flow@alpha hooks post-task --task-id "k3s-playwright-tests"
+             npx claude-flow@alpha hooks session-end --export-metrics true
+           fi
+
+           echo "✅ Test execution completed"
+         volumeMounts:
+         - name: test-results
+           mountPath: /test-results
+         - name: shared-memory
+           mountPath: /shared-memory
+         - name: app-source
+           mountPath: /app
+           readOnly: true
+         resources:
+           requests:
+             memory: "1Gi"
+             cpu: "500m"
+            limits:
+              memory: "2Gi"
+              cpu: "1000m"
+
+       - name: results-processor
         image: alpine:latest
         command: ["sh", "-c"]
         args:
