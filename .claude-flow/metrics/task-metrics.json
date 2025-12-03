@@ -1,0 +1,50 @@
+[
+  {
+    "id": "cmd-swarm-1764707443900",
+    "type": "swarm",
+    "success": true,
+    "duration": 7.081810999999988,
+    "timestamp": 1764707443907,
+    "metadata": {}
+  },
+  {
+    "id": "cmd-agent-1764707444501",
+    "type": "agent",
+    "success": true,
+    "duration": 3.9075499999999863,
+    "timestamp": 1764707444505,
+    "metadata": {}
+  },
+  {
+    "id": "cmd-agent-1764707445092",
+    "type": "agent",
+    "success": true,
+    "duration": 3.823721000000006,
+    "timestamp": 1764707445096,
+    "metadata": {}
+  },
+  {
+    "id": "cmd-agent-1764707445690",
+    "type": "agent",
+    "success": true,
+    "duration": 3.788489999999996,
+    "timestamp": 1764707445694,
+    "metadata": {}
+  },
+  {
+    "id": "cmd-agent-1764707446270",
+    "type": "agent",
+    "success": true,
+    "duration": 3.908379999999994,
+    "timestamp": 1764707446274,
+    "metadata": {}
+  },
+  {
+    "id": "cmd-hooks-1764708274627",
+    "type": "hooks",
+    "success": true,
+    "duration": 3015.633575,
+    "timestamp": 1764708277643,
+    "metadata": {}
+  }
+]
