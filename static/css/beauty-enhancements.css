@@ -1,0 +1,602 @@
+/* Beauty Industry Aligned Visual Enhancements */
+/* Updated color palette inspired by leading beauty brands */
+
+/* Updated CSS variables for beauty industry alignment */
+:root {
+  /* Beauty brand inspired color palette */
+  --beauty-primary: #c68851;      /* Moroccanoil inspired copper */
+  --beauty-primary-dark: #9d6a40; /* Darker copper for contrast */
+  --beauty-accent: #ff69b4;       /* Sephora inspired pink */
+  --beauty-accent-light: #ffb6c1; /* Light pink for highlights */
+  --beauty-neutral-dark: #0a0a0a; /* Very dark background */
+  --beauty-neutral-medium: #1a1a1a; /* Dark card background */
+  --beauty-neutral-light: #f8f8f8; /* Light text on dark */
+  --beauty-neutral-offwhite: #f0f0f0; /* Off-white for sections */
+  
+  /* Typography enhancements */
+  --beauty-heading-font: 'Playfair Display', serif;
+  --beauty-body-font: 'Poppins', sans-serif;
+  
+  /* Beauty industry spacing scale (8-point grid) */
+  --beauty-space-1: 8px;
+  --beauty-space-2: 16px;
+  --beauty-space-3: 24px;
+  --beauty-space-4: 32px;
+  --beauty-space-5: 40px;
+  --beauty-space-6: 48px;
+  --beauty-space-7: 64px;
+  --beauty-space-8: 80px;
+  --beauty-space-9: 96px;
+  --beauty-space-10: 120px;
+  
+  /* Section spacing */
+  --beauty-section-padding-mobile: var(--beauty-space-9);
+  --beauty-section-padding-tablet: var(--beauty-space-10);
+  --beauty-section-padding-desktop: var(--beauty-space-10);
+  
+  /* Component spacing */
+  --beauty-component-gap-small: var(--beauty-space-3);
+  --beauty-component-gap-medium: var(--beauty-space-4);
+  --beauty-component-gap-large: var(--beauty-space-5);
+  
+  /* Container padding */
+  --beauty-container-padding-mobile: var(--beauty-space-3);
+  --beauty-container-padding-tablet: var(--beauty-space-4);
+  --beauty-container-padding-desktop: var(--beauty-space-4);
+}
+
+/* Updated body styling with beauty industry color palette */
+body.beauty-theme {
+  font-family: var(--beauty-body-font);
+  line-height: 1.6;
+  color: var(--beauty-neutral-light);
+  background: linear-gradient(135deg, var(--beauty-neutral-dark) 0%, #0f0f0f 100%);
+  background-attachment: fixed;
+}
+
+/* Enhanced header with beauty industry styling */
+.beauty-header {
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(198, 136, 81, 0.2);
+}
+
+.beauty-logo {
+  color: var(--beauty-primary);
+  font-family: var(--beauty-heading-font);
+  font-size: 1.8rem;
+  text-shadow: 0 0 10px rgba(198, 136, 81, 0.3);
+}
+
+.beauty-nav-link {
+  position: relative;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.beauty-nav-link:hover {
+  color: var(--beauty-primary);
+}
+
+.beauty-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--beauty-primary);
+  transition: width 0.3s ease;
+}
+
+.beauty-nav-link:hover::after {
+  width: 100%;
+}
+
+/* Enhanced hero section with beauty industry aesthetic */
+.beauty-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: var(--beauty-section-padding-mobile) var(--beauty-container-padding-mobile);
+  position: relative;
+  background: radial-gradient(circle at top right, rgba(198, 136, 81, 0.1) 0%, transparent 40%),
+              radial-gradient(circle at bottom left, rgba(255, 105, 180, 0.1) 0%, transparent 40%),
+              linear-gradient(135deg, var(--beauty-neutral-dark) 0%, #0f0f0f 100%);
+  overflow: hidden;
+}
+
+.beauty-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(198, 136, 81, 0.05) 0%, transparent 20%),
+    radial-gradient(circle at 80% 70%, rgba(255, 105, 180, 0.05) 0%, transparent 20%);
+  pointer-events: none;
+}
+
+.beauty-hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--beauty-neutral-light);
+  margin-bottom: var(--beauty-space-5);
+  line-height: 1.2;
+  font-family: var(--beauty-heading-font);
+  position: relative;
+}
+
+.beauty-hero-content h1::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--beauty-primary), var(--beauty-accent));
+  border-radius: 2px;
+}
+
+.beauty-hero-content p {
+  font-size: 1.2rem;
+  color: var(--beauty-neutral-offwhite);
+  margin-bottom: var(--beauty-space-6);
+  line-height: 1.7;
+  max-width: 600px;
+}
+
+/* Enhanced buttons with beauty industry styling */
+.beauty-btn {
+  display: inline-block;
+  padding: var(--beauty-space-3) var(--beauty-space-5);
+  border-radius: 30px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 1rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.beauty-btn-primary {
+  background: linear-gradient(90deg, var(--beauty-primary), var(--beauty-primary-dark));
+  color: white;
+  box-shadow: 0 4px 15px rgba(198, 136, 81, 0.3);
+}
+
+.beauty-btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--beauty-primary-dark), var(--beauty-primary));
+  transition: all 0.4s;
+  z-index: -1;
+}
+
+.beauty-btn-primary:hover::before {
+  width: 100%;
+}
+
+.beauty-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(198, 136, 81, 0.4);
+  color: white;
+}
+
+.beauty-btn-secondary {
+  background: transparent;
+  color: var(--beauty-primary);
+  border: 2px solid var(--beauty-primary);
+  box-shadow: 0 4px 15px rgba(198, 136, 81, 0.1);
+}
+
+.beauty-btn-secondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: var(--beauty-primary);
+  transition: all 0.4s;
+  z-index: -1;
+}
+
+.beauty-btn-secondary:hover::before {
+  width: 100%;
+}
+
+.beauty-btn-secondary:hover {
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(198, 136, 81, 0.3);
+}
+
+/* Enhanced service cards with beauty industry styling */
+.beauty-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--beauty-component-gap-medium);
+}
+
+.beauty-service-card {
+  background: rgba(26, 26, 26, 0.7);
+  padding: var(--beauty-space-6);
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(198, 136, 81, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.beauty-service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--beauty-primary), var(--beauty-accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.beauty-service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.beauty-service-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(198, 136, 81, 0.2);
+  border: 1px solid rgba(198, 136, 81, 0.3);
+}
+
+.beauty-service-icon {
+  width: var(--beauty-space-8);
+  height: var(--beauty-space-8);
+  background: rgba(198, 136, 81, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--beauty-space-4);
+  font-size: 1.5rem;
+  color: var(--beauty-primary);
+  transition: all 0.3s ease;
+  border: 2px solid rgba(198, 136, 81, 0.2);
+}
+
+.beauty-service-card:hover .beauty-service-icon {
+  transform: scale(1.1);
+  background: rgba(198, 136, 81, 0.2);
+  border: 2px solid var(--beauty-primary);
+}
+
+.beauty-service-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: var(--beauty-space-3);
+  color: var(--beauty-neutral-light);
+  font-family: var(--beauty-heading-font);
+}
+
+.beauty-service-card p {
+  color: var(--beauty-neutral-offwhite);
+  margin-bottom: var(--beauty-space-4);
+  line-height: 1.7;
+}
+
+.beauty-price {
+  font-weight: 700;
+  color: var(--beauty-primary);
+  font-size: 1.2rem;
+  display: block;
+  margin-top: var(--beauty-space-3);
+  position: relative;
+  z-index: 2;
+}
+
+/* Enhanced gallery styling */
+.beauty-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--beauty-component-gap-small);
+}
+
+.beauty-gallery-item {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.beauty-gallery-item img {
+  border-radius: 10px;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  display: block;
+}
+
+.beauty-gallery-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 40%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.beauty-gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.beauty-gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.beauty-gallery-item:hover::before {
+  opacity: 1;
+}
+
+/* Enhanced testimonials */
+.beauty-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--beauty-component-gap-medium);
+}
+
+.beauty-testimonial-card {
+  background: rgba(26, 26, 26, 0.7);
+  padding: var(--beauty-space-6);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(198, 136, 81, 0.1);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.beauty-testimonial-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--beauty-accent), var(--beauty-primary));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.beauty-testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 20px rgba(198, 136, 81, 0.2);
+  border: 1px solid rgba(198, 136, 81, 0.3);
+}
+
+.beauty-testimonial-card:hover::before {
+  transform: scaleX(1);
+}
+
+.beauty-testimonial-content p {
+  font-style: italic;
+  color: var(--beauty-neutral-offwhite);
+  margin-bottom: var(--beauty-space-5);
+  position: relative;
+  line-height: 1.7;
+  z-index: 2;
+}
+
+.beauty-testimonial-content p::before {
+  content: """;
+  font-size: 4rem;
+  position: absolute;
+  top: -20px;
+  left: -15px;
+  color: rgba(198, 136, 81, 0.2);
+  font-family: var(--beauty-heading-font);
+  line-height: 1;
+  z-index: -1;
+}
+
+.beauty-testimonial-author h4 {
+  color: var(--beauty-neutral-light);
+  margin-bottom: 5px;
+}
+
+.beauty-testimonial-author p {
+  color: #b0b0b0;
+}
+
+/* Enhanced footer */
+.beauty-footer {
+  background: linear-gradient(135deg, #030303 0%, #0a0a0a 100%);
+  color: var(--beauty-neutral-offwhite);
+  padding: var(--beauty-space-8) 0 var(--beauty-space-4);
+  position: relative;
+  overflow: hidden;
+}
+
+.beauty-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--beauty-primary), transparent);
+}
+
+/* Beauty industry styled form elements */
+.beauty-form-group {
+  margin-bottom: var(--beauty-space-4);
+  position: relative;
+}
+
+.beauty-form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: var(--beauty-neutral-light);
+}
+
+.beauty-form-group input,
+.beauty-form-group select,
+.beauty-form-group textarea {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid rgba(198, 136, 81, 0.2);
+  border-radius: 8px;
+  font-family: var(--beauty-body-font);
+  font-size: 1rem;
+  background-color: rgba(26, 26, 26, 0.8);
+  color: var(--beauty-neutral-light);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.beauty-form-group input:focus,
+.beauty-form-group select:focus,
+.beauty-form-group textarea:focus {
+  outline: none;
+  border-color: var(--beauty-primary);
+  box-shadow: 0 0 0 3px rgba(198, 136, 81, 0.3);
+  background-color: rgba(26, 26, 26, 1);
+}
+
+/* Enhanced focus indicators for beauty industry accessibility */
+.beauty-focus {
+  outline: 3px solid var(--beauty-primary) !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 4px rgba(198, 136, 81, 0.3) !important;
+}
+
+/* Beauty industry styled FAQ section */
+.beauty-faq-item {
+  margin-bottom: var(--beauty-space-3);
+  border: 1px solid rgba(198, 136, 81, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(26, 26, 26, 0.5);
+}
+
+.beauty-faq-question {
+  width: 100%;
+  padding: var(--beauty-space-4);
+  background: rgba(26, 26, 26, 0.8);
+  border: none;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--beauty-neutral-light);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  font-family: var(--beauty-heading-font);
+}
+
+.beauty-faq-question:hover,
+.beauty-faq-question:focus {
+  background: rgba(198, 136, 81, 0.1);
+}
+
+.beauty-faq-question[aria-expanded="true"] {
+  background: rgba(198, 136, 81, 0.15);
+}
+
+.beauty-faq-answer {
+  padding: 0 var(--beauty-space-4);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  background: rgba(8, 8, 8, 0.5);
+}
+
+.beauty-faq-answer[aria-hidden="false"] {
+  max-height: 500px;
+  padding: var(--beauty-space-4);
+}
+
+.beauty-faq-answer p {
+  padding: var(--beauty-space-4) 0;
+  color: var(--beauty-neutral-offwhite);
+  line-height: 1.8;
+}
+
+/* Beauty industry styled WhatsApp button */
+.beauty-whatsapp-btn {
+  background: linear-gradient(90deg, #25D366, #128C7E) !important;
+  color: white !important;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+}
+
+.beauty-whatsapp-btn:hover {
+  background: linear-gradient(90deg, #128C7E, #075E54) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+  color: white !important;
+}
+
+/* Responsive adjustments for beauty industry design */
+@media (max-width: 768px) {
+  :root {
+    --beauty-section-padding-mobile: var(--beauty-space-8);
+    --beauty-container-padding-mobile: var(--beauty-space-3);
+  }
+
+  .beauty-hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .beauty-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .beauty-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .beauty-hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .beauty-btn {
+    display: block;
+    width: 100%;
+    margin-bottom: var(--beauty-space-3);
+  }
+}

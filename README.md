@@ -6,7 +6,7 @@ Mobile-first Hugo static site for Hair At Home, a Winnipeg-based mobile hair sty
 
 - 🚀 **Performance Optimized**: <10s load time on 3G networks
 - 📱 **Mobile-First Design**: Responsive design optimized for all devices
-- 🎨 **Modern UI**: Clean, professional design with smooth animations
+- 🎨 **Beauty Industry UI**: Premium, visually-stunning design aligned with modern beauty brands
 - ⚡ **Fast Loading**: Critical CSS inlined, lazy loading for images
 - 🔍 **SEO Optimized**: Structured data, meta tags, semantic HTML
 - ♿ **Accessible**: WCAG 2.1 AA compliant
@@ -92,7 +92,14 @@ We proudly serve all areas within Winnipeg, including:
 - West Winnipeg (Charleswood, St. James, Fort Richmond, Headingley)
 - North Winnipeg (Seven Oaks, River Heights, North Kildonan, St. Johns)
 
-## Performance Features
+## Visual & Design Features
+
+### Beauty Industry Standards
+- Premium color palette inspired by leading beauty brands
+- High-quality, authentic hair styling imagery
+- Sophisticated typography and spacing
+- Enhanced visual hierarchy and user experience
+- Professional photography showcasing services
 
 ### Critical CSS
 - Above-the-fold styles inlined in `<head>`
@@ -211,6 +218,17 @@ Currently using Google Fonts:
 
 ### Layout
 Modify theme templates in `themes/hairathome/layouts/`
+
+## Visual Enhancement with AI/MCP Tools
+
+This website can be enhanced using external AI and MCP (Multi-Component Platform) tools available in the k3s cluster to:
+
+- Generate professional hair styling imagery
+- Create beauty industry aligned color palettes
+- Analyze and optimize design elements for the beauty sector
+- Enhance visual content with AI-powered tools
+
+For implementation details, see `AI-MCP-VISUAL-ENHANCEMENT-README.md`.
 
 ## Support
 
