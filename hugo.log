@@ -1,0 +1,105 @@
+Watching for changes in /mnt/sentry-nfs/projects/hairathome/{content,data,package.json,static,themes}
+Watching for config changes in /mnt/sentry-nfs/projects/hairathome/hugo.toml
+Start building sites … 
+hugo v0.152.2-6abdacad3f3fe944ea42177844469139e81feda6+extended linux/amd64 BuildDate=2025-10-24T15:31:49Z VendorInfo=gohugoio
+
+
+                  │ EN 
+──────────────────┼────
+ Pages            │ 25 
+ Paginator pages  │  0 
+ Non-page files   │  0 
+ Static files     │  5 
+ Processed images │  0 
+ Aliases          │  0 
+ Cleaned          │  0 
+
+Built in 7 ms
+Environment: "development"
+Serving pages from memory
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0) 
+Press Ctrl+C to stop
+adding created directory to watchlist /mnt/sentry-nfs/projects/hairathome/static/icons
+
+Change of Static files detected, rebuilding site (#1).
+2025-12-02 14:19:21.400 -0600
+Syncing /icons to /
+
+Change of Static files detected, rebuilding site (#2).
+2025-12-02 14:19:34.900 -0600
+Syncing /icons/favicon.svg to /
+
+Change of Static files detected, rebuilding site (#3).
+2025-12-02 14:19:41.900 -0600
+Syncing /css/style.css to /
+
+Change of Static files detected, rebuilding site (#4).
+2025-12-02 14:19:47.900 -0600
+Syncing /css/style.css to /
+
+Change of Static files detected, rebuilding site (#5).
+2025-12-02 14:19:57.400 -0600
+Syncing /css/style.css to /
+
+Change of Static files detected, rebuilding site (#6).
+2025-12-02 14:20:04.400 -0600
+Syncing /css/style.css to /
+
+Change of Static files detected, rebuilding site (#7).
+2025-12-02 14:20:14.400 -0600
+Syncing /css/style.css to /
+
+Change of Static files detected, rebuilding site (#8).
+2025-12-02 14:20:16.400 -0600
+Syncing /icons/favicon-16x16.png to /
+
+Change of Static files detected, rebuilding site (#9).
+2025-12-02 14:20:16.900 -0600
+Syncing /icons/favicon-32x32.png to /
+Syncing /icons/favicon-192x192.png to /
+Syncing /icons/favicon-512x512.png to /
+Syncing /icons/favicon-48x48.png to /
+Syncing /icons/apple-touch-icon.png to /
+Syncing /icons/favicon.ico to /
+
+Change of Static files detected, rebuilding site (#10).
+2025-12-02 14:20:20.400 -0600
+Syncing /css/style.css to /
+
+Change of Static files detected, rebuilding site (#11).
+2025-12-02 14:20:26.400 -0600
+Syncing /favicon-16x16.png to /
+Syncing /favicon-192x192.png to /
+Syncing /favicon-32x32.png to /
+Syncing /favicon-48x48.png to /
+Syncing /favicon-512x512.png to /
+Syncing /favicon.ico to /
+Syncing /apple-touch-icon.png to /
+Syncing /favicon.svg to /
+
+Change of Static files detected, rebuilding site (#12).
+2025-12-02 14:20:26.900 -0600
+Syncing /css/style.css to /
+
+Change detected, rebuilding site (#13).
+2025-12-02 14:20:32.400 -0600
+Template changed /_default/baseof.html
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Total in 6 ms
+
+Change of Static files detected, rebuilding site (#14).
+2025-12-02 14:20:35.400 -0600
+Syncing /css/style.css to /
+
+Change of Static files detected, rebuilding site (#15).
+2025-12-02 14:20:40.399 -0600
+Syncing /css/style.css to /
+
+Change of Static files detected, rebuilding site (#16).
+2025-12-02 14:21:26.900 -0600
+Syncing /css/style.css to /
+
+Change of Static files detected, rebuilding site (#17).
+2025-12-02 14:21:31.399 -0600
+Syncing /css/style.css to /
