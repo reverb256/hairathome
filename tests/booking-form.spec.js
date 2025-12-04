@@ -6,17 +6,17 @@ import { test, expect } from '@playwright/test';
  */
 test.describe('Hair@Home - Booking Form', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/');
-    await page.locator('#booking').scrollIntoViewIfNeeded();
-    await page.waitForTimeout(500);
+    await page.goto('/booking/');
+    await page.waitForLoadState('networkidle');
+    await page.waitForTimeout(1000);
   });
 
   test('booking form is present and accessible', async ({ page }) => {
     const bookingForm = page.locator('#booking-form');
     await expect(bookingForm).toBeVisible();
     
-    const formTitle = page.locator('.booking h2');
-    await expect(formTitle).toHaveText('Book Your Service');
+    const pageTitle = page.locator('h1');
+    await expect(pageTitle).toHaveText('Book Your Service');
   });
 
   test('all form fields are present', async ({ page }) => {
