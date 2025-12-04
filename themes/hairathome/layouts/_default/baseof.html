@@ -285,9 +285,9 @@
     <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
 
-    <!-- Beauty-Enhanced Stylesheet -->
-    <link rel="stylesheet" href="/css/beauty-enhanced-styles.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="/css/beauty-enhanced-styles.css"></noscript>
+    <!-- Beauty-Enhanced Stylesheet with Higher Specificity -->
+    <link rel="stylesheet" href="/css/beauty-overrides.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/css/beauty-overrides.css"></noscript>
 
     <!-- SEO Meta Tags -->
     {{ if .Site.Params.seo.enableOpenGraph }}
