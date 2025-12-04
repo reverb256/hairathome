@@ -5,8 +5,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const html = document.documentElement;
     
     // Set default theme to dark
-    const currentTheme = localStorage.getItem('theme') || 'dark';
+    const savedTheme = localStorage.getItem('theme');
+    const currentTheme = savedTheme || 'dark';
     html.setAttribute('data-theme', currentTheme);
+    
+    // Force dark mode on page load to override any caching
+    if (!savedTheme) {
+        localStorage.setItem('theme', 'dark');
+    }
     
     if (themeToggle) {
         // Update toggle button text and icon
@@ -31,6 +37,10 @@ document.addEventListener('DOMContentLoaded', function() {
             icon.className = 'fas fa-sun';
             text.textContent = 'Dark';
         }
+        
+        // Force immediate visual feedback
+        html.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
     }
 
     // Mobile Navigation Toggle
