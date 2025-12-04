@@ -1,6 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800">
-  <rect width="600" height="800" fill="#$(printf '%02x%02x%02x' $((100 + RANDOM % 100)) $((100 + RANDOM % 100)) $((100 + RANDOM % 100)))"/>
-  <circle cx="300" cy="300" r="150" fill="#$(printf '%02x%02x%02x' $((150 + RANDOM % 100)) $((150 + RANDOM % 100)) $((150 + RANDOM % 100)))"/>
-  <text x="300" y="500" font-family="Arial" font-size="32" fill="#f3e6d0" text-anchor="middle">Hair Style</text>
-  <text x="300" y="550" font-family="Arial" font-size="24" fill="#e8c4a8" text-anchor="middle">Portfolio Item 5</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1200" viewBox="0 0 800 1200">
+  <rect width="800" height="1200" fill="#f3e6d0"/>
+  <circle cx="400" cy="400" r="180" fill="#d4a998"/>
+  <ellipse cx="400" cy="800" rx="250" ry="350" fill="#e8c4a8"/>
+  <text x="400" y="1050" text-anchor="middle" font-family="Arial" font-size="24" fill="#3d2e26">Hair Transformation</text>
+  <text x="400" y="1100" text-anchor="middle" font-family="Arial" font-size="18" fill="#d4af37">Professional Mobile Styling</text>
 </svg>

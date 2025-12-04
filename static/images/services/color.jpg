@@ -1,14 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
-  <rect width="400" height="400" fill="#f3e6d0"/>
-  <circle cx="200" cy="150" r="70" fill="#d4a998"/>
-  <rect x="150" y="220" width="100" height="100" rx="10" fill="url(#colorfulBrush)" />
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
+  <rect width="800" height="800" fill="#f3e6d0"/>
+  <circle cx="400" cy="350" r="180" fill="#d4a998"/>
+  <rect x="150" y="550" width="500" height="150" fill="url(#colorGradient)"/>
   <defs>
-    <linearGradient id="colorfulBrush" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#e8c4a8"/>
-      <stop offset="50%" stop-color="#d4af37"/>
-      <stop offset="100%" stop-color="#f3e6d0"/>
+    <linearGradient id="colorGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
+      <stop offset="33%" style="stop-color:#e8c4a8;stop-opacity:1" />
+      <stop offset="66%" style="stop-color:#d4a998;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3d2e26;stop-opacity:1" />
     </linearGradient>
   </defs>
-  <path d="M100 100 Q200 50, 300 100" stroke="#d4af37" stroke-width="10" fill="none"/>
-  <text x="200" y="350" font-family="Arial" font-size="24" fill="#3d2e26" text-anchor="middle">Hair Color</text>
+  <text x="400" y="650" text-anchor="middle" font-family="Arial" font-size="32" fill="#3d2e26">Hair Coloring</text>
 </svg>
