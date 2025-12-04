@@ -1,13 +1,19 @@
 // Theme Toggle and Mobile Navigation - ensure DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOMContentLoaded event fired');
+    
     // Theme Toggle Functionality
     const themeToggle = document.getElementById('theme-toggle');
     const html = document.documentElement;
+    
+    console.log('Theme toggle element found:', !!themeToggle);
     
     // Set default theme to dark
     const savedTheme = localStorage.getItem('theme');
     const currentTheme = savedTheme || 'dark';
     html.setAttribute('data-theme', currentTheme);
+    
+    console.log('Setting theme to:', currentTheme);
     
     // Force dark mode on page load to override any caching
     if (!savedTheme) {
@@ -17,13 +23,21 @@ document.addEventListener('DOMContentLoaded', function() {
     if (themeToggle) {
         // Update toggle button text and icon
         updateThemeToggle(currentTheme);
+        console.log('Theme toggle initialized with theme:', currentTheme);
         
-        themeToggle.addEventListener('click', () => {
+        themeToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            
             const newTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
             html.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
             updateThemeToggle(newTheme);
+            
+            console.log('Theme toggled to:', newTheme);
         });
+        
+        console.log('Click event listener attached');
     }
     
     function updateThemeToggle(theme) {
@@ -32,10 +46,10 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (theme === 'dark') {
             icon.className = 'fas fa-moon';
-            text.textContent = 'Light';
+            if (text) text.textContent = 'Light';  // Show "Light" to switch to light mode
         } else {
             icon.className = 'fas fa-sun';
-            text.textContent = 'Dark';
+            if (text) text.textContent = 'Dark';   // Show "Dark" to switch to dark mode
         }
         
         // Force immediate visual feedback
@@ -148,88 +162,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Theme Management
-class ThemeManager {
-    constructor() {
-        this.storageKey = 'hairathome-theme';
-        this.darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-        this.init();
-    }
-    
-    init() {
-        // Set dark mode as default if no preference is stored
-        const savedTheme = localStorage.getItem(this.storageKey);
-        if (!savedTheme) {
-            this.setTheme('dark');
-        } else {
-            this.setTheme(savedTheme);
-        }
-        
-        // Listen for system theme changes
-        this.darkModeMediaQuery.addListener((e) => {
-            if (!localStorage.getItem(this.storageKey)) {
-                this.setTheme(e.matches ? 'dark' : 'light');
-            }
-        });
-        
-        // Setup theme toggle
-        this.setupThemeToggle();
-    }
-    
-    setTheme(theme) {
-        const html = document.documentElement;
-        const themeIcon = document.getElementById('theme-icon');
-        const themeText = document.getElementById('theme-text');
-        
-        if (theme === 'dark') {
-            html.removeAttribute('data-theme');
-            themeIcon.className = 'fas fa-moon';
-            if (themeText) themeText.textContent = 'Dark';
-        } else {
-            html.setAttribute('data-theme', 'light');
-            themeIcon.className = 'fas fa-sun';
-            if (themeText) themeText.textContent = 'Light';
-        }
-        
-        localStorage.setItem(this.storageKey, theme);
-        
-        // Update meta theme-color for mobile browsers
-        this.updateMetaThemeColor(theme);
-    }
-    
-    setupThemeToggle() {
-        const toggle = document.getElementById('theme-toggle');
-        if (toggle) {
-            toggle.addEventListener('click', () => {
-                const currentTheme = localStorage.getItem(this.storageKey) || 'dark';
-                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-                this.setTheme(newTheme);
-            });
-        }
-    }
-    
-    updateMetaThemeColor(theme) {
-        let metaThemeColor = document.querySelector('meta[name="theme-color"]');
-        if (!metaThemeColor) {
-            metaThemeColor = document.createElement('meta');
-            metaThemeColor.name = 'theme-color';
-            document.head.appendChild(metaThemeColor);
-        }
-        
-        metaThemeColor.content = theme === 'dark' ? '#050505' : '#ffffff';
-    }
-    
-    getCurrentTheme() {
-        return localStorage.getItem(this.storageKey) || 'dark';
-    }
-}
-
 // Initialize the website
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Hair@Home website loaded successfully!');
-    
-    // Initialize theme manager
-    window.themeManager = new ThemeManager();
     
     // Initialize image optimizer
     window.imageOptimizer = new ImageOptimizer();

@@ -465,15 +465,7 @@
         "{{ .Site.Params.social.instagram }}",
         "{{ .Site.Params.social.tiktok }}"
       ],
-       "hasCredential": {
-         "@type": "EducationalOccupationalCredential",
-         "name": "Red Seal Certified Mobile Hair Stylist",
-         "credentialCategory": "license",
-         "recognizedBy": {
-           "@type": "Organization",
-           "name": "Red Seal Program"
-         }
-       },
+       
        "areaServed": {
          "@type": "City",
          "name": "Winnipeg",
@@ -529,7 +521,7 @@
              "ratingValue": "5",
              "bestRating": "5"
            },
-           "reviewBody": "Red Seal certified and it shows in the quality of work. Highly recommend for anyone looking for professional mobile hair services."
+           "reviewBody": "Professional and experienced stylist with exceptional quality of work. Highly recommend for anyone looking for professional mobile hair services."
          }
        ],
        "hasOfferCatalog": {
@@ -575,11 +567,7 @@
 <body>
      {{ partial "header.html" . }}
 
-     <!-- Theme Toggle Button -->
-     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light theme">
-         <i class="fas fa-moon"></i>
-         <span>Light</span>
-     </button>
+
 
      <main>
         {{ block "main" . }}{{ end }}
@@ -597,8 +585,8 @@
          </a>
      </div>
 
-      <!-- Scripts - No inline scripts for CSP compliance -->
-     <script src="/js/main.js" defer></script>
+       <!-- Scripts - No inline scripts for CSP compliance -->
+      <script src="/js/theme-toggle.js" defer></script>
      {{ if .Site.Params.performance.enableLazyLoading }}
      <script src="/js/lazy-loading.js" defer></script>
      {{ end }}
