@@ -12,7 +12,7 @@ const { chromium } = require('playwright');
     await page.setViewportSize({ width: 1200, height: 800 });
     
     // Navigate to the deployed site
-    console.log('🌐 Loading deployed Hair At Home site...');
+    console.log('🌐 Loading deployed Hair@Home site...');
     await page.goto('https://reverb256.github.io/hairathome/', { 
       waitUntil: 'domcontentloaded', 
       timeout: 60000  // Increase timeout
@@ -126,7 +126,7 @@ const { chromium } = require('playwright');
     
     if (passed >= total * 0.7) {
       console.log('🎉 SUCCESS: Beauty enhancements are live on the deployed site!');
-      console.log('✨ Hair At Home now features beauty industry aligned visuals');
+      console.log('✨ Hair@Home now features beauty industry aligned visuals');
       console.log('📸 Professional hair service imagery and styling in place');
       console.log('📱 Fully responsive with accessibility compliance maintained');
     } else {
@@ -134,7 +134,7 @@ const { chromium } = require('playwright');
     }
 
     console.log('\n🎯 BEAUTY ENHANCEMENT VALIDATION COMPLETE');
-    console.log('The Hair At Home site now meets beauty industry visual standards.');
+    console.log('The Hair@Home site now meets beauty industry visual standards.');
 
   } catch (error) {
     console.error('❌ Validation error:', error);

@@ -1,7 +1,7 @@
-# Hair At Home - MCP-Powered Visual Enhancement Summary
+# Hair@Home - MCP-Powered Visual Enhancement Summary
 
 ## Overview
-Successfully implemented beauty industry aligned visual enhancements for the Hair At Home project using the MCP (Multi-Component Platform) tools running in the K3s cluster.
+Successfully implemented beauty industry aligned visual enhancements for the Hair@Home project using the MCP (Multi-Component Platform) tools running in the K3s cluster.
 
 ## MCP Infrastructure Status
 ✅ **MCP Gateway**: Running in mcp-tools namespace (port 8080)

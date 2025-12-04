@@ -2142,7 +2142,7 @@
                 "height": 46
               },
               "snippet": "<h2>",
-              "nodeLabel": "Hair At Home",
+              "nodeLabel": "Hair@Home",
               "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 2.81 (foreground color: #8e44ad, background color: #1f1f1f, font size: 21.6pt (28.8px), font weight: bold). Expected contrast ratio of 3:1"
             },
             "subItems": {
@@ -2163,7 +2163,7 @@
                       "height": 79
                     },
                     "snippet": "<header>",
-                    "nodeLabel": "Hair At Home\nHome\nAbout\nServices\nGallery\nBook Now"
+                    "nodeLabel": "Hair@Home\nHome\nAbout\nServices\nGallery\nBook Now"
                   }
                 }
               ]

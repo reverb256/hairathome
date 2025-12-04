@@ -2,7 +2,7 @@
 # Real-time security monitoring and alerting
 
 [dashboard]
-title = "Hair at Home Security Dashboard"
+title = "Hair@Home Security Dashboard"
 description = "Real-time security monitoring and compliance tracking"
 refresh-interval = "30s"
 theme = "dark"

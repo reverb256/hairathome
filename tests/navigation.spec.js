@@ -1,10 +1,10 @@
 import { test, expect } from '@playwright/test';
 
 /**
- * Navigation tests for Hair At Home website
+ * Navigation tests for Hair@Home website
  * Tests smooth scrolling, anchor links, and navigation behavior
  */
-test.describe('Hair At Home - Navigation', () => {
+test.describe('Hair@Home - Navigation', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/');
   });

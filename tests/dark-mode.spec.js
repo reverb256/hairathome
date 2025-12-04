@@ -1,10 +1,10 @@
 import { test, expect } from '@playwright/test';
 
 /**
- * Dark Mode Tests for Hair At Home website
+ * Dark Mode Tests for Hair@Home website
  * Tests dark mode functionality, accessibility, and responsiveness across all pages
  */
-test.describe('Hair At Home - Dark Mode Implementation', () => {
+test.describe('Hair@Home - Dark Mode Implementation', () => {
   const pages = [
     { name: 'Home', path: 'http://localhost:1313/hairathome/' },
     { name: 'About', path: 'http://localhost:1313/hairathome/about/' },

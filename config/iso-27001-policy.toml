@@ -1,5 +1,5 @@
 # ISO 27001 Information Security Management System
-# Annex A Controls Implementation for Hair at Home
+# Annex A Controls Implementation for Hair@Home
 
 [iso-27001-policy]
 version = "1.0"
@@ -120,7 +120,7 @@ regulatory-compliance = true
 certification-maintenance = true
 continuous-improvement = true
 
-# Specific Controls for Hair at Home
+# Specific Controls for Hair@Home
 
 [business-specific-controls]
 customer-data-protection = true

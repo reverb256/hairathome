@@ -1,10 +1,10 @@
 import { test, expect } from '@playwright/test';
 
 /**
- * Accessibility tests for Hair At Home website
+ * Accessibility tests for Hair@Home website
  * Tests WCAG compliance, keyboard navigation, and screen reader compatibility
  */
-test.describe('Hair At Home - Accessibility', () => {
+test.describe('Hair@Home - Accessibility', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('http://localhost:1313/hairathome/');
   });

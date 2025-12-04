@@ -329,7 +329,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add proper heading hierarchy validation
     validateHeadingHierarchy();
 
-    console.log('Hair At Home website loaded successfully with accessibility features!');
+    console.log('Hair@Home website loaded successfully with accessibility features!');
 });
 
 function validateHeadingHierarchy() {

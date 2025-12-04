@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Final validation script for beauty-enhanced Hair At Home site
+# Final validation script for beauty-enhanced Hair@Home site
 # Uses the MCP tools to verify all beauty industry aligned features are working
 
 echo "🔍 Initiating comprehensive beauty industry feature validation..."
@@ -78,7 +78,7 @@ echo "- Luxury aesthetic elements: IMPLEMENTED"
 echo "- Visual enhancement tools integration: AVAILABLE"
 
 echo ""
-echo "🚀 The Hair At Home project is now fully aligned with beauty industry visual standards!"
+echo "🚀 The Hair@Home project is now fully aligned with beauty industry visual standards!"
 echo "✨ Professional aesthetics with premium color scheme and typography implemented"
 echo "📱 Mobile-optimized for beauty sector with enhanced performance"
 echo "🎨 Industry-aligned design now live at https://reverb256.github.io/hairathome/"

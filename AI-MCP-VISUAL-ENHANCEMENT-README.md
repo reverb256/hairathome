@@ -1,10 +1,10 @@
-# AI/MCP Visual Enhancement Guide for Hair At Home
+# AI/MCP Visual Enhancement Guide for Hair@Home
 
 ## Overview
-This document outlines how to use external AI and MCP tools to enhance the visual elements of the Hair At Home website, bringing it in line with beauty industry standards.
+This document outlines how to use external AI and MCP tools to enhance the visual elements of the Hair@Home website, bringing it in line with beauty industry standards.
 
 ## Current Visual State
-The Hair At Home website is a well-structured, mobile-first Hugo site with a dark theme. However, it currently uses generic placeholder images that don't reflect the beauty industry aesthetic.
+The Hair@Home website is a well-structured, mobile-first Hugo site with a dark theme. However, it currently uses generic placeholder images that don't reflect the beauty industry aesthetic.
 
 ## Visual Enhancement Goals
 - Replace placeholder images with professional hair styling photography

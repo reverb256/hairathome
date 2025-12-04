@@ -10,7 +10,7 @@
 
 ### Solution: Implement MCP-based CICD Pipeline
 
-## MCP CICD Architecture for Hair At Home
+## MCP CICD Architecture for Hair@Home
 
 ### 1. Build Process
 - Use Playwright MCP for visual testing of beauty enhancements

@@ -1,6 +1,6 @@
-# Hair At Home - Hugo Static Site
+# Hair@Home - Hugo Static Site
 
-Mobile-first Hugo static site for Hair At Home, a Winnipeg-based mobile hair stylist service.
+Mobile-first Hugo static site for Hair@Home, a Winnipeg-based mobile hair stylist service.
 
 ## Features
 

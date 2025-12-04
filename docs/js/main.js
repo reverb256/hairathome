@@ -182,7 +182,7 @@ class ThemeManager {
 
 // Initialize the website
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Hair At Home website loaded successfully!');
+    console.log('Hair@Home website loaded successfully!');
     
     // Initialize theme manager
     window.themeManager = new ThemeManager();

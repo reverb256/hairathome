@@ -1,15 +1,15 @@
 #!/bin/bash
 
-# Hair At Home - MCP Integration Script
+# Hair@Home - MCP Integration Script
 # This script provides integration with the external MCP tools for visual enhancement
 
 # Base URL for the MCP gateway
 MCP_GATEWAY_URL="http://localhost:8080"
 HAIRATHOME_URL="http://localhost:1313/hairathome"
 
-echo "🚀 Starting Hair At Home Visual Enhancement Process"
+echo "🚀 Starting Hair@Home Visual Enhancement Process"
 echo "MCP Gateway: $MCP_GATEWAY_URL"
-echo "Hair At Home: $HAIRATHOME_URL"
+echo "Hair@Home: $HAIRATHOME_URL"
 echo
 
 # Function to run visual comparison
@@ -67,7 +67,7 @@ read_file() {
 }
 
 # Main workflow
-echo "Starting MCP-enhanced visual design workflow for Hair At Home..."
+echo "Starting MCP-enhanced visual design workflow for Hair@Home..."
 echo
 
 run_visual_test

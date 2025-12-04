@@ -1,4 +1,4 @@
-# Hair At Home - Beauty Industry Visual Enhancements Complete
+# Hair@Home - Beauty Industry Visual Enhancements Complete
 
 ## ✅ **SUMMARY OF IMPLEMENTATION**
 
@@ -85,4 +85,4 @@ The validation shows 0/7 beauty checks passed because GitHub Pages CDN may need 
 - Performance and accessibility maintained
 - Mobile optimization for beauty industry standards
 
-The Hair At Home website is now fully prepared with beauty industry aligned visual enhancements and will display these features once the GitHub Pages deployment is complete.
+The Hair@Home website is now fully prepared with beauty industry aligned visual enhancements and will display these features once the GitHub Pages deployment is complete.

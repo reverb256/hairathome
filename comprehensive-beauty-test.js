@@ -1,7 +1,7 @@
 const { chromium } = require('playwright');
 
 /**
- * Comprehensive end-to-end test for the beauty-enhanced Hair At Home site
+ * Comprehensive end-to-end test for the beauty-enhanced Hair@Home site
  * Validates that all MCP-integrated beauty enhancements are working correctly
  */
 (async () => {

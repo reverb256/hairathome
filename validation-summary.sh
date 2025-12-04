@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Final validation script for Hair At Home beauty-enhanced deployment
-echo " validating Hair At Home deployment..."
+# Final validation script for Hair@Home beauty-enhanced deployment
+echo " validating Hair@Home deployment..."
 
 echo "🔍 Checking deployment directory structure..."
 ls -la docs/
@@ -37,4 +37,4 @@ echo "- Heading hierarchy fixes: APPLIED"
 echo "- GitHub Pages deployment: COMPLETED"
 
 echo ""
-echo "🚀 The Hair At Home site has been successfully enhanced with beauty industry aligned visuals and is deployed to GitHub Pages."
+echo "🚀 The Hair@Home site has been successfully enhanced with beauty industry aligned visuals and is deployed to GitHub Pages."

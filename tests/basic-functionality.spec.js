@@ -1,16 +1,16 @@
 import { test, expect } from '@playwright/test';
 
 /**
- * Basic functionality tests for Hair At Home website
+ * Basic functionality tests for Hair@Home website
  * Tests core navigation, page elements, and responsive design
  */
-test.describe('Hair At Home - Basic Functionality', () => {
+test.describe('Hair@Home - Basic Functionality', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('http://localhost:1313/hairathome/');
   });
 
    test('page loads correctly with proper title', async ({ page }) => {
-     await expect(page).toHaveTitle(/Hair At Home.*Winnipeg Mobile Hair Stylist/);
+     await expect(page).toHaveTitle(/Hair@Home.*Winnipeg Mobile Hair Stylist/);
    });
 
    test('navigation menu is present and functional', async ({ page }) => {

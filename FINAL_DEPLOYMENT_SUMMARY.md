@@ -1,4 +1,4 @@
-# Hair At Home - Complete Deployment Summary
+# Hair@Home - Complete Deployment Summary
 
 ## 🚀 Deployment Status: ✅ SUCCESSFUL
 
@@ -145,4 +145,4 @@
 **Security**: ✅ **CONFIGURED** (Cloudflare setup pending)
 **Performance**: ⚠️ **NEEDS OPTIMIZATION** (0.37 → 0.9+ target)
 
-The Hair At Home website has been successfully deployed to GitHub Pages with comprehensive security configurations and performance optimizations. The site is live and functional, though performance optimization is recommended to meet the 0.9 Lighthouse target.
+The Hair@Home website has been successfully deployed to GitHub Pages with comprehensive security configurations and performance optimizations. The site is live and functional, though performance optimization is recommended to meet the 0.9 Lighthouse target.
