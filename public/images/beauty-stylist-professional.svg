@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#f3e6d0"/>
+  <circle cx="400" cy="300" r="120" fill="#d4a998"/>
+  <ellipse cx="400" cy="450" rx="90" ry="150" fill="#e8c4a8"/>
+  <circle cx="370" cy="280" r="8" fill="#3d2e26"/>
+  <circle cx="430" cy="280" r="8" fill="#3d2e26"/>
+  <path d="M370 320 Q400 330, 430 320" stroke="#3d2e26" stroke-width="2" fill="none"/>
+  <circle cx="400" cy="250" r="20" fill="#d4af37" opacity="0.3"/>
+  <text x="400" y="550" font-family="Arial" font-size="20" fill="#3d2e26" text-anchor="middle">Licensed Mobile Beauty Professional</text>
+  <text x="400" y="575" font-family="Arial" font-size="16" fill="#d4a998" text-anchor="middle">Red Seal Certified • 8+ Years Experience</text>
+</svg>

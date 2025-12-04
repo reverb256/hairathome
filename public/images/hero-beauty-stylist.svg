@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#f3e6d0"/>
+  <circle cx="400" cy="250" r="150" fill="#d4a998"/>
+  <path d="M300 450 Q400 500, 500 450" stroke="#3d2e26" stroke-width="8" fill="none"/>
+  <path d="M250 400 Q400 480, 550 400" stroke="#3d2e26" stroke-width="6" fill="none"/>
+  <path d="M350 200 Q400 180, 450 200" stroke="#d4af37" stroke-width="4" fill="none"/>
+  <circle cx="370" cy="240" r="10" fill="#3d2e26"/>
+  <circle cx="430" cy="240" r="10" fill="#3d2e26"/>
+  <path d="M370 280 Q400 290, 430 280" stroke="#3d2e26" stroke-width="3" fill="none"/>
+  <text x="400" y="550" font-family="Arial" font-size="24" fill="#3d2e26" text-anchor="middle">Professional Mobile Hair Styling</text>
+  <text x="400" y="580" font-family="Arial" font-size="18" fill="#d4a998" text-anchor="middle">Winnipeg's Premier Beauty Experience</text>
+</svg>
