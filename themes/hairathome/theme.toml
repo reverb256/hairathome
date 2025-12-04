@@ -1,6 +1,6 @@
-name = "Hair At Home Theme"
+name = "Hair@Home Theme"
 license = "MIT"
-description = "Mobile-first Hugo theme for Hair At Home mobile hair stylist service"
+description = "Mobile-first Hugo theme for Hair@Home mobile hair stylist service"
 
 [author]
-  name = "Hair At Home"
+  name = "Hair@Home"

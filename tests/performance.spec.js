@@ -1,10 +1,10 @@
 import { test, expect } from '@playwright/test';
 
 /**
- * Performance tests for Hair At Home website
+ * Performance tests for Hair@Home website
  * Tests page load speed, resource optimization, and user experience metrics
  */
-test.describe('Hair At Home - Performance', () => {
+test.describe('Hair@Home - Performance', () => {
   test('page loads within acceptable time', async ({ page }) => {
     const startTime = Date.now();
     

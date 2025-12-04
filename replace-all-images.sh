@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# Comprehensive image replacement script for Hair At Home
+# Comprehensive image replacement script for Hair@Home
 # Generates beauty industry aligned images to replace all placeholders
 
 cd /mnt/sentry-nfs/projects/hairathome
 
-echo "🎨 Generating beauty industry aligned placeholder images for Hair At Home..."
+echo "🎨 Generating beauty industry aligned placeholder images for Hair@Home..."
 
 # Create images directory structure
 mkdir -p static/images/services
@@ -205,7 +205,7 @@ cat > static/images/og-image.jpg << 'EOF'
     </linearGradient>
   </defs>
   <circle cx="800" cy="300" r="180" fill="#d4a998"/>
-  <text x="600" y="180" text-anchor="middle" font-family="Arial" font-size="48" fill="#3d2e26" font-weight="bold">Hair At Home</text>
+  <text x="600" y="180" text-anchor="middle" font-family="Arial" font-size="48" fill="#3d2e26" font-weight="bold">Hair@Home</text>
   <text x="600" y="240" text-anchor="middle" font-family="Arial" font-size="28" fill="#d4af37">Mobile Hair Styling in Winnipeg</text>
   <text x="600" y="300" text-anchor="middle" font-family="Arial" font-size="24" fill="#e8c4a8">Professional mobile hair services at your doorstep</text>
   <g transform="translate(550,400)">

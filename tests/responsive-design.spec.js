@@ -1,10 +1,10 @@
 import { test, expect } from '@playwright/test';
 
 /**
- * Responsive design tests for Hair At Home website
+ * Responsive design tests for Hair@Home website
  * Tests website behavior across different screen sizes and devices
  */
-test.describe('Hair At Home - Responsive Design', () => {
+test.describe('Hair@Home - Responsive Design', () => {
   const devices = [
     { name: 'Mobile', width: 375, height: 667 },
     { name: 'Tablet', width: 768, height: 1024 },

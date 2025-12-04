@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# Playwright Testing Setup Script for Hair At Home
+# Playwright Testing Setup Script for Hair@Home
 # Configures testing environment for containerized clusters
 
 set -e
 
-echo "🚀 Setting up Playwright testing for Hair At Home..."
+echo "🚀 Setting up Playwright testing for Hair@Home..."
 
 # Check if Node.js is installed
 if ! command -v node &> /dev/null; then

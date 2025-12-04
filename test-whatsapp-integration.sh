@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "🔍 Testing WhatsApp Business Integration for Hair At Home"
+echo "🔍 Testing WhatsApp Business Integration for Hair@Home"
 echo "========================================================"
 
 # Start local server

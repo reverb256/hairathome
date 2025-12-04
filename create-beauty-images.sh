@@ -60,7 +60,7 @@ cat > static/images/hero-beauty-stylist.svg << 'EOF'
   <circle cx="150" cy="600" r="15" fill="#e8c4a8" opacity="0.3"/>
   
   <!-- Brand elements -->
-  <text x="200" y="250" font-family="Playfair Display, serif" font-size="48" fill="#3d2e26" font-weight="bold">Hair At Home</text>
+  <text x="200" y="250" font-family="Playfair Display, serif" font-size="48" fill="#3d2e26" font-weight="bold">Hair@Home</text>
   <text x="200" y="310" font-family="Poppins, sans-serif" font-size="24" fill="#d4af37">Professional Mobile Styling</text>
   <text x="200" y="350" font-family="Poppins, sans-serif" font-size="20" fill="#3d2e26">Winnipeg's Premier Beauty Experience</text>
   
@@ -348,7 +348,7 @@ cat > static/images/og-image.jpg << 'EOF'
   <circle cx="200" cy="530" r="40" fill="#e8c4a8" opacity="0.1"/>
   
   <!-- Logo representation -->
-  <text x="600" y="250" text-anchor="middle" font-family="Playfair Display, serif" font-size="64" fill="#3d2e26">Hair At Home</text>
+  <text x="600" y="250" text-anchor="middle" font-family="Playfair Display, serif" font-size="64" fill="#3d2e26">Hair@Home</text>
   <text x="600" y="320" text-anchor="middle" font-family="Poppins, sans-serif" font-size="32" fill="#d4af37">Winnipeg Mobile Hair Stylist</text>
   
   <!-- Service preview -->

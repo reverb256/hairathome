@@ -1,7 +1,7 @@
 {
   "name": "hairathome-hugo",
   "version": "1.0.0",
-  "description": "Hair At Home - Hugo Static Site for Winnipeg Mobile Hair Stylist",
+  "description": "Hair@Home - Hugo Static Site for Winnipeg Mobile Hair Stylist",
   "scripts": {
     "build": "hugo --minify",
     "build:dev": "hugo -D --minify",
@@ -35,7 +35,7 @@
     "mobile-first",
     "performance"
   ],
-  "author": "Hair At Home",
+  "author": "Hair@Home",
   "license": "MIT",
   "homepage": "https://hairathome.ca",
   "repository": {

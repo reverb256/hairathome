@@ -1,7 +1,7 @@
 const { chromium } = require('playwright');
 
 (async () => {
-  console.log('🔍 Starting comprehensive analysis of the deployed Hair At Home site...');
+  console.log('🔍 Starting comprehensive analysis of the deployed Hair@Home site...');
   
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage();

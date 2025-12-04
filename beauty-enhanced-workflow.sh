@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Beauty-Enhanced Workflow for Hair At Home
+# Beauty-Enhanced Workflow for Hair@Home
 # Uses MCP tools to implement industry standard visual elements
 
 echo "✨ Starting Beauty Industry Visual Enhancement Process"

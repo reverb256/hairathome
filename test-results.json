@@ -163,7 +163,7 @@
       "specs": [],
       "suites": [
         {
-          "title": "Hair At Home - Basic Functionality",
+          "title": "Hair@Home - Basic Functionality",
           "file": "basic-functionality.spec.js",
           "line": 7,
           "column": 6,

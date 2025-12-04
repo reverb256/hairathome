@@ -1,6 +1,6 @@
-# Playwright Testing for Hair At Home
+# Playwright Testing for Hair@Home
 
-This directory contains the complete Playwright testing suite for the Hair At Home mobile hair stylist website, configured with MCP integration for k3s cluster environments.
+This directory contains the complete Playwright testing suite for the Hair@Home mobile hair stylist website, configured with MCP integration for k3s cluster environments.
 
 ## 🚀 Quick Start
 
@@ -322,4 +322,4 @@ For issues with:
 
 ---
 
-Generated for Hair At Home mobile hair stylist website testing.
+Generated for Hair@Home mobile hair stylist website testing.

@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Hair At Home - Targeted Beautification Audit', () => {
+test.describe('Hair@Home - Targeted Beautification Audit', () => {
   // Test the actual Hugo-built site
   const baseUrl = 'https://reverb256.github.io/hairathome/public/';
 

@@ -1,10 +1,10 @@
 import { test, expect } from '@playwright/test';
 
 /**
- * Booking form tests for Hair At Home website
+ * Booking form tests for Hair@Home website
  * Tests form validation, submission, and user interactions
  */
-test.describe('Hair At Home - Booking Form', () => {
+test.describe('Hair@Home - Booking Form', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/');
     await page.locator('#booking').scrollIntoViewIfNeeded();

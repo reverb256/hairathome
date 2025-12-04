@@ -74,7 +74,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Initialize the website
 document.addEventListener('DOMContentLoaded', function() {
     // Add any initialization code here
-    console.log('Hair At Home website loaded successfully!');
+    console.log('Hair@Home website loaded successfully!');
 });
 
 // Add animation to elements when they come into view

@@ -137,7 +137,7 @@ cat > static/images/og-image.jpg << 'EOF'
   <rect x="50" y="50" width="1100" height="530" rx="20" fill="#0a0a0a"/>
   <circle cx="600" cy="250" r="150" fill="#d4a998"/>
   <path d="M500 400 Q600 480, 700 400" stroke="#d4af37" stroke-width="12" fill="none"/>
-  <text x="600" y="150" font-family="Arial" font-size="60" fill="#f3e6d0" text-anchor="middle">Hair At Home</text>
+  <text x="600" y="150" font-family="Arial" font-size="60" fill="#f3e6d0" text-anchor="middle">Hair@Home</text>
   <text x="600" y="550" font-family="Arial" font-size="40" fill="#e8c4a8" text-anchor="middle">Mobile Hair Styling Services Winnipeg</text>
 </svg>
 EOF

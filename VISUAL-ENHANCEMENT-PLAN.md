@@ -1,7 +1,7 @@
-# Visual Enhancement Plan for Hair At Home
+# Visual Enhancement Plan for Hair@Home
 
 ## Overview
-This document outlines the planned visual enhancements to align the Hair At Home website with beauty industry standards and best practices.
+This document outlines the planned visual enhancements to align the Hair@Home website with beauty industry standards and best practices.
 
 ## Current State Analysis
 - Currently using placeholder images from Unsplash

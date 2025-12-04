@@ -1,7 +1,7 @@
-# Beauty Industry Color Palette Recommendations for Hair At Home
+# Beauty Industry Color Palette Recommendations for Hair@Home
 
 ## Analysis Summary
-Based on visual analysis of leading beauty industry websites (Snapps.ai, Fresha, Booksy) and current Hair At Home design, the following color palette recommendations will enhance the site's alignment with beauty industry standards.
+Based on visual analysis of leading beauty industry websites (Snapps.ai, Fresha, Booksy) and current Hair@Home design, the following color palette recommendations will enhance the site's alignment with beauty industry standards.
 
 ## Recommended Color Palette
 

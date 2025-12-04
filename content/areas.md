@@ -7,7 +7,7 @@ date: 2025-01-01T00:00:00-06:00
 
 ## Complete Winnipeg Coverage
 
-Hair At Home proudly serves all areas within Winnipeg city limits. Our mobile salon is fully equipped to travel throughout the city, bringing professional hair services directly to your doorstep.
+Hair@Home proudly serves all areas within Winnipeg city limits. Our mobile salon is fully equipped to travel throughout the city, bringing professional hair services directly to your doorstep.
 
 ## Service Areas by Region
 

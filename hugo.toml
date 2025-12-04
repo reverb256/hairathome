@@ -1,12 +1,12 @@
 publishDir = "docs"
 baseURL = 'https://reverb256.github.io/hairathome'
 languageCode = 'en-ca'
-title = 'Hair At Home - Winnipeg Mobile Hair Stylist'
+title = 'Hair@Home - Winnipeg Mobile Hair Stylist'
 theme = 'hairathome'
 
 [params]
   description = "Professional mobile hair styling services in Winnipeg. Salon-quality haircuts, color, and styling at your doorstep."
-  author = "Hair At Home"
+  author = "Hair@Home"
   phone = "(204) 555-0123"
   email = "info@hairathome.ca"
   location = "Winnipeg, MB"

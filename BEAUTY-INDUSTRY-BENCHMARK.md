@@ -1,7 +1,7 @@
 # Beauty Industry Benchmark Analysis
 
 ## Overview
-Analysis of leading beauty brands to establish visual standards for the Hair At Home website.
+Analysis of leading beauty brands to establish visual standards for the Hair@Home website.
 
 ## Leading Beauty Brand Websites Analysis
 
@@ -70,7 +70,7 @@ Analysis of leading beauty brands to establish visual standards for the Hair At 
 - Product/service prominence
 - Clear organization
 
-## Comparison with Hair At Home
+## Comparison with Hair@Home
 
 ### Current Strengths
 - Mobile-first responsive design
@@ -121,7 +121,7 @@ Analysis of leading beauty brands to establish visual standards for the Hair At 
 - Service comparison and pricing clarity
 - Professional credibility indicators
 
-## Recommendations for Hair At Home
+## Recommendations for Hair@Home
 
 ### Immediate Improvements
 1. Update color palette to align with beauty industry standards

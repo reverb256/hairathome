@@ -1,6 +1,6 @@
 ---
 title: "About"
-description: "Learn about Hair At Home, your trusted mobile hair stylist in Winnipeg"
+description: "Learn about Hair@Home, your trusted mobile hair stylist in Winnipeg"
 date: 2025-01-01T00:00:00-06:00
 ---
 

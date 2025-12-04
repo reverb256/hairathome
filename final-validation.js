@@ -1,7 +1,7 @@
 const { chromium } = require('playwright');
 
 /**
- * Comprehensive validation test for Hair At Home visual enhancements
+ * Comprehensive validation test for Hair@Home visual enhancements
  * Validates that all beauty industry aligned visuals and missing elements are now implemented
  */
 (async () => {
@@ -191,7 +191,7 @@ const { chromium } = require('playwright');
 
     if (passedChecks >= totalChecks * 0.8) {
       console.log('🎉 SUCCESS: All visual enhancements properly implemented!');
-      console.log('✨ The Hair At Home website now features beauty industry aligned visuals');
+      console.log('✨ The Hair@Home website now features beauty industry aligned visuals');
       console.log('📸 Including proper scissors/hair images, beauty-themed styling, and professional design');
       console.log('📱 With full responsive support across all devices');
     } else {
