@@ -1,5 +1,6 @@
 publishDir = "docs"
-baseURL = 'https://reverb256.github.io/hairathome'
+baseURL = 'https://reverb256.github.io/hairathome/'
+canonifyURLs = true
 languageCode = 'en-ca'
 title = 'Hair@Home - Winnipeg Mobile Hair Stylist'
 theme = 'hairathome'

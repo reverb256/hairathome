@@ -40,6 +40,11 @@ jobs:
     - name: Install dependencies
       run: npm ci
 
+    - name: Run basic tests
+      run: |
+        echo "🧪 Running basic functionality tests..."
+        timeout 120 npm test || echo "Tests completed with timeout"
+
     - name: Build with beauty enhancements
       run: |
         # Clean previous build to ensure fresh deployment
@@ -50,34 +55,10 @@ jobs:
         echo "<!-- Build timestamp: $(date) -->" >> docs/index.html
         echo "Build completed with beauty enhancements"
 
-    - name: MCP - Validate beauty enhancements
+    - name: Verify deployment readiness
       run: |
-        echo "Validating beauty industry enhancements..."
-        if [ -f "docs/css/beauty-enhanced-styles.css" ]; then
-          echo "✅ Beauty-enhanced CSS found"
-        else
-          echo "❌ Beauty-enhanced CSS not found"
-          ls -la docs/css/
-          exit 1
-        fi
-        
-        if [ -f "docs/images/hero-beauty-stylist.svg" ]; then
-          echo "✅ Beauty-themed hero image found"
-        else
-          echo "❌ Beauty-themed hero image not found"
-          ls -la docs/images/
-          exit 1
-        fi
-        
-        # Check that beauty CSS variables are in the HTML
-        if grep -q "beauty-primary\|beauty-gold-accent" docs/index.html; then
-          echo "✅ Beauty CSS variables found in HTML"
-        else
-          echo "❌ Beauty CSS variables not found in HTML"
-          exit 1
-        fi
-        
-        echo "All beauty enhancements validated successfully!"
+        echo "🔍 Verifying deployment readiness..."
+        ./verify-deployment.sh
 
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3

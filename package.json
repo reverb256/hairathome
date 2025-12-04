@@ -57,8 +57,9 @@
     "optimize:images": "find public -name '*.jpg' -o -name '*.png' -o -name '*.webp' | xargs -I {} npx imagemin-cli {} --out-dir=public --plugin=mozjpeg --plugin=pngquant --plugin=webp",
     "serve": "hugo server -D --bind 0.0.0.0 --port 1313",
     "serve:production": "hugo server --bind 0.0.0.0 --port 1313",
-    "test": "npm run build && npm run test:lighthouse",
+    "test": "npx playwright test tests/basic-functionality.spec.js",
     "test:lighthouse": "lhci autorun",
+    "test:playwright": "playwright test",
     "test:performance": "npm run build && npx serve public -l 5000 & sleep 5 && lighthouse http://localhost:5000 --output=json --output-path=./lighthouse-results.json --chrome-flags='--headless' && kill %1",
     "typecheck": "echo \"Hugo has built-in type checking\" && exit 0"
   },

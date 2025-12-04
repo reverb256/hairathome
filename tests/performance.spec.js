@@ -8,7 +8,7 @@ test.describe('Hair@Home - Performance', () => {
   test('page loads within acceptable time', async ({ page }) => {
     const startTime = Date.now();
     
-    await page.goto('/');
+    await page.goto('http://localhost:1313/hairathome/');
     await page.waitForLoadState('networkidle');
     
     const loadTime = Date.now() - startTime;
@@ -31,7 +31,7 @@ test.describe('Hair@Home - Performance', () => {
       }
     });
 
-    await page.goto('/');
+    await page.goto('http://localhost:1313/hairathome/');
     await page.waitForLoadState('networkidle');
 
     // Check that images are not excessively large
@@ -56,7 +56,7 @@ test.describe('Hair@Home - Performance', () => {
       }
     });
 
-    await page.goto('/');
+    await page.goto('http://localhost:1313/hairathome/');
     await page.waitForLoadState('networkidle');
 
     // Check file sizes
@@ -76,7 +76,7 @@ test.describe('Hair@Home - Performance', () => {
       }
     });
 
-    await page.goto('/');
+    await page.goto('http://localhost:1313/hairathome/');
     await page.waitForLoadState('networkidle');
 
     expect(consoleMessages).toHaveLength(0);
@@ -87,7 +87,7 @@ test.describe('Hair@Home - Performance', () => {
   });
 
   test('Core Web Vitals metrics', async ({ page }) => {
-    await page.goto('/');
+    await page.goto('http://localhost:1313/hairathome/');
     await page.waitForLoadState('networkidle');
 
     // Get performance metrics
@@ -148,7 +148,7 @@ test.describe('Hair@Home - Performance', () => {
       }
     });
 
-    await page.goto('/');
+    await page.goto('http://localhost:1313/hairathome/');
     await page.waitForLoadState('networkidle');
 
     console.log(`Loaded ${fontLoadTimes.length} font resources`);
@@ -167,7 +167,7 @@ test.describe('Hair@Home - Performance', () => {
       }
     });
 
-    await page.goto('/');
+    await page.goto('http://localhost:1313/hairathome/');
     await page.waitForLoadState('networkidle');
 
     // CSS should load before images for better perceived performance
@@ -180,7 +180,7 @@ test.describe('Hair@Home - Performance', () => {
   });
 
   test('memory usage', async ({ page }) => {
-    await page.goto('/');
+    await page.goto('http://localhost:1313/hairathome/');
     await page.waitForLoadState('networkidle');
 
     // Get memory usage (Chrome-specific)
@@ -211,7 +211,7 @@ test.describe('Hair@Home - Performance', () => {
       requests.push(request.url());
     });
 
-    await page.goto('/');
+    await page.goto('http://localhost:1313/hairathome/');
     await page.waitForLoadState('networkidle');
 
     console.log(`Total requests: ${requests.length}`);

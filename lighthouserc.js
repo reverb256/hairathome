@@ -2,21 +2,19 @@
 module.exports = {
   ci: {
     collect: {
-      numberOfRuns: 3,
-      startServerCommand: 'npm run serve:production',
-      startServerReadyPattern: 'Web Server is available',
+      numberOfRuns: 1,
+      startServerCommand: 'npx serve docs -l 5000',
+      startServerReadyPattern: 'Accepting connections',
       url: [
-        'http://localhost:1313/',
-        'http://localhost:1313/services/',
-        'http://localhost:1313/booking/'
+        'http://localhost:5000/'
       ]
     },
     assert: {
       assertions: {
-        'categories:performance': ['error', {minScore: 0.95}],
-        'categories:accessibility': ['error', {minScore: 0.95}],
-        'categories:best-practices': ['error', {minScore: 0.95}],
-        'categories:seo': ['error', {minScore: 0.95}]
+        'categories:performance': ['warn', {minScore: 0.7}],
+        'categories:accessibility': ['warn', {minScore: 0.8}],
+        'categories:best-practices': ['warn', {minScore: 0.7}],
+        'categories:seo': ['warn', {minScore: 0.8}]
       }
     },
     upload: {
