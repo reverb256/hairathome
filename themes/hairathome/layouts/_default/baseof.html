@@ -14,8 +14,19 @@
      <meta name="HandheldFriendly" content="true">
      <meta name="MobileOptimized" content="width">
 
-    <title>{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
-    <meta name="description" content="{{ .Description | default .Site.Params.description }}">
+     <title>{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
+     <meta name="description" content="{{ .Description | default .Site.Params.description }}">
+     
+     <!-- Force dark mode as default before CSS loads -->
+     <script>
+         (function() {
+             const theme = localStorage.getItem('theme') || 'dark';
+             document.documentElement.setAttribute('data-theme', theme);
+             if (!localStorage.getItem('theme')) {
+                 localStorage.setItem('theme', 'dark');
+             }
+         })();
+     </script>
 
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
