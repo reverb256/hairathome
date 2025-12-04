@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="500" viewBox="0 0 400 500">
+  <rect width="400" height="500" fill="#0a0a0a"/>
+  <circle cx="200" cy="200" r="100" fill="#d4a998"/>
+  <ellipse cx="200" cy="350" rx="80" ry="120" fill="#e8c4a8"/>
+  <path d="M150 180 Q200 160, 250 180" stroke="#d4af37" stroke-width="4" fill="none"/>
+  <circle cx="170" cy="175" r="8" fill="#3d2e26"/>
+  <circle cx="230" cy="175" r="8" fill="#3d2e26"/>
+  <path d="M170 210 Q200 220, 230 210" stroke="#3d2e26" stroke-width="3" fill="none"/>
+  <text x="200" y="450" font-family="Arial" font-size="28" fill="#f3e6d0" text-anchor="middle">Professional</text>
+  <text x="200" y="480" font-family="Arial" font-size="28" fill="#e8c4a8" text-anchor="middle">Stylist</text>
+</svg>
