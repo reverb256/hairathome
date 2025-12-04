@@ -22,6 +22,41 @@
   --beauty-gradient-primary: linear-gradient(135deg, var(--beauty-gold-accent), var(--beauty-gold-light));
   --beauty-gradient-secondary: linear-gradient(135deg, var(--beauty-secondary), var(--beauty-accent));
   --beauty-gradient-luxury: linear-gradient(135deg, var(--beauty-rose-gold), var(--beauty-gold-accent));
+}
+
+/* Dark mode (default) */
+[data-theme="dark"] {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #1a1a1a;
+  --bg-tertiary: #2a2a2a;
+  --bg-card: rgba(30, 25, 22, 0.95);
+  --text-primary: var(--beauty-text-light);
+  --text-secondary: #b8b8b8;
+  --text-muted: #888;
+  --text-accent: var(--beauty-gold-accent);
+  --border-color: rgba(212, 175, 55, 0.2);
+  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --gradient-hero: radial-gradient(ellipse at top left, rgba(212,175,55,0.15) 0%, transparent 50%),
+                    radial-gradient(ellipse at bottom right, rgba(212,169,152,0.15) 0%, transparent 50%),
+                    linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+}
+
+/* Light mode */
+[data-theme="light"] {
+  --bg-primary: var(--beauty-neutral-light);
+  --bg-secondary: #f0e6d9;
+  --bg-tertiary: var(--beauty-neutral-medium);
+  --bg-card: rgba(255, 255, 255, 0.9);
+  --text-primary: var(--beauty-text-dark);
+  --text-secondary: var(--beauty-text-medium);
+  --text-muted: #666;
+  --text-accent: var(--beauty-gold-accent);
+  --border-color: rgba(212, 169, 152, 0.15);
+  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.08);
+  --gradient-hero: radial-gradient(ellipse at top left, rgba(212,175,55,0.1) 0%, transparent 50%),
+                    radial-gradient(ellipse at bottom right, rgba(212,169,152,0.1) 0%, transparent 50%),
+                    linear-gradient(135deg, var(--beauty-neutral-light) 0%, #f0e6d9 100%);
+}
   
   /* Typography enhancements */
   --beauty-heading-font: 'Playfair Display', serif;
@@ -54,9 +89,10 @@ html {
 body {
   font-family: var(--beauty-body-font);
   line-height: 1.6;
-  color: var(--beauty-text-dark);
-  background: linear-gradient(135deg, var(--beauty-neutral-light) 0%, #f0e6d9 100%);
+  color: var(--text-primary);
+  background: var(--gradient-hero);
   background-attachment: fixed;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
@@ -110,15 +146,9 @@ h2 {
 
 /* Enhanced header with beauty industry styling */
 header {
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--bg-card);
   backdrop-filter: blur(15px);
-  border-bottom: 1px solid rgba(212, 169, 152, 0.2);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .navbar {
@@ -196,10 +226,7 @@ header {
   align-items: center;
   padding: var(--beauty-space-9) var(--beauty-space-3);
   position: relative;
-  background: 
-    radial-gradient(ellipse at top left, rgba(212,175,55,0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at bottom right, rgba(212,169,152,0.15) 0%, transparent 50%),
-    linear-gradient(135deg, var(--beauty-neutral-light) 0%, var(--beauty-neutral-medium) 100%);
+  background: var(--gradient-hero);
   overflow: hidden;
 }
 
@@ -348,7 +375,7 @@ header {
 
 /* About Section */
 .about {
-  background: var(--beauty-neutral-light);
+  background: var(--bg-secondary);
 }
 
 .about-content {
@@ -378,7 +405,7 @@ header {
 
 /* Services Section */
 .services {
-  background: #f0e6d9;
+  background: var(--bg-tertiary);
 }
 
 .services-grid {
@@ -392,9 +419,9 @@ header {
   position: relative;
   overflow: hidden;
   border-radius: 20px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(243,230,208,0.9) 100%);
+  background: var(--bg-card);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(212,175,55,0.1);
+  border: 1px solid var(--border-color);
   padding: var(--beauty-space-6);
   text-align: center;
   transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
@@ -471,7 +498,7 @@ header {
 
 /* Gallery Section */
 .gallery {
-  background: var(--beauty-neutral-light);
+  background: var(--bg-secondary);
 }
 
 .gallery-grid {
@@ -526,7 +553,7 @@ header {
 
 /* Testimonials Section */
 .testimonials {
-  background: #f0e6d9;
+  background: var(--bg-tertiary);
 }
 
 .testimonials-grid {
@@ -537,11 +564,11 @@ header {
 }
 
 .testimonial-card {
-  background: rgba(255, 255, 255, 0.85);
+  background: var(--bg-card);
   padding: var(--beauty-space-6);
   border-radius: 15px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(212, 169, 152, 0.15);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
   backdrop-filter: blur(10px);
   position: relative;
   overflow: hidden;
@@ -603,7 +630,7 @@ header {
 
 /* Booking Section */
 .booking {
-  background: var(--beauty-neutral-light);
+  background: var(--bg-secondary);
 }
 
 .booking-container {
@@ -615,11 +642,11 @@ header {
 }
 
 .booking-form {
-  background: rgba(255, 255, 255, 0.85);
+  background: var(--bg-card);
   padding: var(--beauty-space-6);
   border-radius: 15px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(212, 169, 152, 0.15);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
   backdrop-filter: blur(10px);
 }
 
@@ -682,8 +709,8 @@ header {
 
 /* Footer */
 footer {
-  background: linear-gradient(135deg, #f0e6d9 0%, var(--beauty-neutral-light) 100%);
-  color: var(--beauty-text-dark);
+  background: var(--bg-primary);
+  color: var(--text-primary);
   padding: var(--beauty-space-8) 0 var(--beauty-space-4);
   position: relative;
   overflow: hidden;

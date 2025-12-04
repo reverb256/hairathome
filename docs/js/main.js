@@ -1,5 +1,39 @@
-// Mobile Navigation Toggle - ensure DOM is ready
+// Theme Toggle and Mobile Navigation - ensure DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
+    // Theme Toggle Functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+    
+    // Set default theme to dark
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    html.setAttribute('data-theme', currentTheme);
+    
+    if (themeToggle) {
+        // Update toggle button text and icon
+        updateThemeToggle(currentTheme);
+        
+        themeToggle.addEventListener('click', () => {
+            const newTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeToggle(newTheme);
+        });
+    }
+    
+    function updateThemeToggle(theme) {
+        const icon = themeToggle.querySelector('i');
+        const text = themeToggle.querySelector('span');
+        
+        if (theme === 'dark') {
+            icon.className = 'fas fa-moon';
+            text.textContent = 'Light';
+        } else {
+            icon.className = 'fas fa-sun';
+            text.textContent = 'Dark';
+        }
+    }
+
+    // Mobile Navigation Toggle
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
 
