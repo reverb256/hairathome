@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800">
+  <rect width="600" height="800" fill="#$(printf '%02x%02x%02x' $((100 + RANDOM % 100)) $((100 + RANDOM % 100)) $((100 + RANDOM % 100)))"/>
+  <circle cx="300" cy="300" r="150" fill="#$(printf '%02x%02x%02x' $((150 + RANDOM % 100)) $((150 + RANDOM % 100)) $((150 + RANDOM % 100)))"/>
+  <text x="300" y="500" font-family="Arial" font-size="32" fill="#f3e6d0" text-anchor="middle">Hair Style</text>
+  <text x="300" y="550" font-family="Arial" font-size="24" fill="#e8c4a8" text-anchor="middle">Portfolio Item 2</text>
+</svg>
