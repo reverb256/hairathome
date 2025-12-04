@@ -77,11 +77,10 @@ Yes! We offer gift certificates for any service or amount. These make great gift
 
 ## Safety & Quality
 
-**Are you licensed and insured?**
-Yes, I am a fully licensed and insured professional:
-- Red Seal Certified hairstylist (highest certification in Canada)
+**Are you insured?**
+Yes, I am a fully insured professional:
 - Full professional liability insurance
-- Manitoba Health and Safety certifications
+- Manitoba Health and Safety training
 - Regular continuing education and training
 - Member of professional beauty associations
 

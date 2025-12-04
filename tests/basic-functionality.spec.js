@@ -6,7 +6,7 @@ import { test, expect } from '@playwright/test';
  */
 test.describe('Hair@Home - Basic Functionality', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('http://localhost:1313/hairathome/');
+    await page.goto('/');
   });
 
    test('page loads correctly with proper title', async ({ page }) => {
@@ -78,16 +78,17 @@ test.describe('Hair@Home - Basic Functionality', () => {
 
    test('all sections are present on the page', async ({ page }) => {
      const sections = [
-       'hero',
-       'about',
-       'services-preview',
-       'testimonials',
-       'lead-capture',
-       'cta-section'
+       { id: 'home', class: 'hero' },
+       { id: 'about', class: 'about' },
+       { class: 'services-preview' },
+       { class: 'testimonials' },
+       { class: 'lead-capture' },
+       { class: 'cta-section' }
      ];
 
      for (const section of sections) {
-       const sectionElement = page.locator(`.${section}`);
+       const selector = section.id ? `#${section.id}` : `.${section.class}`;
+       const sectionElement = page.locator(selector);
        await expect(sectionElement).toBeVisible();
      }
    });

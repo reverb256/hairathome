@@ -6,7 +6,7 @@ date: 2025-01-01T00:00:00-06:00
 
 Your Trusted Mobile Hair Stylist in Winnipeg
 
-With over 8 years of professional experience, I bring salon-quality hair styling directly to your home, office, or any location within Winnipeg. As a Red Seal Certified hairstylist, I'm passionate about providing convenient and personalized hair care services for busy individuals and those who prefer the comfort of their own space.
+With over 8 years of professional experience, I bring salon-quality hair styling directly to your home, office, or any location within Winnipeg. As a professional hairstylist, I'm passionate about providing convenient and personalized hair care services for busy individuals and those who prefer the comfort of their own space.
 
 Whether you need a quick trim, a special occasion updo, or professional color services, I come equipped with all the tools and products needed to deliver exceptional results. My mobile setup ensures the same quality you'd expect from a traditional salon, with the added convenience of no travel time or waiting rooms.
 
@@ -22,7 +22,7 @@ I believe that great hair is about more than just the cut or color—it's about 
 
 ## Professional Background
 
-- **Red Seal Certified**: Completed rigorous training and certification through the Province of Manitoba
+- **Professional Training**: Completed comprehensive training through the Province of Manitoba
 - **Continuing Education**: Regular training in the latest techniques and trends
 - **Industry Experience**: 8+ years in professional salons and mobile services
 - **Specializations**: Color correction, bridal styling, men's grooming, and corrective work
@@ -30,7 +30,7 @@ I believe that great hair is about more than just the cut or color—it's about 
 ## Our Commitment to Quality
 
 - **Professional Experience**: 8+ years in the beauty industry
-- **Red Seal Certified**: Highest professional certification in Canada
+- **Professional Experience**: Extensive training and development in Canada
 - **Premium Products**: Professional-grade products for all hair types
 - **Sanitized Equipment**: Hospital-grade sanitation protocols
 - **Flexible Scheduling**: Including evenings and weekends
