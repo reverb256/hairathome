@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f9f5ee;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f0e6d9;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="spotlight" cx="60%" cy="40%" r="50%">
+      <stop offset="0%" style="stop-color:rgba(212, 175, 55, 0.15);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgba(243, 230, 208, 0);stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <rect width="1200" height="800" fill="url(#heroGradient)" />
+  <rect width="1200" height="800" fill="url(#spotlight)" />
+  
+  <!-- Professional stylist with mobile setup -->
+  <g transform="translate(750, 250)">
+    <!-- Stylist portrait -->
+    <circle cx="0" cy="-100" r="90" fill="#d4a998" />
+    <ellipse cx="0" cy="50" rx="70" ry="150" fill="#e8c4a8" />
+    
+    <!-- Hair styling -->
+    <path d="M-70 -80 Q0 -140, 70 -80" fill="#333" stroke="#222" stroke-width="2" />
+    <path d="M-60 -70 Q0 -130, 60 -70" fill="#444" stroke="#222" stroke-width="2" />
+    
+    <!-- Styling tools -->
+    <g transform="translate(100, -120) rotate(-30)">
+      <rect x="-5" y="-60" width="10" height="60" fill="#d4af37" rx="2" />
+      <circle cx="0" cy="-65" r="15" fill="#8e44ad" />
+      <text x="0" y="-90" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">Scissors</text>
+    </g>
+    
+    <!-- Mobile equipment case -->
+    <rect x="-180" y="180" width="360" height="200" rx="20" fill="#0a0a0a" stroke="#d4af37" stroke-width="2"/>
+    <rect x="-150" y="200" width="300" height="150" rx="10" fill="#1a1a1a"/>
+    <text x="0" y="330" text-anchor="middle" font-family="Arial" font-size="20" fill="#f3e6d0">Professional Mobile Kit</text>
+  </g>
+  
+  <!-- Decorative elements -->
+  <circle cx="100" cy="100" r="30" fill="#d4af37" opacity="0.2"/>
+  <circle cx="1000" cy="700" r="20" fill="#d4a998" opacity="0.2"/>
+  <circle cx="150" cy="600" r="15" fill="#e8c4a8" opacity="0.3"/>
+  
+  <!-- Brand elements -->
+  <text x="200" y="250" font-family="Playfair Display, serif" font-size="48" fill="#3d2e26" font-weight="bold">Hair At Home</text>
+  <text x="200" y="310" font-family="Poppins, sans-serif" font-size="24" fill="#d4af37">Professional Mobile Styling</text>
+  <text x="200" y="350" font-family="Poppins, sans-serif" font-size="20" fill="#3d2e26">Winnipeg's Premier Beauty Experience</text>
+  
+  <!-- Service indicators -->
+  <g transform="translate(200, 450)">
+    <rect x="0" y="0" width="250" height="60" rx="30" fill="#3d2e26" opacity="0.8"/>
+    <text x="125" y="40" text-anchor="middle" font-family="Poppins, sans-serif" font-size="22" fill="#f3e6d0">Premium Mobile Service</text>
+  </g>
+  
+  <g transform="translate(200, 530)">
+    <rect x="0" y="0" width="250" height="60" rx="30" fill="#3d2e26" opacity="0.8"/>
+    <text x="125" y="40" text-anchor="middle" font-family="Poppins, sans-serif" font-size="22" fill="#f3e6d0">Red Seal Certified</text>
+  </g>
+</svg>

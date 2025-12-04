@@ -1,7 +1,7 @@
 ---
 title: "Men's Executive Cut"
 description: "Professional men's haircut with precision styling and beard grooming"
-image: "/images/gallery/mens-executive.jpg"
+image: "/images/gallery/transformation-1.jpg"
 date: 2025-01-08T00:00:00-06:00
 ---
 
