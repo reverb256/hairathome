@@ -117,8 +117,8 @@
           top: 20px; 
           right: 20px; 
           z-index: 1001; 
-          background: rgba(255, 255, 255, 0.85);
-          border: 1px solid rgba(212, 169, 152, 0.2);
+          background: var(--bg-card);
+          border: 1px solid var(--border-color);
           border-radius: 50px; 
           padding: 8px 16px; 
           display: flex; 
@@ -126,13 +126,13 @@
           gap: 8px; 
           cursor: pointer; 
           transition: all .3s ease; 
-          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+          box-shadow: var(--shadow-md);
           backdrop-filter: blur(10px);
         }
         .theme-toggle:hover { 
           transform: translateY(-2px); 
           box-shadow: 0 8px 25px rgba(212, 175, 55, 0.2);
-          border: 1px solid rgba(212, 175, 55, 0.3);
+          border: 1px solid var(--beauty-gold-accent);
         }
         .theme-toggle i { font-size: 1.2rem; color: var(--beauty-gold-accent); }
 
@@ -562,9 +562,15 @@
     {{ end }}
 </head>
 <body>
-    {{ partial "header.html" . }}
+     {{ partial "header.html" . }}
 
-    <main>
+     <!-- Theme Toggle Button -->
+     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light theme">
+         <i class="fas fa-moon"></i>
+         <span>Light</span>
+     </button>
+
+     <main>
         {{ block "main" . }}{{ end }}
     </main>
 
