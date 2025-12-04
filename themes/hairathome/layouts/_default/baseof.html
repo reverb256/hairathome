@@ -281,13 +281,124 @@
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
+    <!-- Preloaded critical inline styles -->
+    <style>
+        /* Enhanced beauty industry aligned critical CSS */
+        :root {
+          --beauty-primary: #f3e6d0;        /* Soft champagne - elegance */
+          --beauty-primary-dark: #e6d4b6;   /* Richer champagne */
+          --beauty-secondary: #d4a998;      /* Warm rose tone */
+          --beauty-accent: #e8c4a8;         /* Soft coral accent */
+          --beauty-text-dark: #3d2e26;      /* Rich brown text */
+          --beauty-text-light: #f9f5ee;     /* Off-white text */
+          --beauty-neutral-light: #f9f5ee;  /* Light background */
+          --beauty-neutral-dark: #1e1916;   /* Dark background */
+          --beauty-gold-accent: #d4af37;     /* Gold accent for luxury */
+          --beauty-space-1: 8px;
+          --beauty-space-2: 16px;
+          --beauty-space-3: 24px;
+          --beauty-space-4: 32px;
+          --beauty-space-5: 40px;
+          --beauty-space-6: 48px;
+          --beauty-space-7: 64px;
+          --beauty-space-8: 80px;
+          --beauty-space-9: 96px;
+          --beauty-space-10: 120px;
+        }
+
+        /* Beauty-aligned critical styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+          font-family: 'Poppins', sans-serif;
+          line-height: 1.6;
+          color: var(--beauty-text-dark);
+          background: linear-gradient(135deg, var(--beauty-neutral-light) 0%, #f0e6d9 100%);
+          background-attachment: fixed;
+          transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; height: auto; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          background: rgba(255, 255, 255, 0.95);
+          backdrop-filter: blur(15px);
+          border-bottom: 1px solid rgba(212, 169, 152, 0.2);
+          z-index: 1000;
+        }
+        .logo h2 {
+          color: var(--beauty-gold-accent);
+          font-family: 'Playfair Display', serif;
+          font-size: 1.8rem;
+          text-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+        }
+        .nav-link {
+          position: relative;
+          font-weight: 500;
+          transition: color 0.3s ease;
+          color: var(--beauty-text-dark);
+        }
+        .nav-link:hover { color: var(--beauty-gold-accent); }
+        .nav-link::after {
+          content: '';
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background: var(--beauty-gold-accent);
+          transition: width 0.3s ease;
+        }
+        .nav-link:hover::after { width: 100%; }
+        .hero {
+          min-height: 100vh;
+          display: flex;
+          align-items: center;
+          padding: var(--beauty-space-9) var(--beauty-space-3);
+          position: relative;
+          background: radial-gradient(circle at top right, rgba(212, 169, 152, 0.1) 0%, transparent 40%),
+                      radial-gradient(circle at bottom left, rgba(232, 196, 168, 0.1) 0%, transparent 40%),
+                      linear-gradient(135deg, var(--beauty-neutral-light) 0%, #f0e6d9 100%);
+          overflow: hidden;
+        }
+        .btn {
+          display: inline-block;
+          padding: var(--beauty-space-3) var(--beauty-space-5);
+          border-radius: 30px;
+          font-weight: 600;
+          text-align: center;
+          cursor: pointer;
+          transition: all .3s ease;
+          border: none;
+          font-size: 1rem;
+          position: relative;
+          overflow: hidden;
+          z-index: 1;
+        }
+        .btn-primary {
+          background: linear-gradient(90deg, var(--beauty-gold-accent), #c59d35);
+          color: white;
+          box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+        .btn-secondary {
+          background: transparent;
+          color: var(--beauty-gold-accent);
+          border: 2px solid var(--beauty-gold-accent);
+          box-shadow: 0 4px 15px rgba(212, 175, 55, 0.1);
+        }
+    </style>
+
     <!-- Main stylesheet (non-critical) -->
     <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
 
-    <!-- Beauty-Enhanced Stylesheet with Higher Specificity -->
-    <link rel="stylesheet" href="/css/beauty-overrides.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="/css/beauty-overrides.css"></noscript>
+    <!-- Beauty-Enhanced Stylesheet with Critical Beauty Colors -->
+    <link rel="stylesheet" href="/css/beauty-enhanced-styles.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/css/beauty-enhanced-styles.css"></noscript>
 
     <!-- SEO Meta Tags -->
     {{ if .Site.Params.seo.enableOpenGraph }}
