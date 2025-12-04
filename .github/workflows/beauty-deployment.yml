@@ -43,8 +43,12 @@ jobs:
 
     - name: Build with beauty enhancements
       run: |
+        # Clean previous build to ensure fresh deployment
+        rm -rf docs/*
         hugo --minify --destination docs
         touch docs/.nojekyll
+        # Add cache busting timestamp
+        echo "<!-- Build timestamp: $(date) -->" >> docs/index.html
         echo "Build completed with beauty enhancements"
 
     - name: MCP - Validate beauty enhancements
@@ -96,7 +100,6 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./docs
-        publish_branch: gh-pages
         force_orphan: true
 
     - name: MCP - Post-deployment verification
