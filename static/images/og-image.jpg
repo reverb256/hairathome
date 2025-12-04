@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f9f5ee" />
+  
+  <!-- Background gradient -->
+  <rect width="1200" height="630" fill="url(#ogGradient)" />
+  
+  <defs>
+    <linearGradient id="ogGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f3e6d0;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#e6d4b6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d4a998;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Decorative elements -->
+  <circle cx="1000" cy="100" r="60" fill="#d4af37" opacity="0.1"/>
+  <circle cx="200" cy="530" r="40" fill="#e8c4a8" opacity="0.1"/>
+  
+  <!-- Logo representation -->
+  <text x="600" y="250" text-anchor="middle" font-family="Playfair Display, serif" font-size="64" fill="#3d2e26">Hair At Home</text>
+  <text x="600" y="320" text-anchor="middle" font-family="Poppins, sans-serif" font-size="32" fill="#d4af37">Winnipeg Mobile Hair Stylist</text>
+  
+  <!-- Service preview -->
+  <g transform="translate(600, 450)">
+    <circle cx="-200" cy="0" r="60" fill="#d4a998" />
+    <circle cx="0" cy="0" r="60" fill="#d4a998" />
+    <circle cx="200" cy="0" r="60" fill="#d4a998" />
+    
+    <!-- Service icons -->
+    <g transform="translate(-200, -10)">
+      <path d="M-10 -30 L10 -30 L10 30 L-10 30 Z" fill="#d4af37" opacity="0.8"/>
+      <path d="M-20 -10 L-25 -25 M-20 -10 L-25 5" stroke="#fff" stroke-width="3"/>
+    </g>
+    <text x="-200" y="90" text-anchor="middle" font-family="Poppins, sans-serif" font-size="18" fill="#3d2e26">Cut & Style</text>
+    
+    <g transform="translate(0, -10)">
+      <path d="M-10 -30 L10 -30 L10 30 L-10 30 Z" fill="#d4af37" opacity="0.8"/>
+      <circle cx="-5" cy="-20" r="5" fill="#e8c4a8"/>
+      <circle cx="5" cy="0" r="5" fill="#d4af37"/>
+      <circle cx="0" cy="20" r="5" fill="#d4a998"/>
+    </g>
+    <text x="0" y="90" text-anchor="middle" font-family="Poppins, sans-serif" font-size="18" fill="#3d2e26">Color</text>
+    
+    <g transform="translate(200, -10)">
+      <path d="M-10 -30 L10 -30 L10 30 L-10 30 Z" fill="#d4af37" opacity="0.8"/>
+      <path d="M-15 -20 Q0 -35, 15 -20" stroke="#fff" stroke-width="3" fill="none"/>
+      <path d="M-15 0 Q0 15, 15 0" stroke="#fff" stroke-width="3" fill="none"/>
+    </g>
+    <text x="200" y="90" text-anchor="middle" font-family="Poppins, sans-serif" font-size="18" fill="#3d2e26">Special</text>
+  </g>
+</svg>
