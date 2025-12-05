@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hair@Home - Intelligent Color System Demo</title>
+    <link rel="stylesheet" href="/css/intelligent-color-system.css">
+    <link rel="stylesheet" href="/css/beauty-enhanced-styles.css">
+    <style>
+        /* Demo-specific styles */
+        .demo-container {
+            min-height: 100vh;
+            background: var(--gradient-hero);
+            transition: all 0.5s var(--hair-ease-luxury);
+        }
+        
+        .demo-header {
+            background: var(--surface);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: var(--hair-space-6) 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: all 0.3s var(--hair-ease-out);
+        }
+        
+        .demo-controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--hair-space-6);
+            margin: var(--hair-space-8) 0;
+        }
+        
+        .control-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--hair-radius-2xl);
+            padding: var(--hair-space-6);
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s var(--hair-ease-out);
+        }
+        
+        .control-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--border-strong);
+        }
+        
+        .theme-switcher {
+            display: flex;
+            gap: var(--hair-space-3);
+            flex-wrap: wrap;
+        }
+        
+        .theme-btn {
+            padding: var(--hair-space-3) var(--hair-space-4);
+            border: 2px solid var(--border);
+            border-radius: var(--hair-radius-lg);
+            background: var(--surface);
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.3s var(--hair-ease-out);
+            font-weight: 500;
+        }
+        
+        .theme-btn:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        .theme-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: var(--hair-space-4);
+            margin: var(--hair-space-4) 0;
+        }
+        
+        .color-swatch {
+            height: 80px;
+            border-radius: var(--hair-radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: var(--hair-text-sm);
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: all 0.3s var(--hair-ease-out);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .color-swatch:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .color-swatch::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s var(--hair-ease-out);
+        }
+        
+        .color-swatch:hover::after {
+            opacity: 1;
+        }
+        
+        .context-display {
+            background: var(--surface-elevated);
+            border: 1px solid var(--border);
+            border-radius: var(--hair-radius-lg);
+            padding: var(--hair-space-4);
+            margin: var(--hair-space-4) 0;
+        }
+        
+        .context-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--hair-space-2) 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .context-item:last-child {
+            border-bottom: none;
+        }
+        
+        .context-label {
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+        
+        .context-value {
+            color: var(--primary);
+            font-weight: 500;
+        }
+        
+        .demo-section {
+            margin: var(--hair-space-12) 0;
+            padding: var(--hair-space-8);
+            background: var(--surface);
+            border-radius: var(--hair-radius-3xl);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--hair-space-6);
+            margin: var(--hair-space-6) 0;
+        }
+        
+        .demo-card {
+            background: var(--surface-elevated);
+            border: 1px solid var(--border);
+            border-radius: var(--hair-radius-xl);
+            padding: var(--hair-space-5);
+            text-align: center;
+            transition: all 0.3s var(--hair-ease-out);
+        }
+        
+        .demo-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .performance-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--hair-space-2);
+            padding: var(--hair-space-2) var(--hair-space-3);
+            border-radius: var(--hair-radius-full);
+            font-size: var(--hair-text-sm);
+            font-weight: 600;
+        }
+        
+        .performance-high {
+            background: var(--hair-success-50);
+            color: var(--hair-success-600);
+        }
+        
+        .performance-medium {
+            background: var(--hair-warning-50);
+            color: var(--hair-warning-600);
+        }
+        
+        .performance-low {
+            background: var(--hair-error-50);
+            color: var(--hair-error-600);
+        }
+        
+        .animation-demo {
+            display: flex;
+            gap: var(--hair-space-4);
+            justify-content: center;
+            margin: var(--hair-space-6) 0;
+        }
+        
+        .animation-box {
+            width: 60px;
+            height: 60px;
+            border-radius: var(--hair-radius-lg);
+            background: var(--primary);
+        }
+        
+        .pulse-animation {
+            animation: intelligentPulse 2s infinite;
+        }
+        
+        .shimmer-animation {
+            animation: intelligentShimmer 3s infinite;
+        }
+        
+        .glow-animation {
+            animation: intelligentGlow 2s ease-in-out infinite alternate;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--hair-space-4);
+            margin: var(--hair-space-6) 0;
+        }
+        
+        .stat-card {
+            background: var(--surface-elevated);
+            border: 1px solid var(--border);
+            border-radius: var(--hair-radius-lg);
+            padding: var(--hair-space-4);
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: var(--hair-text-2xl);
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: var(--hair-space-2);
+        }
+        
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: var(--hair-text-sm);
+        }
+        
+        /* Theme transition */
+        .theme-transitioning * {
+            transition: all 0.3s var(--hair-ease-luxury) !important;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .demo-controls {
+                grid-template-columns: 1fr;
+            }
+            
+            .color-palette {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            }
+            
+            .theme-switcher {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <!-- Demo Header -->
+        <header class="demo-header">
+            <div class="container">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--hair-space-4);">
+                    <div>
+                        <h1 style="color: var(--text-primary); margin: 0; font-size: var(--hair-text-3xl);">
+                            🎨 Intelligent Color System
+                        </h1>
+                        <p style="color: var(--text-secondary); margin: var(--hair-space-2) 0 0;">
+                            AI-Powered Dynamic Color Adaptation for Hair@Home
+                        </p>
+                    </div>
+                    <div class="performance-indicator" id="performanceIndicator">
+                        <span class="performance-medium">●</span>
+                        <span id="performanceText">Medium Performance</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="container" style="padding: var(--hair-space-8) 0;">
+            
+            <!-- Theme Controls -->
+            <section class="demo-section">
+                <h2 style="color: var(--text-primary); margin-bottom: var(--hair-space-6);">🎭 Theme Controls</h2>
+                
+                <div class="demo-controls">
+                    <!-- Manual Theme Switcher -->
+                    <div class="control-card">
+                        <h3 style="color: var(--text-primary); margin-bottom: var(--hair-space-4);">Manual Theme</h3>
+                        <div class="theme-switcher">
+                            <button class="theme-btn active" data-theme="light">☀️ Light</button>
+                            <button class="theme-btn" data-theme="dark">🌙 Dark</button>
+                            <button class="theme-btn" data-theme="oled">⚫ OLED</button>
+                            <button class="theme-btn" data-theme="auto">🔄 Auto</button>
+                        </div>
+                    </div>
+
+                    <!-- Context Display -->
+                    <div class="control-card">
+                        <h3 style="color: var(--text-primary); margin-bottom: var(--hair-space-4);">Current Context</h3>
+                        <div class="context-display">
+                            <div class="context-item">
+                                <span class="context-label">Time:</span>
+                                <span class="context-value" id="timeContext">Afternoon</span>
+                            </div>
+                            <div class="context-item">
+                                <span class="context-label">Season:</span>
+                                <span class="context-value" id="seasonContext">Summer</span>
+                            </div>
+                            <div class="context-item">
+                                <span class="context-label">User State:</span>
+                                <span class="context-value" id="userStateContext">Learning</span>
+                            </div>
+                            <div class="context-item">
+                                <span class="context-label">Device:</span>
+                                <span class="context-value" id="deviceContext">Desktop</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Performance Stats -->
+                    <div class="control-card">
+                        <h3 style="color: var(--text-primary); margin-bottom: var(--hair-space-4);">Performance Stats</h3>
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-value" id="fpsCounter">60</div>
+                                <div class="stat-label">FPS</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value" id="adaptationCount">0</div>
+                                <div class="stat-label">Adaptations</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value" id="colorCalculations">0</div>
+                                <div class="stat-label">Calculations</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Color Palette Display -->
+            <section class="demo-section">
+                <h2 style="color: var(--text-primary); margin-bottom: var(--hair-space-6);">🎨 Dynamic Color Palette</h2>
+                
+                <div class="demo-controls">
+                    <!-- Primary Colors -->
+                    <div class="control-card">
+                        <h3 style="color: var(--text-primary); margin-bottom: var(--hair-space-4);">Primary Colors</h3>
+                        <div class="color-palette" id="primaryPalette">
+                            <!-- Dynamically populated -->
+                        </div>
+                    </div>
+
+                    <!-- Secondary Colors -->
+                    <div class="control-card">
+                        <h3 style="color: var(--text-primary); margin-bottom: var(--hair-space-4);">Secondary Colors</h3>
+                        <div class="color-palette" id="secondaryPalette">
+                            <!-- Dynamically populated -->
+                        </div>
+                    </div>
+
+                    <!-- Accent Colors -->
+                    <div class="control-card">
+                        <h3 style="color: var(--text-primary); margin-bottom: var(--hair-space-4);">Accent Colors</h3>
+                        <div class="color-palette" id="accentPalette">
+                            <!-- Dynamically populated -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Animation Demo -->
+            <section class="demo-section">
+                <h2 style="color: var(--text-primary); margin-bottom: var(--hair-space-6);">✨ Intelligent Animations</h2>
+                
+                <div class="animation-demo">
+                    <div class="animation-box pulse-animation"></div>
+                    <div class="animation-box shimmer-animation"></div>
+                    <div class="animation-box glow-animation"></div>
+                </div>
+                
+                <div style="text-align: center; color: var(--text-secondary);">
+                    <p>Animations adapt to performance mode and user preferences</p>
+                </div>
+            </section>
+
+            <!-- Component Demo -->
+            <section class="demo-section">
+                <h2 style="color: var(--text-primary); margin-bottom: var(--hair-space-6);">🧩 Component Examples</h2>
+                
+                <div class="demo-grid">
+                    <div class="demo-card">
+                        <div class="hair-btn hair-btn-primary" style="margin-bottom: var(--hair-space-4);">
+                            Primary Button
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: var(--hair-text-sm);">
+                            Luxury gradient with hover effects
+                        </p>
+                    </div>
+
+                    <div class="demo-card">
+                        <div class="hair-btn hair-btn-secondary" style="margin-bottom: var(--hair-space-4);">
+                            Secondary Button
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: var(--hair-text-sm);">
+                            Elegant border with fill animation
+                        </p>
+                    </div>
+
+                    <div class="demo-card">
+                        <div class="hair-btn hair-btn-accent" style="margin-bottom: var(--hair-space-4);">
+                            Accent Button
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: var(--hair-text-sm);">
+                            Vibrant coral with energy
+                        </p>
+                    </div>
+
+                    <div class="demo-card">
+                        <div class="hair-card" style="margin-bottom: var(--hair-space-4);">
+                            <h4 style="color: var(--text-primary); margin-bottom: var(--hair-space-2);">Service Card</h4>
+                            <p style="color: var(--text-secondary); font-size: var(--hair-text-sm);">
+                                Hover for luxury transformation
+                            </p>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: var(--hair-text-sm);">
+                            Card with gradient border animation
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Psychology Demo -->
+            <section class="demo-section">
+                <h2 style="color: var(--text-primary); margin-bottom: var(--hair-space-6);">🧠 Color Psychology</h2>
+                
+                <div class="demo-grid">
+                    <div class="demo-card hair-psychology-trust" style="background: var(--hair-psychology-trust); color: white;">
+                        <h4>Trust & Reliability</h4>
+                        <p>Professional gold tones build confidence</p>
+                    </div>
+
+                    <div class="demo-card hair-psychology-care" style="background: var(--hair-psychology-care); color: white;">
+                        <h4>Care & Wellness</h4>
+                        <p>Soft rose tones convey gentleness</p>
+                    </div>
+
+                    <div class="demo-card hair-psychology-creativity" style="background: var(--hair-psychology-creativity); color: white;">
+                        <h4>Creativity & Innovation</h4>
+                        <p>Vibrant coral inspires confidence</p>
+                    </div>
+
+                    <div class="demo-card hair-psychology-luxury" style="background: var(--hair-psychology-luxury); color: white;">
+                        <h4>Luxury & Exclusivity</h4>
+                        <p>Deep gold signals premium quality</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="/js/intelligent-color-engine.js"></script>
+    <script>
+        // Demo controller
+        class ColorSystemDemo {
+            constructor() {
+                this.adaptationCount = 0;
+                this.colorCalculations = 0;
+                this.init();
+            }
+
+            init() {
+                this.setupThemeSwitchers();
+                this.setupColorPalettes();
+                this.setupPerformanceMonitoring();
+                this.setupEventListeners();
+                this.updateContextDisplay();
+                this.startLiveUpdates();
+            }
+
+            setupThemeSwitchers() {
+                const themeButtons = document.querySelectorAll('.theme-btn');
+                themeButtons.forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const theme = e.target.getAttribute('data-theme');
+                        
+                        // Update active state
+                        themeButtons.forEach(b => b.classList.remove('active'));
+                        e.target.classList.add('active');
+                        
+                        // Switch theme
+                        if (window.HairAtHomeColorEngine) {
+                            if (theme === 'auto') {
+                                window.HairAtHomeColorEngine.setUserPreference('preferredTheme', 'auto');
+                                window.HairAtHomeColorEngine.updateContext();
+                            } else {
+                                window.HairAtHomeColorEngine.switchTheme(theme);
+                            }
+                        } else {
+                            document.documentElement.setAttribute('data-theme', theme);
+                        }
+                        
+                        this.updateColorPalettes();
+                        this.incrementAdaptations();
+                    });
+                });
+            }
+
+            setupColorPalettes() {
+                this.updateColorPalettes();
+            }
+
+            updateColorPalettes() {
+                const root = document.documentElement;
+                const computedStyle = getComputedStyle(root);
+
+                // Primary colors
+                const primaryColors = [
+                    { name: 'Primary', value: computedStyle.getPropertyValue('--primary').trim() },
+                    { name: 'Trust', value: computedStyle.getPropertyValue('--hair-psychology-trust').trim() },
+                    { name: 'Luxury', value: computedStyle.getPropertyValue('--hair-psychology-luxury').trim() },
+                    { name: 'Winnipeg Gold', value: computedStyle.getPropertyValue('--hair-winnipeg-prairie-gold').trim() }
+                ];
+
+                // Secondary colors
+                const secondaryColors = [
+                    { name: 'Secondary', value: computedStyle.getPropertyValue('--secondary').trim() },
+                    { name: 'Care', value: computedStyle.getPropertyValue('--hair-psychology-care').trim() },
+                    { name: 'Wellness', value: computedStyle.getPropertyValue('--hair-psychology-wellness').trim() },
+                    { name: 'Elegance', value: computedStyle.getPropertyValue('--hair-psychology-elegance').trim() }
+                ];
+
+                // Accent colors
+                const accentColors = [
+                    { name: 'Accent', value: computedStyle.getPropertyValue('--accent').trim() },
+                    { name: 'Creativity', value: computedStyle.getPropertyValue('--hair-psychology-creativity').trim() },
+                    { name: 'Energy', value: computedStyle.getPropertyValue('--hair-psychology-energy').trim() },
+                    { name: 'Confidence', value: computedStyle.getPropertyValue('--hair-psychology-confidence').trim() }
+                ];
+
+                this.renderPalette('primaryPalette', primaryColors);
+                this.renderPalette('secondaryPalette', secondaryColors);
+                this.renderPalette('accentPalette', accentColors);
+                
+                this.incrementCalculations();
+            }
+
+            renderPalette(containerId, colors) {
+                const container = document.getElementById(containerId);
+                container.innerHTML = '';
+                
+                colors.forEach(color => {
+                    const swatch = document.createElement('div');
+                    swatch.className = 'color-swatch';
+                    swatch.style.background = color.value;
+                    swatch.textContent = color.name;
+                    swatch.title = `${color.name}: ${color.value}`;
+                    
+                    swatch.addEventListener('click', () => {
+                        this.copyToClipboard(color.value);
+                        this.showNotification(`Copied ${color.name}: ${color.value}`);
+                    });
+                    
+                    container.appendChild(swatch);
+                });
+            }
+
+            setupPerformanceMonitoring() {
+                // FPS counter
+                let lastTime = performance.now();
+                let frames = 0;
+                
+                const measureFPS = () => {
+                    frames++;
+                    const currentTime = performance.now();
+                    
+                    if (currentTime >= lastTime + 1000) {
+                        const fps = Math.round((frames * 1000) / (currentTime - lastTime));
+                        document.getElementById('fpsCounter').textContent = fps;
+                        
+                        // Update performance indicator
+                        const indicator = document.getElementById('performanceIndicator');
+                        const text = document.getElementById('performanceText');
+                        
+                        if (fps >= 55) {
+                            indicator.className = 'performance-indicator performance-high';
+                            text.textContent = 'High Performance';
+                        } else if (fps >= 30) {
+                            indicator.className = 'performance-indicator performance-medium';
+                            text.textContent = 'Medium Performance';
+                        } else {
+                            indicator.className = 'performance-indicator performance-low';
+                            text.textContent = 'Low Performance';
+                        }
+                        
+                        frames = 0;
+                        lastTime = currentTime;
+                    }
+                    
+                    requestAnimationFrame(measureFPS);
+                };
+                
+                requestAnimationFrame(measureFPS);
+            }
+
+            setupEventListeners() {
+                // Listen to color engine events
+                if (window.HairAtHomeColorEngine) {
+                    document.addEventListener('colorEngine:context:updated', () => {
+                        this.updateContextDisplay();
+                        this.updateColorPalettes();
+                        this.incrementAdaptations();
+                    });
+                    
+                    document.addEventListener('colorEngine:theme:changed', () => {
+                        this.updateColorPalettes();
+                        this.incrementAdaptations();
+                    });
+                }
+            }
+
+            updateContextDisplay() {
+                if (window.HairAtHomeColorEngine) {
+                    const context = window.HairAtHomeColorEngine.getContext();
+                    
+                    document.getElementById('timeContext').textContent = 
+                        context.time.charAt(0).toUpperCase() + context.time.slice(1);
+                    document.getElementById('seasonContext').textContent = 
+                        context.season.charAt(0).toUpperCase() + context.season.slice(1);
+                    document.getElementById('userStateContext').textContent = 
+                        context.userState.charAt(0).toUpperCase() + context.userState.slice(1);
+                    document.getElementById('deviceContext').textContent = 
+                        context.device.type.charAt(0).toUpperCase() + context.device.type.slice(1);
+                }
+            }
+
+            startLiveUpdates() {
+                // Update context every 30 seconds
+                setInterval(() => {
+                    this.updateContextDisplay();
+                }, 30000);
+            }
+
+            incrementAdaptations() {
+                this.adaptationCount++;
+                document.getElementById('adaptationCount').textContent = this.adaptationCount;
+            }
+
+            incrementCalculations() {
+                this.colorCalculations++;
+                document.getElementById('colorCalculations').textContent = this.colorCalculations;
+            }
+
+            copyToClipboard(text) {
+                navigator.clipboard.writeText(text).catch(() => {
+                    // Fallback for older browsers
+                    const textarea = document.createElement('textarea');
+                    textarea.value = text;
+                    document.body.appendChild(textarea);
+                    textarea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textarea);
+                });
+            }
+
+            showNotification(message) {
+                // Create notification element
+                const notification = document.createElement('div');
+                notification.style.cssText = `
+                    position: fixed;
+                    bottom: 20px;
+                    right: 20px;
+                    background: var(--primary);
+                    color: white;
+                    padding: 12px 20px;
+                    border-radius: 8px;
+                    box-shadow: var(--shadow-lg);
+                    z-index: 1000;
+                    animation: slideIn 0.3s ease-out;
+                `;
+                notification.textContent = message;
+                
+                document.body.appendChild(notification);
+                
+                // Remove after 3 seconds
+                setTimeout(() => {
+                    notification.style.animation = 'slideOut 0.3s ease-out';
+                    setTimeout(() => {
+                        document.body.removeChild(notification);
+                    }, 300);
+                }, 3000);
+            }
+        }
+
+        // Initialize demo when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            new ColorSystemDemo();
+        });
+
+        // Add slide animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
