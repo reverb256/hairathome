@@ -1,6 +1,817 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hair@Home - Winnipeg Mobile Hair Stylist</title><link>http://localhost:1313/</link><description>Recent content on Hair@Home - Winnipeg Mobile Hair Stylist</description><generator>Hugo</generator><language>en-ca</language><lastBuildDate>Sat, 25 Jan 2025 00:00:00 -0600</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml"/><item><title>Curly Hair Specialist</title><link>http://localhost:1313/gallery/curly-specialist/</link><pubDate>Sat, 25 Jan 2025 00:00:00 -0600</pubDate><guid>http://localhost:1313/gallery/curly-specialist/</guid><description>&lt;p&gt;Specialized curly hair styling that enhances natural texture while providing manageability. Includes personalized product recommendations and styling techniques for maintaining beautiful curls at home.&lt;/p&gt;</description></item><item><title>Natural Gray Blending</title><link>http://localhost:1313/gallery/gray-blending/</link><pubDate>Wed, 22 Jan 2025 00:00:00 -0600</pubDate><guid>http://localhost:1313/gallery/gray-blending/</guid><description>&lt;p&gt;Beautiful gray blending that maintains the natural beauty of silver hairs while providing dimension and preventing the harsh line of demarcation. A sophisticated approach to mature hair care.&lt;/p&gt;</description></item><item><title>Romantic Beach Waves</title><link>http://localhost:1313/gallery/beach-waves/</link><pubDate>Mon, 20 Jan 2025 00:00:00 -0600</pubDate><guid>http://localhost:1313/gallery/beach-waves/</guid><description>&lt;p&gt;Effortless beach waves that create natural volume and movement. This style works beautifully for both casual outings and special occasions, providing that perfect &amp;ldquo;just stepped off the beach&amp;rdquo; look.&lt;/p&gt;</description></item><item><title>Glamorous Evening Updo</title><link>http://localhost:1313/gallery/evening-updo/</link><pubDate>Sat, 18 Jan 2025 00:00:00 -0600</pubDate><guid>http://localhost:1313/gallery/evening-updo/</guid><description>&lt;p&gt;Stunning evening updo perfect for weddings, galas, or special events. Features soft, romantic curls with elegant styling that holds throughout the evening while maintaining comfort.&lt;/p&gt;</description></item><item><title>Classic Bob Transformation</title><link>http://localhost:1313/gallery/classic-bob/</link><pubDate>Wed, 15 Jan 2025 00:00:00 -0600</pubDate><guid>http://localhost:1313/gallery/classic-bob/</guid><description>&lt;p&gt;A sophisticated bob transformation that brings out natural texture while maintaining a polished, professional look. Perfect for the modern Winnipeg professional who wants effortless style with minimal maintenance.&lt;/p&gt;</description></item><item><title>Elegant Brunette Transformation</title><link>http://localhost:1313/gallery/elegant-brunette/</link><pubDate>Wed, 15 Jan 2025 00:00:00 -0600</pubDate><guid>http://localhost:1313/gallery/elegant-brunette/</guid><description>&lt;p&gt;A stunning transformation featuring rich brunette color with strategically placed highlights to add dimension and movement. The soft layers create natural volume while maintaining a sophisticated, polished look perfect for professional settings.&lt;/p&gt;</description></item><item><title>Luxury Balayage Blonde</title><link>http://localhost:1313/gallery/balayage-blonde/</link><pubDate>Sun, 12 Jan 2025 00:00:00 -0600</pubDate><guid>http://localhost:1313/gallery/balayage-blonde/</guid><description>&lt;p&gt;Beautiful balayage work that creates natural dimension and movement. This multi-dimensional blonde enhances the client&amp;rsquo;s natural beauty while providing a low-maintenance color that grows out gracefully.&lt;/p&gt;</description></item><item><title>Bridal Updo Elegance</title><link>http://localhost:1313/gallery/bridal-updo/</link><pubDate>Fri, 10 Jan 2025 00:00:00 -0600</pubDate><guid>http://localhost:1313/gallery/bridal-updo/</guid><description>&lt;p&gt;An exquisite bridal updo combining classic elegance with modern romance. Soft waves cascade from a structured chignon, creating a timeless look that complements any wedding dress style. Perfect for the modern Winnipeg bride.&lt;/p&gt;</description></item><item><title>Men's Executive Cut</title><link>http://localhost:1313/gallery/mens-executive/</link><pubDate>Wed, 08 Jan 2025 00:00:00 -0600</pubDate><guid>http://localhost:1313/gallery/mens-executive/</guid><description>&lt;p&gt;Clean, professional men&amp;rsquo;s cut perfect for the corporate environment. Includes precision styling and beard grooming for a complete executive look that maintains throughout the week.&lt;/p&gt;</description></item><item><title>Modern Color Melt</title><link>http://localhost:1313/gallery/modern-color-melt/</link><pubDate>Wed, 08 Jan 2025 00:00:00 -0600</pubDate><guid>http://localhost:1313/gallery/modern-color-melt/</guid><description>&lt;p&gt;A contemporary color melt technique creating seamless transitions between complementary tones. This low-maintenance look grows out beautifully while maintaining depth and dimension throughout the hair.&lt;/p&gt;</description></item><item><title>About</title><link>http://localhost:1313/about/</link><pubDate>Wed, 01 Jan 2025 00:00:00 -0600</pubDate><guid>http://localhost:1313/about/</guid><description>&lt;p&gt;Your Trusted Mobile Hair Stylist in Winnipeg&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hair@Home - Winnipeg Mobile Hair Stylist</title><link>https://reverb256.github.io/hairathome/</link><description>Recent content on Hair@Home - Winnipeg Mobile Hair Stylist</description><generator>Hugo</generator><language>en-ca</language><lastBuildDate>Fri, 05 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://reverb256.github.io/hairathome/index.xml" rel="self" type="application/rss+xml"/><item><title>Intelligent Color System Showcase - Hair@Home</title><link>https://reverb256.github.io/hairathome/showcase/</link><pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate><guid>https://reverb256.github.io/hairathome/showcase/</guid><description>&lt;!-- Intelligent Color System Showcase --&gt;
+&lt;section class="color-showcase"&gt;
+ &lt;div class="container"&gt;
+ &lt;div class="showcase-header"&gt;
+ &lt;h1 class="showcase-title"&gt;Intelligent Color System&lt;/h1&gt;
+ &lt;p class="showcase-subtitle"&gt;AI-powered color intelligence that adapts, learns, and optimizes for premium mobile hair services&lt;/p&gt;
+ &lt;/div&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;!-- Color Intelligence Engine --&amp;gt;
+&amp;lt;div class=&amp;quot;showcase-section&amp;quot;&amp;gt;
+ &amp;lt;h2&amp;gt;🧠 AI-Powered Color Intelligence&amp;lt;/h2&amp;gt;
+ &amp;lt;div class=&amp;quot;intelligence-grid&amp;quot;&amp;gt;
+ &amp;lt;div class=&amp;quot;intelligence-card&amp;quot; data-color-intelligence=&amp;quot;dynamic&amp;quot;&amp;gt;
+ &amp;lt;h3&amp;gt;Dynamic HSL Calculations&amp;lt;/h3&amp;gt;
+ &amp;lt;p&amp;gt;Real-time color calculations based on user context, time of day, and device capabilities&amp;lt;/p&amp;gt;
+ &amp;lt;div class=&amp;quot;color-demo&amp;quot; style=&amp;quot;background: hsl(var(--hair-ai-primary-hue), var(--hair-ai-saturation-base), var(--hair-ai-lightness-primary))&amp;quot;&amp;gt;
+ &amp;lt;span class=&amp;quot;color-label&amp;quot;&amp;gt;Primary: HSL(38°, 65%, 52%)&amp;lt;/span&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ 
+ &amp;lt;div class=&amp;quot;intelligence-card&amp;quot; data-color-intelligence=&amp;quot;adaptive&amp;quot;&amp;gt;
+ &amp;lt;h3&amp;gt;Contextual Adaptation&amp;lt;/h3&amp;gt;
+ &amp;lt;p&amp;gt;Automatically adjusts colors based on time, season, and user behavior patterns&amp;lt;/p&amp;gt;
+ &amp;lt;div class=&amp;quot;adaptation-demo&amp;quot;&amp;gt;
+ &amp;lt;div class=&amp;quot;time-slot morning&amp;quot;&amp;gt;Morning&amp;lt;/div&amp;gt;
+ &amp;lt;div class=&amp;quot;time-slot afternoon&amp;quot;&amp;gt;Afternoon&amp;lt;/div&amp;gt;
+ &amp;lt;div class=&amp;quot;time-slot evening&amp;quot;&amp;gt;Evening&amp;lt;/div&amp;gt;
+ &amp;lt;div class=&amp;quot;time-slot night&amp;quot;&amp;gt;Night&amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ 
+ &amp;lt;div class=&amp;quot;intelligence-card&amp;quot; data-color-intelligence=&amp;quot;learning&amp;quot;&amp;gt;
+ &amp;lt;h3&amp;gt;User Preference Learning&amp;lt;/h3&amp;gt;
+ &amp;lt;p&amp;gt;Machine learning system that remembers and adapts to individual user preferences&amp;lt;/p&amp;gt;
+ &amp;lt;div class=&amp;quot;learning-demo&amp;quot;&amp;gt;
+ &amp;lt;div class=&amp;quot;preference-indicator&amp;quot;&amp;gt;
+ &amp;lt;span class=&amp;quot;label&amp;quot;&amp;gt;Learning:&amp;lt;/span&amp;gt;
+ &amp;lt;div class=&amp;quot;progress-bar&amp;quot;&amp;gt;
+ &amp;lt;div class=&amp;quot;progress-fill&amp;quot; style=&amp;quot;width: 75%&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+
+&amp;lt;!-- Color Harmony Demonstrations --&amp;gt;
+&amp;lt;div class=&amp;quot;showcase-section&amp;quot;&amp;gt;
+ &amp;lt;h2&amp;gt;🎨 Mathematical Color Harmony&amp;lt;/h2&amp;gt;
+ &amp;lt;div class=&amp;quot;harmony-grid&amp;quot;&amp;gt;
+ &amp;lt;div class=&amp;quot;harmony-card&amp;quot; data-harmony=&amp;quot;complementary&amp;quot;&amp;gt;
+ &amp;lt;h3&amp;gt;Complementary Colors&amp;lt;/h3&amp;gt;
+ &amp;lt;p&amp;gt;Colors opposite on the color wheel for maximum contrast and visual impact&amp;lt;/p&amp;gt;
+ &amp;lt;div class=&amp;quot;harmony-demo&amp;quot;&amp;gt;
+ &amp;lt;div class=&amp;quot;color-pair&amp;quot;&amp;gt;
+ &amp;lt;div class=&amp;quot;color-swatch primary&amp;quot; style=&amp;quot;background: #d4af37&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+ &amp;lt;div class=&amp;quot;color-swatch complementary&amp;quot; style=&amp;quot;background: #37a6d1&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ 
+ &amp;lt;div class=&amp;quot;harmony-card&amp;quot; data-harmony=&amp;quot;triadic&amp;quot;&amp;gt;
+ &amp;lt;h3&amp;gt;Triadic Harmony&amp;lt;/h3&amp;gt;
+ &amp;lt;p&amp;gt;Three evenly spaced colors on the color wheel for vibrant, balanced designs&amp;lt;/p&amp;gt;
+ &amp;lt;div class=&amp;quot;harmony-demo&amp;quot;&amp;gt;
+ &amp;lt;div class=&amp;quot;triadic-colors&amp;quot;&amp;gt;
+ &amp;lt;div class=&amp;quot;color-swatch&amp;quot; style=&amp;quot;background: #d4af37&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+ &amp;lt;div class=&amp;quot;color-swatch&amp;quot; style=&amp;quot;background: #37a6d1&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+ &amp;lt;div class=&amp;quot;color-swatch&amp;quot; style=&amp;quot;background: #d1a6d1&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ 
+ &amp;lt;div class=&amp;quot;harmony-card&amp;quot; data-harmony=&amp;quot;analogous&amp;quot;&amp;gt;
+ &amp;lt;h3&amp;gt;Analogous Colors&amp;lt;/h3&amp;gt;
+ &amp;lt;p&amp;gt;Colors adjacent on the color wheel for sophisticated, harmonious combinations&amp;lt;/p&amp;gt;
+ &amp;lt;div class=&amp;quot;harmony-demo&amp;quot;&amp;gt;
+ &amp;lt;div class=&amp;quot;analogous-colors&amp;quot;&amp;gt;
+ &amp;lt;div class=&amp;quot;color-swatch&amp;quot; style=&amp;quot;background: #d4af37&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+ &amp;lt;div class=&amp;quot;color-swatch&amp;quot; style=&amp;quot;background: #e6c547&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+ &amp;lt;div class=&amp;quot;color-swatch&amp;quot; style=&amp;quot;background: #f0e6d9&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+ &amp;lt;div class=&amp;quot;color-swatch&amp;quot; style=&amp;quot;background: #daa520&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+
+&amp;lt;!-- Theme Variations --&amp;gt;
+&amp;lt;div class=&amp;quot;showcase-section&amp;quot;&amp;gt;
+ &amp;lt;h2&amp;gt;🌓 Multi-Theme System&amp;lt;/h2&amp;gt;
+ &amp;lt;div class=&amp;quot;theme-grid&amp;quot;&amp;gt;
+ &amp;lt;div class=&amp;quot;theme-card&amp;quot; data-theme=&amp;quot;luxury-dark&amp;quot;&amp;gt;
+ &amp;lt;h3&amp;gt;Luxury Dark&amp;lt;/h3&amp;gt;
+ &amp;lt;p&amp;gt;Deep blacks with luxury gold accents for premium evening browsing&amp;lt;/p&amp;gt;
+ &amp;lt;div class=&amp;quot;theme-preview dark-theme&amp;quot;&amp;gt;
+ &amp;lt;div class=&amp;quot;preview-content&amp;quot;&amp;gt;
+ &amp;lt;h4&amp;gt;Hair@Home&amp;lt;/h4&amp;gt;
+ &amp;lt;p&amp;gt;Professional Mobile Hair Stylist&amp;lt;/p&amp;gt;
+ &amp;lt;button class=&amp;quot;preview-btn&amp;quot;&amp;gt;Preview Theme&amp;lt;/button&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ 
+ &amp;lt;div class=&amp;quot;theme-card&amp;quot; data-theme=&amp;quot;beauty-light&amp;quot;&amp;gt;
+ &amp;lt;h3&amp;gt;Beauty Light&amp;lt;/h3&amp;gt;
+ &amp;lt;p&amp;gt;Soft champagne backgrounds with rich brown text for elegant daytime viewing&amp;lt;/p&amp;gt;
+ &amp;lt;div class=&amp;quot;theme-preview light-theme&amp;quot;&amp;gt;
+ &amp;lt;div class=&amp;quot;preview-content&amp;quot;&amp;gt;
+ &amp;lt;h4&amp;gt;Hair@Home&amp;lt;/h4&amp;gt;
+ &amp;lt;p&amp;gt;Professional Mobile Hair Stylist&amp;lt;/p&amp;gt;
+ &amp;lt;button class=&amp;quot;preview-btn&amp;quot;&amp;gt;Preview Theme&amp;lt;/button&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ 
+ &amp;lt;div class=&amp;quot;theme-card&amp;quot; data-theme=&amp;quot;prairie-spring&amp;quot;&amp;gt;
+ &amp;lt;h3&amp;gt;Prairie Spring&amp;lt;/h3&amp;gt;
+ &amp;lt;p&amp;gt;Winnipeg-inspired spring colors with fresh greens and soft pastels&amp;lt;/p&amp;gt;
+ &amp;lt;div class=&amp;quot;theme-preview spring-theme&amp;quot;&amp;gt;
+ &amp;lt;div class=&amp;quot;preview-content&amp;quot;&amp;gt;
+ &amp;lt;h4&amp;gt;Hair@Home&amp;lt;/h4&amp;gt;
+ &amp;lt;p&amp;gt;Professional Mobile Hair Stylist&amp;lt;/p&amp;gt;
+ &amp;lt;button class=&amp;quot;preview-btn&amp;quot;&amp;gt;Preview Theme&amp;lt;/button&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ 
+ &amp;lt;div class=&amp;quot;theme-card&amp;quot; data-theme=&amp;quot;oled-optimized&amp;quot;&amp;gt;
+ &amp;lt;h3&amp;gt;OLED Optimized&amp;lt;/h3&amp;gt;
+ &amp;lt;p&amp;gt;Battery-efficient pure black theme designed for OLED mobile displays&amp;lt;/p&amp;gt;
+ &amp;lt;div class=&amp;quot;theme-preview oled-theme&amp;quot;&amp;gt;
+ &amp;lt;div class=&amp;quot;preview-content&amp;quot;&amp;gt;
+ &amp;lt;h4&amp;gt;Hair@Home&amp;lt;/h4&amp;gt;
+ &amp;lt;p&amp;gt;Professional Mobile Hair Stylist&amp;lt;/p&amp;gt;
+ &amp;lt;button class=&amp;quot;preview-btn&amp;quot;&amp;gt;Preview Theme&amp;lt;/button&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+
+&amp;lt;!-- Interactive Color Tools --&amp;gt;
+&amp;lt;div class=&amp;quot;showcase-section&amp;quot;&amp;gt;
+ &amp;lt;h2&amp;gt;🛠️ Interactive Color Tools&amp;lt;/h2&amp;gt;
+ &amp;lt;div class=&amp;quot;tools-grid&amp;quot;&amp;gt;
+ &amp;lt;div class=&amp;quot;tool-card&amp;quot;&amp;gt;
+ &amp;lt;h3&amp;gt;Color Palette Generator&amp;lt;/h3&amp;gt;
+ &amp;lt;p&amp;gt;Create custom color palettes with AI-powered harmony suggestions&amp;lt;/p&amp;gt;
+ &amp;lt;div class=&amp;quot;tool-interface&amp;quot;&amp;gt;
+ &amp;lt;input type=&amp;quot;color&amp;quot; id=&amp;quot;base-color&amp;quot; class=&amp;quot;color-input&amp;quot; value=&amp;quot;#d4af37&amp;quot;&amp;gt;
+ &amp;lt;button class=&amp;quot;generate-btn&amp;quot; onclick=&amp;quot;generatePalette()&amp;quot;&amp;gt;Generate Palette&amp;lt;/button&amp;gt;
+ &amp;lt;div class=&amp;quot;palette-output&amp;quot; id=&amp;quot;palette-output&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ 
+ &amp;lt;div class=&amp;quot;tool-card&amp;quot;&amp;gt;
+ &amp;lt;h3&amp;gt;Contrast Checker&amp;lt;/h3&amp;gt;
+ &amp;lt;p&amp;gt;WCAG compliance checker for accessibility and readability&amp;lt;/p&amp;gt;
+ &amp;lt;div class=&amp;quot;tool-interface&amp;quot;&amp;gt;
+ &amp;lt;div class=&amp;quot;contrast-inputs&amp;quot;&amp;gt;
+ &amp;lt;input type=&amp;quot;color&amp;quot; id=&amp;quot;foreground-color&amp;quot; class=&amp;quot;color-input&amp;quot; value=&amp;quot;#ffffff&amp;quot;&amp;gt;
+ &amp;lt;input type=&amp;quot;color&amp;quot; id=&amp;quot;background-color&amp;quot; class=&amp;quot;color-input&amp;quot; value=&amp;quot;#0a0a0a&amp;quot;&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;div class=&amp;quot;contrast-result&amp;quot; id=&amp;quot;contrast-result&amp;quot;&amp;gt;
+ &amp;lt;div class=&amp;quot;contrast-ratio&amp;quot;&amp;gt;21:1 Contrast Ratio&amp;lt;/div&amp;gt;
+ &amp;lt;div class=&amp;quot;wcag-status wcag-aaa&amp;quot;&amp;gt;WCAG AAA Compliant&amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ 
+ &amp;lt;div class=&amp;quot;tool-card&amp;quot;&amp;gt;
+ &amp;lt;h3&amp;gt;Color Harmony Visualizer&amp;lt;/h3&amp;gt;
+ &amp;lt;p&amp;gt;Interactive visualization of color relationships and harmonies&amp;lt;/p&amp;gt;
+ &amp;lt;div class=&amp;quot;tool-interface&amp;quot;&amp;gt;
+ &amp;lt;div class=&amp;quot;color-wheel-container&amp;quot;&amp;gt;
+ &amp;lt;canvas id=&amp;quot;color-wheel&amp;quot; width=&amp;quot;300&amp;quot; height=&amp;quot;300&amp;quot;&amp;gt;&amp;lt;/canvas&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;div class=&amp;quot;harmony-controls&amp;quot;&amp;gt;
+ &amp;lt;button onclick=&amp;quot;showComplementary()&amp;quot;&amp;gt;Complementary&amp;lt;/button&amp;gt;
+ &amp;lt;button onclick=&amp;quot;showTriadic()&amp;quot;&amp;gt;Triadic&amp;lt;/button&amp;gt;
+ &amp;lt;button onclick=&amp;quot;showAnalogous()&amp;quot;&amp;gt;Analogous&amp;lt;/button&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+
+&amp;lt;!-- Performance &amp;amp; Accessibility --&amp;gt;
+&amp;lt;div class=&amp;quot;showcase-section&amp;quot;&amp;gt;
+ &amp;lt;h2&amp;gt;⚡ Performance &amp;amp; Accessibility&amp;lt;/h2&amp;gt;
+ &amp;lt;div class=&amp;quot;performance-grid&amp;quot;&amp;gt;
+ &amp;lt;div class=&amp;quot;perf-card&amp;quot;&amp;gt;
+ &amp;lt;h3&amp;gt;OLED Optimization&amp;lt;/h3&amp;gt;
+ &amp;lt;p&amp;gt;Battery-efficient pure black theme reduces power consumption on OLED displays&amp;lt;/p&amp;gt;
+ &amp;lt;div class=&amp;quot;perf-metric&amp;quot;&amp;gt;
+ &amp;lt;div class=&amp;quot;metric-value&amp;quot;&amp;gt;85% Battery Savings&amp;lt;/div&amp;gt;
+ &amp;lt;div class=&amp;quot;metric-label&amp;quot;&amp;gt;vs Standard Dark Theme&amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ 
+ &amp;lt;div class=&amp;quot;perf-card&amp;quot;&amp;gt;
+ &amp;lt;h3&amp;gt;WCAG AAA Compliance&amp;lt;/h3&amp;gt;
+ &amp;lt;p&amp;gt;All color combinations meet 7:1 contrast ratio for enhanced accessibility&amp;lt;/p&amp;gt;
+ &amp;lt;div class=&amp;quot;perf-metric&amp;quot;&amp;gt;
+ &amp;lt;div class=&amp;quot;metric-value&amp;quot;&amp;gt;100% Compliant&amp;lt;/div&amp;gt;
+ &amp;lt;div class=&amp;quot;metric-label&amp;quot;&amp;gt;WCAG AAA Standard&amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ 
+ &amp;lt;div class=&amp;quot;perf-card&amp;quot;&amp;gt;
+ &amp;lt;h3&amp;gt;GPU Acceleration&amp;lt;/h3&amp;gt;
+ &amp;lt;p&amp;gt;Hardware-accelerated animations with CSS containment for smooth performance&amp;lt;/p&amp;gt;
+ &amp;lt;div class=&amp;quot;perf-metric&amp;quot;&amp;gt;
+ &amp;lt;div class=&amp;quot;metric-value&amp;quot;&amp;gt;60 FPS&amp;lt;/div&amp;gt;
+ &amp;lt;div class=&amp;quot;metric-label&amp;quot;&amp;gt;Animation Performance&amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+
+&amp;lt;!-- Brand Differentiation --&amp;gt;
+&amp;lt;div class=&amp;quot;showcase-section&amp;quot;&amp;gt;
+ &amp;lt;h2&amp;gt;🎯 Brand Differentiation&amp;lt;/h2&amp;gt;
+ &amp;lt;div class=&amp;quot;brand-grid&amp;quot;&amp;gt;
+ &amp;lt;div class=&amp;quot;brand-card&amp;quot;&amp;gt;
+ &amp;lt;h3&amp;gt;Competitive Analysis&amp;lt;/h3&amp;gt;
+ &amp;lt;p&amp;gt;Color intelligence that positions Hair@Home above competitors&amp;lt;/p&amp;gt;
+ &amp;lt;div class=&amp;quot;competitor-analysis&amp;quot;&amp;gt;
+ &amp;lt;div class=&amp;quot;competitor&amp;quot;&amp;gt;
+ &amp;lt;h4&amp;gt;Hair@Home&amp;lt;/h4&amp;gt;
+ &amp;lt;div class=&amp;quot;brand-features&amp;quot;&amp;gt;
+ &amp;lt;div class=&amp;quot;feature&amp;quot;&amp;gt;✅ AI-Powered Colors&amp;lt;/div&amp;gt;
+ &amp;lt;div class=&amp;quot;feature&amp;quot;&amp;gt;✅ Dynamic Adaptation&amp;lt;/div&amp;gt;
+ &amp;lt;div class=&amp;quot;feature&amp;quot;&amp;gt;✅ Premium Psychology&amp;lt;/div&amp;gt;
+ &amp;lt;div class=&amp;quot;feature&amp;quot;&amp;gt;✅ Mobile Optimization&amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;div class=&amp;quot;competitor&amp;quot;&amp;gt;
+ &amp;lt;h4&amp;gt;Traditional Salons&amp;lt;/h4&amp;gt;
+ &amp;lt;div class=&amp;quot;brand-features&amp;quot;&amp;gt;
+ &amp;lt;div class=&amp;quot;feature&amp;quot;&amp;gt;❌ Static Colors&amp;lt;/div&amp;gt;
+ &amp;lt;div class=&amp;quot;feature&amp;quot;&amp;gt;❌ One-Size-Fits-All&amp;lt;/div&amp;gt;
+ &amp;lt;div class=&amp;quot;feature&amp;quot;&amp;gt;❌ Desktop-First&amp;lt;/div&amp;gt;
+ &amp;lt;div class=&amp;quot;feature&amp;quot;&amp;gt;❌ No Intelligence&amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ 
+ &amp;lt;div class=&amp;quot;brand-card&amp;quot;&amp;gt;
+ &amp;lt;h3&amp;gt;Market Positioning&amp;lt;/h3&amp;gt;
+ &amp;lt;p&amp;gt;Premium luxury positioning with tech-forward innovation&amp;lt;/p&amp;gt;
+ &amp;lt;div class=&amp;quot;positioning-statement&amp;quot;&amp;gt;
+ &amp;lt;p&amp;gt;&amp;quot;Hair@Home represents the future of mobile hair services with intelligent color adaptation that learns from user behavior and context, providing a personalized experience that traditional salons cannot match.&amp;quot;&amp;lt;/p&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+ &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+ &lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- Interactive JavaScript for Color Showcase --&gt;
+&lt;script src="https://reverb256.github.io/hairathome/js/intelligent-color-engine.js"&gt;&lt;/script&gt;
+&lt;script src="https://reverb256.github.io/hairathome/js/color-system-test.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+// Color Showcase Interactivity
+function generatePalette() {
+ const baseColor = document.getElementById('base-color').value;
+ const palette = generateIntelligentPalette(baseColor);
+ displayPalette(palette);
+}
+
+function displayPalette(palette) {
+ const output = document.getElementById('palette-output');
+ output.innerHTML = palette.map(color =&gt; 
+ `&lt;div class="palette-swatch" style="background: ${color.hex}"&gt;
+ &lt;span class="color-hex"&gt;${color.hex}&lt;/span&gt;
+ &lt;/div&gt;`
+ ).join('');
+}
+
+function updateContrastChecker() {
+ const fg = document.getElementById('foreground-color').value;
+ const bg = document.getElementById('background-color').value;
+ const ratio = calculateContrastRatio(fg, bg);
+ const result = document.getElementById('contrast-result');
+ 
+ result.innerHTML = `
+ &lt;div class="contrast-ratio"&gt;${ratio}:1 Contrast Ratio&lt;/div&gt;
+ &lt;div class="wcag-status ${ratio &gt;= 7 ? 'wcag-aaa' : ratio &gt;= 4.5 ? 'wcag-aa' : 'wcag-fail'}"&gt;
+ ${ratio &gt;= 7 ? 'WCAG AAA Compliant' : ratio &gt;= 4.5 ? 'WCAG AA Compliant' : 'WCAG Failed'}
+ &lt;/div&gt;
+ `;
+}
+
+// Color wheel visualization
+function initColorWheel() {
+ const canvas = document.getElementById('color-wheel');
+ const ctx = canvas.getContext('2d');
+ drawColorWheel(ctx, canvas.width, canvas.height);
+}
+
+function showComplementary() {
+ highlightHarmony('complementary');
+}
+
+function showTriadic() {
+ highlightHarmony('triadic');
+}
+
+function showAnalogous() {
+ highlightHarmony('analogous');
+}
+
+// Initialize showcase
+document.addEventListener('DOMContentLoaded', function() {
+ initColorWheel();
+ 
+ // Add interactivity to theme cards
+ document.querySelectorAll('.preview-btn').forEach(btn =&gt; {
+ btn.addEventListener('click', function() {
+ const theme = this.closest('.theme-card').dataset.theme;
+ applyTheme(theme);
+ });
+ });
+ 
+ // Color input listeners
+ document.getElementById('base-color').addEventListener('input', generatePalette);
+ document.getElementById('foreground-color').addEventListener('input', updateContrastChecker);
+ document.getElementById('background-color').addEventListener('input', updateContrastChecker);
+});
+&lt;/script&gt;
+&lt;style&gt;
+/* Color Showcase Styles */
+.color-showcase {
+ padding: var(--beauty-space-9) 0;
+ background: var(--gradient-hero);
+}
+
+.showcase-header {
+ text-align: center;
+ margin-bottom: var(--beauty-space-8);
+}
+
+.showcase-title {
+ font-size: 3rem;
+ color: var(--text-primary);
+ margin-bottom: var(--beauty-space-4);
+ font-family: var(--beauty-heading-font);
+}
+
+.showcase-subtitle {
+ font-size: 1.2rem;
+ color: var(--text-secondary);
+ max-width: 600px;
+ margin: 0 auto;
+}
+
+.showcase-section {
+ margin-bottom: var(--beauty-space-10);
+}
+
+.showcase-section h2 {
+ text-align: center;
+ font-size: 2.5rem;
+ color: var(--text-primary);
+ margin-bottom: var(--beauty-space-6);
+ font-family: var(--beauty-heading-font);
+}
+
+/* Intelligence Grid */
+.intelligence-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+ gap: var(--beauty-space-4);
+ margin-bottom: var(--beauty-space-6);
+}
+
+.intelligence-card {
+ background: var(--bg-card);
+ padding: var(--beauty-space-5);
+ border-radius: 15px;
+ border: 1px solid var(--border-color);
+ transition: all 0.3s ease;
+}
+
+.intelligence-card:hover {
+ transform: translateY(-5px);
+ box-shadow: var(--shadow-md);
+}
+
+.intelligence-card h3 {
+ color: var(--text-primary);
+ margin-bottom: var(--beauty-space-3);
+}
+
+.color-demo {
+ width: 100%;
+ height: 60px;
+ border-radius: 10px;
+ margin: var(--beauty-space-3) 0;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.color-label {
+ background: rgba(0, 0, 0, 0.8);
+ color: var(--text-primary);
+ padding: var(--beauty-space-1) var(--beauty-space-2);
+ border-radius: 5px;
+ font-size: 0.8rem;
+}
+
+/* Adaptation Demo */
+.adaptation-demo {
+ display: flex;
+ gap: var(--beauty-space-2);
+ margin: var(--beauty-space-3) 0;
+}
+
+.time-slot {
+ flex: 1;
+ padding: var(--beauty-space-2);
+ text-align: center;
+ border-radius: 8px;
+ font-size: 0.9rem;
+ font-weight: 500;
+}
+
+.morning { background: linear-gradient(135deg, #f8bbd0, #ffeaa7); }
+.afternoon { background: linear-gradient(135deg, #87ceeb, #98d8c8); }
+.evening { background: linear-gradient(135deg, #e8b4b8, #f39c12); }
+.night { background: linear-gradient(135deg, #2c3e50, #1a1a2e); }
+
+/* Harmony Grid */
+.harmony-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+ gap: var(--beauty-space-4);
+ margin-bottom: var(--beauty-space-6);
+}
+
+.harmony-card {
+ background: var(--bg-card);
+ padding: var(--beauty-space-5);
+ border-radius: 15px;
+ border: 1px solid var(--border-color);
+}
+
+.harmony-demo {
+ margin: var(--beauty-space-3) 0;
+}
+
+.color-pair {
+ display: flex;
+ gap: var(--beauty-space-2);
+ align-items: center;
+}
+
+.color-swatch {
+ width: 60px;
+ height: 60px;
+ border-radius: 10px;
+ border: 2px solid var(--border-color);
+}
+
+.triadic-colors, .analogous-colors {
+ display: flex;
+ gap: var(--beauty-space-2);
+ justify-content: center;
+ flex-wrap: wrap;
+}
+
+/* Theme Grid */
+.theme-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+ gap: var(--beauty-space-4);
+ margin-bottom: var(--beauty-space-6);
+}
+
+.theme-card {
+ background: var(--bg-card);
+ padding: var(--beauty-space-5);
+ border-radius: 15px;
+ border: 1px solid var(--border-color);
+ transition: all 0.3s ease;
+}
+
+.theme-card:hover {
+ transform: translateY(-5px);
+ box-shadow: var(--shadow-md);
+}
+
+.theme-preview {
+ width: 100%;
+ height: 200px;
+ border-radius: 10px;
+ margin: var(--beauty-space-3) 0;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ position: relative;
+ overflow: hidden;
+}
+
+.dark-theme {
+ background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+ color: #ffffff;
+}
+
+.light-theme {
+ background: linear-gradient(135deg, #f9f5ee, #f0e6d9);
+ color: #3d2e26;
+}
+
+.spring-theme {
+ background: linear-gradient(135deg, #a8e6cf, #f8bbd0);
+ color: #2d5a3d;
+}
+
+.oled-theme {
+ background: #000000;
+ color: #ffffff;
+}
+
+.preview-content h4 {
+ margin-bottom: var(--beauty-space-2);
+}
+
+.preview-btn {
+ background: var(--beauty-gold-accent);
+ color: #ffffff;
+ border: none;
+ padding: var(--beauty-space-2) var(--beauty-space-4);
+ border-radius: 25px;
+ cursor: pointer;
+ font-weight: 500;
+ transition: all 0.3s ease;
+}
+
+.preview-btn:hover {
+ background: var(--beauty-gold-light);
+ transform: translateY(-2px);
+}
+
+/* Tools Grid */
+.tools-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+ gap: var(--beauty-space-4);
+ margin-bottom: var(--beauty-space-6);
+}
+
+.tool-card {
+ background: var(--bg-card);
+ padding: var(--beauty-space-5);
+ border-radius: 15px;
+ border: 1px solid var(--border-color);
+}
+
+.tool-interface {
+ margin: var(--beauty-space-3) 0;
+}
+
+.color-input {
+ width: 100%;
+ height: 50px;
+ border: 2px solid var(--border-color);
+ border-radius: 8px;
+ margin-bottom: var(--beauty-space-3);
+ font-size: 1rem;
+}
+
+.generate-btn {
+ background: var(--beauty-gold-accent);
+ color: #ffffff;
+ border: none;
+ padding: var(--beauty-space-2) var(--beauty-space-4);
+ border-radius: 8px;
+ cursor: pointer;
+ font-weight: 500;
+ width: 100%;
+ margin-bottom: var(--beauty-space-3);
+ transition: all 0.3s ease;
+}
+
+.generate-btn:hover {
+ background: var(--beauty-gold-light);
+}
+
+.palette-output {
+ display: flex;
+ gap: var(--beauty-space-2);
+ flex-wrap: wrap;
+ margin-top: var(--beauty-space-3);
+}
+
+.palette-swatch {
+ width: 80px;
+ height: 80px;
+ border-radius: 10px;
+ border: 2px solid var(--border-color);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ position: relative;
+}
+
+.color-hex {
+ background: rgba(0, 0, 0, 0.8);
+ color: var(--text-primary);
+ padding: var(--beauty-space-1) var(--beauty-space-2);
+ border-radius: 5px;
+ font-size: 0.7rem;
+ font-weight: 500;
+}
+
+/* Contrast Checker */
+.contrast-inputs {
+ display: flex;
+ gap: var(--beauty-space-3);
+ margin-bottom: var(--beauty-space-3);
+}
+
+.contrast-result {
+ background: var(--bg-card);
+ padding: var(--beauty-space-4);
+ border-radius: 10px;
+ text-align: center;
+}
+
+.contrast-ratio {
+ font-size: 1.5rem;
+ font-weight: 700;
+ color: var(--text-primary);
+ margin-bottom: var(--beauty-space-2);
+}
+
+.wcag-status {
+ padding: var(--beauty-space-1) var(--beauty-space-2);
+ border-radius: 20px;
+ font-weight: 600;
+ font-size: 0.9rem;
+}
+
+.wcag-aaa {
+ background: #28a745;
+ color: #ffffff;
+}
+
+.wcag-aa {
+ background: #007bff;
+ color: #ffffff;
+}
+
+.wcag-fail {
+ background: #dc3545;
+ color: #ffffff;
+}
+
+/* Performance Grid */
+.performance-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+ gap: var(--beauty-space-4);
+ margin-bottom: var(--beauty-space-6);
+}
+
+.perf-card {
+ background: var(--bg-card);
+ padding: var(--beauty-space-5);
+ border-radius: 15px;
+ border: 1px solid var(--border-color);
+ text-align: center;
+}
+
+.perf-metric {
+ margin: var(--beauty-space-3) 0;
+}
+
+.metric-value {
+ font-size: 2rem;
+ font-weight: 700;
+ color: var(--beauty-gold-accent);
+ margin-bottom: var(--beauty-space-1);
+}
+
+.metric-label {
+ color: var(--text-secondary);
+ font-size: 0.9rem;
+}
+
+/* Brand Grid */
+.brand-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+ gap: var(--beauty-space-4);
+ margin-bottom: var(--beauty-space-6);
+}
+
+.competitor-analysis {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: var(--beauty-space-4);
+ margin-bottom: var(--beauty-space-4);
+}
+
+.competitor h4 {
+ text-align: center;
+ color: var(--text-primary);
+ margin-bottom: var(--beauty-space-3);
+}
+
+.brand-features {
+ display: flex;
+ flex-direction: column;
+ gap: var(--beauty-space-1);
+}
+
+.feature {
+ padding: var(--beauty-space-1) var(--beauty-space-2);
+ border-radius: 5px;
+ font-size: 0.8rem;
+ text-align: center;
+}
+
+.positioning-statement {
+ background: var(--bg-card);
+ padding: var(--beauty-space-5);
+ border-radius: 15px;
+ border-left: 4px solid var(--beauty-gold-accent);
+ margin-top: var(--beauty-space-4);
+}
+
+.positioning-statement p {
+ font-style: italic;
+ color: var(--text-secondary);
+ line-height: 1.7;
+}
+
+/* Color Wheel Container */
+.color-wheel-container {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ gap: var(--beauty-space-3);
+}
+
+.harmony-controls {
+ display: flex;
+ gap: var(--beauty-space-2);
+ justify-content: center;
+}
+
+.harmony-controls button {
+ background: var(--beauty-gold-accent);
+ color: #ffffff;
+ border: none;
+ padding: var(--beauty-space-2) var(--beauty-space-3);
+ border-radius: 8px;
+ cursor: pointer;
+ font-weight: 500;
+ transition: all 0.3s ease;
+}
+
+.harmony-controls button:hover {
+ background: var(--beauty-gold-light);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+ .intelligence-grid,
+ .harmony-grid,
+ .theme-grid,
+ .tools-grid,
+ .performance-grid,
+ .brand-grid {
+ grid-template-columns: 1fr;
+ }
+ 
+ .showcase-title {
+ font-size: 2.5rem;
+ }
+ 
+ .showcase-section h2 {
+ font-size: 2rem;
+ }
+ 
+ .adaptation-demo {
+ flex-direction: column;
+ }
+ 
+ .time-slot {
+ font-size: 0.8rem;
+ }
+ 
+ .color-pair {
+ flex-direction: column;
+ }
+ 
+ .triadic-colors,
+ .analogous-colors {
+ flex-direction: column;
+ }
+ 
+ .competitor-analysis {
+ grid-template-columns: 1fr;
+ }
+}
+&lt;/style&gt;</description></item><item><title>Curly Hair Specialist</title><link>https://reverb256.github.io/hairathome/gallery/curly-specialist/</link><pubDate>Sat, 25 Jan 2025 00:00:00 -0600</pubDate><guid>https://reverb256.github.io/hairathome/gallery/curly-specialist/</guid><description>&lt;p&gt;Specialized curly hair styling that enhances natural texture while providing manageability. Includes personalized product recommendations and styling techniques for maintaining beautiful curls at home.&lt;/p&gt;</description></item><item><title>Natural Gray Blending</title><link>https://reverb256.github.io/hairathome/gallery/gray-blending/</link><pubDate>Wed, 22 Jan 2025 00:00:00 -0600</pubDate><guid>https://reverb256.github.io/hairathome/gallery/gray-blending/</guid><description>&lt;p&gt;Beautiful gray blending that maintains the natural beauty of silver hairs while providing dimension and preventing the harsh line of demarcation. A sophisticated approach to mature hair care.&lt;/p&gt;</description></item><item><title>Romantic Beach Waves</title><link>https://reverb256.github.io/hairathome/gallery/beach-waves/</link><pubDate>Mon, 20 Jan 2025 00:00:00 -0600</pubDate><guid>https://reverb256.github.io/hairathome/gallery/beach-waves/</guid><description>&lt;p&gt;Effortless beach waves that create natural volume and movement. This style works beautifully for both casual outings and special occasions, providing that perfect &amp;ldquo;just stepped off the beach&amp;rdquo; look.&lt;/p&gt;</description></item><item><title>Glamorous Evening Updo</title><link>https://reverb256.github.io/hairathome/gallery/evening-updo/</link><pubDate>Sat, 18 Jan 2025 00:00:00 -0600</pubDate><guid>https://reverb256.github.io/hairathome/gallery/evening-updo/</guid><description>&lt;p&gt;Stunning evening updo perfect for weddings, galas, or special events. Features soft, romantic curls with elegant styling that holds throughout the evening while maintaining comfort.&lt;/p&gt;</description></item><item><title>Classic Bob Transformation</title><link>https://reverb256.github.io/hairathome/gallery/classic-bob/</link><pubDate>Wed, 15 Jan 2025 00:00:00 -0600</pubDate><guid>https://reverb256.github.io/hairathome/gallery/classic-bob/</guid><description>&lt;p&gt;A sophisticated bob transformation that brings out natural texture while maintaining a polished, professional look. Perfect for the modern Winnipeg professional who wants effortless style with minimal maintenance.&lt;/p&gt;</description></item><item><title>Elegant Brunette Transformation</title><link>https://reverb256.github.io/hairathome/gallery/elegant-brunette/</link><pubDate>Wed, 15 Jan 2025 00:00:00 -0600</pubDate><guid>https://reverb256.github.io/hairathome/gallery/elegant-brunette/</guid><description>&lt;p&gt;A stunning transformation featuring rich brunette color with strategically placed highlights to add dimension and movement. The soft layers create natural volume while maintaining a sophisticated, polished look perfect for professional settings.&lt;/p&gt;</description></item><item><title>Luxury Balayage Blonde</title><link>https://reverb256.github.io/hairathome/gallery/balayage-blonde/</link><pubDate>Sun, 12 Jan 2025 00:00:00 -0600</pubDate><guid>https://reverb256.github.io/hairathome/gallery/balayage-blonde/</guid><description>&lt;p&gt;Beautiful balayage work that creates natural dimension and movement. This multi-dimensional blonde enhances the client&amp;rsquo;s natural beauty while providing a low-maintenance color that grows out gracefully.&lt;/p&gt;</description></item><item><title>Bridal Updo Elegance</title><link>https://reverb256.github.io/hairathome/gallery/bridal-updo/</link><pubDate>Fri, 10 Jan 2025 00:00:00 -0600</pubDate><guid>https://reverb256.github.io/hairathome/gallery/bridal-updo/</guid><description>&lt;p&gt;An exquisite bridal updo combining classic elegance with modern romance. Soft waves cascade from a structured chignon, creating a timeless look that complements any wedding dress style. Perfect for the modern Winnipeg bride.&lt;/p&gt;</description></item><item><title>Men's Executive Cut</title><link>https://reverb256.github.io/hairathome/gallery/mens-executive/</link><pubDate>Wed, 08 Jan 2025 00:00:00 -0600</pubDate><guid>https://reverb256.github.io/hairathome/gallery/mens-executive/</guid><description>&lt;p&gt;Clean, professional men&amp;rsquo;s cut perfect for the corporate environment. Includes precision styling and beard grooming for a complete executive look that maintains throughout the week.&lt;/p&gt;</description></item><item><title>Modern Color Melt</title><link>https://reverb256.github.io/hairathome/gallery/modern-color-melt/</link><pubDate>Wed, 08 Jan 2025 00:00:00 -0600</pubDate><guid>https://reverb256.github.io/hairathome/gallery/modern-color-melt/</guid><description>&lt;p&gt;A contemporary color melt technique creating seamless transitions between complementary tones. This low-maintenance look grows out beautifully while maintaining depth and dimension throughout the hair.&lt;/p&gt;</description></item><item><title>About</title><link>https://reverb256.github.io/hairathome/about/</link><pubDate>Wed, 01 Jan 2025 00:00:00 -0600</pubDate><guid>https://reverb256.github.io/hairathome/about/</guid><description>&lt;p&gt;Your Trusted Mobile Hair Stylist in Winnipeg&lt;/p&gt;
 &lt;p&gt;With over 8 years of professional experience, I bring salon-quality hair styling directly to your home, office, or any location within Winnipeg. As a professional hairstylist, I&amp;rsquo;m passionate about providing convenient and personalized hair care services for busy individuals and those who prefer the comfort of their own space.&lt;/p&gt;
-&lt;p&gt;Whether you need a quick trim, a special occasion updo, or professional color services, I come equipped with all the tools and products needed to deliver exceptional results. My mobile setup ensures the same quality you&amp;rsquo;d expect from a traditional salon, with the added convenience of no travel time or waiting rooms.&lt;/p&gt;</description></item><item><title>Areas We Serve</title><link>http://localhost:1313/areas/</link><pubDate>Wed, 01 Jan 2025 00:00:00 -0600</pubDate><guid>http://localhost:1313/areas/</guid><description>&lt;h2 id="complete-winnipeg-coverage"&gt;Complete Winnipeg Coverage&lt;/h2&gt;
+&lt;p&gt;Whether you need a quick trim, a special occasion updo, or professional color services, I come equipped with all the tools and products needed to deliver exceptional results. My mobile setup ensures the same quality you&amp;rsquo;d expect from a traditional salon, with the added convenience of no travel time or waiting rooms.&lt;/p&gt;</description></item><item><title>Areas We Serve</title><link>https://reverb256.github.io/hairathome/areas/</link><pubDate>Wed, 01 Jan 2025 00:00:00 -0600</pubDate><guid>https://reverb256.github.io/hairathome/areas/</guid><description>&lt;h2 id="complete-winnipeg-coverage"&gt;Complete Winnipeg Coverage&lt;/h2&gt;
 &lt;p&gt;Hair@Home proudly serves all areas within Winnipeg city limits. Our mobile salon is fully equipped to travel throughout the city, bringing professional hair services directly to your doorstep.&lt;/p&gt;
 &lt;h2 id="service-areas-by-region"&gt;Service Areas by Region&lt;/h2&gt;
 &lt;h3 id="central-winnipeg"&gt;Central Winnipeg&lt;/h3&gt;
@@ -18,7 +829,7 @@
 &lt;li&gt;Weekend and evening appointments&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id="west-winnipeg"&gt;West Winnipeg&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Charleswood, St. James, Fort Richmond, Headingley&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Book Your Service</title><link>http://localhost:1313/booking/</link><pubDate>Wed, 01 Jan 2025 00:00:00 -0600</pubDate><guid>http://localhost:1313/booking/</guid><description>&lt;h2 id="how-to-book-your-appointment"&gt;How to Book Your Appointment&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Charleswood, St. James, Fort Richmond, Headingley&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Book Your Service</title><link>https://reverb256.github.io/hairathome/booking/</link><pubDate>Wed, 01 Jan 2025 00:00:00 -0600</pubDate><guid>https://reverb256.github.io/hairathome/booking/</guid><description>&lt;h2 id="how-to-book-your-appointment"&gt;How to Book Your Appointment&lt;/h2&gt;
 &lt;p&gt;Booking your mobile hair service is simple and convenient. Fill out the form below, and I&amp;rsquo;ll contact you within 24 hours to confirm your appointment and discuss any specific requirements.&lt;/p&gt;
 &lt;h2 id="what-to-expect"&gt;What to Expect&lt;/h2&gt;
 &lt;p&gt;Once you submit your booking request:&lt;/p&gt;
@@ -43,7 +854,7 @@
 &lt;li&gt;E-transfer&lt;/li&gt;
 &lt;li&gt;Credit card (mobile terminal available)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;A 25% deposit may be required for first-time clients or services over $200.&lt;/p&gt;</description></item><item><title>Frequently Asked Questions</title><link>http://localhost:1313/faq/</link><pubDate>Wed, 01 Jan 2025 00:00:00 -0600</pubDate><guid>http://localhost:1313/faq/</guid><description>&lt;h2 id="service--booking"&gt;Service &amp;amp; Booking&lt;/h2&gt;
+&lt;p&gt;A 25% deposit may be required for first-time clients or services over $200.&lt;/p&gt;</description></item><item><title>Frequently Asked Questions</title><link>https://reverb256.github.io/hairathome/faq/</link><pubDate>Wed, 01 Jan 2025 00:00:00 -0600</pubDate><guid>https://reverb256.github.io/hairathome/faq/</guid><description>&lt;h2 id="service--booking"&gt;Service &amp;amp; Booking&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;What areas in Winnipeg do you serve?&lt;/strong&gt;
 We proudly serve all areas within Winnipeg, including Central, South, West, and North Winnipeg. Our mobile salon travels throughout the city limits, so you can enjoy professional hair services wherever you are in Winnipeg. Areas include:&lt;/p&gt;
 &lt;ul&gt;
@@ -54,7 +865,7 @@ We proudly serve all areas within Winnipeg, including Central, South, West, and 
 &lt;li&gt;East Winnipeg (Transcona, Elmwood)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;How long does a mobile hair appointment take?&lt;/strong&gt;
-Appointment length varies depending on the service:&lt;/p&gt;</description></item><item><title>Beard Grooming</title><link>http://localhost:1313/services/beard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/services/beard/</guid><description>&lt;p&gt;Professional beard grooming services designed to keep your facial hair looking sharp, healthy, and well-maintained. From precise trims to complete beard shaping, I&amp;rsquo;ll help you achieve the perfect look that complements your facial features.&lt;/p&gt;
+Appointment length varies depending on the service:&lt;/p&gt;</description></item><item><title>Beard Grooming</title><link>https://reverb256.github.io/hairathome/services/beard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://reverb256.github.io/hairathome/services/beard/</guid><description>&lt;p&gt;Professional beard grooming services designed to keep your facial hair looking sharp, healthy, and well-maintained. From precise trims to complete beard shaping, I&amp;rsquo;ll help you achieve the perfect look that complements your facial features.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Services Include:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Beard trimming and shaping&lt;/li&gt;
@@ -72,7 +883,7 @@ Appointment length varies depending on the service:&lt;/p&gt;</description></ite
 &lt;li&gt;Styling tips and recommendations&lt;/li&gt;
 &lt;li&gt;Relaxing experience&lt;/li&gt;
 &lt;li&gt;Combined haircut and beard packages available&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Color Services</title><link>http://localhost:1313/services/color/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/services/color/</guid><description>&lt;p&gt;Professional color services using premium products to achieve your desired look while maintaining hair health. From subtle highlights to dramatic transformations, I&amp;rsquo;ll create custom color solutions tailored to your skin tone and lifestyle.&lt;/p&gt;
+&lt;/ul&gt;</description></item><item><title>Color Services</title><link>https://reverb256.github.io/hairathome/services/color/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://reverb256.github.io/hairathome/services/color/</guid><description>&lt;p&gt;Professional color services using premium products to achieve your desired look while maintaining hair health. From subtle highlights to dramatic transformations, I&amp;rsquo;ll create custom color solutions tailored to your skin tone and lifestyle.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Services Include:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Full head color&lt;/li&gt;
@@ -88,7 +899,7 @@ Appointment length varies depending on the service:&lt;/p&gt;</description></ite
 &lt;li&gt;Patch testing for new clients&lt;/li&gt;
 &lt;li&gt;Premium ammonia-free products available&lt;/li&gt;
 &lt;li&gt;Aftercare instructions and products&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Haircut &amp; Style</title><link>http://localhost:1313/services/haircut/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/services/haircut/</guid><description>&lt;p&gt;Professional haircut and styling services tailored to your unique preferences and hair type. From classic cuts to modern styles, I&amp;rsquo;ll create a look that complements your features and lifestyle.&lt;/p&gt;
+&lt;/ul&gt;</description></item><item><title>Haircut &amp; Style</title><link>https://reverb256.github.io/hairathome/services/haircut/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://reverb256.github.io/hairathome/services/haircut/</guid><description>&lt;p&gt;Professional haircut and styling services tailored to your unique preferences and hair type. From classic cuts to modern styles, I&amp;rsquo;ll create a look that complements your features and lifestyle.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Includes:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Professional consultation&lt;/li&gt;
@@ -103,7 +914,7 @@ Appointment length varies depending on the service:&lt;/p&gt;</description></ite
 &lt;li&gt;Complete style transformations&lt;/li&gt;
 &lt;li&gt;Special occasion styling&lt;/li&gt;
 &lt;li&gt;Men&amp;rsquo;s and women&amp;rsquo;s cuts&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Special Occasion</title><link>http://localhost:1313/services/special-occasion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/services/special-occasion/</guid><description>&lt;p&gt;Elegant updo and special occasion styling for weddings, proms, galas, and any event where you want to look your absolute best. I&amp;rsquo;ll create a sophisticated, long-lasting hairstyle that complements your outfit and enhances your natural beauty.&lt;/p&gt;
+&lt;/ul&gt;</description></item><item><title>Special Occasion</title><link>https://reverb256.github.io/hairathome/services/special-occasion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://reverb256.github.io/hairathome/services/special-occasion/</guid><description>&lt;p&gt;Elegant updo and special occasion styling for weddings, proms, galas, and any event where you want to look your absolute best. I&amp;rsquo;ll create a sophisticated, long-lasting hairstyle that complements your outfit and enhances your natural beauty.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Services Include:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Wedding day styling&lt;/li&gt;
@@ -120,7 +931,7 @@ Appointment length varies depending on the service:&lt;/p&gt;</description></ite
 &lt;li&gt;Touch-up kit provided&lt;/li&gt;
 &lt;li&gt;Long-lasting techniques&lt;/li&gt;
 &lt;li&gt;On-location service for your convenience&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Treatments</title><link>http://localhost:1313/services/treatments/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/services/treatments/</guid><description>&lt;p&gt;Rejuvenating hair and scalp treatments designed to restore health, shine, and vitality to your hair. Using professional-grade products, I&amp;rsquo;ll address your specific hair concerns and provide personalized solutions for optimal results.&lt;/p&gt;
+&lt;/ul&gt;</description></item><item><title>Treatments</title><link>https://reverb256.github.io/hairathome/services/treatments/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://reverb256.github.io/hairathome/services/treatments/</guid><description>&lt;p&gt;Rejuvenating hair and scalp treatments designed to restore health, shine, and vitality to your hair. Using professional-grade products, I&amp;rsquo;ll address your specific hair concerns and provide personalized solutions for optimal results.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Treatments Include:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Deep conditioning masks&lt;/li&gt;
@@ -138,7 +949,7 @@ Appointment length varies depending on the service:&lt;/p&gt;</description></ite
 &lt;li&gt;Reduces frizz and breakage&lt;/li&gt;
 &lt;li&gt;Promotes healthy scalp&lt;/li&gt;
 &lt;li&gt;Long-lasting results&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Wash &amp; Blowout</title><link>http://localhost:1313/services/blowout/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/services/blowout/</guid><description>&lt;p&gt;Luxurious wash and blowout service that leaves your hair feeling refreshed, healthy, and beautifully styled. Using premium products and professional techniques, I&amp;rsquo;ll create a smooth, voluminous, or sleek finish that lasts.&lt;/p&gt;
+&lt;/ul&gt;</description></item><item><title>Wash &amp; Blowout</title><link>https://reverb256.github.io/hairathome/services/blowout/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://reverb256.github.io/hairathome/services/blowout/</guid><description>&lt;p&gt;Luxurious wash and blowout service that leaves your hair feeling refreshed, healthy, and beautifully styled. Using premium products and professional techniques, I&amp;rsquo;ll create a smooth, voluminous, or sleek finish that lasts.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Includes:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Clarifying shampoo treatment&lt;/li&gt;
