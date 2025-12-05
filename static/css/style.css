@@ -24,20 +24,20 @@
   --beauty-gradient-luxury: linear-gradient(135deg, var(--beauty-rose-gold), var(--beauty-gold-accent));
 }
 
-/* Dark mode (default) */
+/* Dark mode (default) - Luxury Midnight Theme */
 [data-theme="dark"] {
-  --bg-primary: #0a0a0a;
-  --bg-secondary: #1a1a1a;
-  --bg-tertiary: #2a2a2a;
-  --bg-card: rgba(30, 25, 22, 0.95);
-  --text-primary: var(--beauty-text-light);
-  --text-secondary: #b8b8b8;
-  --text-muted: #888;
-  --text-accent: var(--beauty-gold-accent);
-  --border-color: rgba(212, 175, 55, 0.2);
-  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.3);
-  --gradient-hero: radial-gradient(ellipse at top left, rgba(212,175,55,0.15) 0%, transparent 50%),
-                    radial-gradient(ellipse at bottom right, rgba(212,169,152,0.15) 0%, transparent 50%),
+  --bg-primary: #0a0a0a;        /* Deep black - main background */
+  --bg-secondary: #1a1a1a;       /* Soft black - cards, sections */
+  --bg-tertiary: #2a2a2a;        /* Medium black - hover states */
+  --bg-card: rgba(26, 26, 26, 0.95); /* Elevated cards */
+  --text-primary: #ffffff;            /* Pure white - main text */
+  --text-secondary: #b8b8b8;         /* Soft gray - secondary text */
+  --text-muted: #808080;             /* Muted gray - captions */
+  --text-accent: #d4af37;           /* Luxury gold accent */
+  --border-color: rgba(212, 175, 55, 0.3); /* Gold borders */
+  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.4); /* Deeper shadows */
+  --gradient-hero: radial-gradient(ellipse at top left, rgba(212,175,55,0.2) 0%, transparent 50%),
+                    radial-gradient(ellipse at bottom right, rgba(212,169,152,0.1) 0%, transparent 50%),
                     linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
 }
 
