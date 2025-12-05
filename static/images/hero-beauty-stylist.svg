@@ -1,59 +1,169 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
   <defs>
-    <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#f9f5ee;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#f0e6d9;stop-opacity:1" />
+    <!-- Professional gradients -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8f9fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e9ecef;stop-opacity:1" />
     </linearGradient>
-    <radialGradient id="spotlight" cx="60%" cy="40%" r="50%">
-      <stop offset="0%" style="stop-color:rgba(212, 175, 55, 0.15);stop-opacity:1" />
-      <stop offset="100%" style="stop-color:rgba(243, 230, 208, 0);stop-opacity:0" />
+    
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f4e4bc;stop-opacity:1" />
+    </linearGradient>
+    
+    <radialGradient id="glowEffect" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" style="stop-color:rgba(212, 175, 55, 0.1);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgba(212, 175, 55, 0);stop-opacity:0" />
     </radialGradient>
+    
+    <!-- Shadow filter -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="2" dy="4" result="offsetblur"/>
+      <feFlood flood-color="#000000" flood-opacity="0.15"/>
+      <feComposite in2="offsetblur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
   
-  <rect width="1200" height="800" fill="url(#heroGradient)" />
-  <rect width="1200" height="800" fill="url(#spotlight)" />
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#bgGradient)" />
+  <rect width="1200" height="800" fill="url(#glowEffect)" />
   
-  <!-- Professional stylist with mobile setup -->
-  <g transform="translate(750, 250)">
-    <!-- Stylist portrait -->
-    <circle cx="0" cy="-100" r="90" fill="#d4a998" />
-    <ellipse cx="0" cy="50" rx="70" ry="150" fill="#e8c4a8" />
+  <!-- Professional Mobile Hair Stylist Illustration -->
+  <g transform="translate(750, 400)">
     
-    <!-- Hair styling -->
-    <path d="M-70 -80 Q0 -140, 70 -80" fill="#333" stroke="#222" stroke-width="2" />
-    <path d="M-60 -70 Q0 -130, 60 -70" fill="#444" stroke="#222" stroke-width="2" />
-    
-    <!-- Styling tools -->
-    <g transform="translate(100, -120) rotate(-30)">
-      <rect x="-5" y="-60" width="10" height="60" fill="#d4af37" rx="2" />
-      <circle cx="0" cy="-65" r="15" fill="#8e44ad" />
-      <text x="0" y="-90" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">Scissors</text>
+    <!-- Professional stylist figure -->
+    <g transform="translate(0, -50)">
+      <!-- Body -->
+      <ellipse cx="0" cy="80" rx="65" ry="120" fill="#2c3e50" filter="url(#shadow)"/>
+      
+      <!-- Head -->
+      <circle cx="0" cy="-60" r="45" fill="#f4d1ae" filter="url(#shadow)"/>
+      
+      <!-- Professional hair -->
+      <path d="M-45 -80 Q0 -120, 45 -80 Q40 -60, 35 -40 L-35 -40 Q-40 -60, -45 -80" fill="#3d2817" opacity="0.9"/>
+      
+      <!-- Face features -->
+      <circle cx="-15" cy="-65" r="3" fill="#2c3e50"/> <!-- Left eye -->
+      <circle cx="15" cy="-65" r="3" fill="#2c3e50"/> <!-- Right eye -->
+      <path d="M-10 -50 Q0 -45, 10 -50" stroke="#d4a998" stroke-width="2" fill="none" stroke-linecap="round"/> <!-- Smile -->
+      
+      <!-- Professional apron/uniform -->
+      <rect x="-50" y="20" width="100" height="140" rx="5" fill="#ffffff" filter="url(#shadow)"/>
+      <rect x="-45" y="25" width="90" height="130" rx="3" fill="#f8f9fa"/>
+      
+      <!-- Apron pocket with tools -->
+      <rect x="-20" y="80" width="40" height="30" rx="3" fill="#e9ecef"/>
+      
+      <!-- Professional scissors in hand -->
+      <g transform="translate(60, 40) rotate(-15)">
+        <ellipse cx="0" cy="0" rx="8" ry="25" fill="url(#accentGradient)" filter="url(#shadow)"/>
+        <circle cx="0" cy="-20" r="6" fill="#d4af37"/>
+        <circle cx="0" cy="20" r="6" fill="#d4af37"/>
+        <rect x="-2" y="-15" width="4" height="30" fill="#b8941f"/>
+      </g>
+      
+      <!-- Comb in other hand -->
+      <g transform="translate(-60, 40) rotate(15)">
+        <rect x="-3" y="-20" width="6" height="40" fill="#2c3e50" rx="1"/>
+        <rect x="-8" y="-18" width="16" height="3" fill="#2c3e50"/>
+        <rect x="-8" y="-12" width="16" height="3" fill="#2c3e50"/>
+        <rect x="-8" y="-6" width="16" height="3" fill="#2c3e50"/>
+      </g>
     </g>
     
-    <!-- Mobile equipment case -->
-    <rect x="-180" y="180" width="360" height="200" rx="20" fill="#0a0a0a" stroke="#d4af37" stroke-width="2"/>
-    <rect x="-150" y="200" width="300" height="150" rx="10" fill="#1a1a1a"/>
-    <text x="0" y="330" text-anchor="middle" font-family="Arial" font-size="20" fill="#f3e6d0">Professional Mobile Kit</text>
+    <!-- Mobile professional case -->
+    <g transform="translate(0, 200)">
+      <!-- Main case -->
+      <rect x="-120" y="0" width="240" height="120" rx="15" fill="#1a1a1a" filter="url(#shadow)"/>
+      <rect x="-110" y="10" width="220" height="100" rx="10" fill="#2d2d2d"/>
+      
+      <!-- Handle -->
+      <rect x="-30" y="-15" width="60" height="15" rx="7" fill="#d4af37" filter="url(#shadow)"/>
+      
+      <!-- Case compartments -->
+      <rect x="-100" y="25" width="60" height="60" rx="5" fill="#1a1a1a"/>
+      <rect x="-30" y="25" width="60" height="60" rx="5" fill="#1a1a1a"/>
+      <rect x="40" y="25" width="60" height="60" rx="5" fill="#1a1a1a"/>
+      
+      <!-- Professional tools in case -->
+      <circle cx="-70" cy="55" r="15" fill="url(#accentGradient)"/>
+      <rect x="-35" y="45" width="10" height="20" fill="#d4af37" rx="2"/>
+      <circle cx="70" cy="55" r="12" fill="#e74c3c"/>
+      
+      <!-- Wheels for mobility -->
+      <circle cx="-80" y="115" r="8" fill="#34495e"/>
+      <circle cx="80" y="115" r="8" fill="#34495e"/>
+    </g>
+    
+    <!-- Floating hair styling elements -->
+    <g transform="translate(-200, -100)">
+      <!-- Hair strand -->
+      <path d="M0 0 Q20 -10, 40 0 T80 0" stroke="#d4af37" stroke-width="3" fill="none" opacity="0.6"/>
+      <path d="M10 10 Q30 0, 50 10 T90 10" stroke="#f4e4bc" stroke-width="2" fill="none" opacity="0.4"/>
+    </g>
+    
+    <g transform="translate(200, -80)">
+      <!-- Beauty product bottle -->
+      <rect x="-15" y="-20" width="30" height="40" rx="5" fill="#e8f4f8" filter="url(#shadow)"/>
+      <rect x="-10" y="-25" width="20" height="8" rx="2" fill="#d4af37"/>
+      <circle cx="0" cy="0" r="8" fill="#3498db" opacity="0.7"/>
+    </g>
+  </g>
+  
+  <!-- Professional text content -->
+  <g transform="translate(200, 250)">
+    <!-- Main title -->
+    <text x="0" y="0" font-family="Playfair Display, serif" font-size="56" font-weight="700" fill="#2c3e50">Hair@Home</text>
+    
+    <!-- Subtitle -->
+    <text x="0" y="50" font-family="Poppins, sans-serif" font-size="28" font-weight="400" fill="#d4af37">Professional Mobile Styling</text>
+    
+    <!-- Location -->
+    <text x="0" y="85" font-family="Poppins, sans-serif" font-size="20" font-weight="300" fill="#6c757d">Winnipeg's Premier Beauty Experience</text>
+  </g>
+  
+  <!-- Service badges -->
+  <g transform="translate(200, 420)">
+    <!-- Premium service badge -->
+    <rect x="0" y="0" width="280" height="65" rx="32" fill="#2c3e50" filter="url(#shadow)"/>
+    <text x="140" y="25" text-anchor="middle" font-family="Poppins, sans-serif" font-size="16" font-weight="500" fill="#ffffff">Premium Mobile Service</text>
+    <text x="140" y="45" text-anchor="middle" font-family="Poppins, sans-serif" font-size="14" font-weight="300" fill="#d4af37">Professional • Convenient • Luxury</text>
+  </g>
+  
+  <g transform="translate(200, 500)">
+    <!-- Expertise badge -->
+    <rect x="0" y="0" width="280" height="65" rx="32" fill="#ffffff" stroke="#d4af37" stroke-width="2" filter="url(#shadow)"/>
+    <text x="140" y="25" text-anchor="middle" font-family="Poppins, sans-serif" font-size="16" font-weight="500" fill="#2c3e50">Expert Stylists</text>
+    <text x="140" y="45" text-anchor="middle" font-family="Poppins, sans-serif" font-size="14" font-weight="300" fill="#6c757d">Years of Professional Experience</text>
   </g>
   
   <!-- Decorative elements -->
-  <circle cx="100" cy="100" r="30" fill="#d4af37" opacity="0.2"/>
-  <circle cx="1000" cy="700" r="20" fill="#d4a998" opacity="0.2"/>
-  <circle cx="150" cy="600" r="15" fill="#e8c4a8" opacity="0.3"/>
+  <circle cx="100" cy="150" r="40" fill="#d4af37" opacity="0.1"/>
+  <circle cx="1100" cy="650" r="30" fill="#f4e4bc" opacity="0.15"/>
+  <circle cx="150" cy="700" r="25" fill="#d4af37" opacity="0.08"/>
   
-  <!-- Brand elements -->
-  <text x="200" y="250" font-family="Playfair Display, serif" font-size="48" fill="#3d2e26" font-weight="bold">Hair@Home</text>
-  <text x="200" y="310" font-family="Poppins, sans-serif" font-size="24" fill="#d4af37">Professional Mobile Styling</text>
-  <text x="200" y="350" font-family="Poppins, sans-serif" font-size="20" fill="#3d2e26">Winnipeg's Premier Beauty Experience</text>
-  
-  <!-- Service indicators -->
-  <g transform="translate(200, 450)">
-    <rect x="0" y="0" width="250" height="60" rx="30" fill="#3d2e26" opacity="0.8"/>
-    <text x="125" y="40" text-anchor="middle" font-family="Poppins, sans-serif" font-size="22" fill="#f3e6d0">Premium Mobile Service</text>
-  </g>
-  
-  <g transform="translate(200, 530)">
-    <rect x="0" y="0" width="250" height="60" rx="30" fill="#3d2e26" opacity="0.8"/>
-    <text x="125" y="40" text-anchor="middle" font-family="Poppins, sans-serif" font-size="22" fill="#f3e6d0">Professional Service</text>
+  <!-- Professional icons -->
+  <g transform="translate(520, 450)">
+    <!-- Star rating -->
+    <g transform="translate(0, 0)">
+      <path d="M12 2 L15 9 L22 9 L17 14 L19 21 L12 17 L5 21 L7 14 L2 9 L9 9 Z" fill="#d4af37" transform="scale(1.5)"/>
+    </g>
+    <g transform="translate(40, 0)">
+      <path d="M12 2 L15 9 L22 9 L17 14 L19 21 L12 17 L5 21 L7 14 L2 9 L9 9 Z" fill="#d4af37" transform="scale(1.5)"/>
+    </g>
+    <g transform="translate(80, 0)">
+      <path d="M12 2 L15 9 L22 9 L17 14 L19 21 L12 17 L5 21 L7 14 L2 9 L9 9 Z" fill="#d4af37" transform="scale(1.5)"/>
+    </g>
+    <g transform="translate(120, 0)">
+      <path d="M12 2 L15 9 L22 9 L17 14 L19 21 L12 17 L5 21 L7 14 L2 9 L9 9 Z" fill="#d4af37" transform="scale(1.5)"/>
+    </g>
+    <g transform="translate(160, 0)">
+      <path d="M12 2 L15 9 L22 9 L17 14 L19 21 L12 17 L5 21 L7 14 L2 9 L9 9 Z" fill="#d4af37" transform="scale(1.5)"/>
+    </g>
   </g>
 </svg>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="luxury-midnight">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hair@Home - Sophisticated Dark Theme Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/beauty-dark-theme.css">
+    <style>
+        /* Additional demo styles */
+        .theme-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            background: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-accent);
+        }
+        
+        .theme-btn {
+            display: block;
+            width: 100%;
+            padding: 0.5rem 1rem;
+            margin: 0.25rem 0;
+            background: var(--bg-tertiary);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-primary);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.875rem;
+        }
+        
+        .theme-btn:hover,
+        .theme-btn.active {
+            background: var(--accent-gold);
+            color: var(--bg-primary);
+            border-color: var(--accent-gold);
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .color-swatch {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            border: 1px solid var(--border-primary);
+        }
+        
+        .color-box {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            border: 1px solid var(--border-primary);
+        }
+        
+        .color-info {
+            flex: 1;
+        }
+        
+        .color-name {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+        
+        .color-hex {
+            font-family: monospace;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Theme Switcher -->
+    <div class="theme-switcher">
+        <h4 style="margin: 0 0 1rem 0; color: var(--text-primary);">Theme Variations</h4>
+        <button class="theme-btn active" onclick="setTheme('luxury-midnight')">Luxury Midnight</button>
+        <button class="theme-btn" onclick="setTheme('rose-gold')">Modern Rose Gold</button>
+        <button class="theme-btn" onclick="setTheme('platinum')">Sleek Platinum</button>
+        <button class="theme-btn" onclick="setTheme('burgundy')">Burgundy Elegance</button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="luxury-nav">
+        <div class="luxury-container">
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 0;">
+                <div style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--accent-gold);">
+                    Hair@Home
+                </div>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="#home" class="luxury-nav-link active">Home</a>
+                    <a href="#services" class="luxury-nav-link">Services</a>
+                    <a href="#about" class="luxury-nav-link">About</a>
+                    <a href="#contact" class="luxury-nav-link">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="luxury-hero" id="home">
+        <div class="luxury-container">
+            <div class="luxury-hero-content luxury-animate">
+                <h1>Luxury Hair Services at Your Doorstep</h1>
+                <p class="subtitle">Professional mobile hair styling with sophisticated elegance</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="#contact" class="btn-luxury btn-luxury--primary">Book Appointment</a>
+                    <a href="#services" class="btn-luxury btn-luxury--secondary">View Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Color Palette Showcase -->
+    <section class="luxury-section">
+        <div class="luxury-container">
+            <h2 style="text-align: center; margin-bottom: 3rem;">Sophisticated Color Palette</h2>
+            <div class="demo-grid">
+                <div class="color-swatch">
+                    <div class="color-box" style="background: #0a0a0a;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Primary Background</div>
+                        <div class="color-hex">#0a0a0a</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background: #1a1a1a;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Secondary Background</div>
+                        <div class="color-hex">#1a1a1a</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background: #d4af37;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Luxury Gold Accent</div>
+                        <div class="color-hex">#d4af37</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background: #ffffff;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Primary Text</div>
+                        <div class="color-hex">#ffffff</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background: #b8b8b8;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Secondary Text</div>
+                        <div class="color-hex">#b8b8b8</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background: #e8b4b8;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Rose Gold Alternative</div>
+                        <div class="color-hex">#e8b4b8</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="luxury-section" id="services">
+        <div class="luxury-container">
+            <h2 style="text-align: center; margin-bottom: 3rem;">Premium Services</h2>
+            <div class="demo-grid">
+                <div class="luxury-service">
+                    <div class="luxury-service-icon">✂️</div>
+                    <h3>Precision Cutting</h3>
+                    <p>Expert hair cutting and styling tailored to your unique features and lifestyle.</p>
+                    <div style="margin-top: 1.5rem;">
+                        <span class="luxury-price">
+                            <span class="luxury-price-currency">$</span>85
+                        </span>
+                    </div>
+                </div>
+                <div class="luxury-service">
+                    <div class="luxury-service-icon">🎨</div>
+                    <h3>Luxury Coloring</h3>
+                    <p>Premium color services using the finest products for stunning, lasting results.</p>
+                    <div style="margin-top: 1.5rem;">
+                        <span class="luxury-price">
+                            <span class="luxury-price-currency">$</span>150
+                        </span>
+                    </div>
+                </div>
+                <div class="luxury-service">
+                    <div class="luxury-service-icon">💇‍♀️</div>
+                    <h3>Specialty Styling</h3>
+                    <p>Updos, special event styling, and professional finishing touches.</p>
+                    <div style="margin-top: 1.5rem;">
+                        <span class="luxury-price">
+                            <span class="luxury-price-currency">$</span>120
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="luxury-section">
+        <div class="luxury-container">
+            <h2 style="text-align: center; margin-bottom: 3rem;">Client Testimonials</h2>
+            <div class="demo-grid">
+                <div class="luxury-testimonial">
+                    <p>"Absolutely phenomenal service! The convenience of having a luxury salon experience at home is unmatched. My hair has never looked better."</p>
+                    <div style="margin-top: 1rem; text-align: right;">
+                        <strong style="color: var(--accent-gold);">— Sarah M.</strong>
+                    </div>
+                </div>
+                <div class="luxury-testimonial">
+                    <p>"The attention to detail and professional expertise exceeded my expectations. This is exactly what luxury mobile beauty should be."</p>
+                    <div style="margin-top: 1rem; text-align: right;">
+                        <strong style="color: var(--accent-gold);">— Jennifer L.</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="luxury-section" id="contact">
+        <div class="luxury-container">
+            <h2 style="text-align: center; margin-bottom: 3rem;">Book Your Appointment</h2>
+            <div style="max-width: 600px; margin: 0 auto;">
+                <form class="luxury-form">
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; color: var(--text-primary); font-weight: 500;">Name</label>
+                        <input type="text" class="luxury-input" placeholder="Your full name">
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; color: var(--text-primary); font-weight: 500;">Email</label>
+                        <input type="email" class="luxury-input" placeholder="your@email.com">
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; color: var(--text-primary); font-weight: 500;">Service</label>
+                        <select class="luxury-input">
+                            <option>Select a service</option>
+                            <option>Precision Cutting</option>
+                            <option>Luxury Coloring</option>
+                            <option>Specialty Styling</option>
+                            <option>Consultation</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; color: var(--text-primary); font-weight: 500;">Message</label>
+                        <textarea class="luxury-textarea" rows="4" placeholder="Tell us about your hair goals..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-luxury btn-luxury--primary" style="width: 100%;">Book Appointment</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="luxury-footer">
+        <div class="luxury-container">
+            <div style="text-align: center; padding: 2rem 0;">
+                <div style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--accent-gold); margin-bottom: 1rem;">
+                    Hair@Home
+                </div>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                    Luxury mobile hair services in Winnipeg
+                </p>
+                <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem;">
+                    <a href="#" class="luxury-nav-link">About</a>
+                    <a href="#" class="luxury-nav-link">Services</a>
+                    <a href="#" class="luxury-nav-link">Contact</a>
+                    <a href="#" class="luxury-nav-link">Privacy</a>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.875rem;">
+                    © 2024 Hair@Home. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme switching functionality
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            
+            // Update active button
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Save preference
+            localStorage.setItem('selectedTheme', theme);
+        }
+        
+        // Load saved theme
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('selectedTheme');
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                document.querySelectorAll('.theme-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.textContent.toLowerCase().includes(savedTheme.replace('-', ' '))) {
+                        btn.classList.add('active');
+                    }
+                });
+            }
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Form submission handler
+        document.querySelector('.luxury-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your appointment request! We will contact you shortly to confirm.');
+        });
+    </script>
+</body>
+</html>
