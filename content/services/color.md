@@ -1,11 +1,12 @@
 ---
-title: "Color Services"
+title: "Color & Highlights"
 icon: "fas fa-paint-brush"
-price: "$135 - $270"
-original_price: "$150 - $300"
+price: "$130"
+original_price: "$150"
 discount: "10% OFF"
-duration: "1.5-3 hours"
-description: "Full color, highlights, and touch-ups"
+duration: "120 mins"
+description: "From root touch-ups to full balayage transformations using ammonia-free, hair-safe products."
+includes: "Includes toner"
 slug: "color"
 ---
 

@@ -1,90 +1,41 @@
-<!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode | default "en" }}">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
-    <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="/css/style.css">
-    
-    <!-- Structured data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Hair@Home",
-        "image": "https://reverb256.github.io/hairathome/images/logo.png",
-        "telephone": "(204) 555-0123",
-        "email": "info@hairathome.ca",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Winnipeg",
-            "addressRegion": "MB",
-            "addressCountry": "CA"
-        },
-        "areaServed": "Winnipeg",
-        "serviceType": "Mobile Hair Styling",
-        "description": "Professional mobile hair styling services in Winnipeg. Salon-quality services at your doorstep.",
-        "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 08:00-20:00",
-        "priceRange": "$$$"
-    }
-    </script>
-</head>
-<body>
-    <header role="banner">
-        <nav class="navbar" role="navigation" aria-label="Main navigation">
-            <div class="nav-container">
-                <div class="logo">
-                    <a href="{{ .Site.BaseURL }}" aria-label="Hair@Home - Go to homepage">
-                        <h2>Hair@Home</h2>
-                    </a>
-                </div>
+<!-- Navigation -->
+<nav class="fixed w-full z-50 top-0 left-0 border-b border-zinc-200/60 bg-white/80 backdrop-blur-md dark:bg-zinc-900/80 dark:border-zinc-700/60">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="{{ .Site.BaseURL }}" class="text-sm font-semibold tracking-tight text-zinc-900 dark:text-white uppercase">
+            {{ .Site.Title }}
+        </a>
+        
+        <div class="hidden md:flex items-center gap-8">
+            <a href="#about" class="text-sm text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white transition-colors">Philosophy</a>
+            <a href="#services" class="text-sm text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white transition-colors">Services</a>
+            <a href="#pricing" class="text-sm text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white transition-colors">Pricing</a>
+            <a href="#contact" class="text-sm px-4 py-2 bg-zinc-900 text-white rounded-full hover:bg-zinc-800 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200 transition-colors font-medium">
+                Book Now
+            </a>
+        </div>
 
-                <div class="nav-menu" id="nav-menu" role="menu">
-                    {{ range .Site.Menus.main }}
-                    <a href="{{ .URL }}" class="nav-link {{ if $.IsMenuCurrent "main" . }}active{{ end }}" role="menuitem">{{ .Name }}</a>
-                    {{ end }}
-                </div>
+        <!-- Navigation Controls -->
+        <div class="flex items-center gap-4">
+            <!-- Theme Toggle -->
+            <button id="theme-toggle" class="text-zinc-900 dark:text-white p-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors" aria-label="Toggle theme">
+                <iconify-icon icon="lucide:sun" class="dark:hidden" width="20" stroke-width="1.5"></iconify-icon>
+                <iconify-icon icon="lucide:moon" class="hidden dark:block" width="20" stroke-width="1.5"></iconify-icon>
+            </button>
 
-                <!-- Navigation Controls Container -->
-                <div class="nav-controls">
-                    <!-- WhatsApp Quick Contact -->
-                    <a href="https://wa.me/12045550123?text=Hi!%20I'd%20like%20to%20book%20a%20mobile%20hair%20appointment.%20Please%20let%20me%20know%20your%20availability."
-                      class="whatsapp-header-btn"
-                      target="_blank"
-                      rel="noopener"
-                      aria-label="Contact via WhatsApp for booking">
-                          <i class="fab fa-whatsapp" aria-hidden="true"></i>
-                    </a>
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden text-zinc-900 dark:text-white p-2">
+                <iconify-icon icon="lucide:menu" width="24" stroke-width="1.5"></iconify-icon>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden absolute top-16 left-0 w-full bg-white dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-700 p-6 flex-col gap-4 shadow-lg">
+        <a href="#about" class="text-sm text-zinc-600 dark:text-zinc-400">Philosophy</a>
+        <a href="#services" class="text-sm text-zinc-600 dark:text-zinc-400">Services</a>
+        <a href="#pricing" class="text-sm text-zinc-600 dark:text-zinc-400">Pricing</a>
+        <a href="#contact" class="text-sm font-medium text-zinc-900 dark:text-white">Book Appointment</a>
+    </div>
+</nav>
 
-                    <!-- Theme Toggle -->
-                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle between dark and light theme">
-                        <i class="fas fa-moon" aria-hidden="true"></i>
-                        <span>Dark</span>
-                    </button>
-
-                    <!-- Mobile Menu Toggle -->
-                    <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
-                        <span class="bar" aria-hidden="true"></span>
-                        <span class="bar" aria-hidden="true"></span>
-                        <span class="bar" aria-hidden="true"></span>
-                    </button>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <main role="main">
+<main role="main">
