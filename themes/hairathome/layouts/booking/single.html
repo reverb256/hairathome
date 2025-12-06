@@ -1,103 +1,85 @@
 {{ define "main" }}
 <div class="container">
-    <h1>{{ .Title }}</h1>
-    <p class="section-subtitle">{{ .Params.subtitle }}</p>
-    
-    <div class="booking-container">
-        <form id="booking-form" class="booking-form">
-            <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="phone">Phone</label>
-                <input type="tel" id="phone" name="phone" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="service">Service</label>
-                <select id="service" name="service" required>
-                    <option value="">Select a service</option>
-                    {{ range where site.RegularPages "Type" "services" }}
-                    <option value="{{ .Params.slug }}">{{ .Title }} - {{ .Params.price }}</option>
-                    {{ end }}
-                </select>
-            </div>
-            
-            <div class="form-group">
-                <label for="date">Preferred Date</label>
-                <input type="date" id="date" name="date" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="time">Preferred Time</label>
-                <select id="time" name="time" required>
-                    <option value="">Select a time</option>
-                    <option value="9:00">9:00 AM</option>
-                    <option value="10:00">10:00 AM</option>
-                    <option value="11:00">11:00 AM</option>
-                    <option value="12:00">12:00 PM</option>
-                    <option value="1:00">1:00 PM</option>
-                    <option value="2:00">2:00 PM</option>
-                    <option value="3:00">3:00 PM</option>
-                    <option value="4:00">4:00 PM</option>
-                    <option value="5:00">5:00 PM</option>
-                </select>
-            </div>
-            
-            <div class="form-group">
-                <label for="location">Your Location (Winnipeg)</label>
-                <input type="text" id="location" name="location" placeholder="Neighborhood or area" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="message">Additional Details</label>
-                <textarea id="message" name="message" rows="4" placeholder="Any special requests or hair concerns..."></textarea>
-            </div>
-            
-             <button type="submit" class="btn btn-primary">Request Appointment</button>
-         </form>
+    <section class="page-header">
+        <h1>Book Your Appointment</h1>
+        <p class="page-subtitle">Schedule your mobile hair service in Winnipeg</p>
+    </section>
 
-         <!-- WhatsApp Booking Alternative -->
-         <div class="booking-alternatives">
-             <h3>Quick Booking Options</h3>
-             <div class="booking-buttons">
-                 <a href="https://wa.me/12045550123?text=Hi!%20I'd%20like%20to%20book%20a%20mobile%20hair%20appointment.%20Please%20let%20me%20know%20your%20availability."
-                    class="btn whatsapp-btn"
-                    target="_blank">
-                     <i class="fab fa-whatsapp"></i> Book via WhatsApp
-                 </a>
-                 <a href="tel:{{ site.Params.phone }}" class="btn call-btn">
-                     <i class="fas fa-phone"></i> Call Now
-                 </a>
-             </div>
-         </div>
+    <div class="booking-container">
+        <div class="booking-form">
+            <h2>Schedule Your Service</h2>
+            <form id="booking-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="service">Service Type *</label>
+                    <select id="service" name="service" required>
+                        <option value="">Select a service</option>
+                        {{ range where site.RegularPages "Type" "services" }}
+                        <option value="{{ .Title }}">{{ .Title }} - {{ .Params.price }}</option>
+                        {{ end }}
+                    </select>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="date">Preferred Date *</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Preferred Time *</label>
+                        <select id="time" name="time" required>
+                            <option value="">Select a time</option>
+                            <option value="morning">Morning (9AM - 12PM)</option>
+                            <option value="afternoon">Afternoon (12PM - 5PM)</option>
+                            <option value="evening">Evening (5PM - 8PM)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="location">Service Location *</label>
+                    <input type="text" id="location" name="location" placeholder="Your address" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="notes">Special Requests</label>
+                    <textarea id="notes" name="notes" rows="4" placeholder="Any specific requests or notes"></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-large">Request Appointment</button>
+            </form>
+        </div>
         
         <div class="booking-info">
             <h3>Service Information</h3>
             <ul>
-                <li><i class="fas fa-check"></i> Travel fee included in Winnipeg city limits</li>
-                <li><i class="fas fa-check"></i> All equipment and products provided</li>
-                <li><i class="fas fa-check"></i> Sanitized tools for each client</li>
-                <li><i class="fas fa-check"></i> Flexible scheduling including evenings & weekends</li>
-                <li><i class="fas fa-check"></i> Same-day service available based on availability</li>
+                <li><i class="fas fa-clock"></i> <strong>Flexible Scheduling:</strong> Available 7 days a week</li>
+                <li><i class="fas fa-map-marker-alt"></i> <strong>Service Areas:</strong> All Winnipeg neighborhoods</li>
+                <li><i class="fas fa-star"></i> <strong>Professional Grade:</strong> Premium products and tools</li>
+                <li><i class="fas fa-check-circle"></i> <strong>Sanitized Equipment:</strong> Hospital-grade cleanliness</li>
+                <li><i class="fas fa-concierge-bell"></i> <strong>Personalized Service:</strong> One-on-one attention</li>
             </ul>
             
-            <div class="contact-info">
-                <h5>Contact Information</h5>
-                <p><i class="fas fa-phone"></i> {{ site.Params.phone }}</p>
-                <p><i class="fas fa-envelope"></i> {{ site.Params.email }}</p>
-                <p><i class="fas fa-map-marker-alt"></i> Serving all Winnipeg areas</p>
+            <div class="contact-options">
+                <h4>Need to Discuss?</h4>
+                <p>Call us at <a href="tel:2045550123">(204) 555-0123</a> or message us on WhatsApp for questions</p>
             </div>
         </div>
     </div>
-    
-    {{ .Content }}
 </div>
 {{ end }}
