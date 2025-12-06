@@ -14,37 +14,10 @@
      <meta name="HandheldFriendly" content="true">
      <meta name="MobileOptimized" content="width">
 
-     <title>{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
+      <title>{{ .Title }} - {{ .Site.Title }}</title>
      <meta name="description" content="{{ .Description | default .Site.Params.description }}">
      
-     <!-- Intelligent Color System Initialization -->
-     <script>
-         (function() {
-             // Initialize intelligent color system
-             const theme = localStorage.getItem('hairathome-color-preferences') ? 
-                 JSON.parse(localStorage.getItem('hairathome-color-preferences')).preferredTheme : 'auto';
-             const finalTheme = theme === 'auto' ? 
-                 (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme;
-             document.documentElement.setAttribute('data-theme', finalTheme);
-             
-             // Set initial context attributes
-             const hour = new Date().getHours();
-             const timeContext = hour >= 5 && hour < 12 ? 'morning' : 
-                              hour >= 12 && hour < 17 ? 'afternoon' : 
-                              hour >= 17 && hour < 21 ? 'evening' : 'night';
-             document.documentElement.setAttribute('data-time', timeContext);
-             
-             const month = new Date().getMonth();
-             const seasonContext = month >= 2 && month <= 4 ? 'spring' :
-                                month >= 5 && month <= 7 ? 'summer' :
-                                month >= 8 && month <= 10 ? 'autumn' : 'winter';
-             document.documentElement.setAttribute('data-season', seasonContext);
-             
-             // Device detection
-             const isMobile = /mobile|android|iphone|ipad|phone/i.test(navigator.userAgent);
-             document.documentElement.setAttribute('data-device', isMobile ? 'mobile' : 'desktop');
-         })();
-     </script>
+
 
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
