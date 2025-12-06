@@ -1,9 +1,12 @@
 ---
-title: "Beard Grooming"
+title: "Gents Grooming"
 icon: "fas fa-male"
-price: "$25 - $50"
-duration: "30-45 minutes"
-description: "Cuts, trims, and shaping for men"
+price: "$35"
+original_price: "$40"
+discount: "10% OFF"
+duration: "30 mins"
+description: "Classic barbering techniques in the comfort of your home. Clipper or scissor cuts."
+includes: "Scissors & Clippers"
 slug: "beard"
 ---
 

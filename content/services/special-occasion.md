@@ -1,9 +1,12 @@
 ---
-title: "Special Occasion"
+title: "Occasion Styling"
 icon: "fas fa-graduation-cap"
-price: "$60 - $120"
-duration: "1-2 hours"
-description: "Updos, curls, and styling for weddings and events"
+price: "$150"
+original_price: "$200"
+discount: "10% OFF"
+duration: "150 mins"
+description: "Elegant updos, bridal styling, or bouncy blowouts for your special events."
+includes: "Hand painted"
 slug: "special-occasion"
 ---
 
