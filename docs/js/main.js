@@ -1,319 +1,298 @@
-// Theme Toggle and Mobile Navigation - ensure DOM is ready
+// Hair@Home - Main JavaScript
+// Clean, professional functionality for mobile hair stylist service
+
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOMContentLoaded event fired');
-    
-    // Theme Toggle Functionality
+    console.log('Hair@Home website loaded');
+
+    // Theme toggle functionality
     const themeToggle = document.getElementById('theme-toggle');
     const html = document.documentElement;
     
-    console.log('Theme toggle element found:', !!themeToggle);
-    
-    // Set default theme to dark
-    const savedTheme = localStorage.getItem('theme');
-    const currentTheme = savedTheme || 'dark';
-    html.setAttribute('data-theme', currentTheme);
-    
-    console.log('Setting theme to:', currentTheme);
-    
-    // Force dark mode on page load to override any caching
-    if (!savedTheme) {
-        localStorage.setItem('theme', 'dark');
-    }
+    // Set default theme to light (more professional for a service business)
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-theme', savedTheme);
     
     if (themeToggle) {
-        // Update toggle button text and icon
-        updateThemeToggle(currentTheme);
-        console.log('Theme toggle initialized with theme:', currentTheme);
+        updateThemeToggle(savedTheme);
         
         themeToggle.addEventListener('click', (e) => {
             e.preventDefault();
-            e.stopPropagation();
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
             
-            const newTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
             html.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
             updateThemeToggle(newTheme);
-            
-            console.log('Theme toggled to:', newTheme);
         });
-        
-        console.log('Click event listener attached');
     }
     
     function updateThemeToggle(theme) {
         const icon = themeToggle.querySelector('i');
         const text = themeToggle.querySelector('span');
         
-        if (theme === 'dark') {
-            icon.className = 'fas fa-moon';
-            if (text) text.textContent = 'Light';  // Show "Light" to switch to light mode
-        } else {
-            icon.className = 'fas fa-sun';
-            if (text) text.textContent = 'Dark';   // Show "Dark" to switch to dark mode
+        if (icon) {
+            icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
         }
         
-        // Force immediate visual feedback
-        html.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
+        if (text) {
+            text.textContent = theme === 'dark' ? 'Light' : 'Dark';
+        }
     }
 
-    // Mobile Navigation Toggle
+    // Mobile navigation toggle
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
-
+    
     if (hamburger && navMenu) {
         hamburger.addEventListener('click', () => {
-            const isExpanded = hamburger.classList.toggle('active');
+            const isExpanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+            hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
-            hamburger.setAttribute('aria-expanded', isExpanded);
+            hamburger.setAttribute('aria-expanded', !isExpanded);
         });
-
-        // Set a flag to indicate event listeners are attached (for testing)
-        hamburger._hasEventListener = true;
-
+        
         // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-            hamburger.setAttribute('aria-expanded', 'false');
-        }));
-    }
-});
-
-// Form Validation
-const bookingForm = document.getElementById('booking-form');
-
-if (bookingForm) {
-    bookingForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        // Simple validation
-        let isValid = true;
-        const requiredFields = this.querySelectorAll('[required]');
-
-        requiredFields.forEach(field => {
-            if (!field.value.trim()) {
-                isValid = false;
-                field.style.borderColor = '#e74c3c';
-            } else {
-                field.style.borderColor = '#ddd';
-            }
-        });
-
-        if (isValid) {
-            // In a real implementation, you would submit the form to a server
-            // For this demo, we'll show a success message
-            alert('Thank you for your booking request! We will contact you shortly to confirm your appointment.');
-            bookingForm.reset();
-        } else {
-            alert('Please fill in all required fields.');
-        }
-    });
-}
-
-// Lead Capture Form
-const leadForm = document.getElementById('lead-form');
-
-if (leadForm) {
-    leadForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        // Simple validation
-        let isValid = true;
-        const requiredFields = this.querySelectorAll('[required]');
-
-        requiredFields.forEach(field => {
-            if (!field.value.trim()) {
-                isValid = false;
-                field.style.borderColor = '#e74c3c';
-            } else {
-                field.style.borderColor = '#ddd';
-            }
-        });
-
-        if (isValid) {
-            // Show success message
-            alert('Thank you! We will call you within 24 hours to schedule your free consultation.');
-            leadForm.reset();
-        } else {
-            alert('Please fill in all required fields.');
-        }
-    });
-}
-
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-            const headerOffset = 70;
-            const elementPosition = targetElement.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
             });
-        }
-    });
-});
+        });
+    }
 
-// Initialize the website
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('Hair@Home website loaded successfully!');
-    
-    // Initialize image optimizer
-    window.imageOptimizer = new ImageOptimizer();
-    
-    // Set minimum date for booking form to today
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                const offsetTop = targetElement.offsetTop - 70; // Account for fixed header
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Form validation and submission for booking
+    const bookingForm = document.getElementById('booking-form');
+    if (bookingForm) {
+        bookingForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simple validation
+            const requiredFields = this.querySelectorAll('[required]');
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    isValid = false;
+                    field.classList.add('error');
+                } else {
+                    field.classList.remove('error');
+                }
+            });
+            
+            if (isValid) {
+                // In a real implementation, this would submit to a server
+                // For now, just show success message
+                showNotification('Thank you! We will contact you shortly to confirm your appointment.', 'success');
+                this.reset();
+            } else {
+                showNotification('Please fill in all required fields.', 'error');
+            }
+        });
+        
+        // Add error styling to required fields
+        const requiredFields = bookingForm.querySelectorAll('[required]');
+        requiredFields.forEach(field => {
+            field.addEventListener('blur', function() {
+                if (!this.value.trim()) {
+                    this.classList.add('error');
+                } else {
+                    this.classList.remove('error');
+                }
+            });
+        });
+    }
+
+    // Set min date for booking form to today
     const dateInput = document.getElementById('date');
     if (dateInput) {
         const today = new Date().toISOString().split('T')[0];
         dateInput.setAttribute('min', today);
     }
+
+    // Initialize gallery lightbox if gallery exists
+    initGalleryLightbox();
+    
+    // Initialize lazy loading for images
+    initLazyLoading();
 });
 
-// Enhanced Image Optimization and Performance
-class ImageOptimizer {
-    constructor() {
-        this.init();
+// Notification system
+function showNotification(message, type = 'info') {
+    // Remove any existing notifications
+    const existing = document.querySelector('.notification');
+    if (existing) existing.remove();
+    
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.textContent = message;
+    
+    // Add styling via CSS classes
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 1rem 1.5rem;
+        border-radius: 4px;
+        color: white;
+        z-index: 10000;
+        max-width: 300px;
+        animation: slideIn 0.3s ease;
+    `;
+    
+    // Set background based on type
+    if (type === 'success') {
+        notification.style.backgroundColor = '#28a745';
+    } else if (type === 'error') {
+        notification.style.backgroundColor = '#dc3545';
+    } else {
+        notification.style.backgroundColor = '#007bff';
     }
     
-    init() {
-        this.setupLazyLoading();
-        this.setupImageErrorHandling();
-        this.setupProgressiveLoading();
-        this.optimizeImageLoading();
-    }
+    document.body.appendChild(notification);
     
-    setupLazyLoading() {
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        this.loadImage(img);
+    // Remove after 5 seconds
+    setTimeout(() => {
+        if (notification.parentNode) {
+            notification.parentNode.removeChild(notification);
+        }
+    }, 5000);
+}
+
+// Gallery lightbox functionality
+function initGalleryLightbox() {
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    galleryItems.forEach(item => {
+        item.style.cursor = 'pointer';
+        item.addEventListener('click', () => {
+            const img = item.querySelector('img');
+            if (img) {
+                showLightbox(img.src, img.alt);
+            }
+        });
+    });
+}
+
+function showLightbox(src, alt) {
+    // Remove existing lightbox
+    const existing = document.querySelector('.lightbox');
+    if (existing) existing.remove();
+    
+    const lightbox = document.createElement('div');
+    lightbox.className = 'lightbox';
+    lightbox.innerHTML = `
+        <div class="lightbox-content">
+            <span class="lightbox-close">&times;</span>
+            <img src="${src}" alt="${alt}">
+        </div>
+    `;
+    
+    // Add basic styling
+    lightbox.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10000;
+    `;
+    
+    lightbox.querySelector('.lightbox-content').style.cssText = `
+        position: relative;
+        max-width: 90%;
+        max-height: 90%;
+    `;
+    
+    lightbox.querySelector('img').style.cssText = `
+        max-width: 100%;
+        max-height: 80vh;
+        display: block;
+        border-radius: 4px;
+    `;
+    
+    lightbox.querySelector('.lightbox-close').style.cssText = `
+        position: absolute;
+        top: -40px;
+        right: 0;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        z-index: 10001;
+    `;
+    
+    lightbox.querySelector('.lightbox-close').addEventListener('click', () => {
+        document.body.removeChild(lightbox);
+    });
+    
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            document.body.removeChild(lightbox);
+        }
+    });
+    
+    document.body.appendChild(lightbox);
+}
+
+// Lazy loading for images
+function initLazyLoading() {
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    if (img.dataset.src) {
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        img.classList.add('loaded');
                         observer.unobserve(img);
                     }
-                });
-            }, {
-                rootMargin: '50px 0px',
-                threshold: 0.01
+                }
             });
-            
-            document.querySelectorAll('img[data-src]').forEach(img => {
-                imageObserver.observe(img);
-            });
-        } else {
-            // Fallback for older browsers
-            this.loadAllImages();
-        }
-    }
-    
-    loadImage(img) {
-        if (img.dataset.src) {
-            img.src = img.dataset.src;
-            img.classList.add('lazyloaded');
-            img.classList.remove('lazyload');
-        }
-    }
-    
-    loadAllImages() {
+        });
+        
         document.querySelectorAll('img[data-src]').forEach(img => {
-            this.loadImage(img);
-        });
-    }
-    
-    setupImageErrorHandling() {
-        document.querySelectorAll('img').forEach(img => {
-            img.addEventListener('error', function() {
-                this.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzMzMzMzMyIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiM5OTk5OTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiPkltYWdlIE5vdCBBdmFpbGFibGU8L3RleHQ+PC9zdmc+';
-                this.alt = 'Image not available';
-                this.classList.add('image-error');
-            });
-        });
-    }
-    
-    setupProgressiveLoading() {
-        document.querySelectorAll('img').forEach(img => {
-            // Add loading animation
-            img.classList.add('lazyload');
-            
-            img.addEventListener('load', function() {
-                this.classList.add('fade-in');
-            });
-        });
-    }
-    
-    optimizeImageLoading() {
-        // Preload critical images
-        const criticalImages = document.querySelectorAll('img[data-critical="true"]');
-        criticalImages.forEach(img => {
-            if (img.dataset.src) {
-                const preloadLink = document.createElement('link');
-                preloadLink.rel = 'preload';
-                preloadLink.as = 'image';
-                preloadLink.href = img.dataset.src;
-                document.head.appendChild(preloadLink);
-            }
-        });
-        
-        // Add responsive image handling
-        this.setupResponsiveImages();
-    }
-    
-    setupResponsiveImages() {
-        const images = document.querySelectorAll('img[data-srcset]');
-        images.forEach(img => {
-            if (img.dataset.srcset) {
-                img.srcset = img.dataset.srcset;
-            }
+            imageObserver.observe(img);
         });
     }
 }
 
-// Performance monitoring
-if ('performance' in window) {
-    window.addEventListener('load', function() {
-        const perfData = performance.getEntriesByType('navigation')[0];
-        const loadTime = perfData.loadEventEnd - perfData.loadEventStart;
-        console.log(`Page load time: ${loadTime}ms`);
-        
-        // Log performance metrics
-        if ('PerformanceObserver' in window) {
-            const observer = new PerformanceObserver((list) => {
-                list.getEntries().forEach((entry) => {
-                    if (entry.entryType === 'largest-contentful-paint') {
-                        console.log(`LCP: ${entry.startTime}ms`);
-                    }
-                });
-            });
-            observer.observe({ entryTypes: ['largest-contentful-paint'] });
+// Add slideIn animation for notifications
+if (!document.querySelector('#notification-animation')) {
+    const style = document.createElement('style');
+    style.id = 'notification-animation';
+    style.textContent = `
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
         }
-        
-        // Monitor image loading performance
-        const imageEntries = performance.getEntriesByType('resource').filter(entry => 
-            entry.initiatorType === 'img'
-        );
-        console.log(`Images loaded: ${imageEntries.length}`);
-        const totalImageSize = imageEntries.reduce((total, entry) => total + entry.transferSize, 0);
-        console.log(`Total image size: ${(totalImageSize / 1024).toFixed(2)} KB`);
-    });
-}
-
-// Service Worker registration for offline support (optional)
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/sw.js')
-            .then(function(registration) {
-                console.log('ServiceWorker registration successful with scope: ', registration.scope);
-            })
-            .catch(function(error) {
-                console.log('ServiceWorker registration failed: ', error);
-            });
-    });
+    `;
+    document.head.appendChild(style);
 }

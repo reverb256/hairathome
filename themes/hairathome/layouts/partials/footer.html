@@ -1,61 +1,71 @@
-<footer role="contentinfo">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Hair@Home</h3>
-                <p>Bringing professional hair styling directly to you in Winnipeg since 2018.</p>
-                <div class="social-links" role="list">
-                    {{ with .Site.Params.social.facebook }}
-                    <a href="{{ . }}" aria-label="Follow us on Facebook" role="listitem"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-                    {{ end }}
-                    {{ with .Site.Params.social.instagram }}
-                    <a href="{{ . }}" aria-label="Follow us on Instagram" role="listitem"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                    {{ end }}
-                    {{ with .Site.Params.social.tiktok }}
-                    <a href="{{ . }}" aria-label="Follow us on TikTok" role="listitem"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
-                    {{ end }}
+    </main>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Hair@Home</h3>
+                    <p>Bringing professional hair styling directly to you in Winnipeg since 2018. Salon-quality services in the comfort of your own space.</p>
+                    <div class="social-links" role="list">
+                        {{ with .Site.Params.social.facebook }}
+                        <a href="{{ . }}" aria-label="Follow us on Facebook" role="listitem"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        {{ end }}
+                        {{ with .Site.Params.social.instagram }}
+                        <a href="{{ . }}" aria-label="Follow us on Instagram" role="listitem"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        {{ end }}
+                        {{ with .Site.Params.social.tiktok }}
+                        <a href="{{ . }}" aria-label="Follow us on TikTok" role="listitem"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
+                        {{ end }}
+                    </div>
+                </div>
+
+                <nav class="footer-section" aria-label="Footer navigation">
+                    <h4>Quick Links</h4>
+                    <ul role="list">
+                        {{ range .Site.Menus.main }}
+                        <li role="listitem"><a href="{{ .URL }}">{{ .Name }}</a></li>
+                        {{ end }}
+                    </ul>
+                </nav>
+
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <p><a href="tel:{{ .Site.Params.phone }}" class="tap-to-call" aria-label="Call {{ .Site.Params.phone }}"><i class="fas fa-phone" aria-hidden="true"></i> {{ .Site.Params.phone }}</a></p>
+                    <p><a href="https://wa.me/12045550123?text=Hi!%20I'd%20like%20to%20book%20a%20mobile%20hair%20appointment." target="_blank" rel="noopener" class="whatsapp-link" aria-label="Contact via WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp</a></p>
+                    <p aria-label="Email address"><i class="fas fa-envelope" aria-hidden="true"></i> {{ .Site.Params.email }}</p>
+                    <p aria-label="Service location"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> {{ .Site.Params.location }}</p>
+                </div>
+
+                <!-- Business Information -->
+                <div class="footer-section">
+                    <h4>Service Areas</h4>
+                    <p>We proudly serve all areas within Winnipeg, including:</p>
+                    <ul>
+                        <li>Central Winnipeg</li>
+                        <li>South Winnipeg</li>
+                        <li>West Winnipeg</li>
+                        <li>North Winnipeg</li>
+                    </ul>
                 </div>
             </div>
 
-            <nav class="footer-section" aria-label="Footer navigation">
-                <h4>Quick Links</h4>
-                <ul role="list">
-                    {{ range .Site.Menus.main }}
-                    <li role="listitem"><a href="{{ .URL }}">{{ .Name }}</a></li>
-                    {{ end }}
-                </ul>
-            </nav>
-
-              <div class="footer-section">
-                  <h4>Contact Information</h4>
-                  <p><a href="tel:{{ .Site.Params.phone }}" class="tap-to-call" aria-label="Call {{ .Site.Params.phone }}"><i class="fas fa-phone" aria-hidden="true"></i> {{ .Site.Params.phone }}</a></p>
-                  <p><a href="https://wa.me/12045550123?text=Hi!%20I'd%20like%20to%20book%20a%20mobile%20hair%20appointment." target="_blank" rel="noopener" class="whatsapp-link" aria-label="Contact via WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp</a></p>
-                  <p aria-label="Email address"><i class="fas fa-envelope" aria-hidden="true"></i> {{ .Site.Params.email }}</p>
-                  <p aria-label="Service location"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> {{ .Site.Params.location }}</p>
-              </div>
-
-              <!-- Trust Badges -->
-              <div class="footer-section">
-                  <h4>Certifications & Trust</h4>
-                  <div class="trust-badges" role="list">
-                      <div class="trust-badge" role="listitem">
-                          <i class="fas fa-certificate" aria-hidden="true"></i>
-                          <span>Professional Stylist</span>
-                      </div>
-                      <div class="trust-badge" role="listitem">
-                          <i class="fas fa-shield-alt" aria-hidden="true"></i>
-                          <span>Experienced Professional</span>
-                      </div>
-                      <div class="trust-badge" role="listitem">
-                          <i class="fas fa-user-check" aria-hidden="true"></i>
-                          <span>Insured & Bonded</span>
-                      </div>
-                  </div>
-              </div>
+            <div class="footer-bottom">
+                <p>&copy; {{ now.Year }} {{ .Site.Title }}. All rights reserved. | Licensed Mobile Hair Stylist in Winnipeg</p>
+            </div>
         </div>
+    </footer>
 
-        <div class="footer-bottom">
-            <p>&copy; {{ now.Year }} {{ .Site.Title }}. All rights reserved. | Licensed Mobile Hair Stylist in Winnipeg</p>
-        </div>
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/12045550123?text=Hi!%20I'd%20like%20to%20book%20a%20mobile%20hair%20appointment.%20Please%20let%20me%20know%20your%20availability." target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i> Book Now
+        </a>
     </div>
-</footer>
+
+    <!-- Scripts -->
+    <script src="/js/main.js"></script>
+    {{ if hugo.IsProduction }}
+    <!-- Production scripts would go here -->
+    {{ end }}
+</body>
+</html>

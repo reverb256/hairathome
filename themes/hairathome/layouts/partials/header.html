@@ -1,42 +1,90 @@
-<header role="banner">
-    <nav class="navbar" role="navigation" aria-label="Main navigation">
-        <div class="nav-container">
-            <div class="logo">
-                <a href="{{ .Site.BaseURL }}" aria-label="Hair@Home - Go to homepage">
-                    <h2>Hair@Home</h2>
-                </a>
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en" }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Hair@Home",
+        "image": "https://reverb256.github.io/hairathome/images/logo.png",
+        "telephone": "(204) 555-0123",
+        "email": "info@hairathome.ca",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Winnipeg",
+            "addressRegion": "MB",
+            "addressCountry": "CA"
+        },
+        "areaServed": "Winnipeg",
+        "serviceType": "Mobile Hair Styling",
+        "description": "Professional mobile hair styling services in Winnipeg. Salon-quality services at your doorstep.",
+        "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 08:00-20:00",
+        "priceRange": "$$$"
+    }
+    </script>
+</head>
+<body>
+    <header role="banner">
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="{{ .Site.BaseURL }}" aria-label="Hair@Home - Go to homepage">
+                        <h2>Hair@Home</h2>
+                    </a>
+                </div>
+
+                <div class="nav-menu" id="nav-menu" role="menu">
+                    {{ range .Site.Menus.main }}
+                    <a href="{{ .URL }}" class="nav-link {{ if $.IsMenuCurrent "main" . }}active{{ end }}" role="menuitem">{{ .Name }}</a>
+                    {{ end }}
+                </div>
+
+                <!-- Navigation Controls Container -->
+                <div class="nav-controls">
+                    <!-- WhatsApp Quick Contact -->
+                    <a href="https://wa.me/12045550123?text=Hi!%20I'd%20like%20to%20book%20a%20mobile%20hair%20appointment.%20Please%20let%20me%20know%20your%20availability."
+                      class="whatsapp-header-btn"
+                      target="_blank"
+                      rel="noopener"
+                      aria-label="Contact via WhatsApp for booking">
+                          <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                    </a>
+
+                    <!-- Theme Toggle -->
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle between dark and light theme">
+                        <i class="fas fa-moon" aria-hidden="true"></i>
+                        <span>Dark</span>
+                    </button>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+                        <span class="bar" aria-hidden="true"></span>
+                        <span class="bar" aria-hidden="true"></span>
+                        <span class="bar" aria-hidden="true"></span>
+                    </button>
+                </div>
             </div>
-            
-            <div class="nav-menu" id="nav-menu" role="menu">
-                {{ range .Site.Menus.main }}
-                <a href="{{ .URL }}" class="nav-link" role="menuitem">{{ .Name }}</a>
-                {{ end }}
-            </div>
-            
-            <!-- Navigation Controls Container -->
-            <div class="nav-controls">
-                <!-- WhatsApp Quick Contact -->
-                <a href="https://wa.me/12045550123?text=Hi!%20I'd%20like%20to%20book%20a%20mobile%20hair%20appointment.%20Please%20let%20me%20know%20your%20availability."
-                  class="whatsapp-header-btn"
-                  target="_blank"
-                  rel="noopener"
-                  aria-label="Contact via WhatsApp for booking">
-                      <i class="fab fa-whatsapp" aria-hidden="true"></i>
-                </a>
-                
-                <!-- Theme Toggle -->
-                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle between dark and light theme">
-                    <i class="fas fa-moon" id="theme-icon" aria-hidden="true"></i>
-                    <span id="theme-text">Light</span>
-                </button>
-                
-                <!-- Mobile Menu Toggle -->
-                <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
-                    <span class="bar" aria-hidden="true"></span>
-                    <span class="bar" aria-hidden="true"></span>
-                    <span class="bar" aria-hidden="true"></span>
-                </button>
-            </div>
-        </div>
-    </nav>
-</header>
+        </nav>
+    </header>
+
+    <main role="main">
