@@ -1,26 +1,26 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 py-12">
+    <footer class="bg-white dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-700 py-12">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex flex-col gap-2">
-                <span class="text-sm font-semibold tracking-tight text-gray-900 dark:text-white uppercase">{{ .Site.Title }}</span>
-                <p class="text-xs text-gray-400 dark:text-gray-500">© {{ now.Year }} {{ .Site.Title }}. All rights reserved.</p>
+                <span class="text-sm font-semibold tracking-tight text-zinc-900 dark:text-white uppercase">{{ .Site.Title }}</span>
+                <p class="text-xs text-zinc-400 dark:text-zinc-500">© {{ now.Year }} {{ .Site.Title }}. All rights reserved.</p>
             </div>
             
             <div class="flex gap-6">
                 {{ with .Site.Params.social.facebook }}
-                <a href="{{ . }}" class="text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors" aria-label="Facebook">
+                <a href="{{ . }}" class="text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" aria-label="Facebook">
                     <iconify-icon icon="lucide:facebook" width="20" stroke-width="1.5"></iconify-icon>
                 </a>
                 {{ end }}
                 {{ with .Site.Params.social.instagram }}
-                <a href="{{ . }}" class="text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors" aria-label="Instagram">
+                <a href="{{ . }}" class="text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" aria-label="Instagram">
                     <iconify-icon icon="lucide:instagram" width="20" stroke-width="1.5"></iconify-icon>
                 </a>
                 {{ end }}
                 {{ with .Site.Params.social.tiktok }}
-                <a href="{{ . }}" class="text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors" aria-label="TikTok">
+                <a href="{{ . }}" class="text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors" aria-label="TikTok">
                     <iconify-icon icon="lucide:music" width="20" stroke-width="1.5"></iconify-icon>
                 </a>
                 {{ end }}
@@ -36,7 +36,7 @@
            class="bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all hover:scale-110 group"
            aria-label="Contact via WhatsApp">
             <iconify-icon icon="lucide:message-circle" width="24" stroke-width="1.5"></iconify-icon>
-            <span class="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-3 py-1 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+            <span class="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 px-3 py-1 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
                 Book via WhatsApp
             </span>
         </a>
