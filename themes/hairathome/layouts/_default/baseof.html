@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en" }}" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f9f9f9',
+                            100: '#f0f0f0',
+                            200: '#e4e4e4',
+                            300: '#d1d1d1',
+                            400: '#a3a3a3',
+                            500: '#737373',
+                            600: '#525252',
+                            700: '#404040',
+                            800: '#262626',
+                            900: '#171717',
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-out forwards',
+                        'slide-up': 'slideUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Styles -->
+    <style>
+        /* Custom subtle scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #e5e5e5;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #d4d4d4;
+        }
+        
+        /* Custom Selection Color */
+        ::selection {
+            background: #f4f4f5;
+            color: #18181b;
+        }
+
+        /* Checkbox styling */
+        .custom-checkbox:checked {
+            background-color: #18181b;
+            border-color: #18181b;
+        }
+        .custom-checkbox:checked::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 8px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+        
+        /* Dark mode scrollbar */
+        .dark ::-webkit-scrollbar-thumb {
+            background-color: #525252;
+        }
+        .dark ::-webkit-scrollbar-thumb:hover {
+            background-color: #737373;
+        }
+        
+        /* Dark mode selection */
+        .dark ::selection {
+            background: #404040;
+            color: #f9f9f9;
+        }
+    </style>
+    
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Hair@Home",
+        "image": "https://reverb256.github.io/hairathome/images/logo.png",
+        "telephone": "(204) 555-0123",
+        "email": "info@hairathome.ca",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Winnipeg",
+            "addressRegion": "MB",
+            "addressCountry": "CA"
+        },
+        "areaServed": "Winnipeg",
+        "serviceType": "Mobile Hair Styling",
+        "description": "Professional mobile hair styling services in Winnipeg. Salon-quality services at your doorstep.",
+        "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 08:00-20:00",
+        "priceRange": "$$$"
+    }
+    </script>
+</head>
+<body class="bg-white text-gray-900 font-sans antialiased">
+    {{ partial "header.html" . }}
+    {{ block "main" . }}
+    {{ end }}
+    {{ partial "footer.html" . }}
+</body>
+</html>

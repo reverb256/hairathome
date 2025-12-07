@@ -1,0 +1,244 @@
+{{ define "main" }}
+<!-- Hero Section -->
+<section class="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row gap-12 items-center">
+            <div class="flex-1 space-y-8 animate-slide-up">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/20 border border-green-200 dark:border-green-800">
+                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                    <span class="text-xs font-medium text-green-700 dark:text-green-400">Accepting new clients in Winnipeg</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 dark:text-white leading-[1.1]">
+                    The salon experience,<br>
+                    <span class="text-gray-600 dark:text-gray-400">reimagined at home.</span>
+                </h1>
+                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-lg font-light leading-relaxed">
+                    Expert styling, coloring, and cutting services delivered to your doorstep. We bring the luxury of a high-end salon to the comfort and privacy of your personal space.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <a href="#contact" class="inline-flex justify-center items-center px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-all text-sm font-medium group">
+                        Book Appointment
+                        <iconify-icon icon="lucide:arrow-right" class="ml-2 group-hover:translate-x-1 transition-transform" width="16" stroke-width="1.5"></iconify-icon>
+                    </a>
+                    <a href="#services" class="inline-flex justify-center items-center px-6 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all text-sm font-medium">
+                        View Service Menu
+                    </a>
+                </div>
+            </div>
+            
+            <div class="flex-1 w-full relative animate-fade-in delay-200">
+                <div class="aspect-[4/5] md:aspect-square rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-800 relative group">
+                    <!-- Professional Hair Styling Image -->
+                    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1674&auto=format&fit=crop" 
+                         alt="Professional mobile hair styling service" 
+                         class="object-cover w-full h-full opacity-90 group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900/10 to-transparent"></div>
+                </div>
+                <!-- Floating Badge -->
+                <div class="absolute -bottom-6 -left-6 md:bottom-8 md:-left-8 bg-white dark:bg-gray-800 p-4 rounded-xl border border-gray-200 dark:border-gray-700 shadow-xl shadow-gray-200/50 dark:shadow-gray-900/50 max-w-xs hidden md:block">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-900 dark:text-white">
+                            <iconify-icon icon="lucide:star" width="18" stroke-width="1.5"></iconify-icon>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-gray-900 dark:text-white">5-Star Rated</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">Over 200+ happy clients</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Value Proposition -->
+<section id="about" class="py-24 bg-white dark:bg-gray-900 border-y border-gray-200 dark:border-gray-700">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <!-- Feature 1 -->
+            <div class="space-y-4">
+                <div class="w-12 h-12 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center justify-center text-gray-900 dark:text-white mb-6">
+                    <iconify-icon icon="lucide:armchair" width="24" stroke-width="1.5"></iconify-icon>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white tracking-tight">Ultimate Convenience</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed font-light">
+                    Skip the traffic and waiting rooms. We work around your schedule, arriving fully equipped to transform your look without you leaving your front door.
+                </p>
+            </div>
+            <!-- Feature 2 -->
+            <div class="space-y-4">
+                <div class="w-12 h-12 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center justify-center text-gray-900 dark:text-white mb-6">
+                    <iconify-icon icon="lucide:scissors" width="24" stroke-width="1.5"></iconify-icon>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white tracking-tight">Expert Craftsmanship</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed font-light">
+                    With over a decade of experience in top salons, we bring professional-grade tools and premium products to ensure salon-quality results.
+                </p>
+            </div>
+            <!-- Feature 3 -->
+            <div class="space-y-4">
+                <div class="w-12 h-12 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center justify-center text-gray-900 dark:text-white mb-6">
+                    <iconify-icon icon="lucide:sparkles" width="24" stroke-width="1.5"></iconify-icon>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white tracking-tight">Personalized Focus</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed font-light">
+                    In a crowded salon, attention is divided. At home, it's just you and the stylist, allowing for a bespoke consultation and relaxed atmosphere.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Grid -->
+<section id="services" class="py-24 bg-gray-50 dark:bg-gray-800/50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+            <div>
+                <h2 class="text-3xl font-semibold tracking-tight text-gray-900 dark:text-white mb-4">Curated Services</h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-md font-light">Designed for modern lifestyles. All services include a consultation and premium finish.</p>
+            </div>
+            <a href="#pricing" class="text-sm font-medium text-gray-900 dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors flex items-center gap-1">
+                See full price list <iconify-icon icon="lucide:arrow-right" width="14"></iconify-icon>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {{ range first 4 (where site.RegularPages "Type" "services") }}
+            <div class="group bg-white dark:bg-gray-900 p-6 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 hover:shadow-lg hover:shadow-gray-200/50 dark:hover:shadow-gray-900/50 transition-all duration-300">
+                <div class="aspect-video w-full bg-gray-100 dark:bg-gray-800 rounded-lg mb-6 overflow-hidden">
+                     <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?q=80&w=800&auto=format&fit=crop" 
+                          alt="{{ .Title }}" 
+                          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <h3 class="text-base font-semibold text-gray-900 dark:text-white mb-2">{{ .Title }}</h3>
+                <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-4">{{ .Params.description }}</p>
+                <div class="text-sm font-medium text-gray-900 dark:text-white">{{ .Params.price }}</div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+<!-- Pricing Section -->
+<section id="pricing" class="py-24 bg-white dark:bg-gray-900 border-y border-gray-200 dark:border-gray-700">
+    <div class="max-w-3xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-semibold tracking-tight text-gray-900 dark:text-white mb-4">Transparent Pricing</h2>
+            <p class="text-gray-600 dark:text-gray-400 font-light">Simple, flat rates with no hidden travel fees within Winnipeg.</p>
+        </div>
+
+        <div class="space-y-4">
+            {{ range first 5 (where site.RegularPages "Type" "services") }}
+            <div class="flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors border-b border-gray-100 dark:border-gray-800 border-dashed">
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-900 dark:text-white">{{ .Title }}</h4>
+                    <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">{{ .Params.duration }} • {{ .Params.includes }}</p>
+                </div>
+                <span class="text-sm font-medium text-gray-900 dark:text-white">{{ .Params.price }}</span>
+            </div>
+            {{ end }}
+        </div>
+        
+        <div class="mt-8 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 flex items-start gap-3">
+            <iconify-icon icon="lucide:info" class="text-gray-400 dark:text-gray-500 mt-0.5 shrink-0" width="16"></iconify-icon>
+            <p class="text-xs text-gray-600 dark:text-gray-400">Prices may vary slightly based on hair length and thickness. A precise quote will be provided during the initial consultation.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonial Section -->
+<section class="py-24 bg-gray-900 dark:bg-black text-white">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+        <iconify-icon icon="lucide:quote" class="text-gray-700 dark:text-gray-600 mb-8" width="40"></iconify-icon>
+        <h3 class="text-2xl md:text-4xl font-normal leading-snug tracking-tight max-w-4xl mx-auto mb-10">
+            "Absolutely revolutionized my routine. The convenience of having a top-tier stylist come to my home, combined with the professionalism of the service, is unmatched."
+        </h3>
+        <div class="flex flex-col items-center gap-2">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100&auto=format&fit=crop" 
+                 alt="Sarah J" 
+                 class="w-12 h-12 rounded-full border-2 border-gray-700 dark:border-gray-600 grayscale">
+            <div>
+                <p class="text-sm font-medium text-white">Sarah Jenkins</p>
+                <p class="text-xs text-gray-400 dark:text-gray-500">Regular Client</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Booking / Contact Section -->
+<section id="contact" class="py-24 bg-gray-50 dark:bg-gray-800/50 relative overflow-hidden">
+    <div class="max-w-2xl mx-auto px-6 relative z-10">
+        <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-xl shadow-gray-200/50 dark:shadow-gray-900/50 border border-gray-100 dark:border-gray-700 p-8 md:p-12">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-semibold tracking-tight text-gray-900 dark:text-white mb-2">Ready to Book?</h2>
+                <p class="text-gray-600 dark:text-gray-400 font-light text-sm">Fill out the form below or call us directly. We'll get back to you within 2 hours.</p>
+            </div>
+
+            <form class="space-y-6" onsubmit="event.preventDefault(); alert('Thank you for your request. We will contact you shortly!');">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label class="text-xs font-medium text-gray-700 dark:text-gray-300 uppercase tracking-wider">Name</label>
+                        <input type="text" 
+                               placeholder="Jane Doe" 
+                               class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg px-4 py-3 text-sm text-gray-900 dark:text-white outline-none focus:ring-2 focus:ring-gray-900/10 focus:border-gray-900 dark:focus:border-white transition-all">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-xs font-medium text-gray-700 dark:text-gray-300 uppercase tracking-wider">Phone</label>
+                        <input type="tel" 
+                               placeholder="204-555-0123" 
+                               class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg px-4 py-3 text-sm text-gray-900 dark:text-white outline-none focus:ring-2 focus:ring-gray-900/10 focus:border-gray-900 dark:focus:border-white transition-all">
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <label class="text-xs font-medium text-gray-700 dark:text-gray-300 uppercase tracking-wider">Email</label>
+                    <input type="email" 
+                           placeholder="jane@example.com" 
+                           class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg px-4 py-3 text-sm text-gray-900 dark:text-white outline-none focus:ring-2 focus:ring-gray-900/10 focus:border-gray-900 dark:focus:border-white transition-all">
+                </div>
+
+                <div class="space-y-2">
+                    <label class="text-xs font-medium text-gray-700 dark:text-gray-300 uppercase tracking-wider">Service Interest</label>
+                    <div class="relative">
+                        <select class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg px-4 py-3 text-sm text-gray-900 dark:text-white outline-none focus:ring-2 focus:ring-gray-900/10 focus:border-gray-900 dark:focus:border-white transition-all appearance-none">
+                            <option>Cut & Blow Dry</option>
+                            <option>Coloring</option>
+                            <option>Styling</option>
+                            <option>Gents Cut</option>
+                            <option>Other</option>
+                        </select>
+                        <iconify-icon icon="lucide:chevron-down" class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500 pointer-events-none" width="16"></iconify-icon>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-3 pt-2">
+                    <div class="relative flex items-center">
+                        <input type="checkbox" 
+                               id="terms" 
+                               class="peer h-4 w-4 cursor-pointer appearance-none rounded border border-gray-300 dark:border-gray-600 shadow-sm custom-checkbox focus:ring-2 focus:ring-gray-900/10 focus:ring-offset-0">
+                    </div>
+                    <label for="terms" class="text-xs text-gray-600 dark:text-gray-400 cursor-pointer select-none">
+                        I agree to the processing of my personal data for the purpose of booking an appointment.
+                    </label>
+                </div>
+
+                <button type="submit" 
+                        class="w-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-medium py-3 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors shadow-lg shadow-gray-900/10 dark:shadow-white/10 mt-4">
+                    Request Appointment
+                </button>
+            </form>
+            
+            <div class="mt-8 pt-8 border-t border-gray-100 dark:border-gray-700 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+                <div>
+                    <p class="text-xs font-medium text-gray-900 dark:text-white">Direct Contact</p>
+                    <a href="tel:+12045550199" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">+1 204-555-0199</a>
+                </div>
+                <div>
+                    <p class="text-xs font-medium text-gray-900 dark:text-white">Email</p>
+                    <a href="mailto:hello@hairathome.com" class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">hello@hairathome.com</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}
