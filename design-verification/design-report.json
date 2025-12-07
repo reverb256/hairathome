@@ -1,0 +1,20 @@
+{
+  "url": "https://reverb256.github.io/hairathome/",
+  "timestamp": "2025-12-07T00:36:16.639Z",
+  "designIndicators": {
+    "hasTailwindClasses": true,
+    "hasInterFont": false,
+    "hasZincColors": false,
+    "hasMinimalistLayout": false
+  },
+  "bodyStyles": {
+    "fontFamily": "\"Poppins\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "color": "rgb(33, 37, 41)"
+  },
+  "screenshots": [
+    "design-verification/full-page-live.png",
+    "design-verification/hero-section-live.png",
+    "design-verification/navigation-live.png"
+  ]
+}
