@@ -1,0 +1,150 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8f9fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e9ecef;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Hair gradient -->
+    <linearGradient id="hairGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b4513;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#a0522d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6b3410;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Professional outfit gradient -->
+    <linearGradient id="outfitGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2c3e50;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#34495e;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Tool bag gradient -->
+    <linearGradient id="toolBagGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2c2c2c;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bgGradient)"/>
+  
+  <!-- Soft shadow for main figure -->
+  <ellipse cx="400" cy="550" rx="120" ry="20" fill="#000000" opacity="0.1"/>
+  
+  <!-- Professional stylist figure -->
+  <g id="stylist">
+    <!-- Tool bag on floor -->
+    <rect x="320" y="480" width="160" height="60" rx="8" fill="url(#toolBagGradient)"/>
+    <rect x="330" y="490" width="140" height="40" rx="4" fill="#333"/>
+    <!-- Tool bag handle -->
+    <path d="M 380 480 Q 400 460, 420 480" stroke="#1a1a1a" stroke-width="4" fill="none"/>
+    
+    <!-- Professional styling tools visible in bag -->
+    <rect x="350" y="500" width="4" height="20" fill="#c0c0c0"/>
+    <rect x="360" y="498" width="3" height="22" fill="#c0c0c0"/>
+    <rect x="370" y="502" width="4" height="18" fill="#c0c0c0"/>
+    <rect x="380" y="496" width="3" height="24" fill="#c0c0c0"/>
+    
+    <!-- Legs -->
+    <rect x="360" y="400" width="25" height="100" rx="12" fill="#2c3e50"/>
+    <rect x="415" y="400" width="25" height="100" rx="12" fill="#2c3e50"/>
+    
+    <!-- Shoes -->
+    <ellipse cx="372" cy="505" rx="20" ry="8" fill="#1a1a1a"/>
+    <ellipse cx="428" cy="505" rx="20" ry="8" fill="#1a1a1a"/>
+    
+    <!-- Professional outfit/tunic -->
+    <path d="M 340 280 L 340 420 Q 340 430, 350 430 L 450 430 Q 460 430, 460 420 L 460 280 Q 460 270, 450 270 L 350 270 Q 340 270, 340 280 Z" fill="url(#outfitGradient)"/>
+    
+    <!-- Collar -->
+    <path d="M 370 270 L 380 290 L 400 285 L 420 290 L 430 270" stroke="#fff" stroke-width="2" fill="none"/>
+    
+    <!-- Arms -->
+    <ellipse cx="320" cy="320" rx="15" ry="60" fill="#f4d1ae" transform="rotate(-30 320 320)"/>
+    <ellipse cx="480" cy="320" rx="15" ry="60" fill="#f4d1ae" transform="rotate(30 480 320)"/>
+    
+    <!-- Professional styling tools in hands -->
+    <!-- Left hand with scissors -->
+    <g transform="translate(290, 280) rotate(-45)">
+      <ellipse cx="0" cy="0" rx="12" ry="8" fill="#f4d1ae"/>
+      <path d="M 0 -5 L 0 -25" stroke="#c0c0c0" stroke-width="3"/>
+      <circle cx="-3" cy="-28" r="4" fill="none" stroke="#c0c0c0" stroke-width="2"/>
+      <circle cx="3" cy="-28" r="4" fill="none" stroke="#c0c0c0" stroke-width="2"/>
+    </g>
+    
+    <!-- Right hand with comb -->
+    <g transform="translate(510, 280) rotate(45)">
+      <ellipse cx="0" cy="0" rx="12" ry="8" fill="#f4d1ae"/>
+      <rect x="-2" y="-5" width="4" height="20" fill="#c0c0c0"/>
+      <rect x="-6" y="-25" width="2" height="15" fill="#c0c0c0"/>
+      <rect x="-2" y="-25" width="2" height="15" fill="#c0c0c0"/>
+      <rect x="2" y="-25" width="2" height="15" fill="#c0c0c0"/>
+      <rect x="6" y="-25" width="2" height="15" fill="#c0c0c0"/>
+    </g>
+    
+    <!-- Head -->
+    <ellipse cx="400" cy="200" rx="45" ry="55" fill="#f4d1ae"/>
+    
+    <!-- Professional hairstyle -->
+    <path d="M 355 180 Q 355 160, 375 155 Q 395 150, 400 155 Q 405 150, 425 155 Q 445 160, 445 180 Q 445 195, 435 200 Q 440 210, 435 220 Q 430 230, 420 235 Q 410 240, 400 238 Q 390 240, 380 235 Q 370 230, 365 220 Q 360 210, 365 200 Q 355 195, 355 180 Z" fill="url(#hairGradient)"/>
+    
+    <!-- Face features -->
+    <!-- Eyes -->
+    <ellipse cx="380" cy="195" rx="4" ry="6" fill="#333"/>
+    <ellipse cx="420" cy="195" rx="4" ry="6" fill="#333"/>
+    
+    <!-- Eyebrows -->
+    <path d="M 370 185 Q 380 183, 390 185" stroke="#8b4513" stroke-width="2" fill="none"/>
+    <path d="M 410 185 Q 420 183, 430 185" stroke="#8b4513" stroke-width="2" fill="none"/>
+    
+    <!-- Nose -->
+    <path d="M 400 205 L 395 215 L 400 217" stroke="#d4a574" stroke-width="1.5" fill="none"/>
+    
+    <!-- Professional smile -->
+    <path d="M 385 225 Q 400 235, 415 225" stroke="#d4a574" stroke-width="2" fill="none"/>
+    
+    <!-- Professional name badge -->
+    <rect x="370" y="310" width="60" height="25" rx="3" fill="#fff" stroke="#ddd" stroke-width="1"/>
+    <text x="400" y="327" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333">PRO STYLIST</text>
+  </g>
+  
+  <!-- Mobile service indicator -->
+  <g id="mobile-service">
+    <!-- Phone icon -->
+    <rect x="50" y="50" width="40" height="70" rx="5" fill="#333"/>
+    <rect x="53" y="57" width="34" height="50" fill="#4a90e2"/>
+    <circle cx="70" cy="112" r="3" fill="#666"/>
+    
+    <!-- Location pin -->
+    <path d="M 70 30 L 70 45 L 65 40 L 70 45 L 75 40" stroke="#e74c3c" stroke-width="2" fill="none"/>
+    <circle cx="70" cy="30" r="5" fill="#e74c3c"/>
+  </g>
+  
+  <!-- Professional quality indicators -->
+  <g id="quality-badges">
+    <!-- Star rating -->
+    <g transform="translate(650, 50)">
+      <path d="M 0 10 L 3 3 L 10 2 L 5 -3 L 6 -10 L 0 -6 L -6 -10 L -5 -3 L -10 2 L -3 3 Z" fill="#ffd700"/>
+      <path d="M 20 10 L 23 3 L 30 2 L 25 -3 L 26 -10 L 20 -6 L 14 -10 L 15 -3 L 10 2 L 17 3 Z" fill="#ffd700"/>
+      <path d="M 40 10 L 43 3 L 50 2 L 45 -3 L 46 -10 L 40 -6 L 34 -10 L 35 -3 L 30 2 L 37 3 Z" fill="#ffd700"/>
+      <path d="M 60 10 L 63 3 L 70 2 L 65 -3 L 66 -10 L 60 -6 L 54 -10 L 55 -3 L 50 2 L 57 3 Z" fill="#ffd700"/>
+      <path d="M 80 10 L 83 3 L 90 2 L 85 -3 L 86 -10 L 80 -6 L 74 -10 L 75 -3 L 70 2 L 77 3 Z" fill="#ffd700"/>
+    </g>
+    
+    <!-- Years of experience -->
+    <text x="650" y="100" font-family="Arial, sans-serif" font-size="14" fill="#666">10+ Years Experience</text>
+  </g>
+  
+  <!-- Professional equipment details -->
+  <g id="equipment">
+    <!-- Portable styling chair hint -->
+    <rect x="100" y="450" width="80" height="3" fill="#666" opacity="0.3"/>
+    <rect x="130" y="453" width="20" height="30" fill="#666" opacity="0.3"/>
+    
+    <!-- Professional products -->
+    <rect x="600" y="450" width="15" height="25" rx="2" fill="#f39c12" opacity="0.7"/>
+    <rect x="620" y="452" width="15" height="23" rx="2" fill="#e67e22" opacity="0.7"/>
+    <rect x="640" y="450" width="15" height="25" rx="2" fill="#d35400" opacity="0.7"/>
+  </g>
+</svg>
