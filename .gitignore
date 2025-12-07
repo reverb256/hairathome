@@ -47,6 +47,18 @@ temp/
 .env.local
 .env.production
 
+
+# MCP artifacts (if sensitive)
+.memory/
+
+# Docker
+.dockerignore
+
+# k8s secrets (if any)
+k8s/secrets/
+.env
+.worktrees/
+
 # Claude Flow generated files
 .claude/settings.local.json
 .mcp.json
@@ -71,15 +83,5 @@ coordination/orchestration/*
 *.sqlite-journal
 *.sqlite-wal
 claude-flow
+# Removed Windows wrapper files per user request
 hive-mind-prompt-*.txt
-
-# MCP artifacts (if sensitive)
-.memory/
-
-# Docker
-.dockerignore
-
-# k8s secrets (if any)
-k8s/secrets/
-.env
-.worktrees/

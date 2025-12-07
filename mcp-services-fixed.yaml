@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ansible-mcp
+  namespace: mcp-tools
+spec:
+  selector:
+    app: ansible-mcp
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
+      nodePort: 30091
+  type: NodePort
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: terraform-mcp
+  namespace: mcp-tools
+spec:
+  selector:
+    app: terraform-mcp
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
+      nodePort: 30092
+  type: NodePort
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: proxmox-mcp
+  namespace: mcp-tools
+spec:
+  selector:
+    app: proxmox-mcp
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
+      nodePort: 30093
+  type: NodePort
