@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
     <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-    
+    <link rel="canonical" href="{{ .Permalink }}">
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script src="/js/iconify-icon.min.js"></script>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -117,25 +118,63 @@
     
     <!-- Structured data -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Hair@Home",
-        "image": "https://reverb256.github.io/hairathome/images/logo.png",
-        "telephone": "(204) 555-0123",
-        "email": "info@hairathome.ca",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Winnipeg",
-            "addressRegion": "MB",
-            "addressCountry": "CA"
-        },
-        "areaServed": "Winnipeg",
-        "serviceType": "Mobile Hair Styling",
-        "description": "Professional mobile hair styling services in Winnipeg. Salon-quality services at your doorstep.",
-        "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 08:00-20:00",
-        "priceRange": "$$$"
-    }
+    [
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Hair@Home",
+            "image": "https://reverb256.github.io/hairathome/images/logo.png",
+            "telephone": "(204) 555-0123",
+            "email": "info@hairathome.ca",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Winnipeg",
+                "addressRegion": "MB",
+                "addressCountry": "CA"
+            },
+            "areaServed": "Winnipeg",
+            "serviceType": "Mobile Hair Styling",
+            "description": "Professional mobile hair styling services in Winnipeg. Salon-quality services at your doorstep.",
+            "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 08:00-20:00",
+            "priceRange": "$$$",
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Hair Services",
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Haircut & Style",
+                            "description": "Professional haircut and styling service"
+                        },
+                        "price": "60",
+                        "priceCurrency": "CAD"
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Color & Highlights",
+                            "description": "Hair coloring and highlighting services"
+                        },
+                        "price": "130",
+                        "priceCurrency": "CAD"
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Bridal Package",
+                            "description": "Complete bridal hair styling package"
+                        },
+                        "price": "200",
+                        "priceCurrency": "CAD"
+                    }
+                ]
+            }
+        }
+    ]
     </script>
 </head>
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans antialiased selection:bg-gray-200 selection:text-gray-900">
@@ -143,63 +182,8 @@
     {{ block "main" . }}
     {{ end }}
     {{ partial "footer.html" . }}
-    
-    <!-- Theme Toggle JavaScript -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Theme toggle functionality
-            const themeToggle = document.getElementById('theme-toggle');
-            const html = document.documentElement;
-            
-            // Set default theme to light (more professional for a service business)
-            const savedTheme = localStorage.getItem('theme') || 'light';
-            html.classList.toggle('dark', savedTheme === 'dark');
-            
-            if (themeToggle) {
-                themeToggle.addEventListener('click', () => {
-                    const currentTheme = html.classList.contains('dark') ? 'dark' : 'light';
-                    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-                    
-                    html.classList.toggle('dark');
-                    localStorage.setItem('theme', newTheme);
-                });
-            }
 
-            // Mobile navigation toggle
-            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            
-            if (mobileMenuBtn && mobileMenu) {
-                mobileMenuBtn.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
-                });
-                
-                // Close mobile menu when clicking on a link
-                mobileMenu.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        mobileMenu.classList.add('hidden');
-                    });
-                });
-            }
-
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        const offsetTop = targetElement.offsetTop - 70; // Account for fixed header
-                        window.scrollTo({
-                            top: offsetTop,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-        });
-    </script>
+    <!-- JavaScript -->
+    <script src="/js/main.js"></script>
 </body>
 </html>
