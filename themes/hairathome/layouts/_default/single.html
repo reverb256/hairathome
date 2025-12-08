@@ -1,0 +1,24 @@
+{{ define "main" }}
+<div class="container">
+  <article class="service-detail">
+    <header class="service-header">
+      <div class="service-icon-large">
+        <i class="fas fa-scissors"></i>
+      </div>
+      <h1>{{ .Title }}</h1>
+      <div class="price-large">{{ .Params.price }}</div>
+      <p class="service-description">{{ .Description }}</p>
+    </header>
+    
+    <div class="service-content">
+      {{ .Content }}
+    </div>
+    
+    <div class="service-booking">
+      <a href="/booking/" class="btn btn-primary btn-large">
+        <i class="fas fa-calendar-check"></i> Book This Service
+      </a>
+    </div>
+  </article>
+</div>
+{{ end }}

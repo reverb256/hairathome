@@ -1,0 +1,39 @@
+{{ define "main" }}
+<div class="container">
+  <section class="page-header">
+    <h1>Services</h1>
+    <p class="page-subtitle">Professional hair services tailored to your needs</p>
+  </section>
+  
+  <div class="services-grid">
+    {{ range .Pages }}
+    <div class="service-card">
+      <div class="service-icon">
+        {{ if eq .Params.service_type "haircut" }}
+          <i class="fas fa-scissors"></i>
+        {{ else if eq .Params.service_type "color" }}
+          <i class="fas fa-paint-brush"></i>
+        {{ else if eq .Params.service_type "beard" }}
+          <i class="fas fa-male"></i>
+        {{ else if eq .Params.service_type "bridal" }}
+          <i class="fas fa-heart"></i>
+        {{ else if eq .Params.service_type "treatments" }}
+          <i class="fas fa-spa"></i>
+        {{ else if eq .Params.service_type "blowout" }}
+          <i class="fas fa-wind"></i>
+        {{ else if eq .Params.service_type "special-occasion" }}
+          <i class="fas fa-graduation-cap"></i>
+        {{ else }}
+          <i class="fas fa-concierge-bell"></i>
+        {{ end }}
+      </div>
+      <h3>{{ .Title }}</h3>
+      <p>{{ .Description }}</p>
+      <div class="price">{{ .Params.price }}</div>
+      <p>{{ .Content }}</p>
+      <a href="{{ .RelPermalink }}" class="btn btn-primary">Book This Service</a>
+    </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

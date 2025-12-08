@@ -1,0 +1,40 @@
+{{ define "main" }}
+<div class="container">
+  <article class="service-detail">
+    <header class="service-header">
+      <div class="service-icon-large">
+        {{ if eq .Params.service_type "haircut" }}
+          <i class="fas fa-scissors"></i>
+        {{ else if eq .Params.service_type "color" }}
+          <i class="fas fa-paint-brush"></i>
+        {{ else if eq .Params.service_type "beard" }}
+          <i class="fas fa-male"></i>
+        {{ else if eq .Params.service_type "bridal" }}
+          <i class="fas fa-heart"></i>
+        {{ else if eq .Params.service_type "treatments" }}
+          <i class="fas fa-spa"></i>
+        {{ else if eq .Params.service_type "blowout" }}
+          <i class="fas fa-wind"></i>
+        {{ else if eq .Params.service_type "special-occasion" }}
+          <i class="fas fa-graduation-cap"></i>
+        {{ else }}
+          <i class="fas fa-concierge-bell"></i>
+        {{ end }}
+      </div>
+      <h1>{{ .Title }}</h1>
+      <div class="price-large">{{ .Params.price }}</div>
+      <p class="service-description">{{ .Description }}</p>
+    </header>
+    
+    <div class="service-content">
+      {{ .Content }}
+    </div>
+    
+    <div class="service-booking">
+      <a href="/booking/" class="btn btn-primary btn-large">
+        <i class="fas fa-calendar-check"></i> Book This Service
+      </a>
+    </div>
+  </article>
+</div>
+{{ end }}
