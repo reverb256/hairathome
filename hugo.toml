@@ -5,6 +5,8 @@ languageCode = 'en-ca'
 title = 'Hair@Home - Winnipeg Mobile Hair Stylist'
 theme = 'hairathome'
 
+# Forced rebuild: Dec 8 2025 - Ensuring all zinc->gray conversions are applied
+
 [params]
   description = "Professional mobile hair styling services in Winnipeg. Salon-quality haircuts, color, and styling at your doorstep."
   author = "Hair@Home"
