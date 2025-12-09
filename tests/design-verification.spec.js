@@ -23,12 +23,12 @@ test.describe('Design Verification - Live Site', () => {
     
     // Check for specific modern design indicators
     const hasInterFont = htmlContent.includes('Inter') || htmlContent.includes('font-inter');
-    const hasZincColors = htmlContent.includes('zinc-') || htmlContent.includes('bg-zinc') || htmlContent.includes('text-zinc');
+    const hasGrayColors = htmlContent.includes('gray-') || htmlContent.includes('bg-gray') || htmlContent.includes('text-gray');
     const hasMinimalistLayout = htmlContent.includes('max-w-4xl') || htmlContent.includes('mx-auto');
-    
+
     console.log('Design indicators:');
     console.log('- Inter font:', hasInterFont);
-    console.log('- Zinc colors:', hasZincColors);
+    console.log('- Gray colors:', hasGrayColors);
     console.log('- Minimalist layout:', hasMinimalistLayout);
     
     // Take hero section screenshot
@@ -110,11 +110,11 @@ test.describe('Design Verification - Live Site', () => {
     // Check for specific modern design elements we expect
     const modernDesignChecks = await page.evaluate(() => {
       return {
-        // Check for zinc color palette
-        hasZincBackground: Array.from(document.querySelectorAll('*')).some(el => 
-          window.getComputedStyle(el).backgroundColor.includes('212') || // zinc-800
-          window.getComputedStyle(el).backgroundColor.includes('241') || // zinc-100
-          window.getComputedStyle(el).backgroundColor.includes('113')    // zinc-700
+        // Check for gray color palette
+        hasGrayBackground: Array.from(document.querySelectorAll('*')).some(el =>
+          window.getComputedStyle(el).backgroundColor.includes('31') || // gray-900 (0,0,0) -> 0.05*255≈13, 0.1*255≈26, etc.
+          window.getComputedStyle(el).backgroundColor.includes('249') || // gray-50 (249,250,251)
+          window.getComputedStyle(el).backgroundColor.includes('33')    // gray-800 (31,41,55) -> ~33 average
         ),
         
         // Check for Inter font
