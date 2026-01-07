@@ -1,19 +1,13 @@
 {{ define "main" }}
-<div class="container">
-    <h1>{{ .Title }}</h1>
-    <div class="about-content">
-        <div class="about-text">
+<div class="max-w-4xl mx-auto px-6 py-12">
+    <article class="bg-white dark:bg-zinc-900 rounded-2xl shadow-xl shadow-zinc-200/50 dark:shadow-zinc-900/50 border border-zinc-300 dark:border-zinc-600 p-8 md:p-12">
+        <header class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-medium tracking-tight text-zinc-900 dark:text-white mb-6">{{ .Title }}</h1>
+        </header>
+
+        <div class="prose prose-zinc dark:prose-invert max-w-none text-zinc-700 dark:text-zinc-300">
             {{ .Content }}
         </div>
-        <div class="about-image">
-            <img 
-                src="https://images.unsplash.com/photo-1570699020466-27e32d0d9c38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
-                alt="Winnipeg mobile hair stylist"
-                loading="lazy"
-                width="800"
-                height="600"
-            >
-        </div>
-    </div>
+    </article>
 </div>
 {{ end }}

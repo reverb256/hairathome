@@ -1,27 +1,32 @@
 {{ define "main" }}
-<div class="container">
-    <section class="page-header">
-        <h1>{{ .Title }}</h1>
-        <p class="page-subtitle">Mobile hair services available in your area</p>
-    </section>
+<div class="max-w-4xl mx-auto px-6 py-12">
+    <article class="bg-white dark:bg-zinc-900 rounded-2xl shadow-xl shadow-zinc-200/50 dark:shadow-zinc-900/50 border border-zinc-300 dark:border-zinc-600 p-8 md:p-12">
+        <header class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-medium tracking-tight text-zinc-900 dark:text-white mb-2">{{ .Title }}</h1>
+            <p class="text-lg text-zinc-700 dark:text-zinc-700">Mobile hair services available in your area</p>
+        </header>
 
-    <div class="content-area">
-        {{ .Content }}
-    </div>
+        <div class="prose prose-zinc dark:prose-invert max-w-none text-zinc-700 dark:text-zinc-300 mb-8">
+            {{ .Content }}
+        </div>
 
-    <div class="service-areas">
-        <h2>Service Areas</h2>
-        <p>We proudly serve all areas within Winnipeg, including:</p>
-        <ul>
-            <li><strong>Central Winnipeg:</strong> Downtown, Exchange District, Wolseley, Osborne Village</li>
-            <li><strong>South Winnipeg:</strong> Fort Garry, St. Vital, St. Boniface, Transcona</li>
-            <li><strong>West Winnipeg:</strong> Charleswood, St. James, Fort Richmond, Headingley</li>
-            <li><strong>North Winnipeg:</strong> Seven Oaks, River Heights, North Kildonan, St. Johns</li>
-        </ul>
-    </div>
+        <div class="bg-zinc-50 dark:bg-zinc-800 rounded-xl p-6 mb-8">
+            <h2 class="text-xl font-medium text-zinc-900 dark:text-white mb-4">Service Areas</h2>
+            <p class="text-zinc-700 dark:text-zinc-300 mb-4">We proudly serve all areas within Winnipeg, including:</p>
+            <ul class="space-y-2">
+                <li class="flex items-start"><span class="text-amber-600 dark:text-amber-400 mr-2">•</span> <strong class="text-zinc-900 dark:text-white">Central Winnipeg:</strong> <span class="text-zinc-700 dark:text-zinc-300">Downtown, Exchange District, Wolseley, Osborne Village</span></li>
+                <li class="flex items-start"><span class="text-amber-600 dark:text-amber-400 mr-2">•</span> <strong class="text-zinc-900 dark:text-white">South Winnipeg:</strong> <span class="text-zinc-700 dark:text-zinc-300">Fort Garry, St. Vital, St. Boniface, Transcona</span></li>
+                <li class="flex items-start"><span class="text-amber-600 dark:text-amber-400 mr-2">•</span> <strong class="text-zinc-900 dark:text-white">West Winnipeg:</strong> <span class="text-zinc-700 dark:text-zinc-300">Charleswood, St. James, Fort Richmond, Headingley</span></li>
+                <li class="flex items-start"><span class="text-amber-600 dark:text-amber-400 mr-2">•</span> <strong class="text-zinc-900 dark:text-white">North Winnipeg:</strong> <span class="text-zinc-700 dark:text-zinc-300">Seven Oaks, River Heights, North Kildonan, St. Johns</span></li>
+            </ul>
+        </div>
 
-    <div class="booking-cta">
-        <a href="/booking/" class="btn btn-primary">Book Service in Your Area</a>
-    </div>
+        <div class="text-center">
+            <a href="/booking/" class="inline-flex justify-center items-center px-8 py-4 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 rounded-lg hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-all text-base font-medium shadow-lg shadow-zinc-900/10 dark:shadow-white/10">
+                <iconify-icon icon="lucide:map-pin" class="mr-2" width="20" stroke-width="1.5"></iconify-icon>
+                Book Service in Your Area
+            </a>
+        </div>
+    </article>
 </div>
 {{ end }}
