@@ -26,13 +26,13 @@ Appointment length varies depending on the service:
 We'll provide an estimated time when scheduling your appointment and keep you updated throughout the service.
 
 **Do I need to provide anything for the service?**
-Our mobile salon is fully equipped with all necessary tools, equipment, and products. You just need to provide:
+Our mobile service setup is fully equipped with all necessary tools, equipment, and trusted products. You just need to provide:
 - An electrical outlet (standard 120V)
 - Adequate lighting (natural light or good indoor lighting)
 - Comfortable seating (optional - we bring our own professional chair)
 - Access to a bathroom (helpful but not always required)
 
-For longer services, having access to water for rinsing is helpful but not required for most services.
+For longer services, having access to water for rinsing is helpful but not required for most services. We work efficiently to minimize any inconvenience.
 
 **Is the service sanitary?**
 Absolutely! We maintain the highest standards of hygiene and sanitation:
@@ -75,24 +75,37 @@ Contact us for current special offers and package details.
 **Do you accept gift certificates?**
 Yes! We offer gift certificates for any service or amount. These make great gifts for birthdays, anniversaries, or special occasions. Gift certificates never expire and can be used for any of our services.
 
+**Do you offer family packages?**
+Absolutely! We offer family-friendly pricing:
+- **Family of 3+**: 15% discount on all services
+- **Parent & Child Special**: Save $10 when booking together
+- **Multiple Services**: Book 2+ services in one visit and save
+- **Efficient Scheduling**: We can serve the whole family in one appointment block
+
+**How do you keep prices affordable?**
+We focus on efficiency and value:
+- No salon overhead means better prices for you
+- Streamlined service process saves time and money
+- Quality products without the premium markup
+- Direct service provider - no middleman costs
+
 ## Safety & Quality
 
 **Are you insured?**
-Yes, I am a fully insured professional:
-- Full professional liability insurance
+Yes, I am a fully insured service provider:
+- Full liability insurance for your peace of mind
 - Manitoba Health and Safety training
-- Regular continuing education and training
-- Member of professional beauty associations
+- Regular training to stay current with techniques
+- Committed to providing reliable, quality service
 
 **What products do you use?**
-I use professional-grade products from leading brands selected for their quality and results:
-- **Kevin Murphy**: Premium color and styling products
-- **Redken**: Professional hair care and color
-- **Pureology**: Clean, sulfate-free hair care
-- **Moroccanoil**: Luxury oil treatments
-- **Briogeo**: Natural, clean beauty products
+I use trusted products from reliable brands selected for their quality and value:
+- Quality shampoos and conditioners for all hair types
+- Trusted styling products that deliver great results
+- Gentle color treatments that are safe and effective
+- Reliable care products for daily maintenance
 
-All products are cruelty-free, and we can accommodate allergies or sensitivities. During your consultation, we'll discuss product options that work best for your hair type and preferences.
+All products are cruelty-free and budget-friendly. We can accommodate allergies or sensitivities and will discuss product options that work best for your hair type and budget during your consultation.
 
 **Can you work with all hair types?**
 Absolutely! I have extensive experience working with all hair types, textures, and conditions:
@@ -121,12 +134,12 @@ We'll send specific preparation instructions when you book.
 
 **What happens during the consultation?**
 Your consultation includes:
-- Discussion of your hair goals and lifestyle
+- Discussion of your hair needs and practical requirements
 - Hair analysis and condition assessment
 - Review of your hair history and preferences
-- Service recommendations and timeline
-- Product suggestions for home care
-- Pricing and scheduling discussion
+- Service recommendations that fit your budget
+- Product suggestions for affordable home care
+- Clear pricing and scheduling discussion
 
 **Do you offer virtual consultations?**
 Yes! For complex color changes, special occasion styling, or if you're unsure about services, we offer virtual consultations via video call. This allows us to discuss your goals and provide recommendations before booking.

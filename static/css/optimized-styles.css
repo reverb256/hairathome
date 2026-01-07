@@ -2,30 +2,27 @@
 /* WCAG AA Compliant with improved contrast ratios and mobile optimization */
 
 :root {
-  /* Enhanced beauty industry palette with improved contrast */
-  --beauty-primary: #f3e6d0;        /* Soft champagne */
-  --beauty-primary-dark: #e6d4b6;   /* Richer champagne */
-  --beauty-secondary: #d4a998;      /* Warm rose */
-  --beauty-accent: #e8c4a8;         /* Soft coral */
-  --beauty-accent-bright: #f5d5c8;  /* Lighter coral for highlights */
-  --beauty-text-dark: #1a1a1a;      /* Darker text for better contrast */
-  --beauty-text-medium: #4a4a4a;    /* Medium dark for secondary text */
-  --beauty-text-light: #f9f5ee;     /* Off-white text */
-  --beauty-neutral-light: #f9f5ee;  /* Light background */
-  --beauty-neutral-medium: #e8dcc8; /* Medium neutral */
-  --beauty-neutral-dark: #1e1916;   /* Dark background */
-  --beauty-gold-accent: #d4af37;     /* Gold accent */
-  --beauty-gold-light: #e6c547;     /* Lighter gold */
-  --beauty-rose-gold: #c9a879;      /* Rose gold accent */
+  --beauty-primary: #00A8CC;
+  --beauty-primary-dark: #0086AA;
+  --beauty-secondary: #FF6B35;
+  --beauty-accent: #FFD700;
+  --beauty-accent-bright: #FFE066;
+  --beauty-text-dark: #2C3E50;
+  --beauty-text-medium: #34495E;
+  --beauty-text-light: #FFFFFF;
+  --beauty-neutral-light: #F8F9FA;
+  --beauty-neutral-medium: #E9ECEF;
+  --beauty-neutral-dark: #495057;
+  --beauty-primary-blue: #0066CC;
+  --beauty-secondary-blue: #0052A3;
+  --beauty-energy-orange: #FF5722;
   
-  /* Gradient definitions */
-  --beauty-gradient-primary: linear-gradient(135deg, var(--beauty-gold-accent), var(--beauty-gold-light));
-  --beauty-gradient-secondary: linear-gradient(135deg, var(--beauty-secondary), var(--beauty-accent));
-  --beauty-gradient-luxury: linear-gradient(135deg, var(--beauty-rose-gold), var(--beauty-gold-accent));
+  --beauty-gradient-primary: linear-gradient(135deg, var(--beauty-primary), var(--beauty-primary-dark));
+  --beauty-gradient-secondary: linear-gradient(135deg, var(--beauty-secondary), var(--beauty-energy-orange));
+  --beauty-gradient-accent: linear-gradient(135deg, var(--beauty-accent), var(--beauty-accent-bright));
   
-  /* Typography enhancements */
-  --beauty-heading-font: 'Playfair Display', serif;
-  --beauty-body-font: 'Poppins', sans-serif;
+  --beauty-heading-font: 'Inter', sans-serif;
+  --beauty-body-font: 'Inter', sans-serif;
   
   /* Beauty industry spacing scale */
   --beauty-space-1: 8px;

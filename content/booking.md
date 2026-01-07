@@ -13,10 +13,10 @@ Booking your mobile hair service is simple and convenient. Fill out the form bel
 
 Once you submit your booking request:
 1. **Confirmation**: I'll contact you within 24 hours to confirm availability
-2. **Consultation**: We'll discuss your hair goals and any specific requirements
-3. **Preparation**: I'll arrive 15 minutes early to set up my mobile salon
-4. **Service**: Enjoy professional hair services in the comfort of your space
-5. **Aftercare**: Receive personalized tips and product recommendations
+2. **Consultation**: We'll discuss your hair needs and practical requirements
+3. **Preparation**: I'll arrive 15 minutes early to set up my mobile service station
+4. **Service**: Enjoy reliable hair services that save you time and hassle
+5. **Aftercare**: Receive practical tips for maintaining your style at home
 
 ## Preparation Tips
 

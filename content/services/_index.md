@@ -1,11 +1,11 @@
 ---
 title: "Services"
-subtitle: "Professional hair services delivered to your doorstep"
-description: "Complete range of mobile hair services available in Winnipeg"
+subtitle: "Great haircuts at home, no salon prices"
+description: "Affordable mobile hair services for busy Winnipeg families"
 date: 2025-01-01T00:00:00-06:00
 ---
 
-Our comprehensive range of mobile hair services brings the salon experience directly to you. Each service is performed with professional-grade products and equipment, ensuring exceptional results in the comfort of your own space.
+Quality haircuts and styling that come to you - at prices that make sense. We bring trusted salon services to your home, saving you time and money without compromising on great results.
 
 ## Service Areas
 
