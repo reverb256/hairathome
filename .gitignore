@@ -2,19 +2,34 @@
 
 # Build outputs
 dist/
+public/
+resources/
+docs/
 
 # Dependencies
 node_modules/
+.npm/
+.yarn/
+.pnpm-store/
+
+# Nix store paths
+/nix/store/
+.nix-profile
+.nix-defexpr
+.nix-channels
 
 # OS files
 .DS_Store
 Thumbs.db
+ehthumbs.db
+Desktop.ini
 
 # IDE files
 .vscode/
 .idea/
 *.swp
 *.swo
+*.sublime-*
 
 # Logs
 *.log
@@ -28,6 +43,7 @@ test-results/
 test-results.json
 test-results.xml
 trace.zip
+lighthouse-results.json
 
 # Coverage reports
 coverage/
@@ -41,12 +57,15 @@ coverage/
 .temp/
 tmp/
 temp/
+*.tmp
+.cache/
+.cache
 
 # Environment files
 .env
 .env.local
 .env.production
-
+.env.development
 
 # MCP artifacts (if sensitive)
 .memory/

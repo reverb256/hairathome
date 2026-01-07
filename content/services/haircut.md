@@ -1,26 +1,29 @@
 ---
 title: "Haircut & Style"
 icon: "fas fa-scissors"
-price: "$60"
-original_price: "$70"
-discount: "10% OFF"
-duration: "60 mins"
-description: "Precision cutting tailored to your face shape and lifestyle, finished with a professional blow dry."
-includes: "Includes styling"
+price: "$25-35"
+duration: "45 mins"
+description: "Great haircut that fits your life, done right at home."
+includes: "Includes wash & style"
 slug: "haircut"
 ---
 
-Professional haircut and styling services tailored to your unique preferences and hair type. From classic cuts to modern styles, I'll create a look that complements your features and lifestyle.
+Reliable haircuts for the whole family at prices that won't break the bank. Same quality you'd get at a budget salon, but delivered right to your door.
 
-**Includes:**
-- Professional consultation
-- Precision haircut
-- Wash and conditioning treatment
-- Blow-dry and styling
-- Personalized styling tips
+**What's Included:**
+- Quick consultation
+- Quality haircut
+- Wash and basic styling
+- Clean finish every time
 
-**Perfect for:**
-- Regular maintenance trims
-- Complete style transformations
-- Special occasion styling
-- Men's and women's cuts
+**Great for:**
+- Regular trims between big cuts
+- Kids' haircuts (no salon meltdowns)
+- Busy adults who need efficiency
+- Seniors who prefer home visits
+- Students and budget-conscious clients
+
+**Pricing:**
+- Women's cuts: $35
+- Men's cuts: $25  
+- Kids (10 & under): $20

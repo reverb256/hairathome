@@ -1,27 +1,29 @@
 ---
 title: "Color & Highlights"
 icon: "fas fa-paint-brush"
-price: "$130"
-original_price: "$150"
-discount: "10% OFF"
-duration: "120 mins"
-description: "From root touch-ups to full balayage transformations using ammonia-free, hair-safe products."
+price: "$35-50"
+duration: "90 mins"
+description: "Basic root touch-ups and simple highlights using safe, trusted products."
 includes: "Includes toner"
 slug: "color"
 ---
 
-Professional color services using premium products to achieve your desired look while maintaining hair health. From subtle highlights to dramatic transformations, I'll create custom color solutions tailored to your skin tone and lifestyle.
+Affordable color services focused on maintaining your hair color between salon visits. I specialize in simple, effective color work that keeps your hair healthy and looking great without breaking the bank.
 
 **Services Include:**
-- Full head color
-- Partial and full highlights
-- Balayage and ombré
 - Root touch-ups
+- Simple highlights
 - Gray coverage
-- Color correction consultations
+- Color refresh
 
 **Features:**
-- Professional color consultation
+- Quick consultation
 - Patch testing for new clients
-- Premium ammonia-free products available
-- Aftercare instructions and products
+- Safe, quality products
+- Simple aftercare instructions
+
+**Great Value For:**
+- Maintaining your current color
+- Covering roots between salon visits
+- First-time color clients
+- Budget-conscious color maintenance
