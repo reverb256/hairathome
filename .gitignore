@@ -87,6 +87,7 @@ flake.nix
 *.sh
 !dev.sh
 !server.sh
+!verify-deployment.sh
 # Exclude development Python files
 *.py
 !scripts/*.py
