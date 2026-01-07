@@ -1,15 +1,15 @@
 <!-- Navigation -->
-<nav class="fixed w-full z-50 top-0 left-0 border-b border-gray-200/60 bg-white/80 backdrop-blur-md dark:bg-gray-900/80 dark:border-gray-700/60">
+<nav class="fixed w-full z-50 top-0 left-0 border-b border-zinc-300/60 bg-white/80 backdrop-blur-md dark:bg-zinc-900/80 dark:border-zinc-600/60">
     <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="{{ .Site.BaseURL }}" class="text-sm font-semibold tracking-tight text-gray-900 dark:text-white uppercase">
+        <a href="{{ .Site.BaseURL }}" class="text-sm font-semibold tracking-tight text-zinc-900 dark:text-white uppercase">
             {{ .Site.Title }}
         </a>
 
         <div class="hidden md:flex items-center gap-8">
-            <a href="#about" class="text-sm text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors">Philosophy</a>
-            <a href="#services" class="text-sm text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors">Services</a>
-            <a href="#pricing" class="text-sm text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors">Pricing</a>
-            <a href="#contact" class="text-sm px-4 py-2 bg-gray-900 text-white rounded-full hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200 transition-colors font-medium">
+            <a href="#about" class="text-sm text-zinc-700 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-white transition-colors">Philosophy</a>
+            <a href="#services" class="text-sm text-zinc-700 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-white transition-colors">Services</a>
+            <a href="#pricing" class="text-sm text-zinc-700 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-white transition-colors">Pricing</a>
+            <a href="#contact" class="text-sm px-4 py-2 bg-zinc-900 text-white rounded-full hover:bg-zinc-800 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200 transition-colors font-medium">
                 Book Now
             </a>
         </div>
@@ -17,24 +17,24 @@
         <!-- Navigation Controls -->
         <div class="flex items-center gap-4">
             <!-- Theme Toggle -->
-            <button id="theme-toggle" class="text-gray-900 dark:text-white p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Toggle theme">
+            <button id="theme-toggle" class="text-zinc-900 dark:text-white p-2 rounded-lg hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors" aria-label="Toggle theme">
                 <iconify-icon icon="lucide:sun" class="dark:hidden" width="20" stroke-width="1.5"></iconify-icon>
                 <iconify-icon icon="lucide:moon" class="hidden dark:block" width="20" stroke-width="1.5"></iconify-icon>
             </button>
 
             <!-- Mobile Menu Toggle -->
-            <button id="mobile-menu-btn" class="md:hidden text-gray-900 dark:text-white p-2">
+            <button id="mobile-menu-btn" class="md:hidden text-zinc-900 dark:text-white p-2">
                 <iconify-icon icon="lucide:menu" width="24" stroke-width="1.5"></iconify-icon>
             </button>
         </div>
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden absolute top-16 left-0 w-full bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 p-6 flex-col gap-4 shadow-lg">
-        <a href="#about" class="text-sm text-gray-600 dark:text-gray-400">Philosophy</a>
-        <a href="#services" class="text-sm text-gray-600 dark:text-gray-400">Services</a>
-        <a href="#pricing" class="text-sm text-gray-600 dark:text-gray-400">Pricing</a>
-        <a href="#contact" class="text-sm font-medium text-gray-900 dark:text-white">Book Appointment</a>
+    <div id="mobile-menu" class="hidden md:hidden absolute top-16 left-0 w-full bg-white dark:bg-zinc-900 border-b border-zinc-300 dark:border-zinc-600 p-6 flex-col gap-4 shadow-lg">
+        <a href="#about" class="text-sm text-zinc-800 dark:text-zinc-400">Philosophy</a>
+        <a href="#services" class="text-sm text-zinc-800 dark:text-zinc-400">Services</a>
+        <a href="#pricing" class="text-sm text-zinc-800 dark:text-zinc-400">Pricing</a>
+        <a href="#contact" class="text-sm font-medium text-zinc-900 dark:text-white">Book Appointment</a>
     </div>
 </nav>
 

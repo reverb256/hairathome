@@ -1,83 +1,154 @@
 {{ define "main" }}
-<div class="container">
-    <section class="page-header">
-        <h1>Book Your Appointment</h1>
-        <p class="page-subtitle">Schedule your mobile hair service in Winnipeg</p>
+<div class="max-w-4xl mx-auto px-6 py-12">
+    <section class="text-center mb-12">
+        <h1 class="text-3xl md:text-4xl font-medium tracking-tight text-zinc-900 dark:text-white mb-4">Book Your Appointment</h1>
+        <p class="text-lg text-zinc-700 dark:text-zinc-700">Schedule your mobile hair service in Winnipeg</p>
     </section>
 
-    <div class="booking-container">
-        <div class="booking-form">
-            <h2>Schedule Your Service</h2>
-            <form id="booking-form">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" required>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div class="lg:col-span-2">
+            <div class="bg-white dark:bg-zinc-900 rounded-2xl shadow-xl shadow-zinc-200/50 dark:shadow-zinc-900/50 border border-zinc-300 dark:border-zinc-600 p-8">
+                <h2 class="text-2xl font-medium tracking-tight text-zinc-900 dark:text-white mb-6">Schedule Your Service</h2>
+                <form id="booking-form" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label for="name" class="text-xs font-medium text-zinc-700 dark:text-zinc-300 uppercase tracking-wider">Full Name *</label>
+                            <input type="text"
+                                   id="name"
+                                   name="name"
+                                   class="w-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-600 rounded-lg px-4 py-3 text-sm text-zinc-900 dark:text-white outline-none focus:ring-2 focus:ring-zinc-900/10 focus:border-zinc-900 dark:focus:border-white transition-all"
+                                   required>
+                        </div>
+                        <div class="space-y-2">
+                            <label for="phone" class="text-xs font-medium text-zinc-700 dark:text-zinc-300 uppercase tracking-wider">Phone Number *</label>
+                            <input type="tel"
+                                   id="phone"
+                                   name="phone"
+                                   class="w-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-600 rounded-lg px-4 py-3 text-sm text-zinc-900 dark:text-white outline-none focus:ring-2 focus:ring-zinc-900/10 focus:border-zinc-900 dark:focus:border-white transition-all"
+                                   required>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number *</label>
-                        <input type="tel" id="phone" name="phone" required>
+
+                    <div class="space-y-2">
+                        <label for="email" class="text-xs font-medium text-zinc-700 dark:text-zinc-300 uppercase tracking-wider">Email Address *</label>
+                        <input type="email"
+                               id="email"
+                               name="email"
+                               class="w-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-600 rounded-lg px-4 py-3 text-sm text-zinc-900 dark:text-white outline-none focus:ring-2 focus:ring-zinc-900/10 focus:border-zinc-900 dark:focus:border-white transition-all"
+                               required>
                     </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="service">Service Type *</label>
-                    <select id="service" name="service" required>
-                        <option value="">Select a service</option>
-                        {{ range where site.RegularPages "Type" "services" }}
-                        <option value="{{ .Title }}">{{ .Title }} - {{ .Params.price }}</option>
-                        {{ end }}
-                    </select>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="date">Preferred Date *</label>
-                        <input type="date" id="date" name="date" required>
+
+                    <div class="space-y-2">
+                        <label for="service" class="text-xs font-medium text-zinc-700 dark:text-zinc-300 uppercase tracking-wider">Service Type *</label>
+                        <div class="relative">
+                            <select id="service" name="service" class="w-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-600 rounded-lg px-4 py-3 text-sm text-zinc-900 dark:text-white outline-none focus:ring-2 focus:ring-zinc-900/10 focus:border-zinc-900 dark:focus:border-white transition-all appearance-none">
+                                <option value="">Select a service</option>
+                                {{ range where site.RegularPages "Type" "services" }}
+                                <option value="{{ .Title }}">{{ .Title }} - {{ .Params.price }}</option>
+                                {{ end }}
+                            </select>
+                            <iconify-icon icon="lucide:chevron-down" class="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-700 dark:text-zinc-700 pointer-events-none" width="16"></iconify-icon>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="time">Preferred Time *</label>
-                        <select id="time" name="time" required>
-                            <option value="">Select a time</option>
-                            <option value="morning">Morning (9AM - 12PM)</option>
-                            <option value="afternoon">Afternoon (12PM - 5PM)</option>
-                            <option value="evening">Evening (5PM - 8PM)</option>
-                        </select>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label for="date" class="text-xs font-medium text-zinc-700 dark:text-zinc-300 uppercase tracking-wider">Preferred Date *</label>
+                            <input type="date"
+                                   id="date"
+                                   name="date"
+                                   class="w-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-600 rounded-lg px-4 py-3 text-sm text-zinc-900 dark:text-white outline-none focus:ring-2 focus:ring-zinc-900/10 focus:border-zinc-900 dark:focus:border-white transition-all"
+                                   required>
+                        </div>
+                        <div class="space-y-2">
+                            <label for="time" class="text-xs font-medium text-zinc-700 dark:text-zinc-300 uppercase tracking-wider">Preferred Time *</label>
+                            <div class="relative">
+                                <select id="time" name="time" class="w-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-600 rounded-lg px-4 py-3 text-sm text-zinc-900 dark:text-white outline-none focus:ring-2 focus:ring-zinc-900/10 focus:border-zinc-900 dark:focus:border-white transition-all appearance-none">
+                                    <option value="">Select a time</option>
+                                    <option value="morning">Morning (9AM - 12PM)</option>
+                                    <option value="afternoon">Afternoon (12PM - 5PM)</option>
+                                    <option value="evening">Evening (5PM - 8PM)</option>
+                                </select>
+                                <iconify-icon icon="lucide:chevron-down" class="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-700 dark:text-zinc-700 pointer-events-none" width="16"></iconify-icon>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="location">Service Location *</label>
-                    <input type="text" id="location" name="location" placeholder="Your address" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="notes">Special Requests</label>
-                    <textarea id="notes" name="notes" rows="4" placeholder="Any specific requests or notes"></textarea>
-                </div>
-                
-                <button type="submit" class="btn btn-primary btn-large">Request Appointment</button>
-            </form>
+
+                    <div class="space-y-2">
+                        <label for="location" class="text-xs font-medium text-zinc-700 dark:text-zinc-300 uppercase tracking-wider">Service Location *</label>
+                        <input type="text"
+                               id="location"
+                               name="location"
+                               placeholder="Your address"
+                               class="w-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-600 rounded-lg px-4 py-3 text-sm text-zinc-900 dark:text-white outline-none focus:ring-2 focus:ring-zinc-900/10 focus:border-zinc-900 dark:focus:border-white transition-all"
+                               required>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label for="notes" class="text-xs font-medium text-zinc-700 dark:text-zinc-300 uppercase tracking-wider">Special Requests</label>
+                        <textarea id="notes"
+                                  name="notes"
+                                  rows="4"
+                                  placeholder="Any specific requests or notes"
+                                  class="w-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-600 rounded-lg px-4 py-3 text-sm text-zinc-900 dark:text-white outline-none focus:ring-2 focus:ring-zinc-900/10 focus:border-zinc-900 dark:focus:border-white transition-all"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-medium py-3 rounded-lg hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors shadow-lg shadow-zinc-900/10 dark:shadow-white/10">
+                        Request Appointment
+                    </button>
+                </form>
+            </div>
         </div>
-        
-        <div class="booking-info">
-            <h3>Service Information</h3>
-            <ul>
-                <li><i class="fas fa-clock"></i> <strong>Flexible Scheduling:</strong> Available 7 days a week</li>
-                <li><i class="fas fa-map-marker-alt"></i> <strong>Service Areas:</strong> All Winnipeg neighborhoods</li>
-                <li><i class="fas fa-star"></i> <strong>Professional Grade:</strong> Premium products and tools</li>
-                <li><i class="fas fa-check-circle"></i> <strong>Sanitized Equipment:</strong> Hospital-grade cleanliness</li>
-                <li><i class="fas fa-concierge-bell"></i> <strong>Personalized Service:</strong> One-on-one attention</li>
-            </ul>
-            
-            <div class="contact-options">
-                <h4>Need to Discuss?</h4>
-                <p>Call us at <a href="tel:2045550123">(204) 555-0123</a> or message us on WhatsApp for questions</p>
+
+        <div class="lg:col-span-1">
+            <div class="bg-white dark:bg-zinc-900 rounded-2xl shadow-xl shadow-zinc-200/50 dark:shadow-zinc-900/50 border border-zinc-300 dark:border-zinc-600 p-8 sticky top-6">
+                <h3 class="text-xl font-medium tracking-tight text-zinc-900 dark:text-white mb-6">Service Information</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3">
+                        <iconify-icon icon="lucide:clock" class="text-zinc-500 dark:text-zinc-500 mt-0.5 flex-shrink-0" width="16"></iconify-icon>
+                        <div>
+                            <strong class="text-sm font-medium text-zinc-900 dark:text-white">Flexible Scheduling:</strong>
+                            <p class="text-sm text-zinc-700 dark:text-zinc-700">Available 7 days a week</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <iconify-icon icon="lucide:map-pin" class="text-zinc-500 dark:text-zinc-500 mt-0.5 flex-shrink-0" width="16"></iconify-icon>
+                        <div>
+                            <strong class="text-sm font-medium text-zinc-900 dark:text-white">Service Areas:</strong>
+                            <p class="text-sm text-zinc-700 dark:text-zinc-700">All Winnipeg neighborhoods</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <iconify-icon icon="lucide:star" class="text-zinc-500 dark:text-zinc-500 mt-0.5 flex-shrink-0" width="16"></iconify-icon>
+                        <div>
+                            <strong class="text-sm font-medium text-zinc-900 dark:text-white">Professional Grade:</strong>
+                            <p class="text-sm text-zinc-700 dark:text-zinc-700">Premium products and tools</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <iconify-icon icon="lucide:shield-check" class="text-zinc-500 dark:text-zinc-500 mt-0.5 flex-shrink-0" width="16"></iconify-icon>
+                        <div>
+                            <strong class="text-sm font-medium text-zinc-900 dark:text-white">Sanitized Equipment:</strong>
+                            <p class="text-sm text-zinc-700 dark:text-zinc-700">Hospital-grade cleanliness</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <iconify-icon icon="lucide:user-round" class="text-zinc-500 dark:text-zinc-500 mt-0.5 flex-shrink-0" width="16"></iconify-icon>
+                        <div>
+                            <strong class="text-sm font-medium text-zinc-900 dark:text-white">Personalized Service:</strong>
+                            <p class="text-sm text-zinc-700 dark:text-zinc-700">One-on-one attention</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="mt-8 pt-6 border-t border-zinc-200 dark:border-zinc-700">
+                    <h4 class="text-lg font-medium text-zinc-900 dark:text-white mb-3">Need to Discuss?</h4>
+                    <p class="text-sm text-zinc-700 dark:text-zinc-700">
+                        Call us at
+                        <a href="tel:2045550123" class="text-zinc-900 dark:text-white hover:underline">(204) 555-0123</a>
+                        or message us on WhatsApp for questions
+                    </p>
+                </div>
             </div>
         </div>
     </div>
