@@ -12,12 +12,6 @@ node_modules/
 .yarn/
 .pnpm-store/
 
-# Nix store paths
-/nix/store/
-.nix-profile
-.nix-defexpr
-.nix-channels
-
 # Hugo specific
 .hugo_build.lock
 resources/
@@ -48,10 +42,6 @@ yarn-error.log*
 # Test reports
 playwright-report/
 test-results/
-test-results.json
-test-results.xml
-trace.zip
-lighthouse-results.json
 
 # Coverage reports
 coverage/
@@ -67,7 +57,6 @@ tmp/
 temp/
 *.tmp
 .cache/
-.cache
 
 # Environment files
 .env
@@ -75,19 +64,8 @@ temp/
 .env.production
 .env.development
 
-# MCP artifacts (if sensitive)
-.memory/
-
-# Docker
-.dockerignore
-
-# k8s secrets (if any)
-k8s/secrets/
-.env
-.worktrees/
-
-# Claude Flow generated files
-.claude/settings.local.json
+# Development tools, AI assistants, and other non-essential files
+.claude/
 .mcp.json
 claude-flow.config.json
 .swarm/
@@ -95,14 +73,6 @@ claude-flow.config.json
 .claude-flow/
 memory/
 coordination/
-memory/claude-flow-data.json
-memory/sessions/*
-!memory/sessions/README.md
-memory/agents/*
-!memory/agents/README.md
-coordination/memory_bank/*
-coordination/subtasks/*
-coordination/orchestration/*
 *.db
 *.db-journal
 *.db-wal
@@ -110,5 +80,43 @@ coordination/orchestration/*
 *.sqlite-journal
 *.sqlite-wal
 claude-flow
-# Removed Windows wrapper files per user request
-hive-mind-prompt-*.txt
+package.nix.json
+flake.lock
+flake.nix
+# Exclude development scripts but keep essential config files
+dev-setup.sh
+setup-comprehensive-mcp-ecosystem.sh
+setup-tests.sh
+test-whatsapp-integration.sh
+automation-system-status.sh
+comprehensive-system-test.sh
+config-harmonizer.sh
+mcp-comprehensive-test.sh
+replace-all-images.sh
+create-beauty-images.sh
+create-beauty-images-correct.sh
+create-placeholders.sh
+validate-project.js
+validity-check.js
+verify-deployment.sh
+validation-summary.sh
+comprehensive-validation.py
+contrast-validation.py
+final-validation-check.sh
+mcp-visual-enhancement.sh
+# Exclude development config files
+lighthouserc.js
+lighthouse-home.json
+pagespeed-desktop.json
+pagespeed-mobile.json
+performance-metrics.json
+playwright.config.js
+postcss.config.js
+tailwind.config.js
+# Exclude temporary JSON files - these are more specific
+npm-audit-report.json
+test-results.json
+# Exclude temporary lock files
+*.lock
+!package-lock.json
+!yarn.lock
