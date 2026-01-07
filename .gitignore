@@ -83,27 +83,17 @@ claude-flow
 package.nix.json
 flake.lock
 flake.nix
-# Exclude development scripts but keep essential config files
-dev-setup.sh
-setup-comprehensive-mcp-ecosystem.sh
-setup-tests.sh
-test-whatsapp-integration.sh
-automation-system-status.sh
-comprehensive-system-test.sh
-config-harmonizer.sh
-mcp-comprehensive-test.sh
-replace-all-images.sh
-create-beauty-images.sh
-create-beauty-images-correct.sh
-create-placeholders.sh
-validate-project.js
-validity-check.js
-verify-deployment.sh
-validation-summary.sh
-comprehensive-validation.py
-contrast-validation.py
-final-validation-check.sh
-mcp-visual-enhancement.sh
+# Exclude development scripts
+*.sh
+!dev.sh
+!server.sh
+# Exclude development Python files
+*.py
+!scripts/*.py
+# Exclude development JavaScript files (config, tools, etc.)
+*.js
+!static/js/*.js
+!docs/js/*.js
 # Exclude development config files
 lighthouserc.js
 lighthouse-home.json
@@ -113,6 +103,7 @@ performance-metrics.json
 playwright.config.js
 postcss.config.js
 tailwind.config.js
+package.nix.json
 # Exclude temporary JSON files - these are more specific
 npm-audit-report.json
 test-results.json
