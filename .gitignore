@@ -18,6 +18,14 @@ node_modules/
 .nix-defexpr
 .nix-channels
 
+# Hugo specific
+.hugo_build.lock
+resources/
+
+# Temporary hugo binary and downloads
+hugo
+*.tar.gz
+
 # OS files
 .DS_Store
 Thumbs.db
