@@ -1,77 +1,88 @@
 ---
 title: "About"
-description: "Learn about Hair@Home, your trusted mobile hair stylist in Winnipeg"
+description: "Learn about Hair@Home, your budget-friendly mobile hair stylist in Winnipeg"
 date: 2025-01-01T00:00:00-06:00
 ---
 
-Your Neighborhood Mobile Hair Stylist in Winnipeg
+## Your Neighborhood Mobile Hair Stylist in Winnipeg
 
-As a trusted local hair stylist serving hundreds of happy Winnipeg clients, I bring reliable and affordable hair care directly to your home. I believe great hair shouldn't come with salon prices or travel hassles - that's why I offer the same quality results you want, with better value and convenience built right in.
+I'm Sarah Johnson, and I bring affordable haircuts and basic color services directly to Winnipeg homes. No fancy salon, no premium prices - just reliable hair care that fits real budgets.
 
-Whether you need a quick trim for the family, a practical style for work, or a special occasion look, I come fully equipped with everything needed to get the job done right. My mobile service means you get professional results without leaving your home, saving you both time and money.
+## What I Do
+
+I offer straightforward hair services for people who want to look good without spending a lot:
+- **Basic haircuts** for the whole family
+- **Simple color** - root touch-ups and single-process color only
+- **Wash and blow dry** services
+- **Beard trims** and basic grooming
+- **Simple event styling** for special occasions
+
+## What I Don't Do
+
+I'm honest about my limitations as a mobile stylist:
+- **No complex color corrections** - I carry basic colors only
+- **No fashion colors** - no vivid blues, pinks, or creative color work
+- **No elaborate styling** - simple updos and curls only
+- **No chemical treatments** - no perms, relaxers, or keratin treatments
+
+If you need services I don't offer, I'll happily refer you to a full-service salon that can help.
 
 ## Meet Your Stylist
 
-Hi, I'm Sarah Johnson, your neighborhood mobile hair stylist serving Winnipeg families and busy residents. My journey began right here in Winnipeg, graduating from Winnipeg Technical College in 2007 with my hairstyling certification. For years, I've been bringing reliable hair care services directly to hundreds of local clients' homes.
-
-What started as helping neighbors and friends has grown into serving families, seniors, and busy parents across Winnipeg. I believe everyone deserves great hair without the salon premium - that's why I focus on providing dependable, consistent service with real value for your money.
+Hi, I'm Sarah Johnson. I graduated from Winnipeg Technical College in 2007 and have been cutting hair ever since. I started offering mobile services because I saw how many people - especially seniors, busy parents, and budget-conscious families - needed reliable hair care that didn't require a trip to the salon.
 
 ## My Philosophy
 
-Great hair should be simple, affordable, and fit your real life. I focus on practical styles that work for your schedule, budget, and daily routine. Before any service, I take time to understand what actually works for you - whether you're a busy parent juggling multiple schedules, a senior who values convenience, or just someone who wants reliable results without salon prices.
+**Honest pricing:** Base rates that are actually affordable, with add-ons clearly priced
+**Honest service:** I'll tell you if something won't work with your hair type or my mobile setup
+**Honest limitations:** I don't pretend to offer salon-level color or styling - I do basic services well
 
-I'm here to give you the same great results you'd get at a salon, but with better value and none of the hassle.
+## Why Mobile?
+
+I come to you because it makes sense for a lot of Winnipeg families:
+- **Seniors** who have trouble getting to salons
+- **Parents** who don't want to drag kids to appointments
+- **Busy people** who value their time
+- **Anyone** watching their budget
+
+## My Setup
+
+I bring the essentials:
+- Portable styling chair
+- Quality cutting tools
+- Basic color products (single process only)
+- Standard styling products
+- Clean water supply
+
+I don't bring:
+- Shampoo bowls (we use your sink)
+- Hair washing stations
+- Extensive color libraries
+- Fancy spa amenities
 
 ## Professional Background
 
-- **Local Certification**: 2007 Graduate, Winnipeg Technical College Hairstyling Program
-- **Community Experience**: Hundreds of happy Winnipeg clients served over the years
-- **Practical Focus**: Family haircuts, senior styling, everyday maintenance
-- **Reliable Service**: Consistent results with honest, straightforward pricing
+- **Local Certification:** 2007 Graduate, Winnipeg Technical College Hairstyling Program
+- **Experience:** 15+ years cutting hair in Winnipeg
+- **Mobile Specialist:** 5+ years providing home-based services
+- **Community Focus:** Serving families, seniors, and budget-conscious clients
 
-## Our Commitment to You
+## What Clients Say
 
-- **Local Experience**: Trusted by hundreds of Winnipeg families
-- **Practical Training**: Winnipeg Technical College certification
-- **Quality Products**: Reliable products that work well without the premium price
-- **Clean Equipment**: Proper sanitation and hygiene practices
-- **Flexible Scheduling**: Evenings and weekends available
-- **Personal Attention**: One-on-one service focused on your needs
+> "Sarah is straightforward and reliable. She shows up on time, gives a good cut, and doesn't try to sell me stuff I don't need." - Mike T.
 
-## Why Choose Mobile Hair Services?
+> "Finally, someone who can cut my kids' hair at home without charging salon prices." - Jennifer L.
 
-**Convenience**: No travel time, no waiting rooms, no parking hassles. I come directly to you, saving you both time and money.
+> "I appreciate that she's honest about what she can and can't do. My simple root touch-ups look great." - Patricia R.
 
-**Comfort**: Get great hair in the comfort of your own home - no need to find childcare or arrange transportation.
+## Ready to Book?
 
-**Better Value**: Same great results as salon services, but at more affordable prices with no hidden fees.
+I keep things simple:
+1. Text or call to check availability
+2. Tell me what you need (I'll be honest if it's something I don't do)
+3. I show up at your home with my equipment
+4. You get a decent haircut at a fair price
 
-**Perfect for Families**: Ideal for busy parents, seniors, and anyone who appreciates reliable service without leaving home.
+No packages to buy, no products to purchase, no upsell pressure. Just reliable hair care that respects your budget.
 
-**Simple & Stress-Free**: Great for regular maintenance, family appointments, or when you just need a dependable haircut without the salon experience.
-
-## What Sets Us Apart
-
-### Complete Mobile Service
-My mobile setup includes everything needed:
-- Professional styling chair and all tools
-- Quality products that work well
-- Portable lighting and mirrors
-- Clean water supply for services
-- Everything comes right to your door
-
-### Simple, Honest Service
-- Straightforward consultations focused on what you actually need
-- Flexible scheduling that works for busy families
-- Clear, honest pricing - no surprises
-- Practical styling tips for maintaining your look
-- Reliable service you can count on
-
-### Community Connection
-As your Winnipeg neighbor, I'm part of our local community. I serve families across the city, offer special rates for seniors and busy parents, and believe in providing honest, reliable service that our community can trust.
-
-## Let's Work Together
-
-Ready for better value and convenience? I'd love to help you get the great hair you want without the salon prices or hassles. Whether you need regular family haircuts, a practical style for work, or just someone reliable who comes to you, I'm here to make it simple and affordable.
-
-Contact me today to schedule your appointment and see why hundreds of Winnipeg families trust me for their hair care needs.
+**Contact:** 204-555-0199 or hello@hairathome.com

@@ -1,30 +1,49 @@
 ---
-title: "Bridal Package"
+title: "Wedding Day Styling"
 icon: "fas fa-heart"
-price: "From $80"
-duration: "Consultation + Trial + Day"
-description: "Budget-friendly bridal hair services including consultation, trial run, and wedding day styling."
-includes: "Consultation + Trial + Day"
+price: "From $60"
+duration: "60-90 minutes"
+description: "Simple, reliable wedding day hair styling that comes to you."
+includes: "Day-of styling only"
 slug: "bridal"
 ---
 
-Affordable bridal hair services for your special day. This budget package includes everything you need for beautiful wedding day hair, from initial consultation to the final styling on your big day.
+No-frills wedding day hair styling for brides who want reliable results without the premium price tag. I come to your location and get you ready for your big day - simple as that.
 
-**Services Include:**
-- Initial consultation and style planning
-- Trial session to perfect your look
+**What's Included:**
 - Wedding day styling at your location
-- Basic touch-up kit for the day
-- Day-of contact availability
+- One hairstyle of your choice
+- Basic pins and setting products
+- Simple touch-up instructions
 
-**Features:**
-- Quality trusted products
-- Long-lasting techniques
-- Accessory placement
-- Small bridal party packages available
-- Efficient scheduling around your timeline
+**Pricing:**
+- Bride Only: $60 (60-90 minutes)
+- Bride + 1: $100 (2-2.5 hours total)
+- Bride + 2: $130 (3-3.5 hours total)
 
-**Budget Options:**
-- Basic Package: $80 (Consultation + Wedding Day)
-- Standard Package: $100 (Consultation + Trial + Wedding Day)
-- Complete Package: $120 (All services + small bridal party coordination)
+**Add-Ons Available:**
+- Trial run (recommended): +$35
+- Early morning fee (before 8am): +$20
+- Travel outside Winnipeg city limits: +$15
+
+**What I Need From You:**
+- Photos of your desired style
+- Any hair accessories you'll be using
+- Clean, dry hair on the day
+- A space with access to power outlet
+
+**Important Notes:**
+- Trial runs are recommended but not required
+- I don't provide veils, extensions, or accessories
+- Complex braided styles may require a trial
+- Book at least 4 weeks in advance for wedding dates
+- 50% deposit required to hold your date
+
+**What This Isn't:**
+This isn't a luxury bridal experience with champagne and a team of stylists. This is reliable, affordable wedding hair from someone who shows up on time and gets the job done. If you're looking for a full bridal suite experience, a traditional salon might be a better fit.
+
+**Why Choose This?**
+- Budget-friendly pricing
+- Comes to your location
+- No salon minimums or package requirements
+- Straightforward, no-pressure service
