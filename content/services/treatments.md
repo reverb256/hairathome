@@ -1,26 +1,42 @@
 ---
-title: "Treatments"
+title: "Hair Treatments"
 icon: "fas fa-spa"
-price: "$40 - $80"
-duration: "30-60 minutes"
-description: "Deep conditioning and scalp treatments"
+price: "$15-25"
+duration: "15-30 minutes"
+description: "Add-on conditioning treatments to boost your hair's health and shine."
 slug: "treatments"
 ---
 
-Rejuvenating hair and scalp treatments designed to restore health, shine, and vitality to your hair. Using professional-grade products, I'll address your specific hair concerns and provide personalized solutions for optimal results.
+Optional add-on treatments to give your hair a little extra care. These aren't fancy spa experiences - just effective conditioning treatments that actually work, added on to your haircut or color service.
 
-**Treatments Include:**
-- Deep conditioning masks
-- Keratin treatments
-- Scalp detox treatments
-- Moisture infusion therapy
-- Protein reconstruction
-- Anti-frizz treatments
+**Available Add-Ons:**
 
-**Benefits:**
-- Repairs damaged hair
-- Restores natural shine
-- Improves manageability
-- Reduces frizz and breakage
-- Promotes healthy scalp
-- Long-lasting results
+**Deep Conditioning Mask - $15**
+- Intensive moisture treatment
+- Great for dry or damaged hair
+- Applied during your service
+- Adds 15 minutes
+
+**Protein Treatment - $20**
+- Strengthens weak or brittle hair
+- Helps prevent breakage
+- Recommended before color services
+- Adds 20 minutes
+
+**Scalp Treatment - $12**
+- Refreshing scalp cleanse
+- Helps with dryness or buildup
+- Includes brief massage
+- Adds 15 minutes
+
+**How It Works:**
+Treatments are designed as add-ons to other services (haircuts, color, blowouts). They process while I work on other parts of your service, so you're not sitting around waiting.
+
+**Not Available Standalone:**
+These treatments are only offered as add-ons to haircuts, color, or blowout services. This keeps costs down and makes the most of your appointment time.
+
+**What to Expect:**
+- Simple, effective products
+- No fancy spa atmosphere - just good hair care
+- Applied during your regular service
+- You'll feel the difference immediately

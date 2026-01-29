@@ -1,29 +1,44 @@
 ---
-title: "Gents Grooming"
+title: "Beard Trim"
 icon: "fas fa-male"
-price: "$35"
-original_price: "$40"
-discount: "10% OFF"
-duration: "30 mins"
-description: "Classic barbering techniques in the comfort of your home. Clipper or scissor cuts."
-includes: "Scissors & Clippers"
+price: "$15"
+duration: "15-20 minutes"
+description: "Quick beard tidy-up to keep you looking sharp."
+includes: "Trim and shape"
 slug: "beard"
 ---
 
-Professional beard grooming services designed to keep your facial hair looking sharp, healthy, and well-maintained. From precise trims to complete beard shaping, I'll help you achieve the perfect look that complements your facial features.
+Straightforward beard trimming when you need to look neat but don't want to pay barbershop prices. Quick, simple, and done at your convenience.
 
-**Services Include:**
-- Beard trimming and shaping
-- Line-up and edge detailing
-- Hot towel treatments
-- Beard conditioning
-- Mustache trimming
+**Base Service Includes:**
+- Beard trim and shaping
 - Neckline cleanup
+- Mustache trim (if needed)
+- Light styling with basic product
 
-**Features:**
-- Professional consultation
-- Precision tools and techniques
-- Premium beard products
-- Styling tips and recommendations
-- Relaxing experience
-- Combined haircut and beard packages available
+**Add-Ons Available:**
+- Hot towel treatment: +$8
+- Beard conditioning oil application: +$5
+- Combined with haircut: Save $5
+
+**Pricing:**
+- Beard trim only: $15
+- Beard trim + haircut: $35 (save $5)
+
+**What to Expect:**
+- Quick consultation on length preference
+- Clean, even trim
+- Sharp lines where you want them
+- Natural look - not overly styled
+
+**What This Isn't:**
+This isn't a luxury barbershop experience with hot towels, straight razor shaves, or elaborate styling. This is a practical trim that keeps you looking presentable.
+
+**Best For:**
+- Regular maintenance between major trims
+- Quick tidy-ups before events
+- Keeping workplace-appropriate facial hair
+- Budget-conscious grooming
+
+**Note:**
+I don't offer straight razor shaves or full face shaves. For those services, please visit a traditional barbershop.

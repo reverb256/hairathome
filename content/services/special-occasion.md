@@ -1,28 +1,46 @@
 ---
-title: "Occasion Styling"
+title: "Event Styling"
 icon: "fas fa-graduation-cap"
-price: "$150"
-original_price: "$200"
-discount: "10% OFF"
-duration: "150 mins"
-description: "Elegant updos, bridal styling, or bouncy blowouts for your special events."
-includes: "Hand painted"
+price: "$35-50"
+duration: "45-60 minutes"
+description: "Simple updos and styling for graduations, parties, and special events."
+includes: "One styled look"
 slug: "special-occasion"
 ---
 
-Elegant updo and special occasion styling for weddings, proms, galas, and any event where you want to look your absolute best. I'll create a sophisticated, long-lasting hairstyle that complements your outfit and enhances your natural beauty.
+Basic event styling for when you need to look nice but don't want to spend a fortune. Simple updos, curls, or smooth styles that work for graduations, parties, or nights out.
 
-**Services Include:**
-- Wedding day styling
-- Bridal party styling
-- Prom and formal event styling
-- Vintage and modern updos
-- Elegant curls and waves
-- Accessory placement
+**Base Service Includes:**
+- Simple updo, curls, or smooth style
+- Light setting products
+- Basic pins and accessories placement
+- One finished look
 
-**Features:**
-- Pre-event consultation
-- Trial sessions available
-- Touch-up kit provided
-- Long-lasting techniques
-- On-location service for your convenience
+**Pricing:**
+- Simple style (curls, straight, basic updo): $35
+- More complex updo: $50
+
+**Add-Ons Available:**
+- Trial run: +$25
+- Hair extension placement (you provide extensions): +$10
+- Travel outside Winnipeg: +$15
+
+**Perfect For:**
+- Graduation ceremonies
+- Holiday parties
+- Date nights
+- Family photos
+- Work events
+
+**What This Isn't:**
+This isn't elaborate bridal styling or red-carpet hair. I do simple, clean styles that photograph well and stay in place. If you need intricate braiding, complex updos, or avant-garde styling, a full-service salon will serve you better.
+
+**What to Bring:**
+- Photos of styles you like
+- Any accessories (clips, pins, flowers)
+- Clean, dry hair (unless adding wash service)
+
+**Booking Tips:**
+- Book at least 1 week ahead for weekend dates
+- Saturday afternoons fill up fast
+- Trial runs recommended for important events
