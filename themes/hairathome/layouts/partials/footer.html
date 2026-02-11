@@ -1,45 +1,43 @@
-
-    <!-- Footer -->
-    <footer class="bg-white dark:bg-zinc-900 border-t border-zinc-300 dark:border-zinc-600 py-12">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex flex-col gap-2">
-                <span class="text-sm font-semibold tracking-tight text-zinc-900 dark:text-white uppercase">{{ .Site.Title }}</span>
-                <p class="text-xs text-zinc-700 dark:text-zinc-700">© {{ now.Year }} {{ .Site.Title }}. All rights reserved.</p>
+<footer class="bg-brand-dark border-t border-brand-warm/20 py-16">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex flex-col items-center md:items-start gap-3">
+                <span class="text-xl font-display font-semibold text-brand-cream">{{ .Site.Title }}</span>
+                <p class="text-sm text-brand-light">Professional mobile hair styling in Winnipeg</p>
+                <p class="text-xs text-brand-warm mt-2">© {{ now.Year }} {{ .Site.Title }}. All rights reserved.</p>
             </div>
 
-            <div class="flex gap-6">
+            <div class="flex gap-4">
                 {{ with .Site.Params.social.facebook }}
-                <a href="{{ . }}" class="text-zinc-700 hover:text-zinc-900 dark:hover:text-white transition-colors" aria-label="Facebook">
+                <a href="{{ . }}" class="w-11 h-11 rounded-full bg-brand-light/10 flex items-center justify-center text-brand-light hover:bg-brand-soft hover:text-brand-dark transition-all" aria-label="Facebook">
                     <iconify-icon icon="lucide:facebook" width="20" stroke-width="1.5"></iconify-icon>
                 </a>
                 {{ end }}
                 {{ with .Site.Params.social.instagram }}
-                <a href="{{ . }}" class="text-zinc-700 hover:text-zinc-900 dark:hover:text-white transition-colors" aria-label="Instagram">
+                <a href="{{ . }}" class="w-11 h-11 rounded-full bg-brand-light/10 flex items-center justify-center text-brand-light hover:bg-brand-soft hover:text-brand-dark transition-all" aria-label="Instagram">
                     <iconify-icon icon="lucide:instagram" width="20" stroke-width="1.5"></iconify-icon>
                 </a>
                 {{ end }}
                 {{ with .Site.Params.social.tiktok }}
-                <a href="{{ . }}" class="text-zinc-700 hover:text-zinc-900 dark:hover:text-white transition-colors" aria-label="TikTok">
+                <a href="{{ . }}" class="w-11 h-11 rounded-full bg-brand-light/10 flex items-center justify-center text-brand-light hover:bg-brand-soft hover:text-brand-dark transition-all" aria-label="TikTok">
                     <iconify-icon icon="lucide:music" width="20" stroke-width="1.5"></iconify-icon>
                 </a>
                 {{ end }}
             </div>
         </div>
-    </footer>
-
-    <!-- WhatsApp Floating Button -->
-    <div class="fixed bottom-6 right-6 z-40">
-        <a href="https://wa.me/12045550123?text=Hi!%20I'd%20like%20to%20book%20a%20mobile%20hair%20appointment.%20Please%20let%20me%20know%20your%20availability."
-           target="_blank"
-           rel="noopener"
-           class="bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all hover:scale-110 group"
-           aria-label="Contact via WhatsApp">
-            <iconify-icon icon="lucide:message-circle" width="24" stroke-width="1.5"></iconify-icon>
-            <span class="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 px-3 py-1 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
-                Book via WhatsApp
-            </span>
-        </a>
     </div>
+</footer>
+
+<div class="fixed bottom-6 right-6 z-40">
+    <a href="https://wa.me/12045550123?text=Hi!%20I'd%20like%20to%20book%20a%20mobile%20hair%20appointment.%20Please%20let%20me%20know%20your%20availability."
+       target="_blank"
+       rel="noopener"
+       class="flex items-center gap-3 bg-green-500 text-white pl-4 pr-5 py-3 rounded-full shadow-xl hover:bg-green-600 transition-all hover:scale-105 group"
+       aria-label="Contact via WhatsApp">
+        <iconify-icon icon="lucide:message-circle" width="22" stroke-width="1.5"></iconify-icon>
+        <span class="text-sm font-medium">WhatsApp</span>
+    </a>
+</div>
 
     <!-- Scripts -->
     <script>

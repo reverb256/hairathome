@@ -93,8 +93,41 @@
                                   class="w-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-600 rounded-lg px-4 py-3 text-sm text-zinc-900 dark:text-white outline-none focus:ring-2 focus:ring-zinc-900/10 focus:border-zinc-900 dark:focus:border-white transition-all"></textarea>
                     </div>
 
-                    <button type="submit" class="w-full bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-medium py-3 rounded-lg hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors shadow-lg shadow-zinc-900/10 dark:shadow-white/10">
-                        Request Appointment
+                    <div class="space-y-2">
+                        <label class="text-xs font-medium text-zinc-700 dark:text-zinc-300 uppercase tracking-wider">Payment Method *</label>
+                        <div class="space-y-3">
+                            <label class="flex items-center gap-3 p-4 border border-zinc-300 dark:border-zinc-600 rounded-lg cursor-pointer hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors">
+                                <input type="radio"
+                                       name="paymentMethod"
+                                       value="interac"
+                                       required
+                                       class="custom-checkbox w-4 h-4 appearance-none border-2 border-zinc-300 dark:border-zinc-600 rounded cursor-pointer relative">
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-lg">💳</span>
+                                        <strong class="text-sm text-zinc-900 dark:text-white">Interac e-Transfer</strong>
+                                    </div>
+                                    <p class="text-xs text-zinc-700 dark:text-zinc-700 mt-1">Secure bank-to-bank transfer via email</p>
+                                </div>
+                            </label>
+                            <label class="flex items-center gap-3 p-4 border border-zinc-300 dark:border-zinc-600 rounded-lg cursor-pointer hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors">
+                                <input type="radio"
+                                       name="paymentMethod"
+                                       value="cash"
+                                       class="custom-checkbox w-4 h-4 appearance-none border-2 border-zinc-300 dark:border-zinc-600 rounded cursor-pointer relative">
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-lg">💵</span>
+                                        <strong class="text-sm text-zinc-900 dark:text-white">Cash</strong>
+                                    </div>
+                                    <p class="text-xs text-zinc-700 dark:text-zinc-700 mt-1">Pay directly to the stylist on service day</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="submit-btn" class="w-full bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-medium py-3 rounded-lg hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors shadow-lg shadow-zinc-900/10 dark:shadow-white/10 flex items-center justify-center gap-2">
+                        <span>Request Appointment</span>
                     </button>
                 </form>
             </div>
