@@ -1,29 +1,29 @@
 ---
-title: "Color & Highlights"
+title: "Color"
 icon: "fas fa-paint-brush"
-price: "$35-50"
+price: "$45-65"
 duration: "90 mins"
-description: "Basic root touch-ups and simple highlights using safe, trusted products."
-includes: "Includes toner"
+description: "Root touch-ups, single process color, and highlights"
+includes: "Consultation included"
 slug: "color"
 ---
 
-Affordable color services focused on maintaining your hair color between salon visits. I specialize in simple, effective color work that keeps your hair healthy and looking great without breaking the bank.
+Professional color services at fair prices. From root touch-ups to full color.
 
-**Services Include:**
-- Root touch-ups
-- Simple highlights
-- Gray coverage
-- Color refresh
+**Pricing:**
+- Root touch-up: $45
+- Single process color: $55
+- Partial highlights: $55
+- Full highlights: $65
 
-**Features:**
-- Quick consultation
-- Patch testing for new clients
-- Safe, quality products
-- Simple aftercare instructions
+**What you get:**
+- Color consultation
+- Quality products
+- Even application
+- Simple aftercare tips
 
-**Great Value For:**
+**Good for:**
 - Maintaining your current color
-- Covering roots between salon visits
-- First-time color clients
-- Budget-conscious color maintenance
+- Covering roots
+- Freshening up faded color
+- First-time color

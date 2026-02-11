@@ -1,29 +1,26 @@
 ---
-title: "Gents Grooming"
-icon: "fas fa-male"
-price: "$35"
-original_price: "$40"
-discount: "10% OFF"
+title: "Men's Cuts"
+icon: "fas fa-user"
+price: "$25-30"
 duration: "30 mins"
-description: "Classic barbering techniques in the comfort of your home. Clipper or scissor cuts."
-includes: "Scissors & Clippers"
+description: "Clipper or scissor cuts, beard trim available"
 slug: "beard"
 ---
 
-Professional beard grooming services designed to keep your facial hair looking sharp, healthy, and well-maintained. From precise trims to complete beard shaping, I'll help you achieve the perfect look that complements your facial features.
+Straightforward men's haircuts. Fades, tapers, or classic cuts.
 
-**Services Include:**
-- Beard trimming and shaping
-- Line-up and edge detailing
-- Hot towel treatments
-- Beard conditioning
-- Mustache trimming
-- Neckline cleanup
+**Pricing:**
+- Men's haircut: $25
+- Men's cut + beard trim: $30
+- Beard trim only: $10
 
-**Features:**
-- Professional consultation
-- Precision tools and techniques
-- Premium beard products
-- Styling tips and recommendations
-- Relaxing experience
-- Combined haircut and beard packages available
+**What you get:**
+- Consultation
+- Professional cut with clippers or scissors
+- Clean neckline and edges
+- Styling to finish
+
+**Options:**
+- Fades and tapers
+- Classic cuts
+- Beard trims and line-ups

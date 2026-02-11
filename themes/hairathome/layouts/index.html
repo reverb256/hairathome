@@ -1,71 +1,87 @@
 {{ define "main" }}
-<section class="relative pt-32 pb-24 md:pt-52 md:pb-40 px-6 overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-brand-cream via-white to-brand-light/30"></div>
-    <div class="absolute top-20 right-0 w-96 h-96 bg-brand-soft/20 rounded-full blur-3xl animate-float"></div>
-    <div class="absolute bottom-0 left-0 w-80 h-80 bg-brand-peach/15 rounded-full blur-3xl animate-float" style="animation-delay: -3s;"></div>
+<section class="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-cream via-brand-ivory to-brand-blush/30 dark:from-brand-charcoal dark:via-brand-charcoal dark:to-brand-stone/20"></div>
     
-    <div class="max-w-7xl mx-auto relative">
-        <div class="flex flex-col lg:flex-row gap-16 items-center">
-            <div class="flex-1 space-y-8 animate-slide-up">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur border border-brand-warm/20 shadow-sm">
-                    <span class="w-2 h-2 rounded-full bg-gradient-to-r from-brand-soft to-brand-peach animate-pulse-soft"></span>
-                    <span class="text-xs font-medium text-brand-dark tracking-wide">Premium mobile hair care for Winnipeg families</span>
+    <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-rose/20 dark:bg-brand-rose/10 rounded-full blur-3xl animate-float"></div>
+    <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-brand-sage/15 dark:bg-brand-sage/10 rounded-full blur-3xl animate-float-slow"></div>
+    <div class="absolute top-1/2 left-1/3 w-[300px] h-[300px] bg-brand-terracotta/10 rounded-full blur-3xl animate-float" style="animation-delay: -4s;"></div>
+    
+    <div class="max-w-7xl mx-auto px-6 relative z-10 w-full">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div class="space-y-8 animate-slide-up">
+                <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/60 dark:bg-white/5 backdrop-blur-sm border border-brand-rose/20 shadow-sm">
+                    <span class="relative flex h-2.5 w-2.5">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-terracotta opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-terracotta"></span>
+                    </span>
+                    <span class="text-sm font-medium text-brand-charcoal dark:text-brand-cream">Mobile hair services in Winnipeg</span>
                 </div>
                 
-                <h1 class="text-5xl md:text-6xl lg:text-7xl font-display font-medium tracking-tight text-brand-dark leading-[1.05]">
-                    Salon-Quality<br>
-                    <span class="italic text-brand-accent">Hair Care</span><br>
-                    At Your Door
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-display font-medium tracking-tight text-brand-charcoal dark:text-brand-cream leading-[1.05]">
+                    Haircuts<br>
+                    <span class="text-brand-terracotta dark:text-brand-rose">made simple</span>
                 </h1>
                 
-                <p class="text-lg text-brand-secondary max-w-lg leading-relaxed font-light">
-                    Skip the salon hassle. Professional cuts, coloring, and styling delivered to your home. Perfect for busy families who value their time.
+                <p class="text-lg sm:text-xl text-brand-stone dark:text-brand-stone max-w-lg leading-relaxed">
+                    Quality haircuts at straightforward prices. We come to you — home, office, or anywhere in Winnipeg.
                 </p>
                 
-                <div class="flex flex-col sm:flex-row gap-4 pt-2">
-                    <a href="#contact" class="btn-primary inline-flex justify-center items-center px-8 py-4 rounded-xl text-sm font-medium tracking-wide group shadow-lg">
-                        Book Appointment
-                        <iconify-icon icon="lucide:arrow-right" class="ml-2 group-hover:translate-x-1 transition-transform" width="18" stroke-width="1.5"></iconify-icon>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="tel:+12045572287" class="group inline-flex justify-center items-center px-8 py-4 bg-brand-charcoal dark:bg-brand-cream text-brand-cream dark:text-brand-charcoal rounded-xl font-medium shadow-lg shadow-brand-charcoal/20 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
+                        <iconify-icon icon="lucide:phone" class="mr-2" width="18"></iconify-icon>
+                        Call Now
                     </a>
-                    <a href="#services" class="btn-secondary inline-flex justify-center items-center px-8 py-4 rounded-xl text-sm font-medium tracking-wide">
-                        View Services
+                    <a href="#services" class="inline-flex justify-center items-center px-8 py-4 border-2 border-brand-charcoal/20 dark:border-brand-cream/20 text-brand-charcoal dark:text-brand-cream rounded-xl font-medium hover:bg-brand-charcoal/5 dark:hover:bg-brand-cream/5 transition-all duration-300">
+                        See Services
                     </a>
+                </div>
+                
+                <div class="flex items-center gap-8 pt-4">
+                    <div class="text-center">
+                        <p class="text-2xl font-display font-semibold text-brand-charcoal dark:text-brand-cream">7</p>
+                        <p class="text-xs text-brand-stone uppercase tracking-wider">Days a Week</p>
+                    </div>
+                    <div class="w-px h-10 bg-brand-stone/20"></div>
+                    <div class="text-center">
+                        <p class="text-2xl font-display font-semibold text-brand-charcoal dark:text-brand-cream">All</p>
+                        <p class="text-xs text-brand-stone uppercase tracking-wider">Winnipeg</p>
+                    </div>
+                    <div class="w-px h-10 bg-brand-stone/20"></div>
+                    <div class="text-center">
+                        <p class="text-2xl font-display font-semibold text-brand-charcoal dark:text-brand-cream">$20+</p>
+                        <p class="text-xs text-brand-stone uppercase tracking-wider">From</p>
+                    </div>
                 </div>
             </div>
 
-            <div class="flex-1 w-full relative animate-fade-in" style="animation-delay: 0.3s;">
+            <div class="relative animate-fade-in" style="animation-delay: 0.3s;">
                 <div class="relative">
-                    <div class="absolute -inset-4 bg-gradient-to-tr from-brand-soft/30 via-brand-peach/20 to-transparent rounded-3xl blur-2xl"></div>
-                    <div class="relative aspect-[4/5] lg:aspect-[3/4] rounded-2xl overflow-hidden bg-gradient-to-br from-brand-light to-brand-cream shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=1000&auto=format&fit=crop"
-                             alt="Professional mobile hair styling service"
-                             class="object-cover w-full h-full hover:scale-105 transition-transform duration-1000"
-                             loading="eager"
-                             width="800"
-                             height="1000">
-                        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/20 via-transparent to-transparent"></div>
-                    </div>
-                </div>
-                
-                <div class="absolute -bottom-4 -left-4 lg:bottom-8 lg:-left-8 animate-fade-in-up" style="animation-delay: 0.6s;">
-                    <div class="bg-white/95 backdrop-blur-sm p-5 rounded-2xl shadow-xl border border-brand-warm/20 max-w-[200px]">
-                        <div class="flex items-center gap-3">
-                            <div class="w-11 h-11 rounded-full bg-gradient-to-br from-brand-soft to-brand-peach flex items-center justify-center text-white">
-                                <iconify-icon icon="lucide:star" width="20" stroke-width="2"></iconify-icon>
+                    <div class="absolute -inset-6 bg-gradient-to-tr from-brand-rose/40 via-brand-terracotta/30 to-brand-sage/20 rounded-3xl blur-2xl opacity-60"></div>
+                    <div class="relative grid grid-cols-2 gap-4">
+                        <div class="space-y-4">
+                            <div class="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
+                                <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=600&auto=format&fit=crop"
+                                     alt="Professional haircut service"
+                                     class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                                     loading="eager">
                             </div>
-                            <div>
-                                <p class="text-sm font-semibold text-brand-dark">5.0 Rating</p>
-                                <p class="text-xs text-brand-secondary">200+ Happy Clients</p>
+                            <div class="aspect-square rounded-2xl overflow-hidden shadow-xl">
+                                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=400&auto=format&fit=crop"
+                                     alt="Hair styling"
+                                     class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
                             </div>
                         </div>
-                    </div>
-                </div>
-                
-                <div class="absolute -top-2 -right-2 lg:top-6 lg:-right-6 animate-fade-in-up" style="animation-delay: 0.8s;">
-                    <div class="bg-white/95 backdrop-blur-sm px-4 py-3 rounded-xl shadow-lg border border-brand-warm/20">
-                        <div class="flex items-center gap-2">
-                            <iconify-icon icon="lucide:shield-check" class="text-brand-accent" width="18"></iconify-icon>
-                            <span class="text-xs font-medium text-brand-dark">Licensed & Insured</span>
+                        <div class="space-y-4 pt-8">
+                            <div class="aspect-square rounded-2xl overflow-hidden shadow-xl">
+                                <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?q=80&w=400&auto=format&fit=crop"
+                                     alt="Salon tools"
+                                     class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                            </div>
+                            <div class="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
+                                <img src="https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?q=80&w=600&auto=format&fit=crop"
+                                     alt="Happy client"
+                                     class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -74,242 +90,224 @@
     </div>
 </section>
 
-<section id="about" class="py-28 relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-b from-white to-brand-cream/30"></div>
-    <div class="max-w-7xl mx-auto px-6 relative">
-        <div class="text-center mb-20">
-            <span class="text-xs font-medium text-brand-accent uppercase tracking-[0.2em]">Why Choose Us</span>
-            <h2 class="text-3xl md:text-4xl font-display font-medium text-brand-dark mt-4">The Smart Choice for Busy Families</h2>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-            <div class="group p-8 rounded-2xl bg-white/60 backdrop-blur-sm border border-brand-warm/10 hover:border-brand-soft/50 hover:shadow-xl transition-all duration-500">
-                <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-brand-soft to-brand-peach flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <iconify-icon icon="lucide:home" width="24" stroke-width="1.5"></iconify-icon>
-                </div>
-                <h3 class="text-xl font-display font-medium text-brand-dark mb-3">We Come To You</h3>
-                <p class="text-sm text-brand-secondary leading-relaxed">
-                    No travel, no waiting rooms. Professional hair care in the comfort of your home while you relax or manage your day.
-                </p>
-            </div>
-            
-            <div class="group p-8 rounded-2xl bg-white/60 backdrop-blur-sm border border-brand-warm/10 hover:border-brand-soft/50 hover:shadow-xl transition-all duration-500">
-                <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-brand-peach to-brand-accent flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <iconify-icon icon="lucide:scissors" width="24" stroke-width="1.5"></iconify-icon>
-                </div>
-                <h3 class="text-xl font-display font-medium text-brand-dark mb-3">Premium Quality</h3>
-                <p class="text-sm text-brand-secondary leading-relaxed">
-                    Salon-quality cuts and styling with professional products. 10+ years experience delivering exceptional results.
-                </p>
-            </div>
-            
-            <div class="group p-8 rounded-2xl bg-white/60 backdrop-blur-sm border border-brand-warm/10 hover:border-brand-soft/50 hover:shadow-xl transition-all duration-500">
-                <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-brand-accent to-brand-dark flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <iconify-icon icon="lucide:heart" width="24" stroke-width="1.5"></iconify-icon>
-                </div>
-                <h3 class="text-xl font-display font-medium text-brand-dark mb-3">Family Friendly</h3>
-                <p class="text-sm text-brand-secondary leading-relaxed">
-                    Services for the whole family. Kids cuts, men's styles, women's cuts and color — all at competitive prices.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="services" class="py-28 bg-brand-cream/40">
+<section id="services" class="py-24 bg-white dark:bg-brand-charcoal/50 relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand-rose/30 to-transparent"></div>
+    
     <div class="max-w-7xl mx-auto px-6">
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
-            <div>
-                <span class="text-xs font-medium text-brand-accent uppercase tracking-[0.2em]">Our Services</span>
-                <h2 class="text-3xl md:text-4xl font-display font-medium text-brand-dark mt-4">Professional Hair Care</h2>
-                <p class="text-brand-secondary max-w-md mt-3">Full-service hair care for the whole family, delivered to your door.</p>
-            </div>
-            <a href="#pricing" class="inline-flex items-center gap-2 text-sm font-medium text-brand-dark hover:text-brand-accent transition-colors group">
-                View full pricing 
-                <iconify-icon icon="lucide:arrow-right" class="group-hover:translate-x-1 transition-transform" width="16"></iconify-icon>
-            </a>
+        <div class="text-center mb-16">
+            <span class="text-sm font-medium text-brand-terracotta uppercase tracking-[0.2em]">Services</span>
+            <h2 class="text-4xl md:text-5xl font-display font-medium text-brand-charcoal dark:text-brand-cream mt-4">What We Offer</h2>
+            <p class="text-brand-stone dark:text-brand-stone max-w-xl mx-auto mt-4">Professional hair services for the whole family at straightforward prices.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {{ range first 4 (where site.RegularPages "Type" "services") }}
-            <div class="group bg-white rounded-2xl overflow-hidden border border-brand-warm/10 hover:border-brand-soft/50 hover:shadow-xl transition-all duration-500">
-                <div class="aspect-[4/3] w-full overflow-hidden bg-brand-light">
-                     <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=800&auto=format&fit=crop"
-                          alt="{{ .Title }}"
-                          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                          loading="lazy"
-                          width="800"
-                          height="600">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="group relative bg-brand-cream/50 dark:bg-white/5 rounded-2xl overflow-hidden border border-brand-rose/10 hover:border-brand-terracotta/30 transition-all duration-500 hover:-translate-y-1">
+                <div class="aspect-[4/3] overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=600&auto=format&fit=crop"
+                         alt="Haircuts"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                 </div>
                 <div class="p-6">
-                    <h3 class="text-lg font-display font-medium text-brand-dark mb-2">{{ .Title }}</h3>
-                    <p class="text-sm text-brand-secondary leading-relaxed mb-4">{{ .Params.description }}</p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-lg font-semibold text-brand-dark">{{ .Params.price }}</span>
-                        <span class="text-xs text-brand-secondary">{{ .Params.duration }}</span>
+                    <h3 class="text-xl font-display font-medium text-brand-charcoal dark:text-brand-cream">Haircuts</h3>
+                    <p class="text-sm text-brand-stone mt-2">Quality cuts for adults, seniors, and kids. Wash and style included.</p>
+                    <div class="flex items-center justify-between mt-4 pt-4 border-t border-brand-rose/10">
+                        <span class="text-2xl font-display font-semibold text-brand-terracotta">$20-30</span>
+                        <span class="text-sm text-brand-stone">30 mins</span>
                     </div>
                 </div>
-            </div>
-            {{ end }}
-        </div>
-    </div>
-</section>
-
-<section id="pricing" class="py-28 bg-white">
-    <div class="max-w-4xl mx-auto px-6">
-        <div class="text-center mb-16">
-            <span class="text-xs font-medium text-brand-accent uppercase tracking-[0.2em]">Transparent Pricing</span>
-            <h2 class="text-3xl md:text-4xl font-display font-medium text-brand-dark mt-4">Simple, Fair Prices</h2>
-            <p class="text-brand-secondary max-w-md mx-auto mt-3">No hidden fees. No surprises. Just quality service at honest prices.</p>
-        </div>
-
-        <div class="bg-brand-cream/30 rounded-3xl p-8 md:p-10 border border-brand-warm/10">
-            <div class="space-y-1">
-                {{ range first 5 (where site.RegularPages "Type" "services") }}
-                <div class="flex items-center justify-between p-5 rounded-xl hover:bg-white/60 transition-colors group">
-                    <div>
-                        <h4 class="font-medium text-brand-dark group-hover:text-brand-accent transition-colors">{{ .Title }}</h4>
-                        <p class="text-sm text-brand-secondary mt-1">{{ .Params.duration }} {{ if .Params.includes }}• {{ .Params.includes }}{{ end }}</p>
-                    </div>
-                    <span class="text-xl font-display font-semibold text-brand-dark">{{ .Params.price }}</span>
-                </div>
-                {{ end }}
-            </div>
-
-            <div class="mt-8 p-5 bg-white/60 rounded-xl flex items-start gap-4">
-                <iconify-icon icon="lucide:sparkles" class="text-brand-accent mt-1 shrink-0" width="20"></iconify-icon>
-                <p class="text-sm text-brand-secondary">Prices include travel within Winnipeg. Slight adjustments may apply for extra-long or thick hair. Free consultation included with every appointment.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="py-28 relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-brand-dark via-brand-dark to-brand-warm"></div>
-    <div class="absolute top-0 left-1/4 w-96 h-96 bg-brand-soft/10 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-brand-peach/10 rounded-full blur-3xl"></div>
-    
-    <div class="max-w-5xl mx-auto px-6 text-center relative">
-        <iconify-icon icon="lucide:quote" class="text-brand-soft/40 mb-8" width="60"></iconify-icon>
-        
-        <blockquote class="text-2xl md:text-3xl lg:text-4xl font-display font-light leading-snug tracking-tight max-w-3xl mx-auto mb-12 text-brand-cream">
-            "Finally, a hair service that fits our chaotic family schedule. Same quality as the salon but without the hassle. My whole family loves it!"
-        </blockquote>
-        
-        <div class="flex flex-col items-center gap-4">
-            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=120&auto=format&fit=crop"
-                 alt="Sarah Jenkins"
-                 class="w-16 h-16 rounded-full border-2 border-brand-soft/30 object-cover"
-                 width="60"
-                 height="60">
-            <div>
-                <p class="font-medium text-brand-cream">Sarah Jenkins</p>
-                <p class="text-sm text-brand-light">Winnipeg Mom & Loyal Client</p>
             </div>
             
-            <div class="flex gap-1 mt-2">
-                <iconify-icon icon="lucide:star" class="text-brand-peach" width="18"></iconify-icon>
-                <iconify-icon icon="lucide:star" class="text-brand-peach" width="18"></iconify-icon>
-                <iconify-icon icon="lucide:star" class="text-brand-peach" width="18"></iconify-icon>
-                <iconify-icon icon="lucide:star" class="text-brand-peach" width="18"></iconify-icon>
-                <iconify-icon icon="lucide:star" class="text-brand-peach" width="18"></iconify-icon>
+            <div class="group relative bg-brand-cream/50 dark:bg-white/5 rounded-2xl overflow-hidden border border-brand-rose/10 hover:border-brand-terracotta/30 transition-all duration-500 hover:-translate-y-1">
+                <div class="aspect-[4/3] overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=600&auto=format&fit=crop"
+                         alt="Color Services"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-display font-medium text-brand-charcoal dark:text-brand-cream">Color</h3>
+                    <p class="text-sm text-brand-stone mt-2">Root touch-ups, single process, and highlights. Consultation included.</p>
+                    <div class="flex items-center justify-between mt-4 pt-4 border-t border-brand-rose/10">
+                        <span class="text-2xl font-display font-semibold text-brand-terracotta">$45-65</span>
+                        <span class="text-sm text-brand-stone">90 mins</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="group relative bg-brand-cream/50 dark:bg-white/5 rounded-2xl overflow-hidden border border-brand-rose/10 hover:border-brand-terracotta/30 transition-all duration-500 hover:-translate-y-1">
+                <div class="aspect-[4/3] overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1522337094846-8a818192de1f?q=80&w=600&auto=format&fit=crop"
+                         alt="Blowout & Styling"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-display font-medium text-brand-charcoal dark:text-brand-cream">Blowout & Style</h3>
+                    <p class="text-sm text-brand-stone mt-2">Wash, dry, and professional styling. Perfect for any occasion.</p>
+                    <div class="flex items-center justify-between mt-4 pt-4 border-t border-brand-rose/10">
+                        <span class="text-2xl font-display font-semibold text-brand-terracotta">$20-35</span>
+                        <span class="text-sm text-brand-stone">30-45 mins</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="group relative bg-brand-cream/50 dark:bg-white/5 rounded-2xl overflow-hidden border border-brand-rose/10 hover:border-brand-terracotta/30 transition-all duration-500 hover:-translate-y-1">
+                <div class="aspect-[4/3] overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=600&auto=format&fit=crop"
+                         alt="Men's Cuts"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-display font-medium text-brand-charcoal dark:text-brand-cream">Men's Cuts</h3>
+                    <p class="text-sm text-brand-stone mt-2">Fades, tapers, classic cuts. Beard trim available.</p>
+                    <div class="flex items-center justify-between mt-4 pt-4 border-t border-brand-rose/10">
+                        <span class="text-2xl font-display font-semibold text-brand-terracotta">$25-30</span>
+                        <span class="text-sm text-brand-stone">30 mins</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="group relative bg-brand-cream/50 dark:bg-white/5 rounded-2xl overflow-hidden border border-brand-rose/10 hover:border-brand-terracotta/30 transition-all duration-500 hover:-translate-y-1">
+                <div class="aspect-[4/3] overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?q=80&w=600&auto=format&fit=crop"
+                         alt="Updos & Formal"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-display font-medium text-brand-charcoal dark:text-brand-cream">Updos & Formal</h3>
+                    <p class="text-sm text-brand-stone mt-2">Special occasion styling. Weddings, grad, events.</p>
+                    <div class="flex items-center justify-between mt-4 pt-4 border-t border-brand-rose/10">
+                        <span class="text-2xl font-display font-semibold text-brand-terracotta">$35-50</span>
+                        <span class="text-sm text-brand-stone">45-60 mins</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="group relative bg-brand-cream/50 dark:bg-white/5 rounded-2xl overflow-hidden border border-brand-rose/10 hover:border-brand-terracotta/30 transition-all duration-500 hover:-translate-y-1">
+                <div class="aspect-[4/3] overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1559599101-f09722fb4948?q=80&w=600&auto=format&fit=crop"
+                         alt="Treatments"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-display font-medium text-brand-charcoal dark:text-brand-cream">Treatments</h3>
+                    <p class="text-sm text-brand-stone mt-2">Deep conditioning and scalp treatments. Add-on service.</p>
+                    <div class="flex items-center justify-between mt-4 pt-4 border-t border-brand-rose/10">
+                        <span class="text-2xl font-display font-semibold text-brand-terracotta">$15-25</span>
+                        <span class="text-sm text-brand-stone">15-30 mins</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<section id="contact" class="py-28 relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-b from-brand-cream/50 to-white"></div>
-    <div class="absolute top-10 right-10 w-64 h-64 bg-brand-soft/10 rounded-full blur-3xl"></div>
+<section id="about" class="py-24 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-brand-cream to-brand-ivory dark:from-brand-charcoal dark:to-brand-charcoal"></div>
     
-    <div class="max-w-2xl mx-auto px-6 relative">
-        <div class="text-center mb-12">
-            <span class="text-xs font-medium text-brand-accent uppercase tracking-[0.2em]">Get In Touch</span>
-            <h2 class="text-3xl md:text-4xl font-display font-medium text-brand-dark mt-4">Ready to Book?</h2>
-            <p class="text-brand-secondary mt-3">Fill out the form or reach us directly. We respond within 2 hours.</p>
-        </div>
-        
-        <div class="bg-white rounded-3xl shadow-2xl shadow-brand-dark/5 border border-brand-warm/10 p-8 md:p-12">
-            <form class="space-y-6" onsubmit="event.preventDefault(); alert('Thank you for your request. We will contact you shortly!');">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="space-y-2">
-                        <label for="name" class="text-xs font-medium text-brand-secondary uppercase tracking-wider">Name</label>
-                        <input type="text"
-                               id="name"
-                               name="name"
-                               placeholder="Your name"
-                               class="w-full bg-brand-cream/50 border border-brand-warm/20 rounded-xl px-5 py-4 text-sm text-brand-dark outline-none focus:ring-2 focus:ring-brand-soft/30 focus:border-brand-soft transition-all placeholder:text-brand-warm/50"
-                               required>
+    <div class="max-w-7xl mx-auto px-6 relative">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="relative">
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="aspect-[3/4] rounded-2xl overflow-hidden shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=500&auto=format&fit=crop"
+                             alt="Hair styling tools"
+                             class="w-full h-full object-cover">
                     </div>
-                    <div class="space-y-2">
-                        <label for="phone" class="text-xs font-medium text-brand-secondary uppercase tracking-wider">Phone</label>
-                        <input type="tel"
-                               id="phone"
-                               name="phone"
-                               placeholder="204-555-0123"
-                               class="w-full bg-brand-cream/50 border border-brand-warm/20 rounded-xl px-5 py-4 text-sm text-brand-dark outline-none focus:ring-2 focus:ring-brand-soft/30 focus:border-brand-soft transition-all placeholder:text-brand-warm/50"
-                               required>
+                    <div class="aspect-[3/4] rounded-2xl overflow-hidden shadow-xl mt-8">
+                        <img src="https://images.unsplash.com/photo-1553590717-f27c52423777?q=80&w=500&auto=format&fit=crop"
+                             alt="Professional stylist"
+                             class="w-full h-full object-cover">
                     </div>
-                </div>
-
-                <div class="space-y-2">
-                    <label for="email" class="text-xs font-medium text-brand-secondary uppercase tracking-wider">Email</label>
-                    <input type="email"
-                           id="email"
-                           name="email"
-                           placeholder="you@example.com"
-                           class="w-full bg-brand-cream/50 border border-brand-warm/20 rounded-xl px-5 py-4 text-sm text-brand-dark outline-none focus:ring-2 focus:ring-brand-soft/30 focus:border-brand-soft transition-all placeholder:text-brand-warm/50"
-                           required>
-                </div>
-
-                <div class="space-y-2">
-                    <label for="service" class="text-xs font-medium text-brand-secondary uppercase tracking-wider">Service</label>
-                    <div class="relative">
-                        <select id="service" name="service" class="w-full bg-brand-cream/50 border border-brand-warm/20 rounded-xl px-5 py-4 text-sm text-brand-dark outline-none focus:ring-2 focus:ring-brand-soft/30 focus:border-brand-soft transition-all appearance-none cursor-pointer">
-                            <option>Cut & Blow Dry</option>
-                            <option>Coloring</option>
-                            <option>Styling</option>
-                            <option>Gents Cut</option>
-                            <option>Kids Cut</option>
-                            <option>Other</option>
-                        </select>
-                        <iconify-icon icon="lucide:chevron-down" class="absolute right-5 top-1/2 -translate-y-1/2 text-brand-secondary pointer-events-none" width="18"></iconify-icon>
-                    </div>
-                </div>
-
-                <div class="flex items-start gap-3 pt-2">
-                    <input type="checkbox"
-                           id="terms"
-                           name="terms"
-                           class="peer h-5 w-5 cursor-pointer appearance-none rounded-md border border-brand-warm/30 shadow-sm bg-brand-cream/50 checked:bg-brand-dark checked:border-brand-dark focus:ring-2 focus:ring-brand-soft/30 transition-all mt-0.5"
-                           required>
-                    <label for="terms" class="text-sm text-brand-secondary cursor-pointer select-none">
-                        I agree to the processing of my personal data for booking purposes.
-                    </label>
-                </div>
-
-                <button type="submit"
-                        class="w-full btn-primary font-medium py-4 rounded-xl shadow-lg shadow-brand-dark/10 mt-2 text-base tracking-wide">
-                    Request Appointment
-                </button>
-            </form>
-
-            <div class="mt-10 pt-10 border-t border-brand-warm/10 grid grid-cols-2 gap-6 text-center">
-                <div>
-                    <div class="w-12 h-12 rounded-full bg-brand-cream flex items-center justify-center mx-auto mb-3">
-                        <iconify-icon icon="lucide:phone" class="text-brand-accent" width="20"></iconify-icon>
-                    </div>
-                    <p class="text-xs font-medium text-brand-secondary mb-1">Call Us</p>
-                    <a href="tel:+12045550199" class="text-sm font-medium text-brand-dark hover:text-brand-accent transition-colors">+1 204-555-0199</a>
-                </div>
-                <div>
-                    <div class="w-12 h-12 rounded-full bg-brand-cream flex items-center justify-center mx-auto mb-3">
-                        <iconify-icon icon="lucide:mail" class="text-brand-accent" width="20"></iconify-icon>
-                    </div>
-                    <p class="text-xs font-medium text-brand-secondary mb-1">Email</p>
-                    <a href="mailto:hello@hairathome.com" class="text-sm font-medium text-brand-dark hover:text-brand-accent transition-colors">hello@hairathome.com</a>
                 </div>
             </div>
+            
+            <div class="space-y-8">
+                <div>
+                    <span class="text-sm font-medium text-brand-terracotta uppercase tracking-[0.2em]">Why Mobile</span>
+                    <h2 class="text-4xl md:text-5xl font-display font-medium text-brand-charcoal dark:text-brand-cream mt-4">Haircuts at your convenience</h2>
+                </div>
+                
+                <p class="text-lg text-brand-stone leading-relaxed">
+                    No travel time. No waiting rooms. Quality haircuts where you need them, when you need them.
+                </p>
+                
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-terracotta/10 flex items-center justify-center shrink-0">
+                            <iconify-icon icon="lucide:home" class="text-brand-terracotta" width="24"></iconify-icon>
+                        </div>
+                        <div>
+                            <h3 class="font-medium text-brand-charcoal dark:text-brand-cream">We Come to You</h3>
+                            <p class="text-sm text-brand-stone mt-1">Home, office, or anywhere in Winnipeg.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-sage/20 flex items-center justify-center shrink-0">
+                            <iconify-icon icon="lucide:scissors" class="text-brand-sage" width="24"></iconify-icon>
+                        </div>
+                        <div>
+                            <h3 class="font-medium text-brand-charcoal dark:text-brand-cream">Quality Service</h3>
+                            <p class="text-sm text-brand-stone mt-1">Professional results with quality products.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-rose/20 flex items-center justify-center shrink-0">
+                            <iconify-icon icon="lucide:users" class="text-brand-rose" width="24"></iconify-icon>
+                        </div>
+                        <div>
+                            <h3 class="font-medium text-brand-charcoal dark:text-brand-cream">Family Friendly</h3>
+                            <p class="text-sm text-brand-stone mt-1">Services for everyone — men, women, and kids.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="py-24 bg-brand-charcoal dark:bg-brand-charcoal relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-charcoal via-brand-charcoal to-brand-stone/30"></div>
+    <div class="absolute top-1/4 right-0 w-[400px] h-[400px] bg-brand-terracotta/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-1/4 w-[300px] h-[300px] bg-brand-rose/10 rounded-full blur-3xl"></div>
+    
+    <div class="max-w-4xl mx-auto px-6 relative z-10">
+        <div class="text-center mb-12">
+            <span class="text-sm font-medium text-brand-terracotta uppercase tracking-[0.2em]">Contact</span>
+            <h2 class="text-4xl md:text-5xl font-display font-medium text-brand-cream mt-4">Ready to book?</h2>
+            <p class="text-brand-stone mt-4">Call or text to schedule your appointment.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+            <a href="tel:+12045572287" class="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 text-center hover:bg-white/10 transition-all duration-300">
+                <div class="w-16 h-16 rounded-full bg-brand-terracotta/20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                    <iconify-icon icon="lucide:phone" class="text-brand-terracotta" width="28"></iconify-icon>
+                </div>
+                <p class="text-sm text-brand-stone mb-2">Call or Text</p>
+                <p class="text-2xl font-display font-semibold text-brand-cream">(204) 557-2287</p>
+            </a>
+            
+            <a href="https://wa.me/12045572287?text=Hi!%20I'd%20like%20to%20book%20a%20hair%20appointment." target="_blank" class="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 text-center hover:bg-white/10 transition-all duration-300">
+                <div class="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                    <iconify-icon icon="lucide:message-circle" class="text-green-400" width="28"></iconify-icon>
+                </div>
+                <p class="text-sm text-brand-stone mb-2">WhatsApp</p>
+                <p class="text-2xl font-display font-semibold text-brand-cream">Message Us</p>
+            </a>
+        </div>
+        
+        <div class="mt-12 text-center space-y-2">
+            <p class="text-brand-stone text-sm">Available 7 days a week • All areas of Winnipeg</p>
+            <p class="text-brand-stone/70 text-sm flex items-center justify-center gap-4">
+                <span class="flex items-center gap-1.5">
+                    <iconify-icon icon="lucide:credit-card" width="14"></iconify-icon>
+                    e-Transfer
+                </span>
+                <span class="flex items-center gap-1.5">
+                    <iconify-icon icon="lucide:banknote" width="14"></iconify-icon>
+                    Cash
+                </span>
+            </p>
         </div>
     </div>
 </section>
