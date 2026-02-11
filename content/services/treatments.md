@@ -1,26 +1,25 @@
 ---
-title: "Treatments"
+title: "Conditioning Treatments"
 icon: "fas fa-spa"
-price: "$40 - $80"
-duration: "30-60 minutes"
-description: "Deep conditioning and scalp treatments"
+price: "$15-25"
+duration: "15-30 mins"
+description: "Deep conditioning add-on service"
 slug: "treatments"
 ---
 
-Rejuvenating hair and scalp treatments designed to restore health, shine, and vitality to your hair. Using professional-grade products, I'll address your specific hair concerns and provide personalized solutions for optimal results.
+Add-on treatments to keep your hair healthy between visits.
 
-**Treatments Include:**
-- Deep conditioning masks
-- Keratin treatments
-- Scalp detox treatments
-- Moisture infusion therapy
-- Protein reconstruction
-- Anti-frizz treatments
+**Pricing:**
+- Deep conditioning: $15
+- Scalp treatment: $20
+- Repair treatment: $25
 
-**Benefits:**
-- Repairs damaged hair
-- Restores natural shine
-- Improves manageability
-- Reduces frizz and breakage
-- Promotes healthy scalp
-- Long-lasting results
+**What you get:**
+- Professional products
+- Targeted treatment for your hair type
+- Tips for at-home care
+
+**Good for:**
+- Dry or damaged hair
+- Color-treated hair
+- Regular maintenance

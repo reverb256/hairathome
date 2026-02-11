@@ -1,29 +1,28 @@
 ---
-title: "Haircut & Style"
+title: "Haircuts"
 icon: "fas fa-scissors"
-price: "$25-35"
-duration: "45 mins"
-description: "Great haircut that fits your life, done right at home."
+price: "$20-30"
+duration: "30 mins"
+description: "Quality haircuts for the whole family"
 includes: "Includes wash & style"
 slug: "haircut"
 ---
 
-Reliable haircuts for the whole family at prices that won't break the bank. Same quality you'd get at a budget salon, but delivered right to your door.
-
-**What's Included:**
-- Quick consultation
-- Quality haircut
-- Wash and basic styling
-- Clean finish every time
-
-**Great for:**
-- Regular trims between big cuts
-- Kids' haircuts (no salon meltdowns)
-- Busy adults who need efficiency
-- Seniors who prefer home visits
-- Students and budget-conscious clients
+Quality haircuts at straightforward prices. No surprises, no salon markup.
 
 **Pricing:**
-- Women's cuts: $35
-- Men's cuts: $25  
-- Kids (10 & under): $20
+- Adults: $30
+- Seniors (60+): $25
+- Kids (12 & under): $20
+
+**What you get:**
+- Consultation before we start
+- Professional cut to your liking
+- Wash and style included
+- Clean, finished look every time
+
+**Great for:**
+- Regular maintenance cuts
+- Kids who need a patient touch
+- Busy adults who value their time
+- Seniors who prefer home service

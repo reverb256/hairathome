@@ -1,28 +1,27 @@
 ---
-title: "Occasion Styling"
-icon: "fas fa-graduation-cap"
-price: "$150"
-original_price: "$200"
-discount: "10% OFF"
-duration: "150 mins"
-description: "Elegant updos, bridal styling, or bouncy blowouts for your special events."
-includes: "Hand painted"
+title: "Updos & Formal Styling"
+icon: "fas fa-crown"
+price: "$35-50"
+duration: "45-60 mins"
+description: "Special occasion updos and formal styling"
 slug: "special-occasion"
 ---
 
-Elegant updo and special occasion styling for weddings, proms, galas, and any event where you want to look your absolute best. I'll create a sophisticated, long-lasting hairstyle that complements your outfit and enhances your natural beauty.
+Updos and formal styles for special occasions. Weddings, grad, or a night out.
 
-**Services Include:**
-- Wedding day styling
-- Bridal party styling
-- Prom and formal event styling
-- Vintage and modern updos
-- Elegant curls and waves
-- Accessory placement
+**Pricing:**
+- Simple updo: $35
+- Formal updo: $45
+- Bridal style: $50
 
-**Features:**
-- Pre-event consultation
-- Trial sessions available
-- Touch-up kit provided
-- Long-lasting techniques
-- On-location service for your convenience
+**What you get:**
+- Consultation on style
+- Professional styling
+- Long-lasting hold
+- Hair spray included
+
+**Great for:**
+- Graduations
+- Weddings
+- Special events
+- Formal occasions

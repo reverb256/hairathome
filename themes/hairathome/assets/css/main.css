@@ -1,34 +1,36 @@
 /* Warm, professional color scheme for Moms at Home */
 :root {
-  --brand-soft-pink: #e8b4b8;
-  --brand-soft-peach: #d4a574;
-  --brand-cream: #fdf8f3;
-  --brand-warm-gray: #9c8b7a;
-  --brand-dark-warm: #4a3f35;
-  --brand-light-warm: #f5efe8;
-  --accent-warm: #c9956c;
-  --accent-rose: #d4a5a5;
-  --text-primary: #2d2926;
-  --text-secondary: #6b5f57;
-  --background-light: #fefcfa;
-  --background-dark: #1f1c1a;
-  --border-warm: #e5ddd4;
-  --gold-accent: #b8956e;
+  --brand-rose: #c9a89d;
+  --brand-terracotta: #b8846f;
+  --brand-sage: #9caa8c;
+  --brand-cream: #faf8f5;
+  --brand-ivory: #f5f0ea;
+  --brand-charcoal: #3d3d3d;
+  --brand-stone: #8a8279;
+  --brand-gold: #c4a77d;
+  --brand-blush: #e8d5cf;
+  --text-primary: #2a2a2a;
+  --text-secondary: #6b6560;
+  --background-light: #fdfcfa;
+  --background-dark: #252321;
+  --border-warm: #e5dfd6;
 }
 
 .dark {
-  --brand-soft-pink: #d4a5a5;
-  --brand-soft-peach: #c9956c;
-  --brand-cream: #2a2522;
-  --brand-warm-gray: #b8a898;
-  --brand-dark-warm: #f5efe8;
-  --brand-light-warm: #3a3330;
-  --accent-warm: #d4a574;
-  --text-primary: #f5efe8;
-  --text-secondary: #b8a898;
-  --background-light: #1f1c1a;
-  --background-dark: #141210;
-  --border-warm: #3a3330;
+  --brand-rose: #d4b5a8;
+  --brand-terracotta: #c9957a;
+  --brand-sage: #a8ba98;
+  --brand-cream: #2a2725;
+  --brand-ivory: #363230;
+  --brand-charcoal: #f0ebe6;
+  --brand-stone: #b0a8a0;
+  --brand-gold: #d4b88d;
+  --brand-blush: #4a3f3a;
+  --text-primary: #f0ebe6;
+  --text-secondary: #b0a8a0;
+  --background-light: #252321;
+  --background-dark: #1a1816;
+  --border-warm: #3d3a36;
 }
 
 /* Custom scrollbar */

@@ -1,24 +1,26 @@
 ---
-title: "Wash & Blowout"
-icon: "fas fa-combed"
-price: "$20-25"
-duration: "45-60 minutes"
-description: "Quick wash, conditioning, and styling"
+title: "Blowout & Styling"
+icon: "fas fa-wind"
+price: "$20-35"
+duration: "30-45 mins"
+description: "Wash, dry, and style"
 slug: "blowout"
 ---
 
-Efficient wash and blowout service that leaves your hair feeling refreshed, healthy, and neatly styled. Using quality products and trusted techniques, I'll create a smooth, voluminous, or sleek finish that lasts.
+Professional blowout and styling services. Walk out looking polished.
 
-**Includes:**
-- Gentle shampoo treatment
-- Basic conditioning
-- Quick scalp massage
-- Professional blowout
+**Pricing:**
+- Basic blowout: $20
+- Full style (short-medium): $25
+- Full style (long): $35
+
+**What you get:**
+- Shampoo and conditioner
+- Professional blow dry
+- Styling to your preference
 - Light finishing products
 
-**Perfect for:**
-- Everyday styling
-- Regular maintenance between cuts
-- Quick touch-ups before work
-- Busy days when you need to look put-together
-- Students and professionals on a budget
+**Great for:**
+- Looking your best for an event
+- Freshening up between cuts
+- When you want to feel put together
