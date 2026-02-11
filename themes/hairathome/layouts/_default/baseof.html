@@ -16,7 +16,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <!-- Custom Tailwind Config -->
     <script>
@@ -26,36 +26,26 @@
                 extend: {
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
+                        display: ['Cormorant Garamond', 'serif'],
                     },
                     colors: {
                         brand: {
-                            50: '#f9f9f9',
-                            100: '#f0f0f0',
-                            200: '#e4e4e4',
-                            300: '#d1d1d1',
-                            400: '#a3a3a3',
-                            500: '#737373',
-                            600: '#525252',
-                            700: '#404040',
-                            800: '#262626',
-                            900: '#171717',
-                        },
-                        zinc: {
-                            50: '#fafafa',
-                            100: '#f4f4f5',
-                            200: '#e4e4e5',
-                            300: '#d4d4d8',
-                            400: '#a1a1aa',
-                            500: '#71717a',
-                            600: '#52525b',
-                            700: '#3f3f46',
-                            800: '#27272a',
-                            900: '#18181b',
+                            soft: '#e8b4b8',
+                            peach: '#d4a574',
+                            cream: '#fdf8f3',
+                            warm: '#9c8b7a',
+                            dark: '#4a3f35',
+                            light: '#f5efe8',
+                            accent: '#c9956c',
                         },
                     },
                     animation: {
                         'fade-in': 'fadeIn 0.8s ease-out forwards',
                         'slide-up': 'slideUp 0.8s ease-out forwards',
+                        'pulse-soft': 'pulse-soft 2s ease-in-out infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'scale-in': 'scaleIn 0.6s ease-out forwards',
                     },
                     keyframes: {
                         fadeIn: {
@@ -65,7 +55,23 @@
                         slideUp: {
                             '0%': { transform: 'translateY(20px)', opacity: '0' },
                             '100%': { transform: 'translateY(0)', opacity: '1' },
-                        }
+                        },
+                        'pulse-soft': {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0.8' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        scaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.95)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' },
+                        },
                     }
                 }
             }
@@ -73,59 +79,7 @@
     </script>
 
     <!-- Custom Styles -->
-    <style>
-        /* Custom subtle scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        ::-webkit-scrollbar-thumb {
-            background-color: #e5e5e5;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background-color: #d4d4d4;
-        }
-
-        /* Custom Selection Color */
-        ::selection {
-            background: #f4f4f5;
-            color: #18181b;
-        }
-
-        /* Checkbox styling */
-        .custom-checkbox:checked {
-            background-color: #18181b;
-            border-color: #18181b;
-        }
-        .custom-checkbox:checked::after {
-            content: '';
-            position: absolute;
-            width: 4px;
-            height: 8px;
-            border: solid white;
-            border-width: 0 2px 2px 0;
-            top: 45%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(45deg);
-        }
-
-        /* Dark mode scrollbar */
-        .dark ::-webkit-scrollbar-thumb {
-            background-color: #525252;
-        }
-        .dark ::-webkit-scrollbar-thumb:hover {
-            background-color: #737373;
-        }
-
-        /* Dark mode selection */
-        .dark ::selection {
-            background: #404040;
-            color: #f9f9f9;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}assets/css/main.css">
 
     <!-- Structured data -->
     <script type="application/ld+json">
@@ -150,7 +104,7 @@
     }
     </script>
 </head>
-<body class="bg-zinc-50 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-100 font-sans antialiased selection:bg-zinc-200 selection:text-zinc-900">
+<body class="bg-brand-cream text-brand-dark font-sans antialiased selection:bg-brand-soft/30 selection:text-brand-dark">
     {{ partial "header.html" . }}
     <main role="main">
     {{ block "main" . }}

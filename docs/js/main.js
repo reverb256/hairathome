@@ -82,37 +82,72 @@ document.addEventListener('DOMContentLoaded', function() {
     // Form validation and submission for booking
     const bookingForm = document.getElementById('booking-form');
     if (bookingForm) {
-        bookingForm.addEventListener('submit', function(e) {
+        bookingForm.addEventListener('submit', async function(e) {
             e.preventDefault();
-            
-            // Simple validation
-            const requiredFields = this.querySelectorAll('[required]');
-            let isValid = true;
-            
-            requiredFields.forEach(field => {
-                if (!field.value.trim()) {
-                    isValid = false;
-                    field.classList.add('error');
+
+            const submitBtn = document.getElementById('submit-btn');
+            const originalBtnText = submitBtn.innerHTML;
+
+            submitBtn.innerHTML = '<span class="animate-pulse">Processing...</span>';
+            submitBtn.disabled = true;
+
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+
+            const paymentMethod = formData.get('paymentMethod');
+            if (!paymentMethod) {
+                showNotification('Please select a payment method.', 'error');
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+                return;
+            }
+
+            try {
+                const formResponse = await fetch('https://formspree.io/f/xkgnggaw', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        ...data,
+                        _subject: `New Booking Request - ${data.name}`,
+                        _template: 'table'
+                    })
+                });
+
+                if (formResponse.ok) {
+                    const bookingId = 'HAIR-' + Date.now().toString(36).toUpperCase();
+                    const paymentInstructions = getPaymentInstructions(data.paymentMethod);
+                    
+                    showPaymentConfirmation(bookingId, paymentInstructions);
+                    this.reset();
+                    showNotification('Booking request submitted successfully! We\'ll contact you within 24 hours.', 'success');
                 } else {
-                    field.classList.remove('error');
+                    throw new Error('Form submission failed');
                 }
-            });
-            
-            if (isValid) {
-                // In a real implementation, this would submit to a server
-                // For now, just show success message
-                showNotification('Thank you! We will contact you shortly to confirm your appointment.', 'success');
-                this.reset();
-            } else {
-                showNotification('Please fill in all required fields.', 'error');
+            } catch (error) {
+                console.error('Booking error:', error);
+                showManualBookingInstructions(data);
+            } finally {
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
             }
         });
-        
+
         // Add error styling to required fields
         const requiredFields = bookingForm.querySelectorAll('[required]');
         requiredFields.forEach(field => {
             field.addEventListener('blur', function() {
-                if (!this.value.trim()) {
+                if (this.type === 'radio') {
+                    const radioGroup = document.querySelectorAll(`input[name="${this.name}"]`);
+                    const isChecked = Array.from(radioGroup).some(radio => radio.checked);
+                    if (!isChecked) {
+                        radioGroup.forEach(radio => radio.closest('label')?.classList.add('error'));
+                    } else {
+                        radioGroup.forEach(radio => radio.closest('label')?.classList.remove('error'));
+                    }
+                } else if (!this.value.trim()) {
                     this.classList.add('error');
                 } else {
                     this.classList.remove('error');
@@ -135,16 +170,15 @@ document.addEventListener('DOMContentLoaded', function() {
     initLazyLoading();
 });
 
-// Notification system
 function showNotification(message, type = 'info') {
     // Remove any existing notifications
     const existing = document.querySelector('.notification');
     if (existing) existing.remove();
-    
+
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
     notification.textContent = message;
-    
+
     // Add styling via CSS classes
     notification.style.cssText = `
         position: fixed;
@@ -157,7 +191,7 @@ function showNotification(message, type = 'info') {
         max-width: 300px;
         animation: slideIn 0.3s ease;
     `;
-    
+
     // Set background based on type
     if (type === 'success') {
         notification.style.backgroundColor = '#28a745';
@@ -166,15 +200,164 @@ function showNotification(message, type = 'info') {
     } else {
         notification.style.backgroundColor = '#007bff';
     }
-    
+
     document.body.appendChild(notification);
-    
+
     // Remove after 5 seconds
     setTimeout(() => {
         if (notification.parentNode) {
             notification.parentNode.removeChild(notification);
         }
     }, 5000);
+}
+
+// Payment confirmation modal
+function showPaymentConfirmation(bookingId, instructions) {
+    const existingModal = document.querySelector('.payment-confirmation-modal');
+    if (existingModal) existingModal.remove();
+
+    const modal = document.createElement('div');
+    modal.className = 'payment-confirmation-modal';
+    modal.innerHTML = `
+        <div class="modal-backdrop" onclick="closePaymentConfirmation()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closePaymentConfirmation()">&times;</button>
+            <div class="modal-body">
+                <div class="success-icon">✓</div>
+                <h2>Booking Confirmed!</h2>
+                <p class="booking-id">Booking ID: <strong>${bookingId}</strong></p>
+                <div class="payment-instructions">
+                    <h3>Payment Instructions</h3>
+                    <p class="instructions-text">${instructions.replace(/\n/g, '<br>')}</p>
+                </div>
+                <div class="contact-info">
+                    <p><strong>Questions? Call us at (204) 555-0123</strong></p>
+                </div>
+            </div>
+        </div>
+    `;
+
+    const style = document.createElement('style');
+    style.textContent = `
+        .payment-confirmation-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10001;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-backdrop {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+        }
+        .modal-content {
+            position: relative;
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            animation: modalSlideIn 0.3s ease;
+        }
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            line-height: 1;
+            color: #6b7280;
+            cursor: pointer;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.2s;
+        }
+        .modal-close:hover {
+            background: #f3f4f6;
+            color: #374151;
+        }
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: #10b981;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 0 auto 1.5rem;
+        }
+        .modal-body h2 {
+            text-align: center;
+            color: #1f2937;
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+        .booking-id {
+            text-align: center;
+            color: #6b7280;
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+        }
+        .payment-instructions {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+        .payment-instructions h3 {
+            color: #1f2937;
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+        }
+        .instructions-text {
+            color: #4b5563;
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+        .contact-info {
+            text-align: center;
+            color: #1f2937;
+            font-size: 0.875rem;
+        }
+    `;
+    document.head.appendChild(style);
+    document.body.appendChild(modal);
+
+    window.closePaymentConfirmation = function() {
+        const modal = document.querySelector('.payment-confirmation-modal');
+        if (modal) modal.remove();
+    };
 }
 
 // Gallery lightbox functionality
@@ -278,7 +461,166 @@ function initLazyLoading() {
     }
 }
 
-// Add slideIn animation for notifications
+function getPaymentInstructions(paymentMethod) {
+    switch (paymentMethod) {
+        case 'interac':
+            return `Interac e-Transfer Instructions:
+1. Send payment to: info@hairathome.ca
+2. Use booking ID as security question answer
+3. Payment is due on service day
+4. Most Canadian banks offer this service free`;
+        
+        case 'cash':
+            return `Cash Payment Instructions:
+1. Pay directly to the stylist on service day
+2. Please have exact amount if possible
+3. Receipt will be provided
+4. No additional fees for cash payments`;
+        
+        default:
+            return 'Payment will be discussed during confirmation call.';
+    }
+}
+
+function showManualBookingInstructions(data) {
+    const modal = document.createElement('div');
+    modal.className = 'manual-booking-modal';
+    modal.innerHTML = `
+        <div class="modal-backdrop" onclick="closeManualBooking()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeManualBooking()">&times;</button>
+            <div class="modal-body">
+                <h2>Complete Your Booking</h2>
+                <p>Please call or text us to complete your booking:</p>
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <strong>Phone:</strong> <a href="tel:2045550123">(204) 555-0123</a>
+                    </div>
+                    <div class="contact-method">
+                        <strong>Email:</strong> <a href="mailto:info@hairathome.ca">info@hairathome.ca</a>
+                    </div>
+                </div>
+                <div class="booking-details">
+                    <h3>Your Booking Details:</h3>
+                    <p><strong>Name:</strong> ${data.name}</p>
+                    <p><strong>Service:</strong> ${data.service}</p>
+                    <p><strong>Date:</strong> ${data.date}</p>
+                    <p><strong>Time:</strong> ${data.time}</p>
+                    <p><strong>Location:</strong> ${data.location}</p>
+                    <p><strong>Payment Method:</strong> ${data.paymentMethod === 'interac' ? 'Interac e-Transfer' : 'Cash'}</p>
+                </div>
+                <p class="note">We'll respond within 24 hours to confirm your appointment.</p>
+            </div>
+        </div>
+    `;
+
+    const style = document.createElement('style');
+    style.textContent = `
+        .manual-booking-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10001;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .manual-booking-modal .modal-backdrop {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+        }
+        .manual-booking-modal .modal-content {
+            position: relative;
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        .manual-booking-modal .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            line-height: 1;
+            color: #6b7280;
+            cursor: pointer;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.2s;
+        }
+        .manual-booking-modal .modal-close:hover {
+            background: #f3f4f6;
+            color: #374151;
+        }
+        .manual-booking-modal .modal-body h2 {
+            text-align: center;
+            color: #1f2937;
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+        .manual-booking-modal .contact-methods {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin: 1.5rem 0;
+        }
+        .manual-booking-modal .contact-method {
+            margin-bottom: 0.75rem;
+        }
+        .manual-booking-modal .contact-method:last-child {
+            margin-bottom: 0;
+        }
+        .manual-booking-modal .booking-details {
+            background: #f0fdf4;
+            border: 1px solid #86efac;
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin: 1.5rem 0;
+        }
+        .manual-booking-modal .booking-details h3 {
+            color: #166534;
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+        }
+        .manual-booking-modal .booking-details p {
+            color: #374151;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+        .manual-booking-modal .note {
+            text-align: center;
+            color: #6b7280;
+            font-size: 0.875rem;
+            margin-top: 1.5rem;
+        }
+    `;
+    document.head.appendChild(style);
+    document.body.appendChild(modal);
+
+    window.closeManualBooking = function() {
+        const modal = document.querySelector('.manual-booking-modal');
+        if (modal) modal.remove();
+    };
+}
+
 if (!document.querySelector('#notification-animation')) {
     const style = document.createElement('style');
     style.id = 'notification-animation';
