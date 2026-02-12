@@ -1,15 +1,14 @@
 {{ define "main" }}
-<section class="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
+<section class="relative min-h-screen flex items-center pt-20 pb-12 md:pt-24 md:pb-16 overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-br from-brand-cream via-brand-vanilla to-brand-sand/40 dark:from-brand-espresso dark:via-brand-mocha dark:to-brand-cocoa/30"></div>
     
-    <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-copper/15 dark:bg-brand-gold/10 rounded-full blur-3xl animate-float"></div>
-    <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-brand-blush/20 dark:bg-brand-amber/10 rounded-full blur-3xl animate-float-slow"></div>
-    <div class="absolute top-1/2 left-1/3 w-[300px] h-[300px] bg-brand-honey/10 dark:bg-brand-champagne/10 rounded-full blur-3xl animate-float" style="animation-delay: -4s;"></div>
+    <div class="absolute top-0 right-0 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-brand-copper/15 dark:bg-brand-gold/10 rounded-full blur-3xl animate-float"></div>
+    <div class="absolute bottom-0 left-0 w-[250px] h-[250px] md:w-[500px] md:h-[500px] bg-brand-blush/20 dark:bg-brand-amber/10 rounded-full blur-3xl animate-float-slow"></div>
     
-    <div class="max-w-7xl mx-auto px-6 relative z-10 w-full">
-        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div class="space-y-8 animate-slide-up">
-                <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/70 dark:bg-white/5 backdrop-blur-sm border border-brand-copper/20 dark:border-brand-gold/20 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <div class="space-y-6 md:space-y-8 animate-slide-up text-center lg:text-left">
+                <div class="inline-flex items-center gap-3 px-4 py-2 md:px-5 md:py-2.5 rounded-full bg-white/70 dark:bg-white/5 backdrop-blur-sm border border-brand-copper/20 dark:border-brand-gold/20 shadow-sm">
                     <span class="relative flex h-2.5 w-2.5">
                         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-copper dark:bg-brand-gold opacity-75"></span>
                         <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-copper dark:bg-brand-gold"></span>
@@ -17,244 +16,234 @@
                     <span class="text-sm font-medium text-brand-charcoal dark:text-brand-cream">Mobile hair services in Winnipeg</span>
                 </div>
                 
-                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-display font-medium tracking-tight text-brand-charcoal dark:text-brand-cream leading-[1.05]">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-medium tracking-tight text-brand-charcoal dark:text-brand-cream leading-[1.05]">
                     Haircuts<br>
                     <span class="bg-gradient-to-r from-brand-copper via-brand-terracotta to-brand-honey bg-clip-text text-transparent dark:from-brand-gold dark:via-brand-champagne dark:to-brand-amber">made simple</span>
                 </h1>
                 
-                <p class="text-lg sm:text-xl text-brand-slate dark:text-brand-stone max-w-lg leading-relaxed">
+                <p class="text-base sm:text-lg md:text-xl text-brand-slate dark:text-brand-stone max-w-lg leading-relaxed mx-auto lg:mx-0">
                     Quality haircuts at straightforward prices. We come to you — home, office, or anywhere in Winnipeg.
                 </p>
                 
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="tel:+12045572287" class="group inline-flex justify-center items-center px-8 py-4 bg-brand-charcoal dark:bg-brand-gold text-brand-cream dark:text-brand-espresso rounded-xl font-medium shadow-lg shadow-brand-charcoal/20 dark:shadow-brand-gold/20 hover:shadow-xl hover:-translate-y-0.5 hover:animate-glow-pulse transition-all duration-300">
+                <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+                    <a href="tel:+12045572287" class="group inline-flex justify-center items-center px-6 py-3.5 md:px-8 md:py-4 bg-brand-charcoal dark:bg-brand-gold text-brand-cream dark:text-brand-espresso rounded-xl font-medium shadow-lg shadow-brand-charcoal/20 dark:shadow-brand-gold/20 active:scale-95 transition-transform">
                         <iconify-icon icon="lucide:phone" class="mr-2" width="18"></iconify-icon>
                         Call Now
                     </a>
-                    <a href="#services" class="inline-flex justify-center items-center px-8 py-4 border-2 border-brand-copper/30 dark:border-brand-gold/30 text-brand-charcoal dark:text-brand-cream rounded-xl font-medium hover:bg-brand-copper/5 dark:hover:bg-brand-gold/5 hover:border-brand-copper/50 dark:hover:border-brand-gold/50 transition-all duration-300">
+                    <a href="#services" class="inline-flex justify-center items-center px-6 py-3.5 md:px-8 md:py-4 border-2 border-brand-copper/30 dark:border-brand-gold/30 text-brand-charcoal dark:text-brand-cream rounded-xl font-medium active:bg-brand-copper/10 dark:active:bg-brand-gold/10 transition-colors">
                         See Services
                     </a>
                 </div>
                 
-                <div class="flex items-center gap-8 pt-4">
+                <div class="flex items-center justify-center lg:justify-start gap-6 md:gap-8 pt-2">
                     <div class="text-center">
-                        <p class="text-2xl font-display font-semibold text-brand-charcoal dark:text-brand-cream">7</p>
-                        <p class="text-xs text-brand-stone uppercase tracking-wider">Days a Week</p>
+                        <p class="text-xl md:text-2xl font-display font-semibold text-brand-charcoal dark:text-brand-cream">7</p>
+                        <p class="text-xs text-brand-stone uppercase tracking-wider">Days</p>
                     </div>
                     <div class="w-px h-10 bg-brand-copper/20 dark:bg-brand-gold/20"></div>
                     <div class="text-center">
-                        <p class="text-2xl font-display font-semibold text-brand-charcoal dark:text-brand-cream">All</p>
+                        <p class="text-xl md:text-2xl font-display font-semibold text-brand-charcoal dark:text-brand-cream">All</p>
                         <p class="text-xs text-brand-stone uppercase tracking-wider">Winnipeg</p>
                     </div>
                     <div class="w-px h-10 bg-brand-copper/20 dark:bg-brand-gold/20"></div>
                     <div class="text-center">
-                        <p class="text-2xl font-display font-semibold text-brand-charcoal dark:text-brand-cream">$20+</p>
+                        <p class="text-xl md:text-2xl font-display font-semibold text-brand-charcoal dark:text-brand-cream">$20+</p>
                         <p class="text-xs text-brand-stone uppercase tracking-wider">From</p>
                     </div>
                 </div>
             </div>
 
-            <div class="relative animate-fade-in flex items-center justify-center" style="animation-delay: 0.3s;">
-                <div class="absolute w-[500px] h-[500px] bg-gradient-to-br from-brand-copper/20 via-brand-honey/15 to-brand-terracotta/10 dark:from-brand-gold/15 dark:via-brand-champagne/10 dark:to-brand-amber/10 rounded-full blur-3xl"></div>
-                <div class="absolute w-[400px] h-[400px] border border-brand-copper/10 dark:border-brand-gold/10 rounded-full animate-pulse-soft"></div>
-                <div class="absolute w-[350px] h-[350px] border border-brand-honey/20 dark:border-brand-champagne/20 rounded-full animate-pulse-soft" style="animation-delay: -1.5s;"></div>
+            <div class="relative animate-fade-in flex items-center justify-center order-first lg:order-last" style="animation-delay: 0.3s;">
+                <div class="absolute w-[280px] h-[280px] md:w-[500px] md:h-[500px] bg-gradient-to-br from-brand-copper/20 via-brand-honey/15 to-brand-terracotta/10 dark:from-brand-gold/15 dark:via-brand-champagne/10 dark:to-brand-amber/10 rounded-full blur-3xl"></div>
+                <div class="absolute w-[220px] h-[220px] md:w-[400px] md:h-[400px] border border-brand-copper/10 dark:border-brand-gold/10 rounded-full animate-pulse-soft"></div>
+                <div class="absolute w-[180px] h-[180px] md:w-[350px] md:h-[350px] border border-brand-honey/20 dark:border-brand-champagne/20 rounded-full animate-pulse-soft" style="animation-delay: -1.5s;"></div>
                 <img src="images/brand/logo-hero.svg" 
                      alt="Hair@Home" 
-                     class="relative w-80 h-80 lg:w-96 lg:h-96 dark:hidden drop-shadow-2xl">
+                     class="relative w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 dark:hidden drop-shadow-2xl">
                 <img src="images/brand/logo-hero-dark.svg" 
                      alt="Hair@Home" 
-                     class="relative w-80 h-80 lg:w-96 lg:h-96 hidden dark:block drop-shadow-2xl">
+                     class="relative w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 hidden dark:block drop-shadow-2xl">
             </div>
         </div>
     </div>
 </section>
 
-<section id="services" class="py-24 bg-brand-vanilla/50 dark:bg-brand-espresso relative overflow-hidden">
+<section id="services" class="py-16 md:py-24 bg-brand-vanilla/50 dark:bg-brand-espresso relative overflow-hidden">
     <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand-copper/30 dark:via-brand-gold/30 to-transparent"></div>
     
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16">
-            <span class="text-sm font-medium text-brand-copper dark:text-brand-gold uppercase tracking-[0.2em]">Services</span>
-            <h2 class="text-4xl md:text-5xl font-display font-medium text-brand-charcoal dark:text-brand-cream mt-4">What We Offer</h2>
-            <p class="text-brand-slate dark:text-brand-stone max-w-xl mx-auto mt-4">Professional hair services for the whole family at straightforward prices.</p>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-10 md:mb-16">
+            <span class="text-sm font-medium text-brand-copper dark:text-brand-gold uppercase tracking-[0.15em] md:tracking-[0.2em]">Services</span>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-medium text-brand-charcoal dark:text-brand-cream mt-3 md:mt-4">What We Offer</h2>
+            <p class="text-brand-slate dark:text-brand-stone max-w-xl mx-auto mt-3 md:mt-4 text-sm md:text-base">Professional hair services for the whole family at straightforward prices.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="group relative bg-white/70 dark:bg-brand-mocha/50 rounded-2xl overflow-hidden border border-brand-copper/10 dark:border-brand-gold/10 transition-all duration-500 hover:-translate-y-2 hover:animate-underglow">
-                <div class="absolute inset-0 bg-gradient-to-b from-brand-honey/5 to-transparent dark:from-brand-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            <div class="group relative bg-white/70 dark:bg-brand-mocha/50 rounded-xl md:rounded-2xl overflow-hidden border border-brand-copper/10 dark:border-brand-gold/10 transition-all duration-300 active:scale-[0.98] md:hover:-translate-y-2 md:hover:animate-underglow">
                 <div class="aspect-[4/3] overflow-hidden relative">
                     <img src="images/stock/haircut.jpg"
                          alt="Haircuts"
-                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                         class="w-full h-full object-cover md:group-hover:scale-105 transition-transform duration-500"
+                         loading="lazy">
                 </div>
-                <div class="p-6 relative">
-                    <h3 class="text-xl font-display font-medium text-brand-charcoal dark:text-brand-cream">Haircuts</h3>
-                    <p class="text-sm text-brand-slate dark:text-brand-stone mt-2">Quality cuts for adults, seniors, and kids. Wash and style included.</p>
-                    <div class="flex items-center justify-between mt-4 pt-4 border-t border-brand-copper/10 dark:border-brand-gold/10">
-                        <span class="text-2xl font-display font-semibold bg-gradient-to-r from-brand-copper to-brand-terracotta bg-clip-text text-transparent dark:from-brand-gold dark:to-brand-champagne">$20-30</span>
-                        <span class="text-sm text-brand-stone">30 mins</span>
+                <div class="p-4 md:p-6">
+                    <h3 class="text-lg md:text-xl font-display font-medium text-brand-charcoal dark:text-brand-cream">Haircuts</h3>
+                    <p class="text-xs md:text-sm text-brand-slate dark:text-brand-stone mt-1 md:mt-2">Quality cuts for adults, seniors, and kids. Wash and style included.</p>
+                    <div class="flex items-center justify-between mt-3 md:mt-4 pt-3 md:pt-4 border-t border-brand-copper/10 dark:border-brand-gold/10">
+                        <span class="text-xl md:text-2xl font-display font-semibold bg-gradient-to-r from-brand-copper to-brand-terracotta bg-clip-text text-transparent dark:from-brand-gold dark:to-brand-champagne">$20-30</span>
+                        <span class="text-xs md:text-sm text-brand-stone">30 mins</span>
                     </div>
                 </div>
-                <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-copper via-brand-honey to-brand-terracotta dark:from-brand-gold dark:via-brand-champagne dark:to-brand-amber opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
             
-            <div class="group relative bg-white/70 dark:bg-brand-mocha/50 rounded-2xl overflow-hidden border border-brand-copper/10 dark:border-brand-gold/10 transition-all duration-500 hover:-translate-y-2 hover:animate-underglow">
-                <div class="absolute inset-0 bg-gradient-to-b from-brand-honey/5 to-transparent dark:from-brand-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="group relative bg-white/70 dark:bg-brand-mocha/50 rounded-xl md:rounded-2xl overflow-hidden border border-brand-copper/10 dark:border-brand-gold/10 transition-all duration-300 active:scale-[0.98] md:hover:-translate-y-2 md:hover:animate-underglow">
                 <div class="aspect-[4/3] overflow-hidden relative">
                     <img src="images/stock/color.jpg"
                          alt="Color Services"
-                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                         class="w-full h-full object-cover md:group-hover:scale-105 transition-transform duration-500"
+                         loading="lazy">
                 </div>
-                <div class="p-6 relative">
-                    <h3 class="text-xl font-display font-medium text-brand-charcoal dark:text-brand-cream">Color</h3>
-                    <p class="text-sm text-brand-slate dark:text-brand-stone mt-2">Root touch-ups, single process, and highlights. Consultation included.</p>
-                    <div class="flex items-center justify-between mt-4 pt-4 border-t border-brand-copper/10 dark:border-brand-gold/10">
-                        <span class="text-2xl font-display font-semibold bg-gradient-to-r from-brand-copper to-brand-terracotta bg-clip-text text-transparent dark:from-brand-gold dark:to-brand-champagne">$45-65</span>
-                        <span class="text-sm text-brand-stone">90 mins</span>
+                <div class="p-4 md:p-6">
+                    <h3 class="text-lg md:text-xl font-display font-medium text-brand-charcoal dark:text-brand-cream">Color</h3>
+                    <p class="text-xs md:text-sm text-brand-slate dark:text-brand-stone mt-1 md:mt-2">Root touch-ups, single process, and highlights. Consultation included.</p>
+                    <div class="flex items-center justify-between mt-3 md:mt-4 pt-3 md:pt-4 border-t border-brand-copper/10 dark:border-brand-gold/10">
+                        <span class="text-xl md:text-2xl font-display font-semibold bg-gradient-to-r from-brand-copper to-brand-terracotta bg-clip-text text-transparent dark:from-brand-gold dark:to-brand-champagne">$45-65</span>
+                        <span class="text-xs md:text-sm text-brand-stone">90 mins</span>
                     </div>
                 </div>
-                <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-copper via-brand-honey to-brand-terracotta dark:from-brand-gold dark:via-brand-champagne dark:to-brand-amber opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
             
-            <div class="group relative bg-white/70 dark:bg-brand-mocha/50 rounded-2xl overflow-hidden border border-brand-copper/10 dark:border-brand-gold/10 transition-all duration-500 hover:-translate-y-2 hover:animate-underglow">
-                <div class="absolute inset-0 bg-gradient-to-b from-brand-honey/5 to-transparent dark:from-brand-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="group relative bg-white/70 dark:bg-brand-mocha/50 rounded-xl md:rounded-2xl overflow-hidden border border-brand-copper/10 dark:border-brand-gold/10 transition-all duration-300 active:scale-[0.98] md:hover:-translate-y-2 md:hover:animate-underglow">
                 <div class="aspect-[4/3] overflow-hidden relative">
                     <img src="images/stock/blowout.jpg"
                          alt="Blowout & Styling"
-                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                         class="w-full h-full object-cover md:group-hover:scale-105 transition-transform duration-500"
+                         loading="lazy">
                 </div>
-                <div class="p-6 relative">
-                    <h3 class="text-xl font-display font-medium text-brand-charcoal dark:text-brand-cream">Blowout & Style</h3>
-                    <p class="text-sm text-brand-slate dark:text-brand-stone mt-2">Wash, dry, and professional styling. Perfect for any occasion.</p>
-                    <div class="flex items-center justify-between mt-4 pt-4 border-t border-brand-copper/10 dark:border-brand-gold/10">
-                        <span class="text-2xl font-display font-semibold bg-gradient-to-r from-brand-copper to-brand-terracotta bg-clip-text text-transparent dark:from-brand-gold dark:to-brand-champagne">$20-35</span>
-                        <span class="text-sm text-brand-stone">30-45 mins</span>
+                <div class="p-4 md:p-6">
+                    <h3 class="text-lg md:text-xl font-display font-medium text-brand-charcoal dark:text-brand-cream">Blowout & Style</h3>
+                    <p class="text-xs md:text-sm text-brand-slate dark:text-brand-stone mt-1 md:mt-2">Wash, dry, and professional styling. Perfect for any occasion.</p>
+                    <div class="flex items-center justify-between mt-3 md:mt-4 pt-3 md:pt-4 border-t border-brand-copper/10 dark:border-brand-gold/10">
+                        <span class="text-xl md:text-2xl font-display font-semibold bg-gradient-to-r from-brand-copper to-brand-terracotta bg-clip-text text-transparent dark:from-brand-gold dark:to-brand-champagne">$20-35</span>
+                        <span class="text-xs md:text-sm text-brand-stone">30-45 mins</span>
                     </div>
                 </div>
-                <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-copper via-brand-honey to-brand-terracotta dark:from-brand-gold dark:via-brand-champagne dark:to-brand-amber opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
             
-            <div class="group relative bg-white/70 dark:bg-brand-mocha/50 rounded-2xl overflow-hidden border border-brand-copper/10 dark:border-brand-gold/10 transition-all duration-500 hover:-translate-y-2 hover:animate-underglow">
-                <div class="absolute inset-0 bg-gradient-to-b from-brand-honey/5 to-transparent dark:from-brand-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="group relative bg-white/70 dark:bg-brand-mocha/50 rounded-xl md:rounded-2xl overflow-hidden border border-brand-copper/10 dark:border-brand-gold/10 transition-all duration-300 active:scale-[0.98] md:hover:-translate-y-2 md:hover:animate-underglow">
                 <div class="aspect-[4/3] overflow-hidden relative">
                     <img src="images/stock/mens-cut.jpg"
                          alt="Men's Cuts"
-                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                         class="w-full h-full object-cover md:group-hover:scale-105 transition-transform duration-500"
+                         loading="lazy">
                 </div>
-                <div class="p-6 relative">
-                    <h3 class="text-xl font-display font-medium text-brand-charcoal dark:text-brand-cream">Men's Cuts</h3>
-                    <p class="text-sm text-brand-slate dark:text-brand-stone mt-2">Fades, tapers, classic cuts. Beard trim available.</p>
-                    <div class="flex items-center justify-between mt-4 pt-4 border-t border-brand-copper/10 dark:border-brand-gold/10">
-                        <span class="text-2xl font-display font-semibold bg-gradient-to-r from-brand-copper to-brand-terracotta bg-clip-text text-transparent dark:from-brand-gold dark:to-brand-champagne">$25-30</span>
-                        <span class="text-sm text-brand-stone">30 mins</span>
+                <div class="p-4 md:p-6">
+                    <h3 class="text-lg md:text-xl font-display font-medium text-brand-charcoal dark:text-brand-cream">Men's Cuts</h3>
+                    <p class="text-xs md:text-sm text-brand-slate dark:text-brand-stone mt-1 md:mt-2">Fades, tapers, classic cuts. Beard trim available.</p>
+                    <div class="flex items-center justify-between mt-3 md:mt-4 pt-3 md:pt-4 border-t border-brand-copper/10 dark:border-brand-gold/10">
+                        <span class="text-xl md:text-2xl font-display font-semibold bg-gradient-to-r from-brand-copper to-brand-terracotta bg-clip-text text-transparent dark:from-brand-gold dark:to-brand-champagne">$25-30</span>
+                        <span class="text-xs md:text-sm text-brand-stone">30 mins</span>
                     </div>
                 </div>
-                <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-copper via-brand-honey to-brand-terracotta dark:from-brand-gold dark:via-brand-champagne dark:to-brand-amber opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
             
-            <div class="group relative bg-white/70 dark:bg-brand-mocha/50 rounded-2xl overflow-hidden border border-brand-copper/10 dark:border-brand-gold/10 transition-all duration-500 hover:-translate-y-2 hover:animate-underglow">
-                <div class="absolute inset-0 bg-gradient-to-b from-brand-honey/5 to-transparent dark:from-brand-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="group relative bg-white/70 dark:bg-brand-mocha/50 rounded-xl md:rounded-2xl overflow-hidden border border-brand-copper/10 dark:border-brand-gold/10 transition-all duration-300 active:scale-[0.98] md:hover:-translate-y-2 md:hover:animate-underglow">
                 <div class="aspect-[4/3] overflow-hidden relative">
                     <img src="images/stock/updos.jpg"
                          alt="Updos & Formal"
-                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                         class="w-full h-full object-cover md:group-hover:scale-105 transition-transform duration-500"
+                         loading="lazy">
                 </div>
-                <div class="p-6 relative">
-                    <h3 class="text-xl font-display font-medium text-brand-charcoal dark:text-brand-cream">Updos & Formal</h3>
-                    <p class="text-sm text-brand-slate dark:text-brand-stone mt-2">Special occasion styling. Weddings, grad, events.</p>
-                    <div class="flex items-center justify-between mt-4 pt-4 border-t border-brand-copper/10 dark:border-brand-gold/10">
-                        <span class="text-2xl font-display font-semibold bg-gradient-to-r from-brand-copper to-brand-terracotta bg-clip-text text-transparent dark:from-brand-gold dark:to-brand-champagne">$35-50</span>
-                        <span class="text-sm text-brand-stone">45-60 mins</span>
+                <div class="p-4 md:p-6">
+                    <h3 class="text-lg md:text-xl font-display font-medium text-brand-charcoal dark:text-brand-cream">Updos & Formal</h3>
+                    <p class="text-xs md:text-sm text-brand-slate dark:text-brand-stone mt-1 md:mt-2">Special occasion styling. Weddings, grad, events.</p>
+                    <div class="flex items-center justify-between mt-3 md:mt-4 pt-3 md:pt-4 border-t border-brand-copper/10 dark:border-brand-gold/10">
+                        <span class="text-xl md:text-2xl font-display font-semibold bg-gradient-to-r from-brand-copper to-brand-terracotta bg-clip-text text-transparent dark:from-brand-gold dark:to-brand-champagne">$35-50</span>
+                        <span class="text-xs md:text-sm text-brand-stone">45-60 mins</span>
                     </div>
                 </div>
-                <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-copper via-brand-honey to-brand-terracotta dark:from-brand-gold dark:via-brand-champagne dark:to-brand-amber opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
             
-            <div class="group relative bg-white/70 dark:bg-brand-mocha/50 rounded-2xl overflow-hidden border border-brand-copper/10 dark:border-brand-gold/10 transition-all duration-500 hover:-translate-y-2 hover:animate-underglow">
-                <div class="absolute inset-0 bg-gradient-to-b from-brand-honey/5 to-transparent dark:from-brand-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="group relative bg-white/70 dark:bg-brand-mocha/50 rounded-xl md:rounded-2xl overflow-hidden border border-brand-copper/10 dark:border-brand-gold/10 transition-all duration-300 active:scale-[0.98] md:hover:-translate-y-2 md:hover:animate-underglow">
                 <div class="aspect-[4/3] overflow-hidden relative">
                     <img src="images/stock/treatments.jpg"
                          alt="Treatments"
-                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                         class="w-full h-full object-cover md:group-hover:scale-105 transition-transform duration-500"
+                         loading="lazy">
                 </div>
-                <div class="p-6 relative">
-                    <h3 class="text-xl font-display font-medium text-brand-charcoal dark:text-brand-cream">Treatments</h3>
-                    <p class="text-sm text-brand-slate dark:text-brand-stone mt-2">Deep conditioning and scalp treatments. Add-on service.</p>
-                    <div class="flex items-center justify-between mt-4 pt-4 border-t border-brand-copper/10 dark:border-brand-gold/10">
-                        <span class="text-2xl font-display font-semibold bg-gradient-to-r from-brand-copper to-brand-terracotta bg-clip-text text-transparent dark:from-brand-gold dark:to-brand-champagne">$15-25</span>
-                        <span class="text-sm text-brand-stone">15-30 mins</span>
+                <div class="p-4 md:p-6">
+                    <h3 class="text-lg md:text-xl font-display font-medium text-brand-charcoal dark:text-brand-cream">Treatments</h3>
+                    <p class="text-xs md:text-sm text-brand-slate dark:text-brand-stone mt-1 md:mt-2">Deep conditioning and scalp treatments. Add-on service.</p>
+                    <div class="flex items-center justify-between mt-3 md:mt-4 pt-3 md:pt-4 border-t border-brand-copper/10 dark:border-brand-gold/10">
+                        <span class="text-xl md:text-2xl font-display font-semibold bg-gradient-to-r from-brand-copper to-brand-terracotta bg-clip-text text-transparent dark:from-brand-gold dark:to-brand-champagne">$15-25</span>
+                        <span class="text-xs md:text-sm text-brand-stone">15-30 mins</span>
                     </div>
                 </div>
-                <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-copper via-brand-honey to-brand-terracotta dark:from-brand-gold dark:via-brand-champagne dark:to-brand-amber opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
         </div>
     </div>
 </section>
 
-<section id="about" class="py-24 relative overflow-hidden">
+<section id="about" class="py-16 md:py-24 relative overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-b from-brand-sand/30 to-brand-vanilla dark:from-brand-espresso dark:to-brand-mocha"></div>
     
-    <div class="max-w-7xl mx-auto px-6 relative">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
-            <div class="relative">
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="aspect-[3/4] rounded-2xl overflow-hidden shadow-xl ring-1 ring-brand-copper/10 dark:ring-brand-gold/10">
-                        <img src="images/stock/gallery-balayage.jpg"
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative">
+        <div class="grid lg:grid-cols-2 gap-10 md:gap-16 items-center">
+            <div class="relative order-last lg:order-first">
+                <div class="grid grid-cols-2 gap-3 md:gap-4">
+                    <div class="aspect-[3/4] rounded-xl md:rounded-2xl overflow-hidden shadow-lg md:shadow-xl ring-1 ring-brand-copper/10 dark:ring-brand-gold/10">
+                        <img src="images/stock/gallery-color-melt.jpg"
                              alt="Hair coloring process"
-                             class="w-full h-full object-cover">
+                             class="w-full h-full object-cover"
+                             loading="lazy">
                     </div>
-                    <div class="aspect-[3/4] rounded-2xl overflow-hidden shadow-xl mt-8 ring-1 ring-brand-copper/10 dark:ring-brand-gold/10">
+                    <div class="aspect-[3/4] rounded-xl md:rounded-2xl overflow-hidden shadow-lg md:shadow-xl md:mt-8 ring-1 ring-brand-copper/10 dark:ring-brand-gold/10">
                         <img src="images/stock/gallery-curly.jpg"
                              alt="Professional stylist at work"
-                             class="w-full h-full object-cover">
+                             class="w-full h-full object-cover"
+                             loading="lazy">
                     </div>
                 </div>
             </div>
             
-            <div class="space-y-8">
+            <div class="space-y-6 md:space-y-8 text-center lg:text-left">
                 <div>
-                    <span class="text-sm font-medium text-brand-copper dark:text-brand-gold uppercase tracking-[0.2em]">Why Mobile</span>
-                    <h2 class="text-4xl md:text-5xl font-display font-medium text-brand-charcoal dark:text-brand-cream mt-4">Haircuts at your convenience</h2>
+                    <span class="text-sm font-medium text-brand-copper dark:text-brand-gold uppercase tracking-[0.15em] md:tracking-[0.2em]">Why Mobile</span>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-medium text-brand-charcoal dark:text-brand-cream mt-3 md:mt-4">Haircuts at your convenience</h2>
                 </div>
                 
-                <p class="text-lg text-brand-slate dark:text-brand-stone leading-relaxed">
+                <p class="text-base md:text-lg text-brand-slate dark:text-brand-stone leading-relaxed">
                     No travel time. No waiting rooms. Quality haircuts where you need them, when you need them.
                 </p>
                 
-                <div class="space-y-6">
-                    <div class="flex gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-brand-copper/10 dark:bg-brand-gold/10 flex items-center justify-center shrink-0">
-                            <iconify-icon icon="lucide:home" class="text-brand-copper dark:text-brand-gold" width="24"></iconify-icon>
+                <div class="space-y-4 md:space-y-6">
+                    <div class="flex gap-4 justify-center lg:justify-start">
+                        <div class="w-11 h-11 md:w-12 md:h-12 rounded-xl bg-brand-copper/10 dark:bg-brand-gold/10 flex items-center justify-center shrink-0">
+                            <iconify-icon icon="lucide:home" class="text-brand-copper dark:text-brand-gold" width="22"></iconify-icon>
                         </div>
-                        <div>
+                        <div class="text-left">
                             <h3 class="font-medium text-brand-charcoal dark:text-brand-cream">We Come to You</h3>
-                            <p class="text-sm text-brand-slate dark:text-brand-stone mt-1">Home, office, or anywhere in Winnipeg.</p>
+                            <p class="text-sm text-brand-slate dark:text-brand-stone mt-0.5">Home, office, or anywhere in Winnipeg.</p>
                         </div>
                     </div>
                     
-                    <div class="flex gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-brand-terracotta/10 dark:bg-brand-amber/10 flex items-center justify-center shrink-0">
-                            <iconify-icon icon="lucide:scissors" class="text-brand-terracotta dark:text-brand-amber" width="24"></iconify-icon>
+                    <div class="flex gap-4 justify-center lg:justify-start">
+                        <div class="w-11 h-11 md:w-12 md:h-12 rounded-xl bg-brand-terracotta/10 dark:bg-brand-amber/10 flex items-center justify-center shrink-0">
+                            <iconify-icon icon="lucide:scissors" class="text-brand-terracotta dark:text-brand-amber" width="22"></iconify-icon>
                         </div>
-                        <div>
+                        <div class="text-left">
                             <h3 class="font-medium text-brand-charcoal dark:text-brand-cream">Quality Service</h3>
-                            <p class="text-sm text-brand-slate dark:text-brand-stone mt-1">Professional results with quality products.</p>
+                            <p class="text-sm text-brand-slate dark:text-brand-stone mt-0.5">Professional results with quality products.</p>
                         </div>
                     </div>
                     
-                    <div class="flex gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-brand-blush/30 dark:bg-brand-champagne/10 flex items-center justify-center shrink-0">
-                            <iconify-icon icon="lucide:users" class="text-brand-rose dark:text-brand-champagne" width="24"></iconify-icon>
+                    <div class="flex gap-4 justify-center lg:justify-start">
+                        <div class="w-11 h-11 md:w-12 md:h-12 rounded-xl bg-brand-blush/30 dark:bg-brand-champagne/10 flex items-center justify-center shrink-0">
+                            <iconify-icon icon="lucide:users" class="text-brand-rose dark:text-brand-champagne" width="22"></iconify-icon>
                         </div>
-                        <div>
+                        <div class="text-left">
                             <h3 class="font-medium text-brand-charcoal dark:text-brand-cream">Family Friendly</h3>
-                            <p class="text-sm text-brand-slate dark:text-brand-stone mt-1">Services for everyone — men, women, and kids.</p>
+                            <p class="text-sm text-brand-slate dark:text-brand-stone mt-0.5">Services for everyone — men, women, and kids.</p>
                         </div>
                     </div>
                 </div>
@@ -263,39 +252,39 @@
     </div>
 </section>
 
-<section id="contact" class="py-24 bg-brand-charcoal dark:bg-brand-espresso relative overflow-hidden">
+<section id="contact" class="py-16 md:py-24 bg-brand-charcoal dark:bg-brand-espresso relative overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-br from-brand-charcoal via-brand-slate to-brand-espresso dark:from-brand-espresso dark:via-brand-mocha dark:to-brand-cocoa"></div>
-    <div class="absolute top-1/4 right-0 w-[400px] h-[400px] bg-brand-copper/10 dark:bg-brand-gold/10 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-0 left-1/4 w-[300px] h-[300px] bg-brand-honey/10 dark:bg-brand-champagne/10 rounded-full blur-3xl"></div>
+    <div class="absolute top-1/4 right-0 w-[200px] h-[200px] md:w-[400px] md:h-[400px] bg-brand-copper/10 dark:bg-brand-gold/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-1/4 w-[150px] h-[150px] md:w-[300px] md:h-[300px] bg-brand-honey/10 dark:bg-brand-champagne/10 rounded-full blur-3xl"></div>
     
-    <div class="max-w-4xl mx-auto px-6 relative z-10">
-        <div class="text-center mb-12">
-            <span class="text-sm font-medium text-brand-gold dark:text-brand-champagne uppercase tracking-[0.2em]">Contact</span>
-            <h2 class="text-4xl md:text-5xl font-display font-medium text-brand-cream mt-4">Ready to book?</h2>
-            <p class="text-brand-stone mt-4">Call or text to schedule your appointment.</p>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+        <div class="text-center mb-10 md:mb-12">
+            <span class="text-sm font-medium text-brand-gold dark:text-brand-champagne uppercase tracking-[0.15em] md:tracking-[0.2em]">Contact</span>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-medium text-brand-cream mt-3 md:mt-4">Ready to book?</h2>
+            <p class="text-brand-stone mt-3 md:mt-4 text-sm md:text-base">Call or text to schedule your appointment.</p>
         </div>
         
-        <div class="grid md:grid-cols-2 gap-6">
-            <a href="tel:+12045572287" class="group bg-white/5 backdrop-blur-sm border border-brand-gold/10 rounded-2xl p-8 text-center hover:bg-white/10 hover:border-brand-gold/30 transition-all duration-300">
-                <div class="w-16 h-16 rounded-full bg-brand-gold/20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                    <iconify-icon icon="lucide:phone" class="text-brand-gold" width="28"></iconify-icon>
+        <div class="grid sm:grid-cols-2 gap-4 md:gap-6">
+            <a href="tel:+12045572287" class="group bg-white/5 backdrop-blur-sm border border-brand-gold/10 rounded-xl md:rounded-2xl p-6 md:p-8 text-center active:bg-white/10 md:hover:bg-white/10 md:hover:border-brand-gold/30 transition-all duration-300">
+                <div class="w-14 h-14 md:w-16 md:h-16 rounded-full bg-brand-gold/20 flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:scale-110 transition-transform">
+                    <iconify-icon icon="lucide:phone" class="text-brand-gold" width="26"></iconify-icon>
                 </div>
-                <p class="text-sm text-brand-stone mb-2">Call or Text</p>
-                <p class="text-2xl font-display font-semibold text-brand-cream">(204) 557-2287</p>
+                <p class="text-xs md:text-sm text-brand-stone mb-1 md:mb-2">Call or Text</p>
+                <p class="text-xl md:text-2xl font-display font-semibold text-brand-cream">(204) 557-2287</p>
             </a>
             
-            <a href="https://wa.me/12045572287?text=Hi!%20I'd%20like%20to%20book%20a%20hair%20appointment." target="_blank" class="group bg-white/5 backdrop-blur-sm border border-brand-gold/10 rounded-2xl p-8 text-center hover:bg-white/10 hover:border-brand-gold/30 transition-all duration-300">
-                <div class="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                    <iconify-icon icon="lucide:message-circle" class="text-green-400" width="28"></iconify-icon>
+            <a href="https://wa.me/12045572287?text=Hi!%20I'd%20like%20to%20book%20a%20hair%20appointment." target="_blank" class="group bg-white/5 backdrop-blur-sm border border-brand-gold/10 rounded-xl md:rounded-2xl p-6 md:p-8 text-center active:bg-white/10 md:hover:bg-white/10 md:hover:border-brand-gold/30 transition-all duration-300">
+                <div class="w-14 h-14 md:w-16 md:h-16 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:scale-110 transition-transform">
+                    <iconify-icon icon="lucide:message-circle" class="text-green-400" width="26"></iconify-icon>
                 </div>
-                <p class="text-sm text-brand-stone mb-2">WhatsApp</p>
-                <p class="text-2xl font-display font-semibold text-brand-cream">Message Us</p>
+                <p class="text-xs md:text-sm text-brand-stone mb-1 md:mb-2">WhatsApp</p>
+                <p class="text-xl md:text-2xl font-display font-semibold text-brand-cream">Message Us</p>
             </a>
         </div>
         
-        <div class="mt-12 text-center space-y-2">
-            <p class="text-brand-stone text-sm">Available 7 days a week • All areas of Winnipeg</p>
-            <p class="text-brand-stone/70 text-sm flex items-center justify-center gap-4">
+        <div class="mt-10 md:mt-12 text-center space-y-2">
+            <p class="text-brand-stone text-xs md:text-sm">Available 7 days a week • All areas of Winnipeg</p>
+            <p class="text-brand-stone/70 text-xs md:text-sm flex items-center justify-center gap-4">
                 <span class="flex items-center gap-1.5">
                     <iconify-icon icon="lucide:credit-card" width="14"></iconify-icon>
                     e-Transfer
