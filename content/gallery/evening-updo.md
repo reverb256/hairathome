@@ -1,7 +1,7 @@
 ---
 title: "Glamorous Evening Updo"
 description: "Elegant updo with soft curls and pearl accents for special occasions"
-image: "/images/client/braids-result.jpg"
+image: "/images/stock/gallery-evening.jpg"
 date: 2025-01-18T00:00:00-06:00
 ---
 
