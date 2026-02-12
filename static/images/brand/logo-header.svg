@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 50">
+  <path d="M70 5 L125 25 L125 48 L15 48 L15 25 Z" 
+        fill="none" 
+        stroke="#3a3632" 
+        stroke-width="2" 
+        stroke-linejoin="round"/>
+  <text x="70" y="32" 
+        font-family="Georgia, serif" 
+        font-size="14" 
+        font-weight="500" 
+        fill="#3a3632" 
+        text-anchor="middle"
+        letter-spacing="2">HAIR@HOME</text>
+  <g transform="translate(70, 45) scale(0.35)">
+    <ellipse cx="-15" cy="0" rx="10" ry="7" fill="none" stroke="#3a3632" stroke-width="2"/>
+    <ellipse cx="15" cy="0" rx="10" ry="7" fill="none" stroke="#3a3632" stroke-width="2"/>
+    <line x1="-8" y1="0" x2="0" y2="-18" stroke="#3a3632" stroke-width="2" stroke-linecap="round"/>
+    <line x1="8" y1="0" x2="0" y2="-18" stroke="#3a3632" stroke-width="2" stroke-linecap="round"/>
+  </g>
+</svg>
