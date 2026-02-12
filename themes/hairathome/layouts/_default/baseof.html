@@ -26,16 +26,26 @@
                     },
                     colors: {
                         brand: {
-                            cream: '#f9f6f1',
-                            ivory: '#f3ede5',
-                            blush: '#e8ddd4',
-                            rose: '#c4a99a',
-                            terracotta: '#b87a56',
-                            copper: '#a65d3f',
-                            charcoal: '#3a3632',
-                            stone: '#7d756c',
-                            sage: '#8a9178',
-                            olive: '#6b6f5c',
+                            // Light mode palette - warm salon tones
+                            cream: '#FBF8F3',
+                            vanilla: '#F5EDE0',
+                            sand: '#E8DCC6',
+                            honey: '#D4AF37',
+                            rose: '#C4A99A',
+                            blush: '#E8C5B3',
+                            copper: '#B87A56',
+                            terracotta: '#A65D3F',
+                            // Dark mode palette - sophisticated night
+                            espresso: '#2D2520',
+                            mocha: '#3A2F28',
+                            cocoa: '#4A3F38',
+                            amber: '#8B7355',
+                            gold: '#C9A86C',
+                            champagne: '#E5D4B3',
+                            // Neutrals
+                            charcoal: '#2D2D2D',
+                            slate: '#4A4540',
+                            stone: '#7D756C',
                         },
                     },
                     animation: {
@@ -47,6 +57,9 @@
                         'pulse-soft': 'pulseSoft 3s ease-in-out infinite',
                         'shimmer': 'shimmer 2s linear infinite',
                         'gradient': 'gradient 8s ease infinite',
+                        'glow-pulse': 'glowPulse 2s ease-in-out infinite',
+                        'border-shimmer': 'borderShimmer 3s linear infinite',
+                        'underglow': 'underglow 1.5s ease-in-out infinite',
                     },
                     keyframes: {
                         fadeIn: {
@@ -76,6 +89,26 @@
                         gradient: {
                             '0%, 100%': { backgroundPosition: '0% 50%' },
                             '50%': { backgroundPosition: '100% 50%' },
+                        },
+                        glowPulse: {
+                            '0%, 100%': { 
+                                boxShadow: '0 0 20px rgba(184, 122, 86, 0.3), 0 0 40px rgba(184, 122, 86, 0.1)'
+                            },
+                            '50%': { 
+                                boxShadow: '0 0 30px rgba(184, 122, 86, 0.5), 0 0 60px rgba(184, 122, 86, 0.2)'
+                            },
+                        },
+                        borderShimmer: {
+                            '0%': { backgroundPosition: '0% 50%' },
+                            '100%': { backgroundPosition: '200% 50%' },
+                        },
+                        underglow: {
+                            '0%, 100%': { 
+                                boxShadow: '0 8px 32px -8px rgba(184, 122, 86, 0.4)'
+                            },
+                            '50%': { 
+                                boxShadow: '0 8px 40px -4px rgba(212, 175, 55, 0.5)'
+                            },
                         },
                     }
                 }
@@ -107,7 +140,7 @@
     }
     </script>
 </head>
-<body class="bg-brand-cream dark:bg-brand-charcoal text-brand-charcoal dark:text-brand-cream font-sans antialiased selection:bg-brand-rose/30 selection:text-brand-charcoal dark:selection:text-brand-cream">
+<body class="bg-brand-cream dark:bg-brand-espresso text-brand-charcoal dark:text-brand-cream font-sans antialiased selection:bg-brand-copper/30 selection:text-brand-charcoal dark:selection:text-brand-espresso">
     {{ partial "header.html" . }}
     <main role="main">
     {{ block "main" . }}
