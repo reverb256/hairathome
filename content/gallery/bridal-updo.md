@@ -1,7 +1,7 @@
 ---
 title: "Bridal Updo Elegance"
 description: "Classic bridal updo with soft waves and floral accents"
-image: "/images/gallery-new/braids-1.jpg"
+image: "/images/stock/gallery-bridal.jpg"
 date: 2025-01-10T00:00:00-06:00
 ---
 
