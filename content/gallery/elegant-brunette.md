@@ -1,7 +1,7 @@
 ---
 title: "Elegant Brunette Transformation"
 description: "Rich brunette color with soft layers and volume"
-image: "/images/gallery-new/color-process.jpg"
+image: "/images/stock/gallery-brunette.jpg"
 date: 2025-01-15T00:00:00-06:00
 ---
 
