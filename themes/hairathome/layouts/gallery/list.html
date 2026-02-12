@@ -2,7 +2,7 @@
 <div class="max-w-7xl mx-auto px-6 py-12">
     <section class="text-center mb-16">
         <h1 class="text-3xl md:text-4xl font-medium tracking-tight text-brand-charcoal dark:text-brand-cream mb-4">Our Gallery</h1>
-        <p class="text-lg text-brand-stone">See examples of our professional hair styling work</p>
+        <p class="text-lg text-brand-stone dark:text-brand-stoneDark">See examples of our professional hair styling work</p>
     </section>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -17,12 +17,12 @@
             >
             {{ else }}
             <div class="w-full h-64 bg-brand-rose/20 flex items-center justify-center">
-                <span class="text-brand-stone">No image</span>
+                <span class="text-brand-stone dark:text-brand-stoneDark">No image</span>
             </div>
             {{ end }}
             <div class="p-6">
                 <h3 class="text-xl font-display font-medium text-brand-charcoal dark:text-brand-cream mb-2">{{ .Title }}</h3>
-                <p class="text-brand-stone text-sm">{{ .Params.description }}</p>
+                <p class="text-brand-stone dark:text-brand-stoneDark text-sm">{{ .Params.description }}</p>
             </div>
         </div>
         {{ end }}
