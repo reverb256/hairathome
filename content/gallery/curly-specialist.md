@@ -1,7 +1,7 @@
 ---
 title: "Curly Hair Specialist"
 description: "Professional curly hair cut and styling with product recommendations"
-image: "/images/client/braids-child.jpg"
+image: "/images/stock/gallery-curly.jpg"
 date: 2025-01-25T00:00:00-06:00
 ---
 
