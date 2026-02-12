@@ -1,24 +1,28 @@
 {{ define "main" }}
 <div class="max-w-7xl mx-auto px-6 py-12">
     <section class="text-center mb-16">
-        <h1 class="text-3xl md:text-4xl font-medium tracking-tight text-zinc-900 dark:text-white mb-4">Our Gallery</h1>
-        <p class="text-lg text-zinc-700 dark:text-zinc-700">See examples of our professional hair styling work</p>
+        <h1 class="text-3xl md:text-4xl font-medium tracking-tight text-brand-charcoal dark:text-brand-cream mb-4">Our Gallery</h1>
+        <p class="text-lg text-brand-stone">See examples of our professional hair styling work</p>
     </section>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {{ range .Pages }}
-        <div class="bg-white dark:bg-zinc-900 rounded-2xl shadow-lg shadow-zinc-200/50 dark:shadow-zinc-900/50 border border-zinc-300 dark:border-zinc-600 overflow-hidden hover:shadow-xl transition-shadow duration-300">
+        <div class="bg-brand-cream/50 dark:bg-white/5 rounded-2xl shadow-lg shadow-brand-rose/10 border border-brand-rose/10 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            {{ if .Params.image }}
             <img
-                src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjODk0MkE4Ii8+Cjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCIgZmlsbD0id2hpdGUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyMCI+R2FsbGVyeSBJbWFnZTwvdGV4dD4KPC9zdmc+"
+                src="{{ .Params.image }}"
                 alt="{{ .Title }}"
-                width="400"
-                height="300"
                 loading="lazy"
                 class="w-full h-64 object-cover"
             >
+            {{ else }}
+            <div class="w-full h-64 bg-brand-rose/20 flex items-center justify-center">
+                <span class="text-brand-stone">No image</span>
+            </div>
+            {{ end }}
             <div class="p-6">
-                <h3 class="text-xl font-medium text-zinc-900 dark:text-white mb-2">{{ .Title }}</h3>
-                <p class="text-zinc-700 dark:text-zinc-300">{{ .Params.description }}</p>
+                <h3 class="text-xl font-display font-medium text-brand-charcoal dark:text-brand-cream mb-2">{{ .Title }}</h3>
+                <p class="text-brand-stone text-sm">{{ .Params.description }}</p>
             </div>
         </div>
         {{ end }}
