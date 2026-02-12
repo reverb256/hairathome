@@ -310,7 +310,7 @@ a:focus-visible {
 }
 
 .dark ::-webkit-scrollbar-thumb {
-  background: #8B7355;
+  background: #B0956C;
 }
 
 .dark ::-webkit-scrollbar-thumb:hover {
@@ -324,5 +324,5 @@ a:focus-visible {
 }
 
 .dark * {
-  scrollbar-color: #8B7355 #2D2520;
+  scrollbar-color: #B0956C #2D2520;
 }

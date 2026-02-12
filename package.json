@@ -6,5 +6,9 @@
     "build": "hugo --minify",
     "serve": "hugo server -D --bind 0.0.0.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@biomejs/biome": "^2.3.14",
+    "vscode-langservers-extracted": "^4.10.0"
+  }
 }
