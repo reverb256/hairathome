@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FBF8F3" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#2D2520" media="(prefers-color-scheme: dark)">
+    <meta name="color-scheme" content="light dark">
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
     <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 
     <link rel="icon" type="image/x-icon" href="{{ .Site.BaseURL }}favicon.ico">
+    <link rel="manifest" href="{{ .Site.BaseURL }}manifest.json">
+    
+    <link rel="preload" href="{{ .Site.BaseURL }}images/brand/logo-hero.svg" as="image" type="image/svg+xml">
+    <link rel="preload" href="{{ .Site.BaseURL }}images/brand/logo-hero-dark.svg" as="image" type="image/svg+xml">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
@@ -33,7 +40,7 @@
                             honey: '#D4AF37',
                             rose: '#C4A99A',
                             blush: '#E8C5B3',
-                            copper: '#B87A56',
+                            copper: '#A66B48',
                             terracotta: '#A65D3F',
                             // Dark mode palette - sophisticated night
                             espresso: '#2D2520',
@@ -45,7 +52,7 @@
                             // Neutrals
                             charcoal: '#2D2D2D',
                             slate: '#4A4540',
-                            stone: '#7D756C',
+                            stone: '#6B635A',
                         },
                     },
                     animation: {
@@ -92,10 +99,10 @@
                         },
                         glowPulse: {
                             '0%, 100%': { 
-                                boxShadow: '0 0 20px rgba(184, 122, 86, 0.3), 0 0 40px rgba(184, 122, 86, 0.1)'
+                                boxShadow: '0 0 20px rgba(166, 107, 72, 0.3), 0 0 40px rgba(166, 107, 72, 0.1)'
                             },
                             '50%': { 
-                                boxShadow: '0 0 30px rgba(184, 122, 86, 0.5), 0 0 60px rgba(184, 122, 86, 0.2)'
+                                boxShadow: '0 0 30px rgba(166, 107, 72, 0.5), 0 0 60px rgba(166, 107, 72, 0.2)'
                             },
                         },
                         borderShimmer: {
@@ -104,7 +111,7 @@
                         },
                         underglow: {
                             '0%, 100%': { 
-                                boxShadow: '0 8px 32px -8px rgba(184, 122, 86, 0.4)'
+                                boxShadow: '0 8px 32px -8px rgba(166, 107, 72, 0.4)'
                             },
                             '50%': { 
                                 boxShadow: '0 8px 40px -4px rgba(212, 175, 55, 0.5)'
@@ -117,6 +124,7 @@
     </script>
 
     <link rel="stylesheet" href="{{ .Site.BaseURL }}assets/css/main.css">
+    <script src="{{ .Site.BaseURL }}assets/js/app.js" defer></script>
 
     <script type="application/ld+json">
     {
@@ -141,8 +149,11 @@
     </script>
 </head>
 <body class="bg-brand-cream dark:bg-brand-espresso text-brand-charcoal dark:text-brand-cream font-sans antialiased selection:bg-brand-copper/30 selection:text-brand-charcoal dark:selection:text-brand-espresso">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-brand-charcoal dark:focus:bg-brand-gold focus:text-brand-cream dark:focus:text-brand-espresso focus:rounded-lg focus:font-medium focus:shadow-lg">
+        Skip to main content
+    </a>
     {{ partial "header.html" . }}
-    <main role="main">
+    <main role="main" id="main-content">
     {{ block "main" . }}
     {{ end }}
     </main>
