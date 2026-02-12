@@ -1,72 +1,10 @@
 {
-  "author": "Hair@Home",
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead",
-    "not ie <= 11"
-  ],
-  "comments": {
-    "dependencies": {
-      "imagemin-mozjpeg": "project",
-      "imagemin-pngquant": "project",
-      "imagemin-webp": "project"
-    },
-    "devDependencies": {
-      "@axe-core/playwright": "project",
-      "@lhci/cli": "project",
-      "@playwright/test": "project",
-      "axe-core": "project",
-      "hugo-extended": "project",
-      "pa11y-ci": "project",
-      "serve": "project"
-    }
-  },
-  "dependencies": {
-    "imagemin-mozjpeg": "^10.0.0",
-    "imagemin-pngquant": "^10.0.0",
-    "imagemin-webp": "^8.0.0"
-  },
-  "description": "Hair@Home - Hugo Static Site for Winnipeg Mobile Hair Stylist",
-  "devDependencies": {
-    "@axe-core/playwright": "^4.11.0",
-    "@lhci/cli": "^0.15.1",
-    "@playwright/test": "^1.57.0",
-    "axe-core": "^4.11.0",
-    "hugo-extended": "latest",
-    "pa11y-ci": "^4.0.1",
-    "serve": "^14.2.1"
-  },
-  "homepage": "https://hairathome.ca",
-  "keywords": [
-    "hugo",
-    "static-site",
-    "mobile-hair-stylist",
-    "winnipeg",
-    "hair-salon",
-    "mobile-first",
-    "performance"
-  ],
-  "license": "MIT",
-  "name": "hairathome-hugo",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/hairathome/hairathome.ca"
-  },
+  "name": "hairathome",
+  "version": "1.0.0",
+  "description": "Hair@Home - Mobile hair stylist in Winnipeg",
   "scripts": {
     "build": "hugo --minify",
-    "build:dev": "hugo -D --minify",
-    "clean": "rm -rf public resources",
-    "deploy": "hugo --minify && rsync -avz --delete public/ user@server:/path/to/site/",
-    "lint": "hugo mod npm pack",
-    "optimize": "npm run build && npm run optimize:images",
-    "optimize:images": "find public -name '*.jpg' -o -name '*.png' -o -name '*.webp' | xargs -I {} npx imagemin-cli {} --out-dir=public --plugin=mozjpeg --plugin=pngquant --plugin=webp",
-    "serve": "hugo server -D --bind 0.0.0.0 --port 1313",
-    "serve:production": "hugo server --bind 0.0.0.0 --port 1313",
-    "test": "npm run build && npm run test:lighthouse",
-    "test:lighthouse": "lhci autorun",
-    "test:performance": "npm run build && npx serve public -l 5000 & sleep 5 && lighthouse http://localhost:5000 --output=json --output-path=./lighthouse-results.json --chrome-flags='--headless' && kill %1",
-    "typecheck": "echo \"Hugo has built-in type checking\" && exit 0"
+    "serve": "hugo server -D --bind 0.0.0.0"
   },
-  "version": "1.0.0"
+  "license": "MIT"
 }
