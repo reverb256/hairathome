@@ -15,7 +15,8 @@
     <link rel="preload" href="{{ .Site.BaseURL }}images/brand/logo-hero.svg" as="image" type="image/svg+xml">
     <link rel="preload" href="{{ .Site.BaseURL }}images/brand/logo-hero-dark.svg" as="image" type="image/svg+xml">
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    {{ $tailwind := resources.Get "css/main.css" | resources.ExecuteAsTemplate "css/main.css" . }}
+    <link rel="stylesheet" href="{{ $tailwind.RelPermalink }}">
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
