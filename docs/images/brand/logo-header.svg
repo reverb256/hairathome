@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 55">
+  <path d="M80 3 L120 22 L120 35 L40 35 L40 22 Z" 
+        fill="none" 
+        stroke="#3a3632" 
+        stroke-width="1.5" 
+        stroke-linejoin="round"/>
+  <text x="80" y="50" 
+        font-family="Georgia, serif" 
+        font-size="15" 
+        font-weight="500" 
+        fill="#3a3632" 
+        text-anchor="middle"
+        letter-spacing="3">HAIR@HOME</text>
+</svg>

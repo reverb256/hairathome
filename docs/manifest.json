@@ -4,12 +4,12 @@
   "description": "Professional mobile hair styling services in Winnipeg. Salon-quality haircuts, color, and styling at your doorstep.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#050505",
-  "theme_color": "#8e44ad",
+  "background_color": "#FBF8F3",
+  "theme_color": "#A66B48",
   "orientation": "portrait-primary",
   "scope": "/",
   "lang": "en-CA",
-  "categories": ["lifestyle", "business"],
+  "categories": ["lifestyle", "business", "beauty"],
   "icons": [
     {
       "src": "/favicon-192x192.png",
@@ -30,12 +30,21 @@
       "purpose": "any"
     }
   ],
+  "screenshots": [
+    {
+      "src": "/images/og-image.jpg",
+      "sizes": "1200x630",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "Hair@Home - Mobile Hair Stylist in Winnipeg"
+    }
+  ],
   "shortcuts": [
     {
-      "name": "Book Appointment",
-      "short_name": "Book Now",
-      "description": "Schedule your hair appointment",
-      "url": "/booking/",
+      "name": "Call to Book",
+      "short_name": "Call",
+      "description": "Call Hair@Home to schedule your appointment",
+      "url": "/#contact",
       "icons": [
         {
           "src": "/favicon-192x192.png",
@@ -46,8 +55,8 @@
     {
       "name": "View Services",
       "short_name": "Services",
-      "description": "Explore our hair services",
-      "url": "/services/",
+      "description": "Explore our hair services and pricing",
+      "url": "/#services",
       "icons": [
         {
           "src": "/favicon-192x192.png",
@@ -56,9 +65,9 @@
       ]
     },
     {
-      "name": "Gallery",
+      "name": "View Gallery",
       "short_name": "Gallery",
-      "description": "View our work",
+      "description": "See our work",
       "url": "/gallery/",
       "icons": [
         {
