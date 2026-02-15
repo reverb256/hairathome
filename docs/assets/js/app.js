@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, initializing...');
     initThemeToggle();
     initMobileMenu();
     initScrollReveal();
@@ -8,6 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
 function initThemeToggle() {
     const themeToggle = document.getElementById('theme-toggle');
     const html = document.documentElement;
+    
+    console.log('Theme toggle element:', themeToggle);
     
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -19,12 +22,16 @@ function initThemeToggle() {
     }
 
     if (themeToggle) {
+        console.log('Adding theme toggle click listener');
         themeToggle.addEventListener('click', () => {
+            console.log('Theme toggle clicked');
             html.classList.toggle('dark');
             const isDark = html.classList.contains('dark');
             localStorage.setItem('theme', isDark ? 'dark' : 'light');
             updateMetaThemeColor(isDark);
         });
+    } else {
+        console.error('Theme toggle button not found!');
     }
     
     updateMetaThemeColor(html.classList.contains('dark'));
@@ -56,8 +63,13 @@ function initMobileMenu() {
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     
+    console.log('Mobile menu button:', mobileMenuBtn);
+    console.log('Mobile menu:', mobileMenu);
+    
     if (mobileMenuBtn && mobileMenu) {
+        console.log('Adding mobile menu click listener');
         mobileMenuBtn.addEventListener('click', () => {
+            console.log('Mobile menu button clicked');
             const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
             mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
             mobileMenu.classList.toggle('hidden');
@@ -69,6 +81,8 @@ function initMobileMenu() {
                 mobileMenuBtn.setAttribute('aria-expanded', 'false');
             });
         });
+    } else {
+        console.error('Mobile menu elements not found!');
     }
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
