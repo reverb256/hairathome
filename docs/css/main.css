@@ -1,0 +1,462 @@
+/* Warm, professional color scheme for Moms at Home */
+:root {
+  --brand-cream: #f9f6f1;
+  --brand-ivory: #f3ede5;
+  --brand-blush: #e8ddd4;
+  --brand-rose: #c4a99a;
+  --brand-terracotta: #b87a56;
+  --brand-copper: #a65d3f;
+  --brand-charcoal: #3a3632;
+  --brand-stone: #7d756c;
+  --brand-sage: #8a9178;
+  --brand-olive: #6b6f5c;
+  --text-primary: #2d2a27;
+  --text-secondary: #645f5a;
+  --background-light: #faf8f5;
+  --background-dark: #2a2725;
+  --border-warm: #e5dfd6;
+}
+
+.dark {
+  --brand-cream: #353230;
+  --brand-ivory: #2f2c29;
+  --brand-blush: #4a4340;
+  --brand-rose: #c9b5a8;
+  --brand-terracotta: #d4956f;
+  --brand-copper: #c88a6a;
+  --brand-charcoal: #f0ebe6;
+  --brand-stone: #a8a09a;
+  --brand-sage: #a0a890;
+  --brand-olive: #9ca088;
+  --text-primary: #f0ebe6;
+  --text-secondary: #a8a09a;
+  --background-light: #2a2725;
+  --background-dark: #1e1c1a;
+  --border-warm: #454240;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--border-warm);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--brand-warm-gray);
+}
+
+/* Custom Selection Color */
+::selection {
+  background: var(--brand-soft-peach);
+  color: var(--brand-dark-warm);
+}
+
+/* Checkbox styling */
+.custom-checkbox:checked {
+  background-color: var(--brand-dark-warm);
+  border-color: var(--brand-dark-warm);
+}
+
+.custom-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-thumb {
+  background-color: var(--brand-warm-gray);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: var(--brand-soft-pink);
+}
+
+/* Dark mode selection */
+.dark ::selection {
+  background: var(--brand-dark-warm);
+  color: var(--brand-cream);
+}
+
+/* Animated elements */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  0% { opacity: 0; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+/* Custom button styles */
+.btn-primary {
+  background: linear-gradient(135deg, var(--brand-dark-warm) 0%, var(--brand-warm-gray) 100%);
+  color: var(--brand-cream);
+  border: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(74, 63, 53, 0.25);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--brand-dark-warm);
+  border: 1.5px solid var(--brand-dark-warm);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.btn-secondary:hover {
+  background: var(--brand-dark-warm);
+  color: var(--brand-cream);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(74, 63, 53, 0.15);
+}
+
+/* Card styles */
+.card-warm {
+  background: var(--background-light);
+  border: 1px solid var(--border-warm);
+  border-radius: 1.25rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.card-warm::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  box-shadow: 0 20px 40px rgba(74, 63, 53, 0.1);
+  pointer-events: none;
+}
+
+.card-warm:hover {
+  border-color: var(--accent-rose);
+  transform: translateY(-8px);
+}
+
+.card-warm:hover::after {
+  opacity: 1;
+}
+
+.dark .card-warm {
+  background: var(--background-dark);
+  border-color: var(--border-warm);
+}
+
+.dark .card-warm:hover {
+  border-color: var(--accent-rose);
+}
+
+/* Section styles */
+.section-warm {
+  background: var(--background-light);
+  border-bottom: 1px solid var(--border-warm);
+}
+
+.dark .section-warm {
+  background: var(--background-dark);
+  border-bottom: 1px solid var(--border-warm);
+}
+
+/* Text styles */
+.text-brand-primary {
+  color: var(--brand-dark-warm);
+}
+
+.text-brand-secondary {
+  color: var(--brand-warm-gray);
+}
+
+.text-brand-accent {
+  color: var(--accent-warm);
+}
+
+/* Gradient backgrounds */
+.bg-gradient-warm {
+  background: linear-gradient(135deg, var(--brand-soft-pink) 0%, var(--brand-soft-peach) 100%);
+}
+
+.bg-gradient-warm-dark {
+  background: linear-gradient(135deg, var(--brand-dark-warm) 0%, var(--brand-warm-gray) 100%);
+}
+
+/* Floating badges */
+.badge-warm {
+  background: var(--brand-cream);
+  border: 1px solid var(--border-warm);
+  color: var(--brand-dark-warm);
+}
+
+.dark .badge-warm {
+  background: var(--brand-dark-warm);
+  border: 1px solid var(--border-warm);
+  color: var(--brand-cream);
+}
+
+/* Form styles */
+.form-warm input,
+.form-warm select,
+.form-warm textarea {
+  background: var(--background-light);
+  border: 1px solid var(--border-warm);
+  color: var(--text-primary);
+}
+
+.dark .form-warm input,
+.dark .form-warm select,
+.dark .form-warm textarea {
+  background: var(--background-dark);
+  border: 1px solid var(--border-warm);
+  color: var(--text-primary);
+}
+
+.form-warm input:focus,
+.form-warm select:focus,
+.form-warm textarea:focus {
+  border-color: var(--brand-soft-pink);
+  box-shadow: 0 0 0 3px rgba(244, 165, 165, 0.1);
+}
+
+/* Icon styles */
+.icon-warm {
+  color: var(--brand-dark-warm);
+}
+
+.icon-warm-accent {
+  color: var(--accent-warm);
+}
+
+/* Family-friendly icon replacements */
+.icon-family {
+  color: var(--brand-soft-pink);
+}
+
+.icon-mom {
+  color: var(--brand-soft-peach);
+}
+
+.icon-child {
+  color: var(--accent-warm);
+}
+
+.icon-home {
+  color: var(--brand-dark-warm);
+}
+
+.icon-heart {
+  color: var(--brand-soft-pink);
+}
+
+.icon-calendar {
+  color: var(--brand-soft-peach);
+}
+
+.icon-phone {
+  color: var(--accent-warm);
+}
+
+.icon-email {
+  color: var(--brand-dark-warm);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .mobile-card {
+    border-radius: 0.75rem;
+  }
+  
+  .mobile-section {
+    padding: 2rem 1rem;
+  }
+}
+
+/* Print styles */
+@media print {
+    .no-print {
+        display: none;
+    }
+}
+
+/* Mobile menu alignment fixes */
+#mobile-menu a {
+    padding: 0.75rem 0;
+}
+
+#mobile-menu .border-t {
+    margin-top: 1rem;
+}
+
+/* Service cards grid alignment improvements */
+.service-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.service-card > * {
+    flex: 1 0 auto;
+}
+
+.service-card .border-t {
+    margin-top: auto;
+}
+
+/* Hero section text alignment */
+.hero-text-container {
+    text-align: center;
+    max-width: 100%;
+}
+
+@media (min-width: 1024px) {
+    .hero-text-container {
+        text-align: left;
+        max-width: 50%;
+    }
+}
+
+/* Consistent flex alignment classes */
+.flex-align-center {
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-align-start {
+    align-items: flex-start;
+}
+
+.flex-align-center-desktop {
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .flex-align-center-desktop {
+        align-items: center;
+    }
+}
+
+/* Improved card consistency */
+.card-service {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-service > * {
+    flex: 1 0 auto;
+}
+
+.card-service .price-container {
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-warm);
+}
+
+/* Better mobile text alignment */
+.text-left-mobile {
+    text-align: left;
+}
+
+@media (min-width: 1024px) {
+    .text-left-mobile {
+        text-align: left;
+    }
+}
+
+/* Fix for about section mobile alignment */
+.justify-start-mobile {
+    justify-content: flex-start;
+}
+
+@media (min-width: 1024px) {
+    .justify-start-mobile {
+        justify-content: center;
+    }
+}
