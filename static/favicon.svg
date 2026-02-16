@@ -1,11 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <defs>
-    <linearGradient id="copper" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#A66B48"/>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#C9A86C"/>
+      <stop offset="50%" style="stop-color:#D4AF37"/>
       <stop offset="100%" style="stop-color:#B87A56"/>
     </linearGradient>
   </defs>
   <rect width="32" height="32" rx="6" fill="#FBF8F3"/>
-  <path d="M16 6 L26 12 L26 26 L6 26 L6 12 Z" fill="none" stroke="url(#copper)" stroke-width="1.5" stroke-linejoin="round"/>
-  <text x="16" y="20" font-family="Georgia, serif" font-size="10" font-weight="500" fill="url(#copper)" text-anchor="middle">@</text>
+  <path d="M16 6 L26 12 L26 26 L6 26 L6 12 Z" fill="none" stroke="url(#gold)" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="16" y="20" font-family="Georgia, serif" font-size="10" font-weight="500" fill="url(#gold)" text-anchor="middle">@</text>
 </svg>
