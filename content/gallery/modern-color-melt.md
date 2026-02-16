@@ -1,7 +1,7 @@
 ---
 title: "Modern Color Melt"
 description: "Seamless color melt technique with natural dimension"
-image: "/images/stock/gallery-color-melt.jpg"
+image: "/images/movie-frames/frame-0033.jpg"
 date: 2025-01-08T00:00:00-06:00
 ---
 

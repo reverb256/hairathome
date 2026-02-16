@@ -1,7 +1,7 @@
 ---
 title: "Classic Bob Transformation"
 description: "Modern bob cut with subtle layers and professional styling"
-image: "/images/stock/gallery-bob.jpg"
+image: "/images/movie-frames/frame-0031.jpg"
 date: 2025-01-15T00:00:00-06:00
 ---
 
