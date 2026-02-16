@@ -1,7 +1,7 @@
 ---
 title: "Natural Gray Blending"
 description: "Seamless blending of natural gray hairs with professional color"
-image: "/images/stock/gallery-gray.jpg"
+image: "/images/movie-frames/frame-0033.jpg"
 date: 2025-01-22T00:00:00-06:00
 ---
 
