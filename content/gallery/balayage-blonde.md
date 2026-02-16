@@ -1,7 +1,7 @@
 ---
 title: "Luxury Balayage Blonde"
 description: "Natural-looking balayage with golden tones and face-framing highlights"
-image: "/images/movie-frames/frame-0033.jpg"
+image: "/images/stock/gallery-color-melt.jpg"
 date: 2025-01-12T00:00:00-06:00
 ---
 
