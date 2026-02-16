@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM loaded, initializing...');
+    window.appInitialized = true;
     initThemeToggle();
     initMobileMenu();
     initScrollReveal();
