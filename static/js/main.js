@@ -27,15 +27,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function updateThemeToggle(theme) {
-        const icon = themeToggle.querySelector('i');
-        const text = themeToggle.querySelector('span');
+        const sunIcon = themeToggle.querySelector('.dark\\:hidden');
+        const moonIcon = themeToggle.querySelector('.hidden.dark\\:block');
         
-        if (icon) {
-            icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-        }
-        
-        if (text) {
-            text.textContent = theme === 'dark' ? 'Light' : 'Dark';
+        if (theme === 'dark') {
+            sunIcon.classList.remove('hidden');
+            moonIcon.classList.add('hidden');
+        } else {
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
         }
     }
 
