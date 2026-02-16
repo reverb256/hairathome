@@ -15,7 +15,19 @@
     <link rel="preload" href="{{ .Site.BaseURL }}images/brand/logo-hero.svg" as="image" type="image/svg+xml">
     <link rel="preload" href="{{ .Site.BaseURL }}images/brand/logo-hero-dark.svg" as="image" type="image/svg+xml">
     
-    <link href="/css/main.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Inter', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
         colors: {
           brand: {
             cream: '#FBF8F3',
