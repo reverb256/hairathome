@@ -9,7 +9,9 @@
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
     <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 
+    <link rel="icon" type="image/svg+xml" href="{{ .Site.BaseURL }}favicon.svg">
     <link rel="icon" type="image/x-icon" href="{{ .Site.BaseURL }}favicon.ico">
+    <link rel="apple-touch-icon" href="{{ .Site.BaseURL }}favicon.svg">
     <link rel="manifest" href="{{ .Site.BaseURL }}manifest.json">
     
     <link rel="preload" href="{{ .Site.BaseURL }}images/brand/logo-hero.svg" as="image" type="image/svg+xml">
