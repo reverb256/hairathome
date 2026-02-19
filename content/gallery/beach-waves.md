@@ -1,7 +1,7 @@
 ---
 title: "Romantic Beach Waves"
 description: "Loose, natural beach waves with volume and movement"
-image: "/images/movie-frames/frame-0036.jpg"
+image: "/images/stock/gallery-05-beach_00001_.png"
 date: 2025-01-20T00:00:00-06:00
 ---
 
