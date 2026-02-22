@@ -1,20 +1,28 @@
 {
+  "type": "module",
   "name": "hairathome",
   "version": "1.0.0",
   "description": "Hair@Home - Mobile hair stylist in Winnipeg",
   "scripts": {
     "build:css": "npx postcss ./input.css -o ./static/css/main.css --minify",
     "build": "npm run build:css && hugo --minify",
+    "build:full": "npm run build:css && hugo --minify && bash scripts/optimize-images.sh",
+    "optimize": "bash scripts/optimize-images.sh",
     "serve": "hugo server -D --bind 0.0.0.0",
-    "dev": "npm run build:css && hugo server -D --bind 0.0.0.0 --disableFastRender"
+    "dev": "npm run build:css && hugo server -D --bind 0.0.0.0 --disableFastRender",
+    "nix:dev": "bash scripts/nix-dev-shell.sh"
   },
   "license": "MIT",
   "devDependencies": {
     "@biomejs/biome": "^2.3.14",
+    "@tailwindcss/postcss": "^4.2.0",
     "autoprefixer": "^10.4.24",
     "postcss": "^8.5.6",
     "postcss-cli": "^11.0.1",
     "tailwindcss": "^4.1.18",
     "vscode-langservers-extracted": "^4.10.0"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.58.2"
   }
 }
