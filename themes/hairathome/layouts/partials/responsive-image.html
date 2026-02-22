@@ -1,0 +1,30 @@
+{{/* Responsive image partial with WebP fallback support */}}
+{{/* Usage: {{ partial "responsive-image.html" (dict "src" "images/stock/image.png" "alt" "Description") }} */}}
+
+{{ $src := .src }}
+{{ $alt := .alt | default "" }}
+{{ $class := .class | default "" }}
+{{ $loading := .loading | default "lazy" }}
+{{ $webpSrc := $src | replaceRE "\\.(png|jpg|jpeg)$" ".webp" }}
+
+{{/* Check if this is a stock image that might have a WebP version */}}
+{{ $hasWebp := false }}
+{{ if in $src "images/stock/" }}
+  {{ $webpPath := printf "static/%s" $webpSrc }}
+  {{ if fileExists $webpPath }}
+    {{ $hasWebp = true }}
+  {{ end }}
+{{ end }}
+
+<picture class="{{ $class }}">
+  {{ if $hasWebp }}
+    <source srcset="{{ $webpSrc | relURL }}" type="image/webp">
+  {{ end }}
+  <img
+    src="{{ $src | relURL }}"
+    alt="{{ $alt }}"
+    {{ with $class }}class="{{ . }}"{{ end }}
+    loading="{{ $loading }}"
+    {{ if eq $loading "eager" }}fetchpriority="high"{{ end }}
+  >
+</picture>

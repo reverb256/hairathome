@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM loaded, initializing...');
     window.appInitialized = true;
     initThemeToggle();
     initMobileMenu();
@@ -10,12 +9,10 @@ document.addEventListener('DOMContentLoaded', function() {
 function initThemeToggle() {
     const themeToggle = document.getElementById('theme-toggle');
     const html = document.documentElement;
-    
-    console.log('Theme toggle element:', themeToggle);
-    
+
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
+
     if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
         html.classList.add('dark');
     } else {
@@ -23,18 +20,14 @@ function initThemeToggle() {
     }
 
     if (themeToggle) {
-        console.log('Adding theme toggle click listener');
         themeToggle.addEventListener('click', () => {
-            console.log('Theme toggle clicked');
             html.classList.toggle('dark');
             const isDark = html.classList.contains('dark');
             localStorage.setItem('theme', isDark ? 'dark' : 'light');
             updateMetaThemeColor(isDark);
         });
-    } else {
-        console.error('Theme toggle button not found!');
     }
-    
+
     updateMetaThemeColor(html.classList.contains('dark'));
 
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
@@ -50,27 +43,20 @@ function initThemeToggle() {
 }
 
 function updateMetaThemeColor(isDark) {
-    const metaThemeLight = document.querySelector('meta[name="theme-color"][media*="light"]');
-    const metaThemeDark = document.querySelector('meta[name="theme-color"][media*="dark"]');
-    
-    if (isDark) {
-        document.querySelector('meta[name="theme-color"][content="#2D2520"]')?.setAttribute('content', '#2D2520');
-    } else {
-        document.querySelector('meta[name="theme-color"][content="#FBF8F3"]')?.setAttribute('content', '#FBF8F3');
+    const themeColor = isDark ? '#2D2520' : '#FBF8F3';
+    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+    if (metaThemeColor) {
+        metaThemeColor.setAttribute('content', themeColor);
     }
 }
 
 function initMobileMenu() {
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    
-    console.log('Mobile menu button:', mobileMenuBtn);
-    console.log('Mobile menu:', mobileMenu);
-    
+
     if (mobileMenuBtn && mobileMenu) {
-        console.log('Adding mobile menu click listener');
         mobileMenuBtn.addEventListener('click', () => {
-            console.log('Mobile menu button clicked');
             const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
             mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
             mobileMenu.classList.toggle('hidden');
@@ -82,8 +68,6 @@ function initMobileMenu() {
                 mobileMenuBtn.setAttribute('aria-expanded', 'false');
             });
         });
-    } else {
-        console.error('Mobile menu elements not found!');
     }
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -141,11 +125,11 @@ function initServiceWorker() {
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
             navigator.serviceWorker.register('/sw.js', { scope: '/' })
-                .then(registration => {
-                    console.log('SW registered:', registration.scope);
+                .then(() => {
+                    // Service Worker registered successfully
                 })
-                .catch(error => {
-                    console.log('SW registration failed:', error);
+                .catch(() => {
+                    // Service Worker registration failed - non-critical
                 });
         });
     }
