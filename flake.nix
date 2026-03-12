@@ -37,10 +37,13 @@
             # Hugo and site building
             hugo
 
+            # Python with packages for image workflow
+            (python314.withPackages (ps: with ps; [
+              pkgs.python314Packages.pillow
+              pkgs.python314Packages.requests
+            ]))
+
             # Image processing
-            python314
-            python314.pillow
-            python314.pillow-heif
             libwebp
             image_optim
 
@@ -53,14 +56,6 @@
             jq       # JSON processing
             curl     # HTTP requests
             nodejs   # For postcss/minification
-
-            # Python packages for image workflow
-            (python314.withPackages (ps: with ps; [
-              pillow
-              pillow-heif
-              requests
-              numpy
-            ]))
           ];
 
           env = [
