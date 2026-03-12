@@ -1,7 +1,7 @@
 ---
-title: "Services"
+title: "Mobile Hair Services Winnipeg | Haircuts, Color & Styling"
 subtitle: "Quality haircuts at straightforward prices"
-description: "Mobile hair services for Winnipeg families"
+description: "Professional mobile hair services in Winnipeg. Haircuts from $20, color services, styling & more. We come to you - home, office, or anywhere. Book today!"
 date: 2025-01-01T00:00:00-06:00
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: "About"
-description: "Learn about Hair@Home, your trusted mobile hair stylist in Winnipeg"
+title: "About Hair@Home | Winnipeg Mobile Hair Stylist Since 2007"
+description: "Meet your trusted mobile hair stylist in Winnipeg. Professional, affordable hair care at your convenience. Serving Winnipeg families since 2007."
 date: 2025-01-01T00:00:00-06:00
 ---
 
