@@ -1,14 +1,14 @@
 {{ define "main" }}
 <section class="relative min-h-screen flex items-center pt-20 pb-12 md:pt-24 md:pb-16 overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-br from-brand-cream via-brand-vanilla to-brand-sand/40 dark:from-brand-espresso dark:via-brand-mocha dark:to-brand-cocoa/30"></div>
-    
-    <div class="absolute top-0 right-0 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-brand-copper/15 dark:bg-brand-gold/10 rounded-full blur-3xl animate-float"></div>
-    <div class="absolute bottom-0 left-0 w-[250px] h-[250px] md:w-[500px] md:h-[500px] bg-brand-blush/20 dark:bg-brand-amber/10 rounded-full blur-3xl animate-float-slow"></div>
-    
+
+    <div class="absolute top-0 right-0 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-brand-copper/15 dark:bg-brand-gold/10 rounded-full blur-3xl animate-float" data-parallax="0.3"></div>
+    <div class="absolute bottom-0 left-0 w-[250px] h-[250px] md:w-[500px] md:h-[500px] bg-brand-blush/20 dark:bg-brand-amber/10 rounded-full blur-3xl animate-float-slow" data-parallax="0.2"></div>
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
         <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div class="space-y-6 md:space-y-8 animate-slide-up hero-text-container">
-                <div class="inline-flex items-center gap-3 px-4 py-2 md:px-5 md:py-2.5 rounded-full bg-white/70 dark:bg-white/5 backdrop-blur-sm border border-brand-copper/20 dark:border-brand-gold/20 shadow-sm">
+                <div class="inline-flex items-center gap-3 px-4 py-2 md:px-5 md:py-2.5 rounded-full bg-brand-cream/70 dark:bg-white/5 backdrop-blur-sm border border-brand-copper/20 dark:border-brand-gold/20 shadow-sm">
                     <span class="relative flex h-2.5 w-2.5">
                         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-copper dark:bg-brand-gold opacity-75"></span>
                         <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-copper dark:bg-brand-gold"></span>
@@ -18,26 +18,26 @@
                 
                 <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-medium tracking-tight text-brand-charcoal dark:text-brand-cream leading-[1.05]">
                     Haircuts<br>
-                    <span class="bg-gradient-to-r from-brand-copper via-brand-terracotta to-brand-honey bg-clip-text text-transparent dark:from-brand-gold dark:via-brand-champagne dark:to-brand-amber">made simple</span>
+                    <span class="text-shimmer">made simple</span>
                 </h1>
                 
-                <p class="text-base sm:text-lg md:text-xl text-brand-slate dark:text-brand-stoneDark max-w-lg leading-relaxed mx-auto lg:mx-0">
+                <p class="text-base sm:text-lg md:text-xl text-brand-slate dark:text-brand-stoneDark max-w-lg leading-relaxed mx-auto">
                     Quality haircuts at straightforward prices. We come to you — home, office, or anywhere in Winnipeg.
                 </p>
                 
-                <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
-                    <a href="tel:+12045572287" class="group inline-flex justify-center items-center px-6 py-3.5 md:px-8 md:py-4 bg-brand-honey dark:bg-brand-gold text-brand-cream dark:text-brand-espresso rounded-xl font-medium shadow-lg shadow-brand-honey/20 dark:shadow-brand-gold/20 active:scale-95 transition-transform">
+                <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+                    <a href="tel:+12045572287" class="group inline-flex justify-center items-center px-6 py-3.5 md:px-8 md:py-4 bg-brand-honey dark:bg-brand-gold text-brand-cream dark:text-brand-espresso rounded-xl font-medium shadow-lg shadow-brand-honey/20 dark:shadow-brand-gold/20 active:scale-95 transition-transform ripple-btn magnetic-btn relative overflow-hidden">
                         <iconify-icon icon="lucide:phone" class="mr-2" width="18"></iconify-icon>
                         Call Now
                     </a>
-                    <a href="#services" class="inline-flex justify-center items-center px-6 py-3.5 md:px-8 md:py-4 border-2 border-brand-copper/30 dark:border-brand-gold/30 text-brand-charcoal dark:text-brand-cream rounded-xl font-medium active:bg-brand-copper/10 dark:active:bg-brand-gold/10 transition-colors">
+                    <a href="#services" class="inline-flex justify-center items-center px-6 py-3.5 md:px-8 md:py-4 border-2 border-brand-copper/30 dark:border-brand-gold/30 text-brand-charcoal dark:text-brand-cream rounded-xl font-medium active:bg-brand-copper/10 dark:active:bg-brand-gold/10 transition-colors ripple-btn relative overflow-hidden">
                         See Services
                     </a>
                 </div>
                 
-                <div class="flex items-center justify-center lg:justify-start gap-6 md:gap-8 pt-2">
+                <div class="flex items-center justify-center gap-6 md:gap-8 pt-2">
                     <div class="text-center">
-                        <p class="text-xl md:text-2xl font-display font-semibold text-brand-charcoal dark:text-brand-cream">7</p>
+                        <p class="text-xl md:text-2xl font-display font-semibold text-brand-charcoal dark:text-brand-cream" data-count="7">7</p>
                         <p class="text-xs text-brand-stone uppercase tracking-wider">Days</p>
                     </div>
                     <div class="w-px h-10 bg-brand-copper/20 dark:bg-brand-gold/20"></div>
@@ -47,7 +47,7 @@
                     </div>
                     <div class="w-px h-10 bg-brand-copper/20 dark:bg-brand-gold/20"></div>
                     <div class="text-center">
-                        <p class="text-xl md:text-2xl font-display font-semibold text-brand-charcoal dark:text-brand-cream">$20+</p>
+                        <p class="text-xl md:text-2xl font-display font-semibold text-brand-charcoal dark:text-brand-cream" data-count="20">$20+</p>
                         <p class="text-xs text-brand-stone uppercase tracking-wider">From</p>
                     </div>
                 </div>
@@ -78,10 +78,10 @@
             <p class="text-brand-slate dark:text-brand-stoneDark max-w-xl mx-auto mt-3 md:mt-4 text-sm md:text-base">Professional hair services for the whole family at straightforward prices.</p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 scroll-reveal-stagger">
-            <div class="group relative bg-white/70 dark:bg-brand-mocha/50 rounded-xl md:rounded-2xl overflow-hidden border border-brand-copper/10 dark:border-brand-gold/10 transition-all duration-300 active:scale-[0.98] md:hover:-translate-y-2 md:hover:animate-underglow card-service">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 stagger-children">
+            <div class="group relative bg-brand-cream/70 dark:bg-brand-mocha/50 rounded-xl md:rounded-2xl overflow-hidden border border-brand-copper/10 dark:border-brand-gold/10 transition-all duration-300 active:scale-[0.98] md:hover:-translate-y-2 md:hover:animate-underglow card-service stagger-1">
                 <div class="aspect-[4/3] overflow-hidden relative">
-<img src="images/stock/service-01-haircut_00001_.png"
+<img src="images/stock/service-haircut-square_00001_.png"
                      alt="Haircuts - Professional hair cutting services"
                      class="w-full h-full object-cover md:group-hover:scale-105 transition-transform duration-500"
                      loading="lazy">
@@ -95,10 +95,10 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="group relative bg-white/70 dark:bg-brand-mocha/50 rounded-xl md:rounded-2xl overflow-hidden border border-brand-copper/10 dark:border-brand-gold/10 transition-all duration-300 active:scale-[0.98] md:hover:-translate-y-2 md:hover:animate-underglow card-service">
+
+            <div class="group relative bg-brand-cream/70 dark:bg-brand-mocha/50 rounded-xl md:rounded-2xl overflow-hidden border border-brand-copper/10 dark:border-brand-gold/10 transition-all duration-300 active:scale-[0.98] md:hover:-translate-y-2 md:hover:animate-underglow card-service stagger-3">
                 <div class="aspect-[4/3] overflow-hidden relative">
-<img src="images/stock/service-02-color_00001_.png"
+<img src="images/stock/service-color-square_00001_.png"
                      alt="Color Services - Root touch-ups, highlights, and full color"
                      class="w-full h-full object-cover md:group-hover:scale-105 transition-transform duration-500"
                      loading="lazy">
@@ -112,10 +112,10 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="group relative bg-white/70 dark:bg-brand-mocha/50 rounded-xl md:rounded-2xl overflow-hidden border border-brand-copper/10 dark:border-brand-gold/10 transition-all duration-300 active:scale-[0.98] md:hover:-translate-y-2 md:hover:animate-underglow card-service">
+
+            <div class="group relative bg-brand-cream/70 dark:bg-brand-mocha/50 rounded-xl md:rounded-2xl overflow-hidden border border-brand-copper/10 dark:border-brand-gold/10 transition-all duration-300 active:scale-[0.98] md:hover:-translate-y-2 md:hover:animate-underglow card-service stagger-4">
                 <div class="aspect-[4/3] overflow-hidden relative">
-<img src="images/stock/service-03-blowout_00001_.png"
+<img src="images/stock/service-blowout-square_00001_.png"
                      alt="Blowout & Styling - Wash and professional styling"
                      class="w-full h-full object-cover md:group-hover:scale-105 transition-transform duration-500"
                      loading="lazy">
@@ -129,10 +129,10 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="group relative bg-white/70 dark:bg-brand-mocha/50 rounded-xl md:rounded-2xl overflow-hidden border border-brand-copper/10 dark:border-brand-gold/10 transition-all duration-300 active:scale-[0.98] md:hover:-translate-y-2 md:hover:animate-underglow card-service">
+
+            <div class="group relative bg-brand-cream/70 dark:bg-brand-mocha/50 rounded-xl md:rounded-2xl overflow-hidden border border-brand-copper/10 dark:border-brand-gold/10 transition-all duration-300 active:scale-[0.98] md:hover:-translate-y-2 md:hover:animate-underglow card-service stagger-5">
                 <div class="aspect-[4/3] overflow-hidden relative">
-<img src="images/stock/service-04-mens_00001_.png"
+<img src="images/stock/service-mens-square_00001_.png"
                       alt="Men's Cuts - Fades, tapers, and classic cuts"
                       class="w-full h-full object-cover md:group-hover:scale-105 transition-transform duration-500"
                       loading="lazy">
@@ -146,10 +146,10 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="group relative bg-white/70 dark:bg-brand-mocha/50 rounded-xl md:rounded-2xl overflow-hidden border border-brand-copper/10 dark:border-brand-gold/10 transition-all duration-300 active:scale-[0.98] md:hover:-translate-y-2 md:hover:animate-underglow card-service">
+
+            <div class="group relative bg-brand-cream/70 dark:bg-brand-mocha/50 rounded-xl md:rounded-2xl overflow-hidden border border-brand-copper/10 dark:border-brand-gold/10 transition-all duration-300 active:scale-[0.98] md:hover:-translate-y-2 md:hover:animate-underglow card-service stagger-6">
                 <div class="aspect-[4/3] overflow-hidden relative">
-<img src="images/stock/service-05-updo_00001_.png"
+<img src="images/stock/service-updo-square_00001_.png"
                       alt="Updos & Formal - Special occasion styling"
                       class="w-full h-full object-cover md:group-hover:scale-105 transition-transform duration-500"
                       loading="lazy">
@@ -163,10 +163,10 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="group relative bg-white/70 dark:bg-brand-mocha/50 rounded-xl md:rounded-2xl overflow-hidden border border-brand-copper/10 dark:border-brand-gold/10 transition-all duration-300 active:scale-[0.98] md:hover:-translate-y-2 md:hover:animate-underglow card-service">
+
+            <div class="group relative bg-brand-cream/70 dark:bg-brand-mocha/50 rounded-xl md:rounded-2xl overflow-hidden border border-brand-copper/10 dark:border-brand-gold/10 transition-all duration-300 active:scale-[0.98] md:hover:-translate-y-2 md:hover:animate-underglow card-service animate-fade-in">
                 <div class="aspect-[4/3] overflow-hidden relative">
-<img src="images/stock/service-06-treatments_00001_.png"
+<img src="images/stock/service-treatments-square_00001_.png"
                       alt="Treatments - Deep conditioning and scalp care"
                       class="w-full h-full object-cover md:group-hover:scale-105 transition-transform duration-500"
                       loading="lazy">
@@ -380,39 +380,39 @@
     </div>
 </section>
 
-<section id="contact" class="py-16 md:py-24 bg-brand-charcoal dark:bg-brand-espresso relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-brand-charcoal via-brand-slate to-brand-espresso dark:from-brand-espresso dark:via-brand-mocha dark:to-brand-cocoa"></div>
+<section id="contact" class="py-16 md:py-24 bg-brand-sand/50 dark:bg-brand-espresso relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-vanilla via-brand-sand to-brand-copper/20 dark:from-brand-espresso dark:via-brand-mocha dark:to-brand-cocoa"></div>
     <div class="absolute top-1/4 right-0 w-[200px] h-[200px] md:w-[400px] md:h-[400px] bg-brand-copper/10 dark:bg-brand-gold/10 rounded-full blur-3xl"></div>
     <div class="absolute bottom-0 left-1/4 w-[150px] h-[150px] md:w-[300px] md:h-[300px] bg-brand-honey/10 dark:bg-brand-champagne/10 rounded-full blur-3xl"></div>
-    
+
     <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
         <div class="text-center mb-10 md:mb-12 scroll-reveal">
-            <span class="text-sm font-medium text-brand-gold dark:text-brand-champagne uppercase tracking-[0.15em] md:tracking-[0.2em]">Contact</span>
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-medium text-brand-cream mt-3 md:mt-4">Ready to book?</h2>
-            <p class="text-brand-stone dark:text-brand-stoneDark mt-3 md:mt-4 text-sm md:text-base">Call or text to schedule your appointment.</p>
+            <span class="text-sm font-medium text-brand-copper dark:text-brand-gold uppercase tracking-[0.15em] md:tracking-[0.2em]">Contact</span>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-medium text-brand-charcoal dark:text-brand-cream mt-3 md:mt-4">Ready to book?</h2>
+            <p class="text-brand-slate dark:text-brand-stoneDark mt-3 md:mt-4 text-sm md:text-base">Call or text to schedule your appointment.</p>
         </div>
-        
+
         <div class="grid sm:grid-cols-2 gap-4 md:gap-6 scroll-reveal-stagger">
-            <a href="tel:+12045572287" class="group bg-white/5 backdrop-blur-sm border border-brand-gold/10 rounded-xl md:rounded-2xl p-6 md:p-8 text-center active:bg-white/10 md:hover:bg-white/10 md:hover:border-brand-gold/30 transition-all duration-300 flex-align-center">
-                <div class="w-14 h-14 md:w-16 md:h-16 rounded-full bg-brand-gold/20 flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:scale-110 transition-transform">
-                    <iconify-icon icon="lucide:phone" class="text-brand-gold" width="26"></iconify-icon>
+            <a href="tel:+12045572287" class="group bg-brand-cream/70 dark:bg-white/5 backdrop-blur-sm border border-brand-copper/20 dark:border-brand-gold/10 rounded-xl md:rounded-2xl p-6 md:p-8 text-center active:bg-brand-cream/90 dark:active:bg-white/10 md:hover:bg-brand-cream/90 dark:md:hover:bg-white/10 md:hover:border-brand-copper/30 dark:md:hover:border-brand-gold/30 transition-all duration-300 flex-align-center">
+                <div class="w-14 h-14 md:w-16 md:h-16 rounded-full bg-brand-copper/20 dark:bg-brand-gold/20 flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:scale-110 transition-transform">
+                    <iconify-icon icon="lucide:phone" class="text-brand-copper dark:text-brand-gold" width="26"></iconify-icon>
                 </div>
-                <p class="text-xs md:text-sm text-brand-stone dark:text-brand-stoneDark mb-1 md:mb-2">Call or Text</p>
-                <p class="text-xl md:text-2xl font-display font-semibold text-brand-cream">(204) 557-2287</p>
+                <p class="text-xs md:text-sm text-brand-slate dark:text-brand-stoneDark mb-1 md:mb-2">Call or Text</p>
+                <p class="text-xl md:text-2xl font-display font-semibold text-brand-charcoal dark:text-brand-cream">(204) 557-2287</p>
             </a>
-            
-            <a href="https://wa.me/12045572287?text=Hi!%20I'd%20like%20to%20book%20a%20hair%20appointment." target="_blank" class="group bg-white/5 backdrop-blur-sm border border-brand-gold/10 rounded-xl md:rounded-2xl p-6 md:p-8 text-center active:bg-white/10 md:hover:bg-white/10 md:hover:border-brand-gold/30 transition-all duration-300 flex-align-center">
+
+            <a href="https://wa.me/12045572287?text=Hi!%20I'd%20like%20to%20book%20a%20hair%20appointment." target="_blank" class="group bg-brand-cream/70 dark:bg-white/5 backdrop-blur-sm border border-brand-copper/20 dark:border-brand-gold/10 rounded-xl md:rounded-2xl p-6 md:p-8 text-center active:bg-brand-cream/90 dark:active:bg-white/10 md:hover:bg-brand-cream/90 dark:md:hover:bg-white/10 md:hover:border-brand-copper/30 dark:md:hover:border-brand-gold/30 transition-all duration-300 flex-align-center">
                 <div class="w-14 h-14 md:w-16 md:h-16 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:scale-110 transition-transform">
-                    <iconify-icon icon="lucide:message-circle" class="text-green-400" width="26"></iconify-icon>
+                    <iconify-icon icon="lucide:message-circle" class="text-green-500" width="26"></iconify-icon>
                 </div>
-                <p class="text-xs md:text-sm text-brand-stone dark:text-brand-stoneDark mb-1 md:mb-2">WhatsApp</p>
-                <p class="text-xl md:text-2xl font-display font-semibold text-brand-cream">Message Us</p>
+                <p class="text-xs md:text-sm text-brand-slate dark:text-brand-stoneDark mb-1 md:mb-2">WhatsApp</p>
+                <p class="text-xl md:text-2xl font-display font-semibold text-brand-charcoal dark:text-brand-cream">Message Us</p>
             </a>
         </div>
-        
+
         <div class="mt-10 md:mt-12 text-center space-y-2 scroll-reveal">
-            <p class="text-brand-stone dark:text-brand-stoneDark text-xs md:text-sm">Available 7 days a week • All areas of Winnipeg</p>
-            <p class="text-brand-stone/70 dark:text-brand-stoneDark/70 text-xs md:text-sm flex items-center justify-center gap-4">
+            <p class="text-brand-slate dark:text-brand-stoneDark text-xs md:text-sm">Available 7 days a week • All areas of Winnipeg</p>
+            <p class="text-brand-stone dark:text-brand-stoneDark/70 text-xs md:text-sm flex items-center justify-center gap-4">
                 <span class="flex items-center gap-1.5">
                     <iconify-icon icon="lucide:credit-card" width="14"></iconify-icon>
                     e-Transfer

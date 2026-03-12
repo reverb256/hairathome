@@ -1,7 +1,7 @@
 ---
-title: "Book Your Service"
+title: "Book Mobile Hair Appointment Winnipeg | Easy Scheduling"
 subtitle: "Schedule your mobile hair appointment in Winnipeg"
-description: "Easy online booking for mobile hair services in Winnipeg"
+description: "Easy booking for mobile hair services in Winnipeg. Call or text (204) 557-2287 or book online. Same-day appointments available."
 date: 2025-01-01T00:00:00-06:00
 ---
 

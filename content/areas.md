@@ -1,7 +1,7 @@
 ---
-title: "Areas We Serve"
+title: "Service Areas Winnipeg | Mobile Hair Coverage"
 subtitle: "Proud to serve the entire Winnipeg metropolitan area"
-description: "Mobile hair services available throughout Winnipeg and surrounding areas"
+description: "Mobile hair services available throughout Winnipeg MB. Serving Downtown, St. Vital, St. Boniface, St. James, Charleswood, Transcona & all areas."
 date: 2025-01-01T00:00:00-06:00
 ---
 

@@ -1,7 +1,7 @@
 ---
-title: "Gallery"
-subtitle: "Transformations and hairstyles by our talented stylist"
-description: "Browse our portfolio of hair transformations and styling work"
+title: "Hair Gallery Winnipeg | Before & After Transformations"
+subtitle: "Real results from our mobile styling sessions"
+description: "Browse our portfolio of hair transformations in Winnipeg. Color, cuts, bridal & special occasion styles. Get inspired for your next look!"
 date: 2025-01-01T00:00:00-06:00
 ---
 
