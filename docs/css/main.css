@@ -1,4 +1,4 @@
-/* Warm, professional color scheme for Moms at Home */
+/* Warm, professional color scheme for Hair@Home */
 :root {
   --brand-cream: #f9f6f1;
   --brand-ivory: #f3ede5;
@@ -10,6 +10,12 @@
   --brand-stone: #7d756c;
   --brand-sage: #8a9178;
   --brand-olive: #6b6f5c;
+  --brand-dark-warm: #4a403a;
+  --brand-warm-gray: #8b8179;
+  --brand-soft-peach: #f5e6d3;
+  --brand-soft-pink: #f0d9d9;
+  --accent-rose: #d4a598;
+  --accent-warm: #c9967a;
   --text-primary: #2d2a27;
   --text-secondary: #645f5a;
   --background-light: #faf8f5;
@@ -28,6 +34,12 @@
   --brand-stone: #a8a09a;
   --brand-sage: #a0a890;
   --brand-olive: #9ca088;
+  --brand-dark-warm: #d9cfc7;
+  --brand-warm-gray: #a8a09a;
+  --brand-soft-peach: #c9b5a8;
+  --brand-soft-pink: #d9a898;
+  --accent-rose: #e8c4b8;
+  --accent-warm: #dab0a0;
   --text-primary: #f0ebe6;
   --text-secondary: #a8a09a;
   --background-light: #2a2725;
@@ -128,6 +140,51 @@
   100% { opacity: 1; transform: scale(1); }
 }
 
+/* Focus visible styles for keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--brand-copper);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.dark :focus-visible {
+  outline-color: var(--brand-copper);
+  outline-offset: 2px;
+}
+
+/* Remove outline for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Enhanced focus for interactive elements */
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible {
+  outline: 3px solid var(--brand-copper);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.dark a:focus-visible,
+.dark button:focus-visible,
+.dark [role="button"]:focus-visible {
+  outline-color: var(--brand-copper);
+}
+
+/* Skip link styles */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 .animate-fade-in {
   animation: fadeIn 0.8s ease-out forwards;
 }
@@ -138,10 +195,12 @@
 
 .animate-pulse-soft {
   animation: pulse-soft 2s ease-in-out infinite;
+  will-change: opacity;
 }
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
+  will-change: transform;
 }
 
 .animate-fade-in-up {
