@@ -3,6 +3,9 @@ import { getEntry } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const entry = await getEntry('pages', 'faq');
+if (!entry) {
+  throw new Error('FAQ page content not found');
+}
 const { Content } = await entry.render();
 ---
 

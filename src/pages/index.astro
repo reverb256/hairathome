@@ -198,11 +198,11 @@ const galleryImages = [
       </div>
 
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
-        {galleryImages.map((src, index) => (
-          <div key={index} class="gallery-image group relative aspect-square rounded-xl md:rounded-2xl overflow-hidden shadow-lg ring-1 ring-brand-copper/10 dark:ring-brand-gold/10">
+        {galleryImages.map((src) => (
+          <div class="gallery-image group relative aspect-square rounded-xl md:rounded-2xl overflow-hidden shadow-lg ring-1 ring-brand-copper/10 dark:ring-brand-gold/10">
             <img
               src={src}
-              alt={`Mobile hair styling ${index + 1}`}
+              alt="Mobile hair styling"
               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               loading="lazy"
             />

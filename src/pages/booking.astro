@@ -3,6 +3,9 @@ import { getEntry } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const entry = await getEntry('pages', 'booking');
+if (!entry) {
+  throw new Error('Booking page content not found');
+}
 const { Content } = await entry.render();
 ---
 
