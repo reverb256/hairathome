@@ -16,7 +16,7 @@ const {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const imageURL = new URL(image, Astro.site);
 
-// These components will be created in later tasks
+import { ViewTransitions } from 'astro:transitions';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import DarkModeToggle from '../components/ui/DarkModeToggle.astro';
