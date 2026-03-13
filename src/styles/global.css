@@ -30,3 +30,20 @@ html:not(.dark) {
 html.dark ::-webkit-scrollbar-track {
   background: #2D2520;
 }
+
+/* Prose styling for markdown content */
+.prose h2 {
+  @apply text-2xl font-display font-medium text-brand-charcoal dark:text-brand-cream mt-8 mb-4;
+}
+.prose h3 {
+  @apply text-xl font-display font-medium text-brand-charcoal dark:text-brand-cream mt-6 mb-3;
+}
+.prose p {
+  @apply mb-4 leading-relaxed text-brand-slate dark:text-brand-stoneDark;
+}
+.prose ul {
+  @apply mb-4 list-disc pl-6 space-y-2;
+}
+.prose strong {
+  @apply font-semibold text-brand-copper dark:text-brand-gold;
+}
