@@ -8,7 +8,6 @@ const services = defineCollection({
     price: z.string(),
     duration: z.string(),
     description: z.string(),
-    slug: z.string(),
     image: z.string().optional(),
   }),
 });
