@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceCard from '../../components/service/ServiceCard.astro';
+
+const services = await getCollection('services');
+---
+
+<BaseLayout
+  title="Services | Hair@Home Winnipeg"
+  description="Professional mobile hair services in Winnipeg. Haircuts, color, styling, and more at your convenience."
+>
+  <section class="py-16 md:py-24 bg-brand-vanilla/50 dark:bg-brand-espresso relative overflow-hidden min-h-screen">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <!-- Header -->
+      <div class="text-center mb-10 md:mb-16">
+        <span class="text-sm font-medium text-brand-copper dark:text-brand-gold uppercase tracking-[0.15em] md:tracking-[0.2em]">
+          Services
+        </span>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-display font-medium text-brand-charcoal dark:text-brand-cream mt-3 md:mt-4">
+          What We Offer
+        </h1>
+        <p class="text-brand-slate dark:text-brand-stoneDark max-w-xl mx-auto mt-3 md:mt-4 text-sm md:text-base">
+          Professional hair services for the whole family at straightforward prices.
+        </p>
+      </div>
+
+      <!-- Services Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        {services.map((service) => (
+          <ServiceCard service={service} />
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

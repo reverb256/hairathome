@@ -1,0 +1,115 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const services = await getCollection('services');
+  return services.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const { title, price, duration, description, icon } = entry.data;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  type="article"
+>
+  <div class="max-w-4xl mx-auto px-6 py-12">
+    <article class="bg-white dark:bg-zinc-900 rounded-2xl shadow-xl shadow-zinc-200/50 dark:shadow-zinc-900/50 border border-zinc-300 dark:border-zinc-600 p-8 md:p-12">
+      <header class="text-center mb-10">
+        <div class="w-20 h-20 rounded-full bg-zinc-50 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-600 flex items-center justify-center text-zinc-900 dark:text-white text-2xl mx-auto mb-6">
+          {icon && <iconify-icon icon={icon} width={32} />}
+        </div>
+        <h1 class="text-3xl md:text-4xl font-medium tracking-tight text-zinc-900 dark:text-white mb-4">
+          {title}
+        </h1>
+        <div class="text-2xl font-medium text-zinc-900 dark:text-white mb-3">
+          {price}
+        </div>
+        <p class="text-lg text-zinc-700 dark:text-zinc-300 max-w-2xl mx-auto">
+          {description}
+        </p>
+        <div class="flex items-center justify-center gap-2 text-zinc-600 dark:text-zinc-400 mt-2">
+          <iconify-icon icon="lucide:clock" width={16} />
+          <span>{duration}</span>
+        </div>
+      </header>
+
+      <div class="prose prose-zinc dark:prose-invert max-w-none text-zinc-700 dark:text-zinc-300">
+        <Content />
+      </div>
+
+      <div class="mt-12 text-center">
+        <a
+          href="tel:+12045572287"
+          class="inline-flex justify-center items-center px-8 py-4 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 rounded-lg hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-all text-base font-medium shadow-lg shadow-zinc-900/10 dark:shadow-white/10"
+        >
+          <iconify-icon icon="lucide:phone" class="mr-2" width={20} />
+          Book This Service
+        </a>
+      </div>
+    </article>
+
+    <!-- Back to Services -->
+    <div class="mt-8 text-center">
+      <a
+        href="/services/"
+        class="inline-flex items-center text-brand-copper dark:text-brand-gold hover:underline"
+      >
+        <iconify-icon icon="lucide:arrow-left" class="mr-2" width={16} />
+        Back to Services
+      </a>
+    </div>
+  </div>
+
+  <!-- Service Schema -->
+  <script is:inline type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": title,
+    "description": description,
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Hair@Home",
+      "telephone": "(204) 557-2287",
+      "email": "info@hairathome.ca",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Winnipeg",
+        "addressRegion": "MB",
+        "addressCountry": "CA"
+      },
+      "areaServed": "Winnipeg"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": price,
+      "priceCurrency": "CAD",
+      "availability": "https://schema.org/InStock"
+    }
+  })} />
+</BaseLayout>
+
+<style>
+  :global(article h2) {
+    @apply text-2xl font-display font-medium text-zinc-900 dark:text-white mt-8 mb-4;
+  }
+  :global(article h3) {
+    @apply text-xl font-display font-medium text-zinc-900 dark:text-white mt-6 mb-3;
+  }
+  :global(article p) {
+    @apply mb-4 leading-relaxed;
+  }
+  :global(article ul) {
+    @apply mb-4 list-disc pl-6 space-y-2;
+  }
+  :global(article strong) {
+    @apply font-semibold text-brand-copper dark:text-brand-gold;
+  }
+</style>

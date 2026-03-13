@@ -6,8 +6,27 @@
     <meta name="theme-color" content="#FBF8F3" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#2D2520" media="(prefers-color-scheme: dark)">
     <meta name="color-scheme" content="light dark">
-    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
+    <title>{{ if .IsHome }}Mobile Hair Stylist Winnipeg | Hair@Home - At-Home Haircuts & Color{{ else }}{{ .Title }} | Hair@Home Winnipeg{{ end }}</title>
     <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{ .Permalink }}">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}">
+    <meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta property="og:image" content="{{ if .Params.image }}{{ .Site.BaseURL }}{{ .Params.image }}{{ else }}{{ .Site.BaseURL }}images/stock/hero-02-happy-client_00001_.png{{ end }}">
+    <meta property="og:image:alt" content="{{ if .Params.image }}{{ .Title }}{{ else }}Hair@Home mobile hair styling service{{ end }}">
+    <meta property="og:locale" content="en_CA">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ .Permalink }}">
+    <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}">
+    <meta name="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta name="twitter:image" content="{{ if .Params.image }}{{ .Site.BaseURL }}{{ .Params.image }}{{ else }}{{ .Site.BaseURL }}images/stock/hero-02-happy-client_00001_.png{{ end }}">
 
     <link rel="icon" type="image/svg+xml" href="{{ .Site.BaseURL }}favicon.svg">
     <link rel="icon" type="image/x-icon" href="{{ .Site.BaseURL }}favicon.ico">
@@ -60,6 +79,7 @@
 
     <link rel="stylesheet" href="{{ .Site.BaseURL }}assets/css/main.css">
     <script src="{{ .Site.BaseURL }}assets/js/app.js" defer></script>
+    <script src="{{ .Site.BaseURL }}js/animations.js" defer></script>
 
     <script type="application/ld+json">
     {

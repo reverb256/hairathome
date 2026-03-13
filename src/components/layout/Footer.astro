@@ -1,0 +1,66 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-brand-sand/50 dark:bg-brand-mocha border-t border-brand-copper/10 dark:border-brand-gold/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Brand -->
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <img
+            src="/images/brand/logo-hero.svg"
+            alt="Hair@Home"
+            class="h-8 w-auto dark:hidden"
+            width="32"
+            height="32"
+          />
+          <img
+            src="/images/brand/logo-hero-dark.svg"
+            alt="Hair@Home"
+            class="h-8 w-auto hidden dark:block"
+            width="32"
+            height="32"
+          />
+          <span class="font-display font-semibold text-lg text-brand-charcoal dark:text-brand-cream">
+            Hair@Home
+          </span>
+        </div>
+        <p class="text-sm text-brand-slate dark:text-brand-stoneDark">
+          Professional mobile hair stylist in Winnipeg, MB. Quality service at your convenience.
+        </p>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="font-display font-semibold text-brand-charcoal dark:text-brand-cream mb-4">Contact</h3>
+        <ul class="space-y-2 text-sm text-brand-slate dark:text-brand-stoneDark">
+          <li>
+            <a href="tel:+12045572287" class="hover:text-brand-copper dark:hover:text-brand-gold transition-colors">
+              (204) 557-2287
+            </a>
+          </li>
+          <li>
+            <a href="mailto:info@hairathome.ca" class="hover:text-brand-copper dark:hover:text-brand-gold transition-colors">
+              info@hairathome.ca
+            </a>
+          </li>
+          <li>Winnipeg, MB, Canada</li>
+        </ul>
+      </div>
+
+      <!-- Hours -->
+      <div>
+        <h3 class="font-display font-semibold text-brand-charcoal dark:text-brand-cream mb-4">Hours</h3>
+        <p class="text-sm text-brand-slate dark:text-brand-stoneDark">
+          Available 7 days a week<br />
+          By appointment
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-8 pt-8 border-t border-brand-copper/10 dark:border-brand-gold/10 text-center text-sm text-brand-stone dark:text-brand-stoneDark">
+      <p>&copy; {currentYear} Hair@Home. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hairathome.ca/sitemap.xml
+Sitemap: https://reverb256.github.io/hairathome/sitemap.xml
 
 # Block common non-content paths
 Disallow: /api/

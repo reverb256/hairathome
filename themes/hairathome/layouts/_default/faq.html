@@ -1,0 +1,82 @@
+{{ define "main" }}
+<div class="max-w-4xl mx-auto px-6 py-12">
+    <article class="bg-white dark:bg-zinc-900 rounded-2xl shadow-xl shadow-zinc-200/50 dark:shadow-zinc-900/50 border border-zinc-300 dark:border-zinc-600 p-8 md:p-12">
+        <header class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-medium tracking-tight text-zinc-900 dark:text-white mb-6">{{ .Title }}</h1>
+            {{ if .Params.subtitle }}
+            <p class="text-lg text-zinc-600 dark:text-zinc-400">{{ .Params.subtitle }}</p>
+            {{ end }}
+        </header>
+
+        <div class="prose prose-zinc dark:prose-invert max-w-none text-zinc-700 dark:text-zinc-300">
+            {{ .Content }}
+        </div>
+    </article>
+</div>
+
+<!-- FAQPage Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What areas in Winnipeg do you serve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We proudly serve all areas within Winnipeg, including Central, South, West, and North Winnipeg. Our mobile salon travels throughout the city limits, serving Downtown Winnipeg (Exchange District, The Forks, Osborne Village), South Winnipeg (St. Boniface, St. Vital, Fort Garry), West Winnipeg (Charleswood, St. James, Assiniboine Park), North Winnipeg (Seven Oaks, River Heights, St. Johns), and East Winnipeg (Transcona, Elmwood)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a mobile hair appointment take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Appointment length varies depending on the service: Basic haircut takes 30-45 minutes, haircut with style takes 45-60 minutes, color services take 1.5-3 hours, special occasion styling takes 1-2 hours, and full treatment service takes 2-3 hours."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to provide anything for the service?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our mobile service setup is fully equipped with all necessary tools, equipment, and trusted products. You just need to provide an electrical outlet (standard 120V), adequate lighting, and comfortable seating. Access to a bathroom is helpful but not always required."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the service sanitary?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we maintain the highest standards of hygiene and sanitation. All tools are thoroughly sanitized between clients using hospital-grade disinfectants. Single-use items are disposed of after each client. We follow all health and safety protocols required by the province of Manitoba."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What payment methods do you accept?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We accept cash, e-transfer (preferred for deposits), credit card payments through our mobile terminal, and debit card payments. A 25% deposit may be required for first-time clients or services over $200."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are you insured?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, I am a fully insured service provider with full liability insurance for your peace of mind. I have Manitoba Health and Safety training and stay current with techniques through regular training."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you work with all hair types?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely! I have extensive experience working with all hair types, textures, and conditions including fine, medium, and coarse hair; straight, wavy, curly, and coily textures; color-treated, damaged, or chemically processed hair; ethnic hair types and cultural styling; men's and women's hair; and children's hair (age 8+)."
+      }
+    }
+  ]
+}
+</script>
+{{ end }}
