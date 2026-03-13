@@ -1,0 +1,19 @@
+# Code Owners for hairathome
+# See https://docs.github.com/en/repositories/managing-your-repositorys-health-and-settings/defining-the-owners-of-a-codebase
+
+# All code
+* @reverb256
+
+# Hugo configuration
+config.* @reverb256
+hugo.toml @reverb256
+
+# Content and layouts
+/content/** @reverb256
+/layouts/** @reverb256
+
+# Static assets
+/static/** @reverb256
+
+# Theme customization
+/assets/** @reverb256

@@ -7,14 +7,19 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {{ range .Pages }}
-        <div class="bg-white dark:bg-zinc-900 rounded-2xl shadow-lg shadow-zinc-200/50 dark:shadow-zinc-900/50 border border-zinc-300 dark:border-zinc-600 p-8 hover:shadow-xl transition-shadow duration-300">
-            <div class="w-16 h-16 rounded-lg bg-zinc-50 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-600 flex items-center justify-center text-zinc-900 dark:text-white text-2xl mb-6">
-                <iconify-icon icon="lucide:scissors" width="24" stroke-width="1.5"></iconify-icon>
+        <div class="bg-brand-cream dark:bg-zinc-900 rounded-2xl shadow-lg shadow-zinc-200/50 dark:shadow-zinc-900/50 border border-brand-copper/10 dark:border-zinc-600 overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
+            {{ $serviceImage := printf "images/stock/service-%s-square_00001_.png" .Slug }}
+            <div class="aspect-square overflow-hidden">
+                <img src="{{ $serviceImage }}"
+                     alt="{{ .Title }} professional service"
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             </div>
-            <h3 class="text-xl font-medium text-zinc-900 dark:text-white mb-3">{{ .Title }}</h3>
-            <p class="text-zinc-700 dark:text-zinc-700 mb-4">{{ .Params.description }}</p>
-            <div class="text-lg font-medium text-zinc-900 dark:text-white mb-6">{{ .Params.price }}</div>
-            <a href="{{ .RelPermalink }}" class="inline-block bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 rounded-lg px-6 py-3 hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors font-medium">View Service Details</a>
+            <div class="p-6">
+                <h3 class="text-xl font-medium text-zinc-900 dark:text-white mb-3">{{ .Title }}</h3>
+                <p class="text-zinc-700 dark:text-zinc-700 mb-4 line-clamp-2">{{ .Params.description }}</p>
+                <div class="text-lg font-medium text-zinc-900 dark:text-white mb-6">{{ .Params.price }}</div>
+                <a href="{{ .RelPermalink }}" class="inline-block w-full text-center bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 rounded-lg px-6 py-3 hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors font-medium">View Service Details</a>
+            </div>
         </div>
         {{ end }}
     </div>

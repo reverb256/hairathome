@@ -1,7 +1,9 @@
 ---
 title: "Frequently Asked Questions"
+type: "faq"
+layout: "faq"
 subtitle: "Everything you need to know about our mobile hair services"
-description: "Common questions about mobile hair styling services in Winnipeg"
+description: "Common questions about mobile hair styling services in Winnipeg. Learn about booking, pricing, areas served, and what to expect."
 date: 2025-01-01T00:00:00-06:00
 ---
 
