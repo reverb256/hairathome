@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#f9f5ee" />
+  <circle cx="400" cy="250" r="120" fill="#d4a998" />
+  <path d="M300 400 Q400 350, 500 400" stroke="#3d2e26" stroke-width="8" fill="#e8c4a8" />
+  
+  <!-- Hair styling examples -->
+  <path d="M250 200 Q400 100, 550 200" stroke="#333" stroke-width="12" fill="none" />
+  <path d="M280 220 Q400 140, 520 220" stroke="#444" stroke-width="8" fill="none" />
+  <path d="M260 250 Q400 180, 540 250" stroke="#555" stroke-width="6" fill="none" />
+  
+  <!-- Before/after style elements -->
+  <rect x="100" y="450" width="250" height="40" rx="20" fill="#0a0a0a" opacity="0.9"/>
+  <text x="225" y="475" text-anchor="middle" font-family="Arial" font-size="18" fill="#f3e6d0">Before</text>
+  <rect x="450" y="450" width="250" height="40" rx="20" fill="#d4af37" opacity="0.9"/>
+  <text x="575" y="475" text-anchor="middle" font-family="Arial" font-size="18" fill="#f9f5ee">After</text>
+  
+  <text x="400" y="550" text-anchor="middle" font-family="Poppins, sans-serif" font-size="24" fill="#3d2e26">Premium Transformation</text>
+</svg>

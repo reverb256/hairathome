@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <!-- House shape -->
+  <path d="M200 40 L340 130 L340 320 L60 320 L60 130 Z" 
+        fill="none" 
+        stroke="#C9A86C" 
+        stroke-width="4" 
+        stroke-linejoin="round"/>
+  
+  <!-- Roof accent line -->
+  <path d="M200 40 L340 130" 
+        stroke="#D4AF37" 
+        stroke-width="4" 
+        stroke-linecap="round"/>
+  
+  <!-- HAIR text -->
+  <text x="200" y="175" 
+        font-family="Georgia, 'Times New Roman', serif" 
+        font-size="42" 
+        font-weight="500" 
+        fill="#C9A86C" 
+        text-anchor="middle"
+        letter-spacing="8">HAIR</text>
+  
+  <!-- @ symbol with hair strand curve -->
+  <path d="M175 205 Q200 195 225 205" 
+        stroke="#D4AF37" 
+        stroke-width="2" 
+        fill="none"/>
+  <text x="200" y="215" 
+        font-family="Georgia, 'Times New Roman', serif" 
+        font-size="24" 
+        fill="#D4AF37" 
+        text-anchor="middle">@</text>
+  
+  <!-- HOME text -->
+  <text x="200" y="260" 
+        font-family="Georgia, 'Times New Roman', serif" 
+        font-size="42" 
+        font-weight="500" 
+        fill="#C9A86C" 
+        text-anchor="middle"
+        letter-spacing="5">HOME</text>
+  
+  <!-- Scissors -->
+  <g transform="translate(200, 320) scale(0.8)">
+    <ellipse cx="-20" cy="0" rx="14" ry="10" fill="none" stroke="#D4AF37" stroke-width="2.5"/>
+    <ellipse cx="20" cy="0" rx="14" ry="10" fill="none" stroke="#D4AF37" stroke-width="2.5"/>
+    <line x1="-10" y1="0" x2="0" y2="-25" stroke="#D4AF37" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="10" y1="0" x2="0" y2="-25" stroke="#D4AF37" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Decorative hair strand waves -->
+  <path d="M100 150 Q150 140 200 150 Q250 160 300 150" 
+        stroke="#D4AF37" 
+        stroke-width="1.5" 
+        fill="none" 
+        opacity="0.4"/>
+  <path d="M110 280 Q160 290 200 280 Q240 270 290 280" 
+        stroke="#D4AF37" 
+        stroke-width="1.5" 
+        fill="none" 
+        opacity="0.4"/>
+</svg>
