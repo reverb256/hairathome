@@ -1,21 +1,130 @@
 ---
-import '../styles/global.css';
-
 interface Props {
-  title?: string;
+  title: string;
+  description?: string;
+  image?: string;
+  type?: 'website' | 'article';
 }
 
-const { title = 'Hair@Home' } = Astro.props;
+const {
+  title,
+  description = 'Professional mobile hair stylist in Winnipeg, MB. Quality haircuts, color & styling at your convenience.',
+  image = '/images/stock/hero-02-happy-client_00001_.png',
+  type = 'website',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const imageURL = new URL(image, Astro.site);
+
+// These components will be created in later tasks
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import DarkModeToggle from '../components/ui/DarkModeToggle.astro';
+import '../styles/global.css';
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-ca" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#FBF8F3" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#2D2520" media="(prefers-color-scheme: dark)" />
+    <meta name="color-scheme" content="light dark" />
+
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={imageURL} />
+    <meta property="og:image:alt" content={title} />
+    <meta property="og:locale" content="en_CA" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageURL} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Preload -->
+    <link rel="preload" href="/images/brand/logo-hero.svg" as="image" type="image/svg+xml" />
+    <link rel="preload" href="/images/brand/logo-hero-dark.svg" as="image" type="image/svg+xml" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Hair@Home",
+        "image": "https://reverb256.github.io/hairathome/images/logo.png",
+        "telephone": "(204) 557-2287",
+        "email": "info@hairathome.ca",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Winnipeg",
+          "addressRegion": "MB",
+          "addressCountry": "CA"
+        },
+        "areaServed": "Winnipeg",
+        "serviceType": "Mobile Hair Styling",
+        "description": "Professional mobile hair styling services in Winnipeg. Quality haircuts at your convenience.",
+        "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 08:00-20:00",
+        "priceRange": "$$"
+      }
+    </script>
+
+    <ViewTransitions />
   </head>
-  <body class="bg-brand-cream text-brand-charcoal font-body dark:bg-brand-charcoal dark:text-brand-cream">
-    <slot />
+  <body class="bg-brand-cream dark:bg-brand-espresso text-brand-charcoal dark:text-brand-cream font-body antialiased selection:bg-brand-copper/30 selection:text-brand-charcoal">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-brand-charcoal dark:focus:bg-brand-gold focus:text-brand-cream dark:focus:text-brand-espresso focus:rounded-lg focus:font-medium focus:shadow-lg">
+      Skip to main content
+    </a>
+    <Header />
+    <main role="main" id="main-content">
+      <slot />
+    </main>
+    <Footer />
+    <DarkModeToggle />
   </body>
 </html>
+
+<style is:global>
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  .focus\:not-sr-only:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: inherit;
+    margin: inherit;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+</style>
