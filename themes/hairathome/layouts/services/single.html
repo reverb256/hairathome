@@ -22,4 +22,51 @@
         </div>
     </article>
 </div>
+
+<!-- Service Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "{{ .Title }}",
+  "description": "{{ .Params.description }}",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Hair@Home",
+    "telephone": "(204) 557-2287",
+    "email": "info@hairathome.ca",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Winnipeg",
+      "addressRegion": "MB",
+      "addressCountry": "CA"
+    },
+    "areaServed": "Winnipeg"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Winnipeg"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "{{ .Params.price }}",
+    "priceCurrency": "CAD",
+    "availability": "https://schema.org/InStock"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Hair Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "{{ .Title }}"
+        }
+      }
+    ]
+  },
+  "url": "{{ .Permalink }}"
+}
+</script>
 {{ end }}

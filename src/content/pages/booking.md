@@ -1,0 +1,33 @@
+---
+title: "Book Mobile Hair Appointment Winnipeg | Easy Scheduling"
+description: "Easy booking for mobile hair services in Winnipeg. Call or text (204) 557-2287 or book online. Same-day appointments available."
+---
+
+## How to Book Your Appointment
+
+Booking your mobile hair service is simple and convenient. Fill out the form below, and I'll contact you within 24 hours to confirm your appointment and discuss any specific requirements.
+
+## What to Expect
+
+Once you submit your booking request:
+1. **Confirmation**: I'll contact you within 24 hours to confirm availability
+2. **Consultation**: We'll discuss your hair needs and practical requirements
+3. **Preparation**: I'll arrive 15 minutes early to set up my mobile service station
+4. **Service**: Enjoy reliable hair services that save you time and hassle
+5. **Aftercare**: Receive practical tips for maintaining your style at home
+
+## Preparation Tips
+
+- Ensure adequate lighting and access to an electrical outlet
+- Have a comfortable chair available
+- For longer services, access to water is helpful but not required
+- Remove any valuable items from the service area
+- Wear a button-up shirt for easy changing after color services
+
+## Payment Options
+
+- Cash
+- E-transfer
+- Credit card (mobile terminal available)
+
+A 25% deposit may be required for first-time clients or services over $200.
