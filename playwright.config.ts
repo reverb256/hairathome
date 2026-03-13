@@ -18,7 +18,7 @@ export default defineConfig({
     { name: 'Mobile Chrome', use: { ...devices['Pixel 5'] } },
   ],
   webServer: {
-    command: 'cd /data/projects/hairathome && npm run astro:build && npm run astro:preview',
+    command: 'npm run astro:build && npm run astro:preview',
     url: 'http://localhost:4321',
     reuseExistingServer: !process.env.CI,
     timeout: 120000,
