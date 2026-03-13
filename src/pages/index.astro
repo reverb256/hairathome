@@ -1,16 +1,280 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ServiceCard from '../components/service/ServiceCard.astro';
+
+const services = await getCollection('services');
+const galleryImages = [
+  '/images/movie-frames-enhanced/frame-0026-enhanced.jpg',
+  '/images/movie-frames-enhanced/frame-0033-enhanced.jpg',
+  '/images/movie-frames-enhanced/frame-0025-enhanced.jpg',
+  '/images/movie-frames-enhanced/frame-0028-enhanced.jpg',
+  '/images/movie-frames-enhanced/frame-0027-enhanced.jpg',
+  '/images/movie-frames-enhanced/frame-0034-enhanced.jpg',
+  '/images/movie-frames-enhanced/frame-0031-enhanced.jpg',
+  '/images/movie-frames-enhanced/frame-0030-enhanced.jpg',
+  '/images/movie-frames-enhanced/frame-0032-enhanced.jpg',
+  '/images/movie-frames-enhanced/frame-0038-enhanced.jpg',
+];
 ---
 
-<BaseLayout title="Hair@Home - Mobile Hair Stylist Winnipeg">
-  <main class="min-h-screen flex items-center justify-center">
-    <div class="text-center animate-fade-in">
-      <h1 class="text-4xl font-display font-bold text-brand-copper mb-4">
-        Hair@Home
-      </h1>
-      <p class="text-lg text-brand-mocha">
-        Professional mobile hair stylist in Winnipeg, MB
-      </p>
+<BaseLayout
+  title="Mobile Hair Stylist Winnipeg | Hair@Home - At-Home Haircuts & Color"
+  description="Professional mobile hair stylist in Winnipeg, MB. Quality haircuts, color & styling at your convenience. Serving all areas. Book today: (204) 557-2287"
+>
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center pt-20 pb-12 md:pt-24 md:pb-16 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-cream via-brand-vanilla to-brand-sand/40 dark:from-brand-espresso dark:via-brand-mocha dark:to-brand-cocoa/30"></div>
+
+    <div class="absolute top-0 right-0 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-brand-copper/15 dark:bg-brand-gold/10 rounded-full blur-3xl animate-float" data-parallax="0.3"></div>
+    <div class="absolute bottom-0 left-0 w-[250px] h-[250px] md:w-[500px] md:h-[500px] bg-brand-blush/20 dark:bg-brand-amber/10 rounded-full blur-3xl animate-float-slow" data-parallax="0.2"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+        <div class="space-y-6 md:space-y-8 animate-slide-up">
+          <div class="inline-flex items-center gap-3 px-4 py-2 md:px-5 md:py-2.5 rounded-full bg-brand-cream/70 dark:bg-white/5 backdrop-blur-sm border border-brand-copper/20 dark:border-brand-gold/20 shadow-sm">
+            <span class="relative flex h-2.5 w-2.5">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-copper dark:bg-brand-gold opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-copper dark:bg-brand-gold"></span>
+            </span>
+            <span class="text-sm font-medium text-brand-charcoal dark:text-brand-cream">Mobile hair services in Winnipeg</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-medium tracking-tight text-brand-charcoal dark:text-brand-cream leading-[1.05]">
+            Haircuts<br>
+            <span class="animate-shimmer inline-block bg-gradient-to-r from-brand-copper via-brand-terracotta to-brand-honey bg-clip-text text-transparent">made simple</span>
+          </h1>
+
+          <p class="text-base sm:text-lg md:text-xl text-brand-slate dark:text-brand-stoneDark max-w-lg leading-relaxed">
+            Quality haircuts at straightforward prices. We come to you — home, office, or anywhere in Winnipeg.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <a href="tel:+12045572287" class="inline-flex justify-center items-center px-6 py-3.5 md:px-8 md:py-4 bg-brand-honey dark:bg-brand-gold text-brand-cream dark:text-brand-espresso rounded-xl font-medium shadow-lg hover:scale-105 transition-transform">
+              Call Now
+            </a>
+            <a href="#services" class="inline-flex justify-center items-center px-6 py-3.5 md:px-8 md:py-4 border-2 border-brand-copper/30 dark:border-brand-gold/30 text-brand-charcoal dark:text-brand-cream rounded-xl font-medium hover:bg-brand-copper/10 dark:hover:bg-brand-gold/10 transition-colors">
+              See Services
+            </a>
+          </div>
+
+          <div class="flex items-center justify-center gap-6 md:gap-8 pt-2">
+            <div class="text-center">
+              <p class="text-xl md:text-2xl font-display font-semibold text-brand-charcoal dark:text-brand-cream">7</p>
+              <p class="text-xs text-brand-stone uppercase tracking-wider">Days</p>
+            </div>
+            <div class="w-px h-10 bg-brand-copper/20 dark:bg-brand-gold/20"></div>
+            <div class="text-center">
+              <p class="text-xl md:text-2xl font-display font-semibold text-brand-charcoal dark:text-brand-cream">All</p>
+              <p class="text-xs text-brand-stone uppercase tracking-wider">Winnipeg</p>
+            </div>
+            <div class="w-px h-10 bg-brand-copper/20 dark:bg-brand-gold/20"></div>
+            <div class="text-center">
+              <p class="text-xl md:text-2xl font-display font-semibold text-brand-charcoal dark:text-brand-cream">$20+</p>
+              <p class="text-xs text-brand-stone uppercase tracking-wider">From</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative animate-fade-in flex items-center justify-center order-first lg:order-last">
+          <div class="absolute w-[280px] h-[280px] md:w-[500px] md:h-[500px] bg-gradient-to-br from-brand-copper/20 via-brand-honey/15 to-brand-terracotta/10 dark:from-brand-gold/15 dark:via-brand-champagne/10 dark:to-brand-amber/10 rounded-full blur-3xl"></div>
+          <img
+            src="/images/brand/logo-hero.svg"
+            alt="Hair@Home"
+            class="relative w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 dark:hidden drop-shadow-2xl"
+          />
+          <img
+            src="/images/brand/logo-hero-dark.svg"
+            alt="Hair@Home"
+            class="relative w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 hidden dark:block drop-shadow-2xl"
+          />
+        </div>
+      </div>
     </div>
-  </main>
+  </section>
+
+  <!-- Services Preview Section -->
+  <section id="services" class="py-16 md:py-24 bg-brand-vanilla/50 dark:bg-brand-espresso relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand-copper/30 dark:via-brand-gold/30 to-transparent"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-10 md:mb-16">
+        <span class="text-sm font-medium text-brand-copper dark:text-brand-gold uppercase tracking-[0.15em] md:tracking-[0.2em]">Services</span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-medium text-brand-charcoal dark:text-brand-cream mt-3 md:mt-4">What We Offer</h2>
+        <p class="text-brand-slate dark:text-brand-stoneDark max-w-xl mx-auto mt-3 md:mt-4 text-sm md:text-base">Professional hair services for the whole family at straightforward prices.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        {services.map((service) => (
+          <ServiceCard service={service} />
+        ))}
+      </div>
+
+      <div class="mt-8 text-center">
+        <a
+          href="/services/"
+          class="inline-flex items-center text-brand-copper dark:text-brand-gold hover:underline font-medium"
+        >
+          View All Services
+          <iconify-icon icon="lucide:arrow-right" class="ml-2" width={16} />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-16 md:py-24 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-brand-sand/30 to-brand-vanilla dark:from-brand-espresso dark:to-brand-mocha"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative">
+      <div class="grid lg:grid-cols-2 gap-10 md:gap-16 items-center">
+        <div class="relative order-last lg:order-first">
+          <div class="grid grid-cols-2 gap-3 md:gap-4">
+            <div class="aspect-[3/4] rounded-xl md:rounded-2xl overflow-hidden shadow-lg md:shadow-xl ring-1 ring-brand-copper/10 dark:ring-brand-gold/10">
+              <img src="/images/movie-frames/frame-0033.jpg" alt="Hair coloring process" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+            <div class="aspect-[3/4] rounded-xl md:rounded-2xl overflow-hidden shadow-lg md:shadow-xl md:mt-8 ring-1 ring-brand-copper/10 dark:ring-brand-gold/10">
+              <img src="/images/stock/gallery-01-curly_00001_.png" alt="Curly hair specialist" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-6 md:space-y-8 text-center lg:text-left">
+          <div>
+            <span class="text-sm font-medium text-brand-copper dark:text-brand-gold uppercase tracking-[0.15em] md:tracking-[0.2em]">Why Mobile</span>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-medium text-brand-charcoal dark:text-brand-cream mt-3 md:mt-4">Haircuts at your convenience</h2>
+          </div>
+
+          <p class="text-base md:text-lg text-brand-slate dark:text-brand-stoneDark leading-relaxed">
+            No travel time. No waiting rooms. Quality haircuts where you need them, when you need them.
+          </p>
+
+          <div class="space-y-4 md:space-y-6">
+            <div class="flex gap-4 justify-start">
+              <div class="w-11 h-11 md:w-12 md:h-12 rounded-xl bg-brand-copper/10 dark:bg-brand-gold/10 flex items-center justify-center shrink-0">
+                <iconify-icon icon="lucide:home" class="text-brand-copper dark:text-brand-gold" width="22" />
+              </div>
+              <div>
+                <h3 class="font-medium text-brand-charcoal dark:text-brand-cream">We Come to You</h3>
+                <p class="text-sm text-brand-slate dark:text-brand-stoneDark mt-0.5">Home, office, or anywhere in Winnipeg.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 justify-start">
+              <div class="w-11 h-11 md:w-12 md:h-12 rounded-xl bg-brand-terracotta/10 dark:bg-brand-amber/10 flex items-center justify-center shrink-0">
+                <iconify-icon icon="lucide:scissors" class="text-brand-terracotta dark:text-brand-amber" width="22" />
+              </div>
+              <div>
+                <h3 class="font-medium text-brand-charcoal dark:text-brand-cream">Quality Service</h3>
+                <p class="text-sm text-brand-slate dark:text-brand-stoneDark mt-0.5">Professional results with quality products.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 justify-start">
+              <div class="w-11 h-11 md:w-12 md:h-12 rounded-xl bg-brand-blush/30 dark:bg-brand-champagne/10 flex items-center justify-center shrink-0">
+                <iconify-icon icon="lucide:users" class="text-brand-rose dark:text-brand-champagne" width="22" />
+              </div>
+              <div>
+                <h3 class="font-medium text-brand-charcoal dark:text-brand-cream">Family Friendly</h3>
+                <p class="text-sm text-brand-slate dark:text-brand-stoneDark mt-0.5">Services for everyone — men, women, and kids.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-16 md:py-24 bg-brand-vanilla/50 dark:bg-brand-mocha relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-brand-sand/30 to-brand-vanilla dark:from-brand-mocha dark:to-brand-espresso"></div>
+    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand-copper/30 dark:via-brand-gold/30 to-transparent"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+      <div class="text-center mb-10 md:mb-16">
+        <span class="text-sm font-medium text-brand-copper dark:text-brand-gold uppercase tracking-[0.15em] md:tracking-[0.2em]">Real Results</span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-medium text-brand-charcoal dark:text-brand-cream mt-3 md:mt-4">From Our Salon</h2>
+        <p class="text-brand-slate dark:text-brand-stoneDark max-w-xl mx-auto mt-3 md:mt-4 text-sm md:text-base">Actual photos from our mobile styling sessions. Quality hair service, wherever you are.</p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
+        {galleryImages.map((src, index) => (
+          <div key={index} class="gallery-image group relative aspect-square rounded-xl md:rounded-2xl overflow-hidden shadow-lg ring-1 ring-brand-copper/10 dark:ring-brand-gold/10">
+            <img
+              src={src}
+              alt={`Mobile hair styling ${index + 1}`}
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-8 md:mt-12 text-center">
+        <p class="text-sm text-brand-slate dark:text-brand-stoneDark">
+          <iconify-icon icon="lucide:camera" class="inline-block mr-1.5 text-brand-copper dark:text-brand-gold" width="16" />
+          Real photos from our actual styling sessions
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 md:py-24 bg-brand-sand/50 dark:bg-brand-espresso relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-vanilla via-brand-sand to-brand-copper/20 dark:from-brand-espresso dark:via-brand-mocha dark:to-brand-cocoa"></div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+      <div class="text-center mb-10 md:mb-12">
+        <span class="text-sm font-medium text-brand-copper dark:text-brand-gold uppercase tracking-[0.15em] md:tracking-[0.2em]">Contact</span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-medium text-brand-charcoal dark:text-brand-cream mt-3 md:mt-4">Ready to book?</h2>
+        <p class="text-brand-slate dark:text-brand-stoneDark mt-3 md:mt-4 text-sm md:text-base">Call or text to schedule your appointment.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-4 md:gap-6">
+        <a href="tel:+12045572287" class="group bg-brand-cream/70 dark:bg-white/5 backdrop-blur-sm border border-brand-copper/20 dark:border-brand-gold/10 rounded-xl md:rounded-2xl p-6 md:p-8 text-center hover:bg-brand-cream/90 dark:hover:bg-white/10 transition-all">
+          <div class="w-14 h-14 md:w-16 md:h-16 rounded-full bg-brand-copper/20 dark:bg-brand-gold/20 flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:scale-110 transition-transform">
+            <iconify-icon icon="lucide:phone" class="text-brand-copper dark:text-brand-gold" width="26" />
+          </div>
+          <p class="text-xs md:text-sm text-brand-slate dark:text-brand-stoneDark mb-1 md:mb-2">Call or Text</p>
+          <p class="text-xl md:text-2xl font-display font-semibold text-brand-charcoal dark:text-brand-cream">(204) 557-2287</p>
+        </a>
+
+        <a href="https://wa.me/12045572287" target="_blank" class="group bg-brand-cream/70 dark:bg-white/5 backdrop-blur-sm border border-brand-copper/20 dark:border-brand-gold/10 rounded-xl md:rounded-2xl p-6 md:p-8 text-center hover:bg-brand-cream/90 dark:hover:bg-white/10 transition-all">
+          <div class="w-14 h-14 md:w-16 md:h-16 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:scale-110 transition-transform">
+            <iconify-icon icon="lucide:message-circle" class="text-green-500" width="26" />
+          </div>
+          <p class="text-xs md:text-sm text-brand-slate dark:text-brand-stoneDark mb-1 md:mb-2">WhatsApp</p>
+          <p class="text-xl md:text-2xl font-display font-semibold text-brand-charcoal dark:text-brand-cream">Message Us</p>
+        </a>
+      </div>
+
+      <div class="mt-10 md:mt-12 text-center space-y-2">
+        <p class="text-brand-slate dark:text-brand-stoneDark text-xs md:text-sm">Available 7 days a week • All areas of Winnipeg</p>
+        <p class="text-brand-stone dark:text-brand-stoneDark/70 text-xs md:text-sm flex items-center justify-center gap-4">
+          <span class="flex items-center gap-1.5">
+            <iconify-icon icon="lucide:credit-card" width="14" />
+            e-Transfer
+          </span>
+          <span class="flex items-center gap-1.5">
+            <iconify-icon icon="lucide:banknote" width="14" />
+            Cash
+          </span>
+        </p>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
+
+<style>
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
+  }
+</style>
