@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+  <circle cx="40" cy="40" r="38" fill="#f3e6d0" stroke="#d4af37" stroke-width="2"/>
+  <circle cx="25" cy="25" r="12" fill="#d4af37"/>
+  <circle cx="55" cy="25" r="12" fill="#e8c4a8"/>
+  <circle cx="40" cy="50" r="12" fill="#d4a998"/>
+  <text x="40" y="75" text-anchor="middle" font-family="Arial" font-size="12" fill="#3d2e26">Color</text>
+</svg>
