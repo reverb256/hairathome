@@ -9,12 +9,19 @@ interface Props {
 const {
   title,
   description = 'Professional mobile hair stylist in Winnipeg, MB. Quality haircuts, color & styling at your convenience.',
-  image = '/images/stock/hero-02-happy-client_00001_.png',
+  image,
   type = 'website',
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const imageURL = new URL(image, Astro.site);
+
+// Generate OG image path based on current route
+// Remove leading slash and trailing slash, replace with og-images path
+const routePath = Astro.url.pathname.replace(/^\/|\/$/g, '') || 'index';
+const ogImagePath = `/og-images/${routePath}.svg`;
+
+// Use custom image if provided, otherwise use generated OG image
+const imageURL = image ? new URL(image, Astro.site) : new URL(ogImagePath, Astro.site);
 
 import { ViewTransitions } from 'astro:transitions';
 import Header from '../components/layout/Header.astro';
@@ -92,7 +99,7 @@ import '../styles/global.css';
 
     <ViewTransitions />
   </head>
-  <body class="bg-brand-cream dark:bg-brand-espresso text-brand-charcoal dark:text-brand-cream font-body antialiased selection:bg-brand-copper/30 selection:text-brand-charcoal">
+  <body class="bg-brand-cream dark:bg-brand-espresso text-brand-charcoal dark:text-brand-cream font-body antialiased selection:bg-brand-copper/30 selection:text-brand-charcoal" style="touch-action: manipulation;">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-brand-charcoal dark:focus:bg-brand-gold focus:text-brand-cream dark:focus:text-brand-espresso focus:rounded-lg focus:font-medium focus:shadow-lg">
       Skip to main content
     </a>

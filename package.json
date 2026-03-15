@@ -12,8 +12,9 @@
     "dev": "npm run build:css && hugo server -D --bind 0.0.0.0 --disableFastRender",
     "nix:dev": "bash scripts/nix-dev-shell.sh",
     "astro:dev": "astro dev",
-    "astro:build": "astro build",
+    "astro:build": "node scripts/generate-og-images.js && astro build",
     "astro:preview": "astro preview",
+    "generate:og": "node scripts/generate-og-images.js",
     "astro": "astro",
     "test": "playwright test",
     "lint": "biome check .",
@@ -37,6 +38,7 @@
   "dependencies": {
     "@astrojs/check": "^0.9.7",
     "@playwright/test": "^1.58.2",
+    "@vercel/og": "^0.11.1",
     "astro-icon": "^1.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
