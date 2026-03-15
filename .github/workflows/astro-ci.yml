@@ -73,16 +73,11 @@ jobs:
       - name: Build
         run: npm run astro:build
 
-      - name: Copy docs to root for deployment
-        run: |
-          rm -rf astro_deploy
-          mkdir -p astro_deploy
-          cp -r docs/* astro_deploy/
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./astro_deploy
-          force_orphan: true
-          commit_message: Deploy ${{ github.sha }}
+          publish_dir: ./docs
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'Deploy Astro site'
