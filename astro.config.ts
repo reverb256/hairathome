@@ -11,6 +11,7 @@ export default defineConfig({
     sitemap(),
   ],
   output: 'static',
+  outDir: 'docs',
   build: { format: 'directory' },
   vite: { build: { assetsInlineLimit: 0 } },
 });

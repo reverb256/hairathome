@@ -35,8 +35,8 @@ jobs:
       - name: Upload build
         uses: actions/upload-artifact@v4
         with:
-          name: dist
-          path: dist/
+          name: docs
+          path: docs/
 
       - name: Install Playwright
         run: npx playwright install --with-deps
@@ -77,4 +77,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./docs
