@@ -18,7 +18,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 // Generate OG image path based on current route
 // Remove leading slash and trailing slash, replace with og-images path
 const routePath = Astro.url.pathname.replace(/^\/|\/$/g, '') || 'index';
-const ogImagePath = `/og-images/${routePath}.svg`;
+
+// Cache busting version - update this to force social media refresh
+const OG_VERSION = 'v1';
+
+const ogImagePath = `/og-images/${routePath}.svg?v=${OG_VERSION}`;
 
 // Use custom image if provided, otherwise use generated OG image
 const imageURL = image ? new URL(image, Astro.site) : new URL(ogImagePath, Astro.site);

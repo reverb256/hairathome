@@ -51,10 +51,10 @@ jobs:
           name: playwright-report
           path: playwright-report/
 
-  deploy-preview:
+  deploy:
     needs: build-test
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/feature/astro-migration' && github.event_name == 'push'
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     permissions:
       contents: write
     steps:
@@ -78,4 +78,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          destination_dir: ./astro-preview
