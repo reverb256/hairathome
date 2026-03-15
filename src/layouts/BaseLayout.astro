@@ -16,16 +16,22 @@ const {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 // Generate OG image path based on current route
-// Remove leading slash and trailing slash, replace with og-images path
-const routePath = Astro.url.pathname.replace(/^\/|\/$/g, '') || 'index';
+// Remove base path, leading slash, and trailing slash
+const basePath = '/hairathome';
+let routePath = Astro.url.pathname;
+if (routePath.startsWith(basePath)) {
+  routePath = routePath.slice(basePath.length);
+}
+routePath = routePath.replace(/^\/|\/$/g, '') || 'index';
 
 // Cache busting version - update this to force social media refresh
 const OG_VERSION = 'v1';
 
-const ogImagePath = `/og-images/${routePath}.svg?v=${OG_VERSION}`;
+// OG image path includes the base directory for GitHub Pages
+const ogImagePath = `/hairathome/og-images/${routePath}.svg?v=${OG_VERSION}`;
 
 // Use custom image if provided, otherwise use generated OG image
-const imageURL = image ? new URL(image, Astro.site) : new URL(ogImagePath, Astro.site);
+const imageURL = image ? new URL(image, 'https://reverb256.github.io') : new URL(ogImagePath, 'https://reverb256.github.io');
 
 import { ViewTransitions } from 'astro:transitions';
 import Header from '../components/layout/Header.astro';
