@@ -9,29 +9,12 @@ interface Props {
 const {
   title,
   description = 'Professional mobile hair stylist in Winnipeg, MB. Quality haircuts, color & styling at your convenience.',
-  image,
+  image = '/images/stock/hero-02-happy-client_00001_.png',
   type = 'website',
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-
-// Generate OG image path based on current route
-// Remove base path, leading slash, and trailing slash
-const basePath = '/hairathome';
-let routePath = Astro.url.pathname;
-if (routePath.startsWith(basePath)) {
-  routePath = routePath.slice(basePath.length);
-}
-routePath = routePath.replace(/^\/|\/$/g, '') || 'index';
-
-// Cache busting version - update this to force social media refresh
-const OG_VERSION = 'v1';
-
-// OG image path includes the base directory for GitHub Pages
-const ogImagePath = `/hairathome/og-images/${routePath}.svg?v=${OG_VERSION}`;
-
-// Use custom image if provided, otherwise use generated OG image
-const imageURL = image ? new URL(image, 'https://reverb256.github.io') : new URL(ogImagePath, 'https://reverb256.github.io');
+const imageURL = new URL(image, Astro.site);
 
 import { ViewTransitions } from 'astro:transitions';
 import Header from '../components/layout/Header.astro';
@@ -109,7 +92,7 @@ import '../styles/global.css';
 
     <ViewTransitions />
   </head>
-  <body class="bg-brand-cream dark:bg-brand-espresso text-brand-charcoal dark:text-brand-cream font-body antialiased selection:bg-brand-copper/30 selection:text-brand-charcoal" style="touch-action: manipulation;">
+  <body class="bg-brand-cream dark:bg-brand-espresso text-brand-charcoal dark:text-brand-cream font-body antialiased selection:bg-brand-copper/30 selection:text-brand-charcoal">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-brand-charcoal dark:focus:bg-brand-gold focus:text-brand-cream dark:focus:text-brand-espresso focus:rounded-lg focus:font-medium focus:shadow-lg">
       Skip to main content
     </a>
