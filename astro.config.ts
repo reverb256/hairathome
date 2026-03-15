@@ -4,7 +4,8 @@ import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://reverb256.github.io/hairathome/',
+  site: 'https://reverb256.github.io',
+  base: '/hairathome/',
   integrations: [
     tailwind({ applyBaseStyles: false }),
     react(),
