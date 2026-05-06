@@ -2,7 +2,7 @@ name: Astro CI
 
 on:
   push:
-    branches: [main, 'feature/astro-migration']
+    branches: ['feature/astro-migration']
   pull_request:
     branches: [main]
 
