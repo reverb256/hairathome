@@ -17,7 +17,7 @@
     "@biomejs/biome": "^2.3.14",
     "@tailwindcss/postcss": "^4.2.0",
     "autoprefixer": "^10.4.24",
-    "postcss": "^8.5.12",
+    "postcss": "^8.5.25",
     "postcss-cli": "^11.0.1",
     "tailwindcss": "^4.1.18",
     "vscode-langservers-extracted": "^4.10.0"
