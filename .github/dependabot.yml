@@ -9,6 +9,25 @@ updates:
     groups:
       npm:
         patterns: ["*"]
+    # Majors that cannot install against this repo's integration set. Verified
+    # in CI, not assumed (PRs #22/#23, kanban t_3f22909d):
+    #   astro              -> project depends on @astrojs/tailwind@6, which peers
+    #                         astro ^3 || ^4 || ^5; astro 5+ moves to
+    #                         @tailwindcss/vite (PR #22: ERESOLVE on astro 7.2.8).
+    #   typescript         -> @astrojs/check@0.9.10 (latest published) peers
+    #                         typescript ^5 || ^6; nothing accepts 7 (PR #23).
+    #   tailwindcss        -> the canonical Hugo/postcss stack pins tailwind v3
+    #                         (tailwind.config.js is v3 config), see STACK.md.
+    # Majors are decided with a real Astro/tailwind migration, not as drive-by
+    # bumps. Minor and patch updates still arrive normally. Remove an entry here
+    # when the matching migration lands.
+    ignore:
+      - dependency-name: "astro"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "tailwindcss"
+        update-types: ["version-update:semver-major"]
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:

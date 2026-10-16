@@ -6,6 +6,15 @@ node_modules/
 # Hugo
 .hugo_build.lock
 
+# Generated / scratch artefacts. These were committed at the repo root
+# (incident 2026-10-16, kanban t_3f22909d); .github/workflows/hygiene.yml fails
+# if any of them becomes tracked again.
+.astro/
+hugo.tar.gz
+*.bak
+playwright-report/
+test-results/
+
 # OS
 .DS_Store
 Thumbs.db

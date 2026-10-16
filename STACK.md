@@ -18,7 +18,11 @@ packages in `package.json` are half-migrated work carried on
 
 | Fact | How it was read |
 |------|-----------------|
-| Live site is Hugo output | `curl -sL https://hairathome.reverb256.ca/` -> `http 200`, `<meta name=generator content="Hugo 0.140.2">` |
+| Live site is Hugo output | `curl -sL https://hairathome.reverb256.ca/` -> `http 200`, `<meta name=generator content="Hugo 0.155.3">` (the April build, not this repo's pinned 0.140.2) |
+| The live pages are frozen at the April deploy | `gh api repos/reverb256/hairathome/deployments` -> newest `environment: github-pages` = `ref: main`, sha `fec386e`, created `2026-04-14T15:18:28Z`; `curl -sD- https://hairathome.reverb256.ca/` -> `last-modified: Tue, 14 Apr 2026 15:18:45 GMT` |
+| The live origin is `fec386e:docs/` byte-for-byte | diff of the live HTML against `git show fec386e:docs/index.html` shows only Cloudflare edge rewrites: `type="…-text/javascript"` attributes + `/cdn-cgi/…/rocket-loader.min.js` (Rocket Loader) and injected `/cf-fonts/` `@font-face` blocks (Cloudflare Fonts) |
+| `main`'s `docs/` is the reproducible build output | on `main` (`7d57c18`), `npm ci && npm run build` with hugo extended 0.140.2 -> `git status --porcelain` empty (0 changed, 0 untracked); 32 pages, 156 static files |
+| Publishing `main`'s `docs/` does not change the site content | live vs `fec386e:docs/index.html` vs `main:docs/index.html`: identical visible text (272 words, word-level diff 0 segments) and identical headings; only `og:image` differs (theme default after `e686431`) |
 | Source of the live site is `main` | `gh api repos/reverb256/hairathome/deployments` -> latest `environment: github-pages`, `ref: main` (sha `fec386e`) |
 | Hugo is the deploy output | `hugo.toml`: `publishDir = "docs"`; `AGENTS.md`: "Hugo static site"; `npm run build` = `postcss ... && hugo --minify` |
 | Astro is not built | `main` has no `astro build`/`astro:build` script and no astro output directory; the migration lives on `feature/astro-migration` |
@@ -69,18 +73,48 @@ with `npm ci` on both majors. The `lockfile-sync` job enforces this.
   npm 10.9.9 and npm 11.19.0. `npx astro check` -> 0 errors. `npm run build` ->
   32 pages.
 
-## Open items (not decided here)
+## Open items and their status
 
-* `deploy.yml` still publishes only on `push: feature/astro-migration` and
-  uploads `./docs`; `main` pushes do not republish the public site. Fixing that
-  changes what the live site serves, so it needs an explicit decision.
-* `feature/astro-migration` cannot be judged by `astro-ci.yml` alone: its own
-  `npm run build` is `hugo --minify`, and `deploy-preview` publishes a committed
-  `dist/`, so the branch does not actually build Astro either.
-* Major dependency PRs (#22 astro 4 -> 7, #23 npm group incl. typescript 7) are
-  not compatible with the current integration set: `@astrojs/tailwind@6` peers
-  `astro ^3 || ^4 || ^5`, and `@astrojs/check@0.9.10` peers `typescript ^5 || ^6`.
-  Decide those together with a real Astro migration, not as drive-by bumps.
-* Repo hygiene: `hugo.tar.gz` (18 MB), `package.json.bak`,
-  `astro-ci.yml.bak`, `tailwind.config.js.bak`, `playwright-report/`,
-  `test-results/` are committed at the root.
+Updated 2026-10-16 by kanban `t_3f22909d` (follow-ups to the CI fix above).
+
+1. **Deploy path - decision open, change ready.** `deploy.yml` used to publish
+   only on `push: feature/astro-migration` + `workflow_dispatch`, so `main`
+   pushes never republished the public site (live was frozen at `fec386e`,
+   2026-04-14). A verified change that triggers on `push: main`, installs the
+   pinned Hugo 0.140.2, runs `npm run build`, gates the upload on `docs/`
+   matching that build, and drops the decorative `npx astro build` (writes
+   `dist/`) and `generate-og-images.js` (writes `public/`) steps is open as
+   **PR #24**. Merging it *is* the decision: the live site then follows `main`.
+   Evidence in the PR body and in the table above.
+   Not part of that PR: Pages has `https_enforced: false` and the domain is
+   Cloudflare-proxied with Rocket Loader + Cloudflare Fonts enabled; enforcing
+   HTTPS can interact with the Cloudflare SSL mode, so it is a separate call.
+2. **`feature/astro-migration` cannot be judged by `astro-ci.yml` alone**: its
+   own `npm run build` is `hugo --minify`, and `deploy-preview` publishes a
+   committed `dist/`, so the branch does not actually build Astro either.
+   Unchanged.
+3. **Major dependency PRs: closed, and re-blocked at the source.** #22
+   (astro 4 -> 7.2.8) and #23 (npm group incl. typescript 7.0.2) cannot install:
+   `@astrojs/tailwind@6.0.2` peers `astro ^3 || ^4 || ^5`, and the latest
+   `@astrojs/check@0.9.10` peers `typescript ^5 || ^6` (verified against the
+   registry and in CI runs 38949577762 / 38949692235). Both are closed with that
+   evidence, and `.github/dependabot.yml` now ignores major bumps of `astro`,
+   `typescript`, and `tailwindcss` so the queue stops re-raising them. Delete
+   those `ignore` entries when a real Astro/tailwind migration lands.
+4. **Repo hygiene: done.** `hugo.tar.gz` (18 MB), `package.json.bak`,
+   `tailwind.config.js.bak`, `.github/workflows/astro-ci.yml.bak`,
+   `playwright-report/`, `test-results/`, `.hugo_build.lock` and the generated
+   `.astro/` types are untracked, `.gitignore` covers them, and
+   `.github/workflows/hygiene.yml` fails the build if any of them is tracked
+   again. **Git history was not rewritten** (`hugo.tar.gz` is still in old
+   commits, so the clone stays ~290 MB); rewriting `main` is destructive and was
+   not done.
+5. **Stale branches** (found while doing the above, not touched):
+   `chore/remove-deprecated-integrations`, `prod`, `restore-astro-site` are all
+   March/April-era and superseded by `main`.
+6. **Minor**: `postcss` is configured twice (`postcss.config.js` uses the
+   tailwind v4 plugin `@tailwindcss/postcss`, `postcss.config.cjs`/`.mjs` use v3
+   `tailwindcss`), and `npm run build:css` is effectively a no-op: with
+   `input.css` = `@tailwind base;` it emits the same 16 bytes it was given. The
+   public CSS comes from the theme's Hugo assets. Harmless today; clean up with
+   the tailwind v4 decision.
