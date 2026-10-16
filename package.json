@@ -18,17 +18,17 @@
     "@astrojs/check": "^0.9.10",
     "@astrojs/sitemap": "^3.7.4",
     "@astrojs/tailwind": "^6.0.2",
-    "@biomejs/biome": "^2.3.14",
-    "@tailwindcss/postcss": "^4.2.0",
-    "astro": "^4.16.19",
-    "autoprefixer": "^10.4.24",
-    "postcss": "^8.5.12",
-    "postcss-cli": "^11.0.1",
-    "tailwindcss": "^3.4.19",
-    "typescript": "^5.9.3",
+    "@biomejs/biome": "^2.5.15",
+    "@tailwindcss/postcss": "^4.3.3",
+    "astro": "^7.3.8",
+    "autoprefixer": "^10.6.1",
+    "postcss": "^8.5.30",
+    "postcss-cli": "^12.0.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2",
     "vscode-langservers-extracted": "^4.10.0"
   },
   "dependencies": {
-    "@playwright/test": "^1.58.2"
+    "@playwright/test": "^1.64.0"
   }
 }
