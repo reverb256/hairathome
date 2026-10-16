@@ -1,0 +1,43 @@
+name: Repo hygiene
+
+# Regression check for the committed-junk incident (kanban t_3f22909d,
+# 2026-10-16). `hugo.tar.gz` (18 MB), `package.json.bak`,
+# `.github/workflows/astro-ci.yml.bak`, `tailwind.config.js.bak`,
+# `.hugo_build.lock`, `playwright-report/`, `test-results/` and the generated
+# `.astro/` types were all tracked at the repo root. They were untracked by the
+# hygiene change for kanban t_3f22909d; this job keeps them out.
+#
+# It blocks nothing else: no npm install, no build, a few seconds.
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  no-committed-junk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Fail if build junk is tracked again
+        run: |
+          tracked="$(git ls-files \
+            hugo.tar.gz \
+            .hugo_build.lock \
+            package.json.bak \
+            tailwind.config.js.bak \
+            .github/workflows/astro-ci.yml.bak \
+            playwright-report \
+            test-results \
+            .astro)"
+          if [ -n "$tracked" ]; then
+            echo "::error::generated or scratch files are tracked again - delete them and keep .gitignore current"
+            echo "$tracked"
+            exit 1
+          fi
+          echo "no committed build junk"
