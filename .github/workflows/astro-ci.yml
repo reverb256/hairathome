@@ -18,6 +18,12 @@ jobs:
         with:
           node-version: '22'
           cache: 'npm'
+      - name: Install Hugo
+        run: |
+          curl -L -o hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v0.140.2/hugo_extended_0.140.2_Linux-64bit.tar.gz
+          tar -xzf hugo.tar.gz
+          sudo mv hugo /usr/local/bin/
+          hugo version
 
       - name: Install dependencies
         run: npm ci
@@ -30,7 +36,7 @@ jobs:
         continue-on-error: true
 
       - name: Build
-        run: npm run astro:build
+        run: npm run build
 
       - name: Upload build
         uses: actions/upload-artifact@v4
@@ -66,12 +72,18 @@ jobs:
         with:
           node-version: '22'
           cache: 'npm'
+      - name: Install Hugo
+        run: |
+          curl -L -o hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v0.140.2/hugo_extended_0.140.2_Linux-64bit.tar.gz
+          tar -xzf hugo.tar.gz
+          sudo mv hugo /usr/local/bin/
+          hugo version
 
       - name: Install dependencies
         run: npm ci
 
       - name: Build
-        run: npm run astro:build
+        run: npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
