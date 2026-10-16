@@ -11,7 +11,14 @@ npm run build    # Build to docs/
 
 ## Deploy
 
-Push to `main` - GitHub Pages deploys automatically.
+The live site (https://hairathome.reverb256.ca/) is Hugo output published from
+`docs/`. `deploy.yml` runs on a push to `feature/astro-migration` and on manual
+dispatch only, so a push to `main` does **not** republish the site today. Read
+`STACK.md` before changing that.
+
+## Stack
+
+Canonical stack, CI contract, and the lockfile rule: `STACK.md`.
 
 ## Structure
 
