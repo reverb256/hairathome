@@ -1,8 +1,24 @@
 name: Deploy to GitHub Pages
 
+# Canonical stack: STACK.md - Hugo 0.140.2 + postcss + tailwindcss v3 -> docs/
+#
+# Decision record (kanban t_3f22909d, 2026-10-16).
+# Before this change the workflow triggered on `push: feature/astro-migration`
+# and `workflow_dispatch` only, so a push to `main` never republished the public
+# site. The last live deploy was `ref: main`, sha `fec386e`, 2026-04-14
+# (`gh api repos/reverb256/hairathome/deployments`), while `main`'s `docs/` is
+# the current, reproducible build output (verified: a fresh `npm run build` on
+# main leaves `docs/` byte-identical to the committed tree).
+#
+# Two steps of the old workflow were decorative for this artifact:
+#   * `npx astro build` writes `dist/`, and `main` does not build Astro at all
+#     (STACK.md: `src/*.astro` is half-migrated work, not the public build).
+#   * `node scripts/generate-og-images.js` writes `public/og-images/`, which
+#     Hugo does not copy (`publishDir = docs`, static dirs = `static/`).
+# Both are removed; the artifact is `./docs`, gated on a fresh build.
 on:
   push:
-    branches: ['feature/astro-migration']
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -27,14 +43,34 @@ jobs:
           node-version: '22'
           cache: 'npm'
 
+      - name: Install Hugo 0.140.2 (pinned, matches STACK.md)
+        run: |
+          curl -sSL --fail -o hugo.tar.gz \
+            https://github.com/gohugoio/hugo/releases/download/v0.140.2/hugo_extended_0.140.2_Linux-64bit.tar.gz
+          tar -xzf hugo.tar.gz
+          sudo mv hugo /usr/local/bin/
+          hugo version
+
       - name: Install dependencies
         run: npm ci
 
-      - name: Generate OG images
-        run: node scripts/generate-og-images.js
+      - name: Build (postcss + hugo --minify)
+        run: npm run build
 
-      - name: Build Astro site
-        run: npx astro build
+      # Regression gate for the incident this workflow used to hide: the
+      # published artifact is the *committed* docs/ tree, so a docs/ that no
+      # longer matches a fresh build of content/+themes/ must fail here instead
+      # of shipping stale pages.
+      - name: Verify docs/ is in sync with the build
+        run: |
+          if [ -n "$(git status --porcelain -- docs static/css)" ]; then
+            echo "::error::docs/ is out of date: run 'npm run build' and commit docs/ (see STACK.md)"
+            git status --porcelain -- docs static/css
+            exit 1
+          fi
+          test -f docs/index.html
+          test -f docs/services/index.html
+          echo "docs/ index.html pages: $(find docs -name index.html | wc -l)"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
